@@ -2,6 +2,8 @@ import networkx as nx
 from node import *
 import matplotlib.pyplot as plt
 import re
+from find import get_input_output
+import requests
 
 
 
@@ -25,7 +27,14 @@ def whichOperator(char):
 
     return ""
 
-def shunting_yard(G, expression, output, size):
+def shunting_yard(G, expression, output, input_output):
+
+
+    dictionary = input_output[0]
+    values = dictionary.values()
+    list_of_dicts = next(iter(values)) ## inputs and outputs of the first module (default)
+    value = list_of_dicts[1]
+    size_of_output = value[left]
     stack = list()
     queue = list()
     for char in expression:
@@ -66,13 +75,15 @@ def shunting_yard(G, expression, output, size):
 
             stack.append(Node)
         else:
-            Node = node(Type = char, name = char, size = 1)
+            value = list_of_dicts[0]
+            size = value[char]
+            Node = node(Type = "input", name = char, size = size)
             stack.append(Node)
 
 
     # we know that the top of the stack is the output for the expression
 
-    Node = node(Type = "output", name=output, size=1)
+    Node = node(Type = "output", name=output, size=size_of_output)
     G.add_edge(Node, stack[-1])
         
 
@@ -82,17 +93,28 @@ def shunting_yard(G, expression, output, size):
 
 
 
-text = "F = ((A & B) | C ) ^ D"
 
 
-regex = r"(?<=\=).*"
-text = re.findall(regex,text)[0]
-print(text)
-text = text.replace(" ","")
-
+file = open("module.txt")
+file2 = open("module.txt")
+lines = file.readlines()
+input_output = get_input_output(file2)
 
 G = nx.Graph()
-shunting_yard(G,text,"F",1)
+for line in lines:
+
+
+   
+    if len(re.findall("assign", line)) > 0:
+        splitted_text = line.split("=")
+        splitted_text[0] = splitted_text[0].replace(' ','').replace("assign", "").replace("\t", "")
+        splitted_text[1] = splitted_text[1].replace(' ','').replace("\t", "").replace(";","").replace("\n","")
+
+        left = splitted_text[0]
+        right = splitted_text[1]
+
+    
+        shunting_yard(G,right,left,input_output)
 
 nx.draw_spring(G, with_labels=True)
 plt.show()
