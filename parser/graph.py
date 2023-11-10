@@ -46,15 +46,13 @@ def whichOperator(char):
 
     return ""
 
-def shunting_yard(G, expression, output, input_output):
+def shunting_yard(G, expression, out, input_output):
     flag = False ## this flag is to be triggered in case there are no parenthesis
+    stack = list()
+    queue = list()
     dictionary = input_output[0]
     values = dictionary.values()
     list_of_dicts = next(iter(values)) ## inputs and outputs of the first module (default)
-    value = list_of_dicts[1]
-    size_of_output = value[left]
-    stack = list()
-    queue = list()
     for index, char in enumerate(expression):
         if flag:
             flag = False
@@ -141,7 +139,14 @@ def shunting_yard(G, expression, output, input_output):
 
     # we know that the top of the stack is the output for the expression
 
-    Node = node(Type = "output", name=output, size=size_of_output)
+    Type = "output"
+    value = list_of_dicts[1]
+    if out not in value:
+        value = list_of_dicts[2]
+        Type = "wire"
+    size_of_out = value[out]
+
+    Node = node(Type = Type, name=out, size=size_of_out)
     G.add_edge(Node, stack[-1])
         
 
@@ -168,11 +173,11 @@ for line in lines:
         splitted_text[0] = splitted_text[0].replace(' ','').replace("assign", "").replace("\t", "")
         splitted_text[1] = splitted_text[1].replace(' ','').replace("\t", "").replace(";","").replace("\n","")
 
-        left = splitted_text[0]
+        out = splitted_text[0]
         right = splitted_text[1]
 
     
-        shunting_yard(G,right,left,input_output)
+        shunting_yard(G,right,out,input_output)
 
 
 

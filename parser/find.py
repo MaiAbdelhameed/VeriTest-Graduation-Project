@@ -8,11 +8,12 @@ def substring_after(s, delim):
 def get_input_output(file):
     processing_text = ""
     module_name = []
-    input_name = ""
     inputs = []
+    wires = []
     outputs2 = {}
     inputs2 = {}
     outputs = []
+    wires2 = {}
     bus_size = 0
     pattern = r'\[(.*?)\]'
     regex = r'\bmodule\b'
@@ -75,12 +76,35 @@ def get_input_output(file):
                 outputs2.update({i.split("//")[0].replace(";","")  : bus_size})
 
 
+        elif line.find("wire") != -1:
+            if line.find("]") != -1:
+                wire_list = substring_after(line, "]").strip("\n"
+                ).strip(";").replace(" ","").split(",")
+                matches = re.search(pattern, line)
+                extracted_text = matches.group(1).replace("reg", "").split(":")
+                if int(extracted_text[0]) != 0:
+                    bus_size = int(extracted_text[0]) + 1
+                else:
+                    bus_size = int(extracted_text[1]) + 1
+
+            else: # not a bus output
+                wire_list = substring_after(line, "wire").strip("\n"
+                ).strip(";").replace(" ","").replace("reg", "").split(",")
+                bus_size = 1
+        
+            
+            for i in wire_list:
+                wires2.update({i.split("//")[0].replace(";","")  : bus_size})
+
+
         
         elif line.find("endmodule") != -1:
             outputs.append(outputs2)
             inputs.append(inputs2)
+            wires.append(wires2)
             inputs2 = {}
             outputs2 = {}
+            wires2 = {}
 
 
 
@@ -93,6 +117,7 @@ def get_input_output(file):
         list_of_inputs_outputs = []
         list_of_inputs_outputs.append(inputs[module_name.index(mod)])
         list_of_inputs_outputs.append(outputs[module_name.index(mod)])
+        list_of_inputs_outputs.append(wires[module_name.index(mod)])
         dictionary = {mod : list_of_inputs_outputs}
         input_output.append(dictionary)
         file1.writelines("Module Name: ")
