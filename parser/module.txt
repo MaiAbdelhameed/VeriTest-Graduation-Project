@@ -1,7 +1,10 @@
 module jbuffer(a,y);
 	input a;
 	input c;
+	input d;
 	input b;
 	output y;
-	assign y=a&c;	
+	output k;
+	assign y = ~a ^ d
+	assign k = y & c
 endmodule
