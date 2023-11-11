@@ -1,9 +1,12 @@
 import networkx as nx
-from node import *
+from components.node import *
+from preprocessing.find import *
 import matplotlib.pyplot as plt
 import re
-from find import get_input_output
 import requests
+import sys
+
+
 
 
 
@@ -183,6 +186,9 @@ for line in lines:
 
 # for Node in G.nodes():
 #     print(Node.name)
+
+
+print(len(G.nodes()))
     
 nx.draw_spring(G, with_labels=True)
 plt.show()
