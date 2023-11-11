@@ -8,7 +8,7 @@ class node:
         self.name = name
 
     def __str__(self):
-        if self.Type == "input" or self.Type == "input" or self.Type == "wire":
+        if self.Type == "INPUT" or self.Type == "OUTPUT" or self.Type == "WIRE":
             return self.Type + " \n \n" + self.name + "=" + str(self.size)
     
         else:
