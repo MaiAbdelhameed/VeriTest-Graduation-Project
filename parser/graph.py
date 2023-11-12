@@ -60,26 +60,26 @@ def shunting_yard(G, Tokens, out, Input_output_wire):
     flag = False ## this flag is to be triggered in case there are no parenthesis
     stack = list()
     queue = list()
-    for index, char in enumerate(Tokens):
+    for index, Token in enumerate(Tokens):
         if flag:
             flag = False
             continue
-        if TokenisOperator(char) and TokenwhichOperator(char) != "open" and TokenwhichOperator(char) != "close": ## hal ana opeartor 3'er parenthesis!
+        if TokenisOperator(Token) and TokenwhichOperator(Token) != "open" and TokenwhichOperator(Token) != "close": ## hal ana opeartor 3'er parenthesis!
             ## first check if we pushed any (
             if not checkstack(stack) and Tokens[index+1].name.isalpha(): ## means there is no an open bracket
                                       ## 3ashan e7na 3ayzeen el tokens fel 7ala deh tkoon A,B,&
                 queue.append(Tokens[index+1])
-                queue.append(char)
+                queue.append(Token)
                 flag = True ## 3ashan a2dr askip next element 3ashan ana already processed it!
                 continue
 
             else: ## lw b3dy bracket aw kan ably bracket khlas sa3etha kda el algorithm hyzbot lw7do
-                stack.append(char)
+                stack.append(Token)
        
             
-        elif char.Type == "open":
-            stack.append(char)
-        elif char.Type == "close":
+        elif Token.Type == "open":
+            stack.append(Token)
+        elif Token.Type == "close":
             while stack[-1].Type != "open":
                 top = stack.pop()
                 queue.append(top)
@@ -92,7 +92,7 @@ def shunting_yard(G, Tokens, out, Input_output_wire):
 
 
         else:
-            queue.append(char)
+            queue.append(Token)
             if (len(stack) > 0):
                 if TokenisOperator(stack[-1]): ## 3ashan lw 3ndy ~A 3ayz bs at2kd eny akhly fel queue A ~
                     if TokenwhichOperator(stack[-1]) == "not":
@@ -115,9 +115,9 @@ def shunting_yard(G, Tokens, out, Input_output_wire):
     '''
 
 
-    for char in queue:
-        if TokenisOperator(char): ## creating a gate for the expression
-            Type = TokenwhichOperator(char)
+    for Token in queue:
+        if TokenisOperator(Token): ## creating a gate for the expression
+            Type = TokenwhichOperator(Token)
             Node = node(Type, size = 1)
             G.add_node(Node)
             if Type != "not":
@@ -133,11 +133,11 @@ def shunting_yard(G, Tokens, out, Input_output_wire):
             stack.append(Node)
         else:    
 
-            nodeitr = nodeingraph(G,char)
+            nodeitr = nodeingraph(G,Token)
             if nodeitr == None: 
                 value = Input_output_wire[0] ## we will create a new node and it's for an input
-                size = value[char.name]
-                Node = node(Type = "INPUT", name = char.name, size = size)
+                size = value[Token.name]
+                Node = node(Type = "INPUT", name = Token.name, size = size)
                 stack.append(Node)
 
             else:
