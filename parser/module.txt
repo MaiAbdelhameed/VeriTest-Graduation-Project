@@ -3,9 +3,8 @@ module jbuffer(a,y);
 	input c;
 	input  d;
 	input b;
-	wire y, m;
+	wire y, m, f;
 	output k;
-	assign y = a& b
-	assign m = y & c
-	assign k = ~(m ^ d)
+	assign k = m & b
+	assign m = d & c
 endmodule

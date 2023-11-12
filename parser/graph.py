@@ -56,7 +56,7 @@ def TokenwhichOperator(Token):
 
    
 
-def shunting_yard(G, Tokens, out, Input_output_wire):
+def shunting_yard(G, Tokens, output_token, Input_output_wire):
     flag = False ## this flag is to be triggered in case there are no parenthesis
     stack = list()
     queue = list()
@@ -135,16 +135,23 @@ def shunting_yard(G, Tokens, out, Input_output_wire):
 
             nodeitr = nodeingraph(G,Token)
             if nodeitr == None: 
-                value = Input_output_wire[0] ## we will create a new node and it's for an input
-                size = value[Token.name]
-                Node = node(Type = "INPUT", name = Token.name, size = size)
-                stack.append(Node)
+                if Token.name in Input_output_wire[0]:
+                    value = Input_output_wire[0] ## we will create a new node and it's for an input
+                    size = value[Token.name]
+                    Node = node(Type = "INPUT", name = Token.name, size = size)
+                    stack.append(Node)
+                elif Token.name in Input_output_wire[2]:
+                    value = Input_output_wire[2] ## we will create a new node and it's for an WIRE
+                    size = value[Token.name]
+                    Node = node(Type = "WIRE", name = Token.name, size = size)
+                    stack.append(Node)
 
             else:
                 stack.append(nodeitr)
 
 
     # we know that the top of the stack is the output for the expression
+
 
     Type = "OUTPUT"
     value = Input_output_wire[1]
@@ -153,8 +160,15 @@ def shunting_yard(G, Tokens, out, Input_output_wire):
         Type = "WIRE"
     size_of_out = value[out]
 
-    Node = node(Type = Type, name=out, size=size_of_out)
-    G.add_edge(Node, stack[-1])
+
+    nodeitr = nodeingraph(G,output_token)
+    if nodeitr == None:
+        Node = node(Type = Type, name=out, size=size_of_out)
+        G.add_edge(Node, stack[-1])
+
+    else:
+        G.add_edge(nodeitr, stack[-1])
+
         
 
 
@@ -188,6 +202,7 @@ for line in lines:
         out = splitted_text[0]
         right = splitted_text[1]
         Tokens = list()
+        output_token = Token(Type = "WIRE", name = out, start = 0, end = 0)
         for char in right:
             operator = whichOperator(char)
             if char.isalpha():
@@ -206,7 +221,7 @@ for line in lines:
 
 
     
-        shunting_yard(G,Tokens,out,Input_output_wire)
+        shunting_yard(G,Tokens,output_token,Input_output_wire)
         tokens=""
 
 
