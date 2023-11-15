@@ -155,6 +155,7 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
 
     Type = "OUTPUT"
     value = Input_output_wire[1]
+    out = output_token.name
     if out not in value:
         value = Input_output_wire[2]
         Type = "WIRE"
@@ -203,15 +204,30 @@ for line in lines:
         right = splitted_text[1]
         Tokens = list()
         output_token = Token(Type = "WIRE", name = out, start = 0, end = 0)
-        for char in right:
+        for index, char in enumerate(right):
             operator = whichOperator(char)
+            if (char == "[" or char == "]" or char == ":" or char.isdigit()):
+                continue
             if char.isalpha():
+                start = 0
+                end = 0
+                if index + 1 < len(right):
+                    if right[index+1] == "[":
+                        regex = "(?<=" + re.escape(char) + ")\[?(\d+)(?::(\d+))?\]?"
+                        matchgrp = re.findall(regex,right)
+                        start = int(matchgrp[0][0])
+                        end = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else start
+
                 if char in Input_output_wire[0]:
-                    token = Token(Type = "INPUT", name=char, start = 0, end=0)
+                    token = Token(Type = "INPUT", name=char, start = start, end=end)
                 elif char in Input_output_wire[1]:
-                    token = Token(Type = "OUTPUT", name=char, start = 0, end=0)
+                    token = Token(Type = "OUTPUT", name=char, start = start, end=end)
                 elif char in Input_output_wire[2]:
-                    token = Token(Type = "WIRE", name=char, start = 0, end=0)
+                    token = Token(Type = "WIRE", name=char, start = start, end=end)
+
+
+                    
+                  
                 
             else:
                 Type = whichOperator(char)
@@ -226,11 +242,17 @@ for line in lines:
 
 
 
-for Node in G.nodes():
-    print(Node.name)
+
+# for Node in G.nodes():
+#     print(Node.name)
 
 
-print(len(G.nodes()))
+# print(len(G.nodes()))
     
 nx.draw_spring(G, with_labels=True)
 plt.show()
+
+
+
+
+

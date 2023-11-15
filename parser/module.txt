@@ -1,10 +1,15 @@
 module jbuffer(a,y);
-	input a;
-	input c;
-	input  d;
+
+	input a,c,d;
 	input b;
-	wire y, m, f;
-	output k;
-	assign k = m & b
-	assign m = d & c
+	wire y, m, k;
+	output f;
+	assign k = a[15:0]&b;
+	assign m = k | c;
+	
+
+
+	queue = ab&
+	
 endmodule
+

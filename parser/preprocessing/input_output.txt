@@ -1,7 +1,7 @@
 Module Name: jbuffer
 INPUTS
 --------
-a 1
+a 3
 c 1
 d 1
 b 1
@@ -9,4 +9,4 @@ b 1
 
 OUTPUTS
 --------
-f 1
+k 1
