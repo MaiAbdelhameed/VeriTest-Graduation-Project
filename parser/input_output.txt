@@ -1,10 +1,10 @@
 Module Name: jbuffer
 INPUTS
 --------
-a 3
-b 3
+a 4
+b 4
 
 
 OUTPUTS
 --------
-k 4
+k 18

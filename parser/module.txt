@@ -1,10 +1,14 @@
 module jbuffer(a,y);
 
-	input[2:0] a,b;
-	output[3:0] k;
 
-	assign k[1:0] = a[1:0] ^ b[1:0]
-	assign k[3:2] = a[1:0] & b[1:0]
+
+	input[3:0] a,b
+	output[17:0] k;
+	wire [3:0] m;
+
+
+	assign k[3:0] = a & b;
+	assign k[3:0] = a ^ b;
 
 
 	

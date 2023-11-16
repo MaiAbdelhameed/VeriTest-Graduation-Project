@@ -10,13 +10,17 @@ class node:
         self.end = end
 
     def __str__(self):
-        if self.Type == "INPUT" or self.Type == "OUTPUT":
-            return self.Type + " \n \n" + self.name + "=" + str(self.size)
-        
+
+        if self.Type == "OUTPUT" or self.Type == "INPUT":
+            if  self.start != self.end:
+                return self.Type + " \n \n" + self.name  + "[" + str(self.start)+ ":" +str(self.end) +"]"
+            elif self.start == self.end:
+                return self.Type + " \n \n" + self.name  + "[" + str(self.start) + "]"
+    
         elif self.Type == "WIRE":
             if self.start != self.end:
                 return self.Type + " \n \n" + self.name  + "[" + str(self.start)+ ":" +str(self.end) +"]"
-            elif self.start == self.end and self.start > 0:
+            elif self.start == self.end:
                 return self.Type + " \n \n" + self.name  + "[" + str(self.start) + "]"
 
 
@@ -26,3 +30,5 @@ class node:
     
         else:
             return self.Type
+        
+        return "aaaa"
