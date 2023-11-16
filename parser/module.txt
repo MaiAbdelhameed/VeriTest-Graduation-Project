@@ -7,7 +7,7 @@ module jbuffer(a,y);
 	wire [3:0] m;
 
 
-	assign k[3:0] = a & b;
+	assign k[3:0] = a[2:0] & b;
 	assign k[3:0] = a ^ b;
 
 

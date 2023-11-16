@@ -13,13 +13,13 @@ class node:
 
         if self.Type == "OUTPUT" or self.Type == "INPUT":
             if  self.start != self.end:
-                return self.Type + " \n \n" + self.name  + "[" + str(self.start)+ ":" +str(self.end) +"]"
+                return self.Type + " \n \n" + self.name  + "[" + str(self.end)+ ":" +str(self.start) +"]"
             elif self.start == self.end:
                 return self.Type + " \n \n" + self.name  + "[" + str(self.start) + "]"
     
         elif self.Type == "WIRE":
             if self.start != self.end:
-                return self.Type + " \n \n" + self.name  + "[" + str(self.start)+ ":" +str(self.end) +"]"
+                return self.Type + " \n \n" + self.name  + "[" + str(self.end)+ ":" +str(self.start) +"]"
             elif self.start == self.end:
                 return self.Type + " \n \n" + self.name  + "[" + str(self.start) + "]"
 

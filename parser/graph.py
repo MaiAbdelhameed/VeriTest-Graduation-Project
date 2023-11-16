@@ -143,7 +143,7 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
                 if Token.name in Input_output_wire[0]:
                     value = Input_output_wire[0]
                     size = value[Token.name]
-                    Node = node(Type = "INPUT", name = Token.name, size = size, start = size - 1, end = 0)
+                    Node = node(Type = "INPUT", name = Token.name, size = size, start = 0, end = size - 1)
                     if size_of_token == size:
                         stack.append(Node)
                         
@@ -158,7 +158,7 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
                     size_of_token = token.size 
                     value = Input_output_wire[2]
                     size = value[Token.name]
-                    Node = node(Type = "WIRE", name = Token.name, size = size, start = size -1, end = 0)
+                    Node = node(Type = "WIRE", name = Token.name, size = size, start = 0, end = size -1)
                     if size_of_token == size:
                         stack.append(Node)
                         
@@ -274,15 +274,15 @@ for line in lines:
                     if right[index+1] == "[":
                         regex = "(?<=" + re.escape(char) + ")\[?(\d+)(?::(\d+))?\]?"
                         matchgrp = re.findall(regex,right)
-                        start = int(matchgrp[0][0])
-                        end = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else start
+                        end = int(matchgrp[0][0])
+                        start = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else start
                     else:
                         if char in Input_output_wire[0]:
                             value = Input_output_wire[0]
-                            start = value[char] - 1
+                            end = value[char] - 1
                         else:
                             value = Input_output_wire[2]
-                            start = value[char] - 1
+                            end = value[char] - 1
 
 
                 if char in Input_output_wire[0]:
@@ -311,16 +311,16 @@ for line in lines:
         start = 0
         end = 0
         if len(matchgrp) > 0:
-            start = int(matchgrp[0][0])
-            end = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else start
+            end = int(matchgrp[0][0])
+            start = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else start
 
         else:
             if out2 in Input_output_wire[1]:
                 value = Input_output_wire[1]
-                start = value[out2] - 1
+                end = value[out2] - 1
             else:
                 value = Input_output_wire[2]
-                start = value[out2] - 1
+                end = value[out2] - 1
 
         output_token = Token(Type = "WIRE", name = out2, start = start, end = end, size = abs(end-start)+1)  
         shunting_yard(G,Tokens,output_token,Input_output_wire)
