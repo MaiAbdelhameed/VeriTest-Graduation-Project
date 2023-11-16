@@ -134,41 +134,107 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
         else:    
 
             nodeitr = nodeingraph(G,Token)
-            if nodeitr == None: 
+            if nodeitr == None:
+                size_of_token = token.size 
                 if Token.name in Input_output_wire[0]:
-                    value = Input_output_wire[0] ## we will create a new node and it's for an input
+                    value = Input_output_wire[0]
                     size = value[Token.name]
                     Node = node(Type = "INPUT", name = Token.name, size = size)
-                    stack.append(Node)
+                    if size_of_token == size:
+                        stack.append(Node)
+                        
+                    else:
+                        Node_WIRE = node(Type = "WIRE", name = Token.name + "_WIRE", size = size, start = Token.start, end = Token.end) ## abl ama tcreate node et2kd el awl feeh node wire bnfs el 7aga wla la2
+                        G.add_edge(Node_WIRE,Node)
+                        stack.append(Node_WIRE)
+
+                    
+                        
                 elif Token.name in Input_output_wire[2]:
-                    value = Input_output_wire[2] ## we will create a new node and it's for an WIRE
-                    size = value[Token.name]
-                    Node = node(Type = "WIRE", name = Token.name, size = size)
-                    stack.append(Node)
+                    size_of_token = token.size 
+                    if Token.name in Input_output_wire[2]:
+                        value = Input_output_wire[2]
+                        size = value[Token.name]
+                        Node = node(Type = "WIRE", name = Token.name, size = size)
+                        if size_of_token == size:
+                            stack.append(Node)
+                            
+                        else:
+                            Node_WIRE = node(Type = "WIRE", name = Token.name + "_WIRE", size = size, start = Token.start, end = Token.end)
+                            G.add_edge(Node_WIRE,Node)
+                            stack.append(Node_WIRE)
 
             else:
-                stack.append(nodeitr)
+                if Token.name in Input_output_wire[0]:
+                    value = Input_output_wire[0]
+                    size = value[Token.name]
+                    size_of_token = Token.size
+                    if size_of_token == size:
+                        stack.append(nodeitr)
+                        
+                    else:
+                        Node_WIRE = node(Type = "WIRE", name = Token.name + "_WIRE", size = size, start = Token.start, end = Token.end)
+                        G.add_edge(Node_WIRE,nodeitr)
+                        stack.append(Node_WIRE)
+
+
+                elif Token.name in Input_output_wire[2]:
+                    value = Input_output_wire[2]
+                    size = value[Token.name]
+                    size_of_token = Token.size
+                    if size_of_token == size:
+                        stack.append(nodeitr)
+                        
+                    else:
+                        Node_WIRE = node(Type = "WIRE", name = Token.name + "_WIRE", size = size, start = Token.start, end = Token.end)
+                        G.add_edge(Node_WIRE,nodeitr)
+                        stack.append(Node_WIRE)
+               
 
 
     # we know that the top of the stack is the output for the expression
 
 
+
+
+
+    
     Type = "OUTPUT"
     value = Input_output_wire[1]
     out = output_token.name
+    size_of_token = Token.size
     if out not in value:
         value = Input_output_wire[2]
         Type = "WIRE"
     size_of_out = value[out]
 
 
+
+
+
     nodeitr = nodeingraph(G,output_token)
     if nodeitr == None:
-        Node = node(Type = Type, name=out, size=size_of_out)
-        G.add_edge(Node, stack[-1])
+        size_of_token = output_token.size
+        if size_of_token == size_of_out:
+            Node = node(Type = Type, name=out, size=size_of_out)
+            G.add_edge(Node, stack[-1])
+        else:
+            Node = node(Type = Type, name=out, size=size_of_out)
+            Node_WIRE = node(Type = "WIRE", name = output_token.name + "_WIRE", size = size_of_token, start = output_token.start, end = output_token.end)
+            G.add_edge(Node_WIRE, Node)
+            G.add_edge(Node_WIRE, stack[-1])
+         
 
     else:
-        G.add_edge(nodeitr, stack[-1])
+        if size_of_token == size_of_out:
+            G.add_edge(stack[-1], nodeitr)
+           
+        else:
+            Node_WIRE = node(Type = "WIRE", name = output_token.name + "_WIRE", size = size_of_token, start = output_token.start, end = output_token.end)
+            G.add_edge(Node_WIRE, nodeitr)
+            G.add_edge(Node_WIRE, stack[-1])
+
+    
 
         
 
@@ -203,7 +269,7 @@ for line in lines:
         out = splitted_text[0]
         right = splitted_text[1]
         Tokens = list()
-        output_token = Token(Type = "WIRE", name = out, start = 0, end = 0)
+        
         for index, char in enumerate(right):
             operator = whichOperator(char)
             if (char == "[" or char == "]" or char == ":" or char.isdigit()):
@@ -219,11 +285,11 @@ for line in lines:
                         end = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else start
 
                 if char in Input_output_wire[0]:
-                    token = Token(Type = "INPUT", name=char, start = start, end=end)
+                    token = Token(Type = "INPUT", name=char, start = start, end=end, size = abs(end-start) + 1)
                 elif char in Input_output_wire[1]:
-                    token = Token(Type = "OUTPUT", name=char, start = start, end=end)
+                    token = Token(Type = "OUTPUT", name=char, start = start, end=end, size = abs(end-start) + 1)
                 elif char in Input_output_wire[2]:
-                    token = Token(Type = "WIRE", name=char, start = start, end=end)
+                    token = Token(Type = "WIRE", name=char, start = start, end=end, size = abs(end-start) + 1)
 
 
                     
@@ -233,10 +299,21 @@ for line in lines:
                 Type = whichOperator(char)
                 token = Token(Type=Type, name="1")
 
+           
             Tokens.append(token)
 
 
-    
+        out2 = out.replace(' ','').replace("\t", "").replace("[","").replace("]","").replace(":","")
+        out2  = re.sub(r'\d', '', out2)
+        regex = "(?<=" + re.escape(out2) + ")\[?(\d+)(?::(\d+))?\]?"
+        matchgrp = re.findall(regex,out)
+        start = 0
+        end = 0
+        if len(matchgrp) > 0:
+            start = int(matchgrp[0][0])
+            end = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else start
+
+        output_token = Token(Type = "WIRE", name = out2, start = start, end = end, size = abs(end-start)+1)  
         shunting_yard(G,Tokens,output_token,Input_output_wire)
         tokens=""
 
