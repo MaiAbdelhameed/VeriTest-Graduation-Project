@@ -1,24 +1,5 @@
-module jbuffer(a,y);
-
-
-
-	input[3:0] a,b
-	output[17:0] k;
-	wire [3:0] m;
-
-
-	assign k[3:0] = a[2:0] & b;
-	assign k[3:0] = a ^ b;
-
-
-	
-
-	
-
-
-	
-	
-
-	
+module adder (A, B, sum);
+input [15:0] A, B;
+output [15:0] sum;
+assign sum = A & B;
 endmodule
-

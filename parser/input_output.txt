@@ -1,10 +1,10 @@
-Module Name: jbuffer
+Module Name: adder
 INPUTS
 --------
-a 4
-b 4
+a 16
+b 16
 
 
 OUTPUTS
 --------
-k 18
+sum 16

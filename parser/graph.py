@@ -252,7 +252,7 @@ print(Input_output_wire)
 for line in lines:
 
 
-   
+    line = line.lower()
     if len(re.findall("assign", line)) > 0:
 
         splitted_text = line.split("=")
@@ -275,7 +275,7 @@ for line in lines:
                         regex = "(?<=" + re.escape(char) + ")\[?(\d+)(?::(\d+))?\]?"
                         matchgrp = re.findall(regex,right)
                         end = int(matchgrp[0][0])
-                        start = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else start
+                        start = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else end
                     else:
                         if char in Input_output_wire[0]:
                             value = Input_output_wire[0]
@@ -312,7 +312,7 @@ for line in lines:
         end = 0
         if len(matchgrp) > 0:
             end = int(matchgrp[0][0])
-            start = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else start
+            start = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else end
 
         else:
             if out2 in Input_output_wire[1]:
