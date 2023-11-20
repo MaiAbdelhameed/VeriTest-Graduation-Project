@@ -2,12 +2,12 @@
 
 class node:
 
-    def __init__(self, Type, size=1, name=None, start=0, end=0):
+    def __init__(self, Type):
         self.Type = Type
-        self.size = size
-        self.name = name
-        self.start = start
-        self.end = end
+        # self.size = size
+        # self.name = name
+        # self.start = start
+        # self.end = end
 
     def __str__(self):
 
