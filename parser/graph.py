@@ -1,9 +1,12 @@
 import networkx as nx
-from components.node import *
+from components.node import node
+from components.INPUT import Input
 from preprocessing.find import *
 import matplotlib.pyplot as plt
 import re
 from Token import *
+from components.gate import *
+
 
 
 
@@ -124,18 +127,29 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
     for Token in queue:
         if TokenisOperator(Token): ## creating a gate for the expression
             Type = TokenwhichOperator(Token)
-            Node = node(Type, size = 1)
-            G.add_node(Node)
+ 
+            
+            size = stack[-1].size
+            Gate = gate("GATE", Type, size)
+            G.add_node(Gate)
             if Type != "not":
                 for i in range(0,2):
                     a = stack.pop()
                     G.add_edge(a, Node)
+                    if Gate.G1 == None:
+                        Gate.G1 = a
+                    else:
+                        Gate.G2 = a
+
+
 
             else:   
                 a = stack.pop()
                 G.add_edge(a, Node)
+                Gate.G1 == a
 
-            stack.append(Node)
+            
+            stack.append(Gate)
         else:    
             nodeitr = nodeingraph(G,Token)
             if nodeitr == None:
@@ -143,7 +157,7 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
                 if Token.name in Input_output_wire[0]:
                     value = Input_output_wire[0]
                     size = value[Token.name]
-                    Node = node(Type = "INPUT", name = Token.name, size = size, start = 0, end = size - 1)
+                    Node = Input(Type = "INPUT", size = size, start = 0, end = size - 1, name = Token.name)
                     if size_of_token == size:
                         stack.append(Node)
                         

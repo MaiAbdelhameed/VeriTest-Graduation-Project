@@ -1,13 +1,7 @@
-
-
 class node:
 
     def __init__(self, Type):
         self.Type = Type
-        # self.size = size
-        # self.name = name
-        # self.start = start
-        # self.end = end
 
     def __str__(self):
 

@@ -1,10 +1,12 @@
 Module Name: adder
 INPUTS
 --------
-a 16
-b 16
+a 4
+b 4
+c 4
+d 4
 
 
 OUTPUTS
 --------
-sum 16
+sum 4

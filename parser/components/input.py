@@ -1,12 +1,11 @@
-from node import *
-
-class input(node):
+class Input():
 
     def __init__(self, Type, size, start, end, name):
-        super().__init__(Type)
+        #super().__init__(Type)
         self.start = start
         self.end = end
         self.name = name
+        self.size = size
 
     
     def connect_input(self, input):
@@ -19,8 +18,8 @@ class input(node):
         
     
 
-    def __str__(self):
-        return super().__str__()
+    # def __str__(self):
+    #     return super().__str__()
 
 
     
