@@ -1,8 +1,10 @@
+from components.Node import node
 
-class gate():
+
+class gate(node):
 
     def __init__(self, Type, Type_of_gate, size):
-        # super().__init__(Type)
+        super().__init__(Type)
         self.size = size
         self.Type_of_gate = Type_of_gate
         self.G1 = None
@@ -52,8 +54,8 @@ class gate():
         
     
 
-    # def __str__(self):
-    #     return super().__str__()
+    def __str__(self):
+        return super().__str__()
 
 
     

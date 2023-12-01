@@ -2,12 +2,13 @@ class node:
 
     def __init__(self, Type):
         self.Type = Type
+        
 
     def __str__(self):
 
         if self.Type == "OUTPUT" or self.Type == "INPUT":
             if  self.start != self.end:
-                return self.Type + " \n \n" + self.name  + "[" + str(self.end)+ ":" +str(self.start) +"]"
+                return self.Type + " \n \n" + self.name  + "[" + str(self.end)+ ":" +str(self.start) +"]" 
             elif self.start == self.end:
                 return self.Type + " \n \n" + self.name  + "[" + str(self.start) + "]"
     
@@ -17,7 +18,6 @@ class node:
             elif self.start == self.end:
                 return self.Type + " \n \n" + self.name  + "[" + str(self.start) + "]"
 
-
             else:
                 return self.Type + " \n \n" + self.name  + "=" + str(self.size)
 
@@ -25,4 +25,4 @@ class node:
         else:
             return self.Type
         
-        return "aaaa"
+        

@@ -9,4 +9,6 @@ d 4
 
 OUTPUTS
 --------
+k 4
 sum 4
+suma 4

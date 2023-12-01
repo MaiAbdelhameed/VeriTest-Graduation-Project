@@ -1,11 +1,15 @@
 import networkx as nx
-from components.node import node
+from components.Gate import gate
 from components.INPUT import Input
+
+from components.Wire import wire
+from components.OUTPUT import Output
+
 from preprocessing.find import *
 import matplotlib.pyplot as plt
 import re
 from Token import *
-from components.gate import *
+
 
 
 
@@ -15,8 +19,8 @@ from components.gate import *
 
 def nodeingraph(G,a):
     for Nodeitr in G.nodes():
-        if Nodeitr.name:
-            if Nodeitr.Type == "INPUT":
+        if not isinstance(Nodeitr, gate):
+            if isinstance(Nodeitr, Input):
                 if Nodeitr.name == a.name:
                     return Nodeitr
 
@@ -120,22 +124,26 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
 
     converting into gates
 
-
+    
     '''
+ 
+    
+    #rabna yostor 
 
 
+    
+
+    #queue A B & C |
     for Token in queue:
         if TokenisOperator(Token): ## creating a gate for the expression
             Type = TokenwhichOperator(Token)
- 
-            
             size = stack[-1].size
             Gate = gate("GATE", Type, size)
             G.add_node(Gate)
             if Type != "not":
-                for i in range(0,2):
+                for _ in range(0,2):
                     a = stack.pop()
-                    G.add_edge(a, Node)
+                    G.add_edge(a, Gate)
                     if Gate.G1 == None:
                         Gate.G1 = a
                     else:
@@ -162,7 +170,7 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
                         stack.append(Node)
                         
                     else:
-                        Node_WIRE = node(Type = "WIRE", name = Token.name +"_WIRE", size = abs(Token.end-Token.start)+1, start = Token.start, end = Token.end) ## abl ama tcreate node et2kd el awl feeh node wire bnfs el 7aga wla la2
+                        Node_WIRE = wire(Type = "WIRE", name = Token.name +"_WIRE", size = abs(Token.end-Token.start)+1, start = Token.start, end = Token.end) ## abl ama tcreate node et2kd el awl feeh node wire bnfs el 7aga wla la2
                         G.add_edge(Node_WIRE,Node)
                         stack.append(Node_WIRE)
 
@@ -172,12 +180,12 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
                     size_of_token = token.size 
                     value = Input_output_wire[2]
                     size = value[Token.name]
-                    Node = node(Type = "WIRE", name = Token.name, size = size, start = 0, end = size -1)
+                    Node = wire(Type = "WIRE", name = Token.name, size = size, start = 0, end = size -1)
                     if size_of_token == size:
                         stack.append(Node)
                         
                     else:
-                        Node_WIRE = node(Type = "WIRE", name = Token.name + "_WIRE", size = abs(end-start)+1, start = Token.start, end = Token.end)
+                        Node_WIRE = wire(Type = "WIRE", name = Token.name + "_WIRE", size = abs(end-start)+1, start = Token.start, end = Token.end)
                         G.add_edge(Node_WIRE,Node)
                         stack.append(Node_WIRE)
 
@@ -190,7 +198,7 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
                         stack.append(nodeitr)
                         
                     else:
-                        Node_WIRE = node(Type = "WIRE", name = Token.name + "_WIRE", size = abs(end-start) + 1, start = Token.start, end = Token.end)
+                        Node_WIRE = wire(Type = "WIRE", name = Token.name + "_WIRE", size = abs(end-start) + 1, start = Token.start, end = Token.end)
                         G.add_edge(Node_WIRE,nodeitr)
                         stack.append(Node_WIRE)
 
@@ -203,7 +211,7 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
                         stack.append(nodeitr)
                         
                     else:
-                        Node_WIRE = node(Type = "WIRE", name = Token.name + "_WIRE", size = abs(end-start) + 1, start = Token.start, end = Token.end)
+                        Node_WIRE = wire(Type = "WIRE", name = Token.name + "_WIRE", size = abs(end-start) + 1, start = Token.start, end = Token.end)
                         G.add_edge(Node_WIRE,nodeitr)
                         stack.append(Node_WIRE)
                
@@ -213,10 +221,9 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
 
 
 
-
-
     
-    Type = "OUTPUT"
+    Type = output_token.Type
+
     value = Input_output_wire[1]
     out = output_token.name
     size_of_token = Token.size
@@ -225,15 +232,17 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
         Type = "WIRE"
 
 
-
-
-
-
     nodeitr = nodeingraph(G,output_token)
     if nodeitr == None:
-        Node = node(Type = Type, name=out, size=abs(output_token.end-output_token.start)+1, start = output_token.start, end = output_token.end)
-        G.add_edge(Node, stack[-1])
+        Node = None
+        if Type == "OUTPUT":
+            Node = Output(name=out,Type = "OUTPUT", size=abs(output_token.end-output_token.start)+1, start = output_token.start, end = output_token.end)
+            
+        else:
+            Node = wire(name=out,Type = "WIRE", size=abs(output_token.end-output_token.start)+1, start = output_token.start, end = output_token.end)
+
         
+        G.add_edge(Node, stack[-1])
             
          
 
@@ -241,15 +250,6 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
         G.add_edge(stack[-1], nodeitr)
            
        
-    
-
-        
-
-
-
-
-
-
 
 
 
@@ -262,12 +262,14 @@ values = dictionary.values()
 Input_output_wire = next(iter(values)) ## inputs and outputs of the first module (default)
 
 G = nx.Graph()
+#counter hna
 print(Input_output_wire)
 for line in lines:
 
 
     line = line.lower()
     if len(re.findall("assign", line)) > 0:
+        #inc el counter dah hna bs
 
         splitted_text = line.split("=")
         splitted_text[0] = splitted_text[0].replace(' ','').replace("assign", "").replace("\t", "")
@@ -330,21 +332,25 @@ for line in lines:
 
         else:
             if out2 in Input_output_wire[1]:
+                out_token = "OUTPUT"
                 value = Input_output_wire[1]
                 end = value[out2] - 1
             else:
+                out_token = "WIRE"
                 value = Input_output_wire[2]
                 end = value[out2] - 1
 
-        output_token = Token(Type = "WIRE", name = out2, start = start, end = end, size = abs(end-start)+1)  
+
+
+        output_token = Token(Type = out_token, name = out2, start = start, end = end, size = abs(end-start)+1)  
         shunting_yard(G,Tokens,output_token,Input_output_wire)
         tokens=""
 
 
 
 
-# for Node in G.nodes():
-#     print(Node.name)
+for Node in G.nodes():
+    print(Node)
 
 
 # print(len(G.nodes()))
