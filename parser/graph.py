@@ -12,11 +12,6 @@ from Token import *
 
 
 
-
-
-
-
-
 def nodeingraph(G,a):
     for Nodeitr in G.nodes():
         if not isinstance(Nodeitr, gate):
@@ -28,6 +23,7 @@ def nodeingraph(G,a):
                 if Nodeitr.name.replace("_WIRE", "") == a.name and a.start == Nodeitr.start and a.end == Nodeitr.end:
                     return Nodeitr
     return None
+
 
 def checkstack(Tokens):
     for token in Tokens:
@@ -69,7 +65,7 @@ def TokenwhichOperator(Token):
 
    
 
-def shunting_yard(G, Tokens, output_token, Input_output_wire):
+def shunting_yard(G, Tokens, output_token, Input_output_wire, set_of_inputs, set_of_outputs):
     flag = False ## this flag is to be triggered in case there are no parenthesis
     stack = list()
     queue = list()
@@ -138,7 +134,7 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
         if TokenisOperator(Token): ## creating a gate for the expression
             Type = TokenwhichOperator(Token)
             size = stack[-1].size
-            Gate = gate("GATE", Type, size)
+            Gate = gate(Type, Type, size)
             G.add_node(Gate)
             if Type != "not":
                 for _ in range(0,2):
@@ -166,18 +162,20 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
                     value = Input_output_wire[0]
                     size = value[Token.name]
                     Node = Input(Type = "INPUT", size = size, start = 0, end = size - 1, name = Token.name)
+                    set_of_inputs.add(Node)
                     if size_of_token == size:
                         stack.append(Node)
                         
                     else:
                         Node_WIRE = wire(Type = "WIRE", name = Token.name +"_WIRE", size = abs(Token.end-Token.start)+1, start = Token.start, end = Token.end) ## abl ama tcreate node et2kd el awl feeh node wire bnfs el 7aga wla la2
+                        Node_WIRE.connect_input(Node)
                         G.add_edge(Node_WIRE,Node)
                         stack.append(Node_WIRE)
 
                     
                         
                 elif Token.name in Input_output_wire[2]:
-                    size_of_token = token.size 
+                    size_of_token = Token.size 
                     value = Input_output_wire[2]
                     size = value[Token.name]
                     Node = wire(Type = "WIRE", name = Token.name, size = size, start = 0, end = size -1)
@@ -185,7 +183,8 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
                         stack.append(Node)
                         
                     else:
-                        Node_WIRE = wire(Type = "WIRE", name = Token.name + "_WIRE", size = abs(end-start)+1, start = Token.start, end = Token.end)
+                        Node_WIRE = wire(Type = "WIRE", name = Token.name + "_WIRE", size = abs(Token.end-Token.start)+1, start = Token.start, end = Token.end)
+                        Node_WIRE.connect_input(Node)
                         G.add_edge(Node_WIRE,Node)
                         stack.append(Node_WIRE)
 
@@ -198,7 +197,8 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
                         stack.append(nodeitr)
                         
                     else:
-                        Node_WIRE = wire(Type = "WIRE", name = Token.name + "_WIRE", size = abs(end-start) + 1, start = Token.start, end = Token.end)
+                        Node_WIRE = wire(Type = "WIRE", name = Token.name + "_WIRE", size = abs(Token.end-Token.start) + 1, start = Token.start, end = Token.end)
+                        Node_WIRE.connect_input(nodeitr)
                         G.add_edge(Node_WIRE,nodeitr)
                         stack.append(Node_WIRE)
 
@@ -211,7 +211,8 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
                         stack.append(nodeitr)
                         
                     else:
-                        Node_WIRE = wire(Type = "WIRE", name = Token.name + "_WIRE", size = abs(end-start) + 1, start = Token.start, end = Token.end)
+                        Node_WIRE = wire(Type = "WIRE", name = Token.name + "_WIRE", size = abs(Token.end-Token.start) + 1, start = Token.start, end = Token.end)
+                        Node_WIRE.connect_input(nodeitr)
                         G.add_edge(Node_WIRE,nodeitr)
                         stack.append(Node_WIRE)
                
@@ -223,7 +224,6 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
 
     
     Type = output_token.Type
-
     value = Input_output_wire[1]
     out = output_token.name
     size_of_token = Token.size
@@ -241,122 +241,117 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire):
         else:
             Node = wire(name=out,Type = "WIRE", size=abs(output_token.end-output_token.start)+1, start = output_token.start, end = output_token.end)
 
-        
+        set_of_outputs.add(Node)
+        Node.connect_input(stack[-1])
         G.add_edge(Node, stack[-1])
             
          
 
     else:
+        Node.connect_input(nodeitr)
         G.add_edge(stack[-1], nodeitr)
+
+    return
            
        
 
 
+def parse():
+    file = open("module.txt")
+    file2 = open("module.txt")
+    lines = file.readlines()
+    input_output = get_input_output(file2)
+    dictionary = input_output[0]
+    values = dictionary.values()
+    Input_output_wire = next(iter(values)) ## inputs and outputs of the first module (default)
 
-file = open("module.txt")
-file2 = open("module.txt")
-lines = file.readlines()
-input_output = get_input_output(file2)
-dictionary = input_output[0]
-values = dictionary.values()
-Input_output_wire = next(iter(values)) ## inputs and outputs of the first module (default)
+    G = nx.Graph()
+    set_of_inputs = set()
+    set_of_outputs = set()
+    for line in lines:
 
-G = nx.Graph()
-#counter hna
-print(Input_output_wire)
-for line in lines:
-
-
-    line = line.lower()
-    if len(re.findall("assign", line)) > 0:
-        #inc el counter dah hna bs
-
-        splitted_text = line.split("=")
-        splitted_text[0] = splitted_text[0].replace(' ','').replace("assign", "").replace("\t", "")
-        splitted_text[1] = splitted_text[1].replace(' ','').replace("\t", "").replace("\n","")
-
-        out = splitted_text[0]
-        right = splitted_text[1]
-        Tokens = list()
-        
-        for index, char in enumerate(right):
-            operator = whichOperator(char)
-            if (char == "[" or char == "]" or char == ":" or char.isdigit() or char == ";"):
-                continue
-            if char.isalpha():
-                start = 0
-                end = 0
-                if index + 1 < len(right):
-                    if right[index+1] == "[":
-                        regex = "(?<=" + re.escape(char) + ")\[?(\d+)(?::(\d+))?\]?"
-                        matchgrp = re.findall(regex,right)
-                        end = int(matchgrp[0][0])
-                        start = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else end
-                    else:
-                        if char in Input_output_wire[0]:
-                            value = Input_output_wire[0]
-                            end = value[char] - 1
+        line = line.lower()
+        if len(re.findall("assign", line)) > 0:
+            splitted_text = line.split("=")
+            splitted_text[0] = splitted_text[0].replace(' ','').replace("assign", "").replace("\t", "")
+            splitted_text[1] = splitted_text[1].replace(' ','').replace("\t", "").replace("\n","")
+            out = splitted_text[0]
+            right = splitted_text[1]
+            Tokens = list()
+            for index, char in enumerate(right):
+                if (char == "[" or char == "]" or char == ":" or char.isdigit() or char == ";"):
+                    continue
+                if char.isalpha():
+                    start = 0
+                    end = 0
+                    if index + 1 < len(right):
+                        if right[index+1] == "[":
+                            regex = "(?<=" + re.escape(char) + ")\[?(\d+)(?::(\d+))?\]?"
+                            matchgrp = re.findall(regex,right)
+                            end = int(matchgrp[0][0])
+                            start = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else end
                         else:
-                            value = Input_output_wire[2]
-                            end = value[char] - 1
+                            if char in Input_output_wire[0]:
+                                value = Input_output_wire[0]
+                                end = value[char] - 1
+                            else:
+                                value = Input_output_wire[2]
+                                end = value[char] - 1
 
 
-                if char in Input_output_wire[0]:
-                    token = Token(Type = "INPUT", name=char, start = start, end=end, size = abs(end-start) + 1)
-                elif char in Input_output_wire[1]:
-                    token = Token(Type = "OUTPUT", name=char, start = start, end=end, size = abs(end-start) + 1)
-                elif char in Input_output_wire[2]:
-                    token = Token(Type = "WIRE", name=char, start = start, end=end, size = abs(end-start) + 1)
+                    if char in Input_output_wire[0]:
+                        token = Token(Type = "INPUT", name=char, start = start, end=end, size = abs(end-start) + 1)
+                    elif char in Input_output_wire[1]:
+                        token = Token(Type = "OUTPUT", name=char, start = start, end=end, size = abs(end-start) + 1)
+                    elif char in Input_output_wire[2]:
+                        token = Token(Type = "WIRE", name=char, start = start, end=end, size = abs(end-start) + 1)
 
 
+                        
                     
-                  
-                
+                    
+                else:
+                    Type = whichOperator(char)
+                    token = Token(Type=Type, name="1")
+
+            
+                Tokens.append(token)
+
+
+            out2 = out.replace(' ','').replace("\t", "").replace("[","").replace("]","").replace(":","")
+            out2  = re.sub(r'\d', '', out2)
+            regex = "(?<=" + re.escape(out2) + ")\[?(\d+)(?::(\d+))?\]?"
+            matchgrp = re.findall(regex,out)
+            start = 0
+            end = 0
+            if len(matchgrp) > 0:
+                end = int(matchgrp[0][0])
+                start = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else end
+
             else:
-                Type = whichOperator(char)
-                token = Token(Type=Type, name="1")
-
-           
-            Tokens.append(token)
-
-
-        out2 = out.replace(' ','').replace("\t", "").replace("[","").replace("]","").replace(":","")
-        out2  = re.sub(r'\d', '', out2)
-        regex = "(?<=" + re.escape(out2) + ")\[?(\d+)(?::(\d+))?\]?"
-        matchgrp = re.findall(regex,out)
-        start = 0
-        end = 0
-        if len(matchgrp) > 0:
-            end = int(matchgrp[0][0])
-            start = int(matchgrp[0][1]) if len(matchgrp[0][1]) > 0 else end
-
-        else:
-            if out2 in Input_output_wire[1]:
-                out_token = "OUTPUT"
-                value = Input_output_wire[1]
-                end = value[out2] - 1
-            else:
-                out_token = "WIRE"
-                value = Input_output_wire[2]
-                end = value[out2] - 1
+                if out2 in Input_output_wire[1]:
+                    out_token = "OUTPUT"
+                    value = Input_output_wire[1]
+                    end = value[out2] - 1
+                else:
+                    out_token = "WIRE"
+                    value = Input_output_wire[2]
+                    end = value[out2] - 1
 
 
 
-        output_token = Token(Type = out_token, name = out2, start = start, end = end, size = abs(end-start)+1)  
-        shunting_yard(G,Tokens,output_token,Input_output_wire)
-        tokens=""
+            output_token = Token(Type = out_token, name = out2, start = start, end = end, size = abs(end-start)+1)  
+            shunting_yard(G,Tokens,output_token,Input_output_wire, set_of_inputs, set_of_outputs)
+            token = None
+            Tokens = list()
+
+    return G, set_of_inputs, set_of_outputs     
 
 
 
 
-for Node in G.nodes():
-    print(Node)
 
-
-# print(len(G.nodes()))
     
-nx.draw_spring(G, with_labels=True)
-plt.show()
 
 
 
