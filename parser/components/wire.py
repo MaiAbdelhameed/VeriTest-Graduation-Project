@@ -7,19 +7,14 @@ class wire(node):
         self.end = end
         self.name = name
         self.size = size
-        self.output = list()
-        self.G1 = None
-        self.G2 = None
 
     
-    def connect_input(self, G1): ## input is a node
-        self.G1 = G1
+    def connect_input(self, input):
+        self.input = input
 
 
     def calculate_output(self):
-
-        for i in range(self.start, self.end + 1):
-            self.output.append(self.G1.output[i])
+        self.output = self.input1
         return True
         
     

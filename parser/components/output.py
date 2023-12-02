@@ -7,17 +7,14 @@ class Output(node):
         self.end = end
         self.name = name
         self.size = size
-        self.output = list()
-        self.G1 = None
-        self.G2 = None
 
     
-    def connect_input(self, G1):
-        self.G1 = G1
+    def connect_input(self, input):
+        self.input1 = input
 
 
     def calculate_output(self):
-        self.output = self.G1.output[::-1]
+        self.output = self.input1
         return True
         
     

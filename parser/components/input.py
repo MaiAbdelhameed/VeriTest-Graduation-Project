@@ -8,19 +8,15 @@ class Input(node):
         self.end = end
         self.name = name
         self.size = size
-        self.output = list()
-        self.G1 = None
-        self.G2 = None
+        #self.id = id
 
     
-    def connect_input(self, G1):
-        self.G1 = G1
-        self.calculate_output()
-
+    def connect_input(self, input):
+        self.input1 = input
 
 
     def calculate_output(self):
-        self.output = self.G1[::-1]
+        self.output = reversed(self.input1)
         return True
         
     
