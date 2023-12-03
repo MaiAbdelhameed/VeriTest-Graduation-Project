@@ -24,8 +24,8 @@ class Output(node):
             start = gate.start
             end = gate.end
             self.output[start:end+1] = output
-
-        self.output = self.output[::-1]
+        if None not in self.output:
+            self.output = self.output[::-1]
         return True
         
     

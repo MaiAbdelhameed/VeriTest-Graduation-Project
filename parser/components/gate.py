@@ -28,7 +28,11 @@ class gate(node):
             else: ## not gate
                 input = self.G1.output
                 for i in range(0, self.size):
-                    self.output.append(not input[i])
+                    if input[i] == '1': 
+                        self.output[i] = '0'
+                    else:
+                        self.output[i] = '1'
+
                     
         else:
             if len(self.G1.output) == 0 or len(self.G2.output) == 0:

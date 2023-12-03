@@ -156,8 +156,8 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire, set_of_inputs, set
 
             else:   
                 a = stack.pop()
-                G.add_edge(a, Node)
-                Gate.G1 == a
+                G.add_edge(a, Gate)
+                Gate.G1 = a
 
             
             stack.append(Gate)

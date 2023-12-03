@@ -2,8 +2,6 @@ module adder (A, B, sum);
 input [3:0]  a, b, c, d;
 OUTPUT [3:0] k;
 output [3:0] sum, suma;
-assign sum = a & b;
-
-
+assign sum = a ~& b;
 
 endmodule
