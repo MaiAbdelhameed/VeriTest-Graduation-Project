@@ -378,8 +378,8 @@ def parse():
             token = None
             Tokens = list()
 
-    nx.draw_spring(G, with_labels = True)
-    plt.show()
+    # nx.draw_spring(G, with_labels = True)
+    # plt.show()
     return G, set_of_inputs, set_of_outputs     
 
 

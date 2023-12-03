@@ -19,10 +19,12 @@ class wire(node):
     def calculate_output(self):
 
 
-        self.output = self.G1.output
-        # print(self, self.G1.output)
-        # for i in range(self.start, self.end + 1):
-        #     self.output.append(self.G1.output[i])
+        
+        if self.size == len(self.G1.output):
+            self.output = self.G1.output
+        else:
+            for i in range(self.start, self.end + 1):
+                self.output.append(self.G1.output[i])
 
         
         return True

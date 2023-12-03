@@ -23,9 +23,7 @@ class Output(node):
                 return False
             start = gate.start
             end = gate.end
-            print(self, start, end, len(self.output))
-            for i in range(start, end + 1):
-                self.output[i] = output[i]
+            self.output[start:end+1] = output
 
         self.output = self.output[::-1]
         return True
