@@ -28,6 +28,8 @@ def DFS(node):
     if node.calculate_output() == False:
         return
     for nodeadj in list(G.neighbors(node)):
+        if isinstance(node, Output):
+            continue
         if node.G1 == nodeadj or node.G2 == nodeadj:
             continue
         DFS(nodeadj)

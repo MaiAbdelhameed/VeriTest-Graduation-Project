@@ -7,17 +7,27 @@ class Output(node):
         self.end = end
         self.name = name
         self.size = size
-        self.output = list()
-        self.G1 = None
-        self.G2 = None
+        self.output = [None] * size
+        self.G = list()
+
 
     
     def connect_input(self, G1):
-        self.G1 = G1
+        self.G.append(G1)
 
 
     def calculate_output(self):
-        self.output = self.G1.output[::-1]
+        for gate in self.G:
+            output = gate.output
+            if len(output) == 0:
+                return False
+            start = gate.start
+            end = gate.end
+            print(self, start, end, len(self.output))
+            for i in range(start, end + 1):
+                self.output[i] = output[i]
+
+        self.output = self.output[::-1]
         return True
         
     
