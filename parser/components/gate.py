@@ -61,6 +61,13 @@ class gate(node):
                         else:
                             self.output[i] = '1'
 
+                if self.Type == "nand":
+                    for i in range(0, self.size):
+                        if input1[i] == '1' and input2[i] == '1':
+                            self.output[i] = '0'
+                        else:
+                            self.output[i] = '1'
+
         return True
         
     

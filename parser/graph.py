@@ -45,7 +45,7 @@ def isOperator(char):
 
 def TokenisOperator(char):
 
-    return char.Type == "and" or char.Type == "xor" or char.Type == "not" or char.Type == "open" or char.Type == "or" or char.Type == "close"
+    return char.Type == "and" or char.Type == "xor" or char.Type == "not" or char.Type == "open" or char.Type == "or" or char.Type == "close" or char.Type == "nand"
 
 
 def whichOperator(char):
@@ -307,8 +307,10 @@ def parse():
             out = splitted_text[0]
             right = splitted_text[1]
             Tokens = list()
+            flag = False
             for index, char in enumerate(right):
-                if (char == "[" or char == "]" or char == ":" or char.isdigit() or char == ";"):
+                if (char == "[" or char == "]" or char == ":" or char.isdigit() or char == ";" or flag == True):
+                    flag = False
                     continue
                 if char.isalpha():
                     start = 0
@@ -340,8 +342,17 @@ def parse():
                     
                     
                 else:
-                    Type = whichOperator(char)
-                    token = Token(Type=Type, name="1")
+                    if whichOperator(char) == "not":
+                        if index + 1 < len(right):
+                            next_operator = whichOperator(right[index + 1])
+                            if next_operator == "and":
+                                flag = True
+                                Type = "nand"
+                                token = Token(Type=Type, name="1")
+                            else:
+                                Type = whichOperator(char)
+                                token = Token(Type=Type, name="1")
+
 
             
                 Tokens.append(token)
