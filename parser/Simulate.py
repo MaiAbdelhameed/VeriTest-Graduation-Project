@@ -10,13 +10,14 @@ from components.OUTPUT import Output
 
 
 G, set_of_inputs, set_of_outputs = parse()
+# nx.draw_spring(G, with_labels = True)
+# plt.show()
 
 def finished(set_of_outputs):
     for node in set_of_outputs:
-        node.calculate_output()
-        for bit in node.output:
-            if bit == None:
-                return False
+        calculated = node.calculate_output()
+        if calculated == False:
+            return False
     return True
 
 

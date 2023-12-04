@@ -1,14 +1,11 @@
-Module Name: adder
+Module Name: half_adder
 INPUTS
 --------
 a 4
 b 4
-c 4
-d 4
 
 
 OUTPUTS
 --------
-k 4
-sum 4
-suma 4
+s 4
+cout 4

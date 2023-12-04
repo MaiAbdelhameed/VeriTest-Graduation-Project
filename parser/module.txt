@@ -1,8 +1,9 @@
-module adder (A, B, sum);
-input [3:0]  a, b, c, d;
-OUTPUT [3:0] k;
-output [3:0] sum, suma;
-assign sum[2:0] = a[2:0] ~& b[2:0];
-assign sum[3] = a[3];
+module half_adder(a, b, s, cout);
+  input[3:0] a,b;
+  output[3:0] s, cout;
+  
+  assign s[2:0] = a[3:1] ^ b[3:1];
+  assign s[3] = a[2] & b[1];
+  
 
 endmodule

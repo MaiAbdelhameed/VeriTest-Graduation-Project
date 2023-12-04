@@ -67,6 +67,14 @@ class gate(node):
                             self.output[i] = '0'
                         else:
                             self.output[i] = '1'
+                
+                if self.Type == "nor":
+                    for i in range(0, self.size):
+                        if input1[i] == '0' and input2[i] == '0':
+                            self.output[i] = '1'
+                        else:
+                            self.output[i] = '0'
+                
 
         return True
         

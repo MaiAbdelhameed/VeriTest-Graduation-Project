@@ -1,4 +1,5 @@
 from components.Node import node
+from components.Gate import gate
 class Output(node):
 
     def __init__(self,Type, size, start, end, name):
@@ -17,16 +18,21 @@ class Output(node):
 
 
     def calculate_output(self):
-        for gate in self.G:
-            output = gate.output
-            if len(output) == 0:
-                return False
-            start = gate.start
-            end = gate.end
-            self.output[start:end+1] = output
+        for Gate in self.G:
+            if isinstance(Gate, gate): # lw wasel ably gate 3la tool ha5od menha el output bta3ha kolo
+                self.output = Gate.output
+            else:
+                output = Gate.output
+                if len(output) == 0:
+                    return False
+                start = Gate.start
+                end = Gate.end
+                self.output[start:end+1] = output
+                
         if None not in self.output:
             self.output = self.output[::-1]
-        return True
+            return True
+        return False
         
     
 

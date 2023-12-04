@@ -45,7 +45,8 @@ def isOperator(char):
 
 def TokenisOperator(char):
 
-    return char.Type == "and" or char.Type == "xor" or char.Type == "not" or char.Type == "open" or char.Type == "or" or char.Type == "close" or char.Type == "nand"
+    return char.Type == "and" or char.Type == "xor" or char.Type == "not" or char.Type == "open" or char.Type == "or" or char.Type == "close" or char.Type == "nand" or char.Type == "nor"
+
 
 
 def whichOperator(char):
@@ -169,6 +170,7 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire, set_of_inputs, set
                     value = Input_output_wire[0]
                     size = value[token.name]
                     Node = Input(Type = "INPUT", size = size, start = 0, end = size - 1, name = token.name)
+                    G.add_node(Node)
                     set_of_inputs.add(Node)
                     if size_of_token == size:
                         stack.append(Node)
@@ -186,6 +188,7 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire, set_of_inputs, set
                     value = Input_output_wire[2]
                     size = value[token.name]
                     Node = wire(Type = "WIRE", name = token.name, size = size, start = 0, end = size -1)
+                    G.add_node(Node)
                     if size_of_token == size:
                         stack.append(Node)
                         
@@ -253,9 +256,12 @@ def shunting_yard(G, Tokens, output_token, Input_output_wire, set_of_inputs, set
             
         else:
             Node = wire(name=out,Type = "WIRE", size=size_of_output, start = 0, end = size_of_output-1)
+
+        
         
         set_of_outputs.add(Node)
-        if size_of_token == size_of_output:
+        G.add_node(Node)
+        if output_token.size == size_of_output:
             Node.connect_input(stack[-1])
             G.add_edge(Node, stack[-1])
         else:
@@ -349,12 +355,21 @@ def parse():
                                 flag = True
                                 Type = "nand"
                                 token = Token(Type=Type, name="1")
+
+                            if next_operator == "or":
+                                flag = True
+                                Type = "nor"
+                                token = Token(Type=Type, name="1")    
+                                
                             else:
                                 Type = whichOperator(char)
                                 token = Token(Type=Type, name="1")
 
 
-            
+                    else:
+                        Type = whichOperator(char)
+                        token = Token(Type = Type, name="1")
+
                 Tokens.append(token)
 
 
@@ -389,8 +404,7 @@ def parse():
             token = None
             Tokens = list()
 
-    # nx.draw_spring(G, with_labels = True)
-    # plt.show()
+
     return G, set_of_inputs, set_of_outputs     
 
 
