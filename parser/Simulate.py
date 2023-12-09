@@ -6,12 +6,13 @@ from components.INPUT import Input
 
 from components.Wire import wire
 from components.OUTPUT import Output
+from components.MUX import mux
 
 
 
 G, set_of_inputs, set_of_outputs = parse_verilog_code()
-# nx.draw_spring(G, with_labels = True)
-# plt.show()
+nx.draw_spring(G, with_labels = True)
+plt.show()
 
 
 def finished(set_of_outputs):
@@ -23,6 +24,22 @@ def finished(set_of_outputs):
 
 
 
+def isInput(node, nodeadj):
+    if isinstance(node, mux):
+        for gate in node.G:
+            if gate == nodeadj:
+                return True
+        if nodeadj == node.selector:
+            return True
+
+    for gate in node.G:
+        if gate == nodeadj:
+            return True
+        
+    return False
+    
+
+
 
 stack = list()
 def DFS(node):
@@ -30,16 +47,9 @@ def DFS(node):
     if node.calculate_output() == False:
         return
     for nodeadj in list(G.neighbors(node)):
-        if isinstance(node, Output):
+        if isinstance(node, Output) or isInput(node, nodeadj):
             continue
 
-        for gate in node.G:
-            if gate == nodeadj:
-                flag = True
-                continue
-        if flag:
-            flag = False
-            continue
         DFS(nodeadj)
 
 

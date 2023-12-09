@@ -1,12 +1,13 @@
-Module Name: half_adder
+Module Name: mux_4to_assign
 INPUTS
 --------
 a 4
 b 4
 c 4
 d 4
+sel 2
 
 
 OUTPUTS
 --------
-s 4
+out 4

@@ -2,18 +2,18 @@
 import networkx as nx
 from components.Gate import gate
 from components.INPUT import Input
+from components.Ugate import UGate
 
 from components.Wire import wire
 from components.OUTPUT import Output
+from components.MUX import mux
 
 from preprocessing.find import *
-import matplotlib.pyplot as plt
-import re
-from Token import *
+
 from pyverilog.vparser.parser import parse
-from pyverilog.vparser.ast import Assign, Concat, And, Xor, Variable, Value, Partselect, Or, Xor, Pointer
-from components.INPUT import Input
-import networkx as nx
+from pyverilog.vparser.ast import Assign, Concat, And, Xor, Partselect, Or, Xor, Pointer, Uand, Unor, Uxor, Uor, Cond
+
+
 import matplotlib.pyplot as plt
 
 
@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 
 def nodeingraph(G,a):
     for Nodeitr in G.nodes():
-        if not isinstance(Nodeitr, gate):
+        if not isinstance(Nodeitr, gate) and not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux):
             if Nodeitr.name == a:
                 return Nodeitr
     return None
@@ -57,6 +57,9 @@ def parse_verilog(file_path):
 def isGate(right):
     return isinstance(right, And) or isinstance(right, Or) or isinstance(right, Xor)
 
+def isUGate(right):
+    return isinstance(right, Uand) or isinstance(right, Uor) or isinstance(right, Uxor)
+
 
 def gatetype(right):
     if isinstance(right, And):
@@ -65,6 +68,14 @@ def gatetype(right):
         return "or"
     elif isinstance(right, Xor):
         return "xor"
+    
+def Ugatetype(right):
+    if isinstance(right, Uand):
+        return "Uand"
+    elif isinstance(right, Uor):
+        return "Uor"
+    elif isinstance(right, Uor):
+        return "Uxor"
 
 
 def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_outputs, G):
@@ -109,6 +120,23 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
 
         return Gate
     
+    if isinstance(assignment, Cond):
+        input1 = parse_assign_statement(assignment.false_value, input_output_wire, set_of_inputs, set_of_outputs, G)
+        input0 = parse_assign_statement(assignment.true_value, input_output_wire, set_of_inputs, set_of_outputs, G)
+        sel = parse_assign_statement(assignment.cond, input_output_wire, set_of_inputs, set_of_outputs, G)
+        mux2x1 = mux(Type = "MUX", size = input0.size, start = 0, end = input0.size-1)
+        mux2x1.connect_input(input0)
+        mux2x1.connect_input(input1)
+        mux2x1.connect_selector(sel)
+        G.add_edge(mux2x1, input0)
+        G.add_edge(mux2x1, input1)
+        G.add_edge(mux2x1, sel)
+        return mux2x1
+
+
+
+
+    
     if isinstance(assignment, Pointer):
         Input_node = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G)
         name_of_variable = Input_node.name
@@ -118,6 +146,18 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         Wire.connect_input(Input_node)
         return Wire
 
+    if isUGate(assignment):
+        Input_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G)
+        name_of_variable = Input_node.name
+        size = 1
+        Type = Ugatetype(assignment)
+        Single_input_Gate = UGate(Type = Type, Type_of_Ugate = Type, size = size)
+        Single_input_Gate.connect_input(Input_node)
+        G.add_edge(Single_input_Gate, Input_node)
+        return Single_input_Gate
+
+
+        
 
 
         
