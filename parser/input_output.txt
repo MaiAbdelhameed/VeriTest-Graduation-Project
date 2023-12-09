@@ -3,9 +3,10 @@ INPUTS
 --------
 a 4
 b 4
+c 4
+d 4
 
 
 OUTPUTS
 --------
 s 4
-cout 4

@@ -8,23 +8,23 @@ class wire(node):
         self.name = name
         self.size = size
         self.output = list()
-        self.G1 = None
-        self.G2 = None
+        self.G = list()
+       
 
     
     def connect_input(self, G1): ## input is a node
-        self.G1 = G1
+        self.G.append(G1)
 
 
     def calculate_output(self):
 
 
         
-        if self.size == len(self.G1.output):
-            self.output = self.G1.output
+        if self.size == len(self.G[0].output):
+            self.output = self.G[0].output
         else:
             for i in range(self.start, self.end + 1):
-                self.output.append(self.G1.output[i])
+                self.output.append(self.G[0].output[i])
 
         
         return True

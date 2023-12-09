@@ -7,8 +7,7 @@ class gate(node):
         super().__init__(Type)
         self.size = size
         self.Type_of_gate = Type_of_gate
-        self.G1 = None
-        self.G2 = None
+        self.G = list()
         self.output = [None] * size
 
         
@@ -16,17 +15,16 @@ class gate(node):
 
 
     
-    def connect_input(self, G1, G2=None): # not gates has only 1 input
-        self.G1 = G1
-        self.G2 = G2
+    def connect_input(self, G1): # not gates has only 1 input
+        self.G.append(G1)
 
 
     def calculate_output(self):
         if self.Type_of_gate == "not":
-            if len(self.G1.output) == 0:
+            if len(self.G[0].output) == 0:
                 return False
             else: ## not gate
-                input = self.G1.output
+                input = self.G[0].output
                 for i in range(0, self.size):
                     if input[i] == '1': 
                         self.output[i] = '0'
@@ -35,45 +33,55 @@ class gate(node):
 
                     
         else:
-            if len(self.G1.output) == 0 or len(self.G2.output) == 0:
-                return False
+            for gate in self.G:
+                if len(gate.output) == 0:
+                    return False
             else:
-                input1 = self.G1.output
-                input2 = self.G2.output
-                if self.Type == "and":
-                    for i in range(0, self.size):
-                        if input1[i] == '1' and input2[i] == '1':
-                            self.output[i] = '1'
-                        else:
-                            self.output[i] = '0'
+                if self.Type != "concat":
+                    input1 = self.G[0].output
+                    input2 = self.G[1].output
+                    if self.Type == "and":
+                        for i in range(0, self.size):
+                        
+                            if input1[i] == '1' and input2[i] == '1':
+                                self.output[i] = '1'
+                            else:
+                                self.output[i] = '0'
 
-                if self.Type == "or":
-                    for i in range(0, self.size):
-                        if input1[i] == '1' or input2[i] == '1':
-                            self.output[i] = '1'
-                        else:
-                            self.output[i] = '0'
+                    if self.Type == "or":
+                        for i in range(0, self.size):
+                            if input1[i] == '1' or input2[i] == '1':
+                                self.output[i] = '1'
+                            else:
+                                self.output[i] = '0'
 
-                if self.Type == "xor":
-                    for i in range(0, self.size):
-                        if input1[i] == input2[i]:
-                            self.output[i] = '0'
-                        else:
-                            self.output[i] = '1'
+                    if self.Type == "xor":
+                        for i in range(0, self.size):
+                            if input1[i] == input2[i]:
+                                self.output[i] = '0'
+                            else:
+                                self.output[i] = '1'
 
-                if self.Type == "nand":
-                    for i in range(0, self.size):
-                        if input1[i] == '1' and input2[i] == '1':
-                            self.output[i] = '0'
-                        else:
-                            self.output[i] = '1'
-                
-                if self.Type == "nor":
-                    for i in range(0, self.size):
-                        if input1[i] == '0' and input2[i] == '0':
-                            self.output[i] = '1'
-                        else:
-                            self.output[i] = '0'
+                    if self.Type == "nand":
+                        for i in range(0, self.size):
+                            if input1[i] == '1' and input2[i] == '1':
+                                self.output[i] = '0'
+                            else:
+                                self.output[i] = '1'
+                    
+                    if self.Type == "nor":
+                        for i in range(0, self.size):
+                            if input1[i] == '0' and input2[i] == '0':
+                                self.output[i] = '1'
+                            else:
+                                self.output[i] = '0'
+                else:
+                    finoutput = list()
+                    for gate in self.G:
+                        finoutput.extend(gate.output[::-1])
+
+                    self.output = finoutput[::-1]
+
                 
 
         return True

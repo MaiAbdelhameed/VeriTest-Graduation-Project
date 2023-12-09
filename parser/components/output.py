@@ -29,7 +29,7 @@ class Output(node):
                 end = Gate.end
                 self.output[start:end+1] = output
                 
-        if None not in self.output:
+        if None not in self.output and len(self.output) != 0:
             self.output = self.output[::-1]
             return True
         return False

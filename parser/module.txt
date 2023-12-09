@@ -1,9 +1,12 @@
 module half_adder(a, b, s, cout);
-  input[3:0] a,b;
-  output[3:0] s, cout;
+  input [3:0] a,b,c,d;
+  output [2:0] s;
+  assign s = a[2:0] & b[3:1] ^ d[2:0];
+
+
+
+
   
-  assign s[2:0] = a[3:1] ^ b[3:1];
-  assign s[3] = a[2] & b[1];
   
 
 endmodule

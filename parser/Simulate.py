@@ -1,4 +1,4 @@
-from graph import parse
+from graph import parse_verilog_code
 import networkx as nx
 import matplotlib.pyplot as plt
 from components.Gate import gate
@@ -9,9 +9,10 @@ from components.OUTPUT import Output
 
 
 
-G, set_of_inputs, set_of_outputs = parse()
+G, set_of_inputs, set_of_outputs = parse_verilog_code()
 # nx.draw_spring(G, with_labels = True)
 # plt.show()
+
 
 def finished(set_of_outputs):
     for node in set_of_outputs:
@@ -25,13 +26,19 @@ def finished(set_of_outputs):
 
 stack = list()
 def DFS(node):
-
+    flag = False
     if node.calculate_output() == False:
         return
     for nodeadj in list(G.neighbors(node)):
         if isinstance(node, Output):
             continue
-        if node.G1 == nodeadj or node.G2 == nodeadj:
+
+        for gate in node.G:
+            if gate == nodeadj:
+                flag = True
+                continue
+        if flag:
+            flag = False
             continue
         DFS(nodeadj)
 
