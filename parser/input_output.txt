@@ -1,12 +1,10 @@
-Module Name: mux_4to1
+Module Name: mux_8x1
 INPUTS
 --------
-a 4
-b 4
-select 2
+h 8
+h3 3
 
 
 OUTPUTS
 --------
-data_out 4
-data 4
+h2 1

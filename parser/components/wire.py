@@ -26,12 +26,10 @@ class wire(node):
         
             start = self.start
             end = self.end
-            if start == end:
-                self.output.append(self.G[0].output[-(start+1)])
-            else:
-                for i in range(start + 1, end + 2, 1):
-                    self.output.append(self.G[0].output[-i])
-                self.output = self.output[::-1]
+            print(self, start, end, len(self.G[0].output))
+            for i in range(start + 1, end + 2, 1):
+                self.output.append(self.G[0].output[-i])
+            self.output = self.output[::-1]
 
         
         return True

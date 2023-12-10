@@ -23,7 +23,24 @@ import matplotlib.pyplot as plt
 
 def nodeingraph(G,a):
     for Nodeitr in G.nodes():
-        if not isinstance(Nodeitr, gate) and not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux) and not isinstance(Nodeitr, mGate):
+
+        if isinstance(a, gate): ## check if there is a gate with same size
+            if a.Type != "not":
+                if Nodeitr.size == a.size and isinstance(Nodeitr, gate):
+                    input0 = Nodeitr.G[0]
+                    input1 = Nodeitr.G[1]
+                    if (a.G[0] == input0 or a.G[0] == input1) and (a.G[1] == input0 or a.G[1] == input1):
+                        return Nodeitr
+            else:
+                if Nodeitr.size == a.size and isinstance(Nodeitr, gate):
+                    input0 = Nodeitr.G[0]
+                    if a.G[0] == input0:
+                        return Nodeitr
+
+
+
+        
+        elif not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux) and not isinstance(Nodeitr, mGate) and not isinstance(Nodeitr, gate):
             if Nodeitr.name == a.name and Nodeitr.start == a.start and Nodeitr.end == a.end:
                 return Nodeitr
     return None
@@ -93,8 +110,15 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         Gate = gate(Type=Type, Type_of_gate = Type, size = left.size)
         Gate.connect_input(right)
         Gate.connect_input(left)
-        G.add_edge(Gate,right)
-        G.add_edge(Gate,left)
+        node_itr = nodeingraph(G, Gate)
+        if node_itr == None:
+            G.add_edge(Gate,right)
+            G.add_edge(Gate,left)
+
+        else:
+            return node_itr
+
+
         return Gate
     
     if isinstance(assignment, Partselect):
@@ -158,7 +182,7 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
     if isinstance(assignment, Eq):
         selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G)
         
-        condition_value = assignment.right.value.strip("2'b")[::-1]
+        condition_value = assignment.right.value.strip("2'b").strip("3'b")[::-1]
         name_of_variable = selector_node.name
         and_gate = mGate(Type="Mand", Type_of_Mgate="Mand", size = 1)
         for i in range(0, len(condition_value), 1):
@@ -174,9 +198,16 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
             if condition_value[i] == "0":
                 not_gate = gate(Type = "not", Type_of_gate="not", size = 1)
                 not_gate.connect_input(wire_for_cond)
-                and_gate.connect_input(not_gate)
-                G.add_edge(not_gate, and_gate)
-                G.add_edge(not_gate, wire_for_cond)
+                node_itr = nodeingraph(G, not_gate)
+                if node_itr == None:
+                    and_gate.connect_input(not_gate)
+                    G.add_edge(not_gate, and_gate)
+                    G.add_edge(not_gate, wire_for_cond)
+                else:
+                    and_gate.connect_input(node_itr)
+                    G.add_edge(node_itr, and_gate)
+                    
+
 
             else:
                 and_gate.connect_input(wire_for_cond)
@@ -205,8 +236,12 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
             size = Input_node.size
             Single_input_Gate = gate(Type = "not", Type_of_gate= "not", size = size)
             Single_input_Gate.connect_input(Input_node)
-            G.add_edge(Single_input_Gate, Input_node)
-            return Single_input_Gate
+            node_itr = nodeingraph(G, Single_input_Gate)
+            if node_itr == None:
+                G.add_edge(Single_input_Gate, Input_node)
+                return Single_input_Gate
+            else:
+                return node_itr
 
 
 
@@ -231,7 +266,6 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
 
         node_itr = nodeingraph(G, search_for_input)
         if node_itr == None: ## Input not in Graph
-
             if Type == "INPUT":
                 input_node = Input(Type="INPUT", size = size, start=0, end=size-1, name=name_of_variable)
                 set_of_inputs.add(input_node)
