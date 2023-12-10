@@ -3,6 +3,7 @@ import networkx as nx
 from components.Gate import gate
 from components.INPUT import Input
 from components.Ugate import UGate
+from components.MGate import mGate
 
 from components.Wire import wire
 from components.OUTPUT import Output
@@ -11,7 +12,7 @@ from components.MUX import mux
 from preprocessing.find import *
 
 from pyverilog.vparser.parser import parse
-from pyverilog.vparser.ast import Assign, Concat, And, Xor, Partselect, Or, Xor, Pointer, Uand, Unor, Uxor, Uor, Cond
+from pyverilog.vparser.ast import Assign, Concat, And, Xor, Partselect, Or, Xor, Pointer, Uand, Unor, Uxor, Uor, Cond, Eq, Unot
 
 
 import matplotlib.pyplot as plt
@@ -22,7 +23,7 @@ import matplotlib.pyplot as plt
 
 def nodeingraph(G,a):
     for Nodeitr in G.nodes():
-        if not isinstance(Nodeitr, gate) and not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux):
+        if not isinstance(Nodeitr, gate) and not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux) and not isinstance(Nodeitr, mGate):
             if Nodeitr.name == a.name and Nodeitr.start == a.start and Nodeitr.end == a.end:
                 return Nodeitr
     return None
@@ -58,7 +59,7 @@ def isGate(right):
     return isinstance(right, And) or isinstance(right, Or) or isinstance(right, Xor)
 
 def isUGate(right):
-    return isinstance(right, Uand) or isinstance(right, Uor) or isinstance(right, Uxor)
+    return isinstance(right, Uand) or isinstance(right, Uor) or isinstance(right, Uxor) or isinstance(right, Unot)
 
 
 def gatetype(right):
@@ -76,6 +77,8 @@ def Ugatetype(right):
         return "Uor"
     elif isinstance(right, Uor):
         return "Uxor"
+    elif isinstance(right, Unot):
+        return "Unot"
 
 
 def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_outputs, G):
@@ -151,16 +154,60 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         G.add_edge(Wire, Input_node)
         Wire.connect_input(Input_node)
         return Wire
+    
+    if isinstance(assignment, Eq):
+        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G)
+        
+        condition_value = assignment.right.value.strip("2'b")[::-1]
+        name_of_variable = selector_node.name
+        and_gate = mGate(Type="Mand", Type_of_Mgate="Mand", size = 1)
+        for i in range(0, len(condition_value), 1):
+            wire_for_cond = wire(Type = "WIRE", size = 1, start = i, end = i, name= name_of_variable+ "_WIRE")
+            node_itr = nodeingraph(G, wire_for_cond)
+            if node_itr == None:
+                wire_for_cond.connect_input(selector_node)
+                G.add_edge(wire_for_cond, selector_node)
+
+            else:
+                wire_for_cond = node_itr
+
+            if condition_value[i] == "0":
+                not_gate = gate(Type = "not", Type_of_gate="not", size = 1)
+                not_gate.connect_input(wire_for_cond)
+                and_gate.connect_input(not_gate)
+                G.add_edge(not_gate, and_gate)
+                G.add_edge(not_gate, wire_for_cond)
+
+            else:
+                and_gate.connect_input(wire_for_cond)
+                G.add_edge(wire_for_cond, and_gate)
+
+
+        return and_gate
+        
+           
+
+
 
     if isUGate(assignment):
-        Input_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G)
-        name_of_variable = Input_node.name
-        size = 1
         Type = Ugatetype(assignment)
-        Single_input_Gate = UGate(Type = Type, Type_of_Ugate = Type, size = size)
-        Single_input_Gate.connect_input(Input_node)
-        G.add_edge(Single_input_Gate, Input_node)
-        return Single_input_Gate
+        if Type != "Unot":
+            Input_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G)
+            name_of_variable = Input_node.name
+            size = 1
+            Single_input_Gate = UGate(Type = Type, Type_of_Ugate = Type, size = size)
+            Single_input_Gate.connect_input(Input_node)
+            G.add_edge(Single_input_Gate, Input_node)
+            return Single_input_Gate
+        elif Type == "Unot":
+            Input_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G)
+            name_of_variable = Input_node.name
+            size = Input_node.size
+            Single_input_Gate = gate(Type = "not", Type_of_gate= "not", size = size)
+            Single_input_Gate.connect_input(Input_node)
+            G.add_edge(Single_input_Gate, Input_node)
+            return Single_input_Gate
+
 
 
         

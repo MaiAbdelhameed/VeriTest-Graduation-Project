@@ -21,12 +21,7 @@ class node:
             else:
                 return self.Type + " \n \n" + self.name  + "=" + str(self.size)
 
-        elif self.Type.startswith("U"):
-            return self.Type_of_Ugate
-        elif self.Type == "MUX":
-            return self.Type
-
         else:
-            return self.Type_of_gate
+            return self.Type
         
         

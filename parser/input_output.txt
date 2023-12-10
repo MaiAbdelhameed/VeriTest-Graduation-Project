@@ -1,13 +1,12 @@
-Module Name: mux_4to_assign
+Module Name: mux_4to1
 INPUTS
 --------
 a 4
 b 4
-c 4
-d 4
-sel 2
+select 2
 
 
 OUTPUTS
 --------
-out 3
+data_out 4
+data 4

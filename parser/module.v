@@ -1,16 +1,12 @@
-module mux_4to_assign (a,b,c,d,sel,out);
+module mux_4to1 (
+ data_in, select, data_out
+);
 
-input [3:0] a;
+ input  [3:0] a,b;
+  input  [1:0] select;
+  output [3:0] data_out, data;
 
-input [3:0] b; 
-input [3:0] c; 
-
-input [3:0] d; 
-
-input [1:0] sel; 
-output [2:0] out; 
-
-
-assign out = (a[2:0] & c[2:0]) | a[2:0];
+assign data_out =  a & b;
+assign data = a & b;
 
 endmodule

@@ -27,11 +27,11 @@ class gate(node):
                 return False
             else: ## not gate
                 input = self.G[0].output
-                for i in range(-(self.size-1),-1, -1 ):
-                    if input[i] == '1': 
-                        self.output[i] = '0'
+                for i in range(self.start+1, self.end+2, 1):
+                    if input[-i] == '1': 
+                        self.output[-i] = '0'
                     else:
-                        self.output[i] = '1'
+                        self.output[-i] = '1'
 
                     
         else:
