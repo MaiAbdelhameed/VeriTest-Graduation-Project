@@ -8,9 +8,9 @@ input [3:0] c;
 input [3:0] d; 
 
 input [1:0] sel; 
-output [3:0] out; 
+output [2:0] out; 
 
 
-assign out = sel[1] ? (sel[0] ? d : c) : (sel[0] ? b : a);
+assign out = (a[2:0] & c[2:0]) | a[2:0];
 
 endmodule

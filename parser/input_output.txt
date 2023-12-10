@@ -10,4 +10,4 @@ sel 2
 
 OUTPUTS
 --------
-out 4
+out 3

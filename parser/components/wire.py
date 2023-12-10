@@ -31,7 +31,7 @@ class wire(node):
             else:
                 for i in range(start + 1, end + 2, 1):
                     self.output.append(self.G[0].output[-i])
-                    self.output = self.output[::-1]
+                self.output = self.output[::-1]
 
         
         return True

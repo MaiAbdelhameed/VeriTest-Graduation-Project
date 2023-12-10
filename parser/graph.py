@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 def nodeingraph(G,a):
     for Nodeitr in G.nodes():
         if not isinstance(Nodeitr, gate) and not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux):
-            if Nodeitr.name == a:
+            if Nodeitr.name == a.name and Nodeitr.start == a.start and Nodeitr.end == a.end:
                 return Nodeitr
     return None
 
@@ -99,8 +99,11 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         name_of_variable = Input_node.name
         msb = int(assignment.msb.value)
         lsb = int(assignment.lsb.value)
-        size = abs(msb-lsb)
-        Wire = wire(Type = "WIRE", size = size + 1, start = lsb, end = msb, name= name_of_variable+ "_WIRE")
+        size = abs(msb-lsb) 
+        Wire = wire(Type = "WIRE", size = size+1, start = lsb, end = msb, name= name_of_variable+ "_WIRE")
+        nodeitr = nodeingraph(G, Wire)
+        if nodeitr != None:
+            return nodeitr
         G.add_edge(Wire, Input_node)
         Wire.connect_input(Input_node)
         return Wire
@@ -142,6 +145,9 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         name_of_variable = Input_node.name
         value = int(assignment.ptr.value)
         Wire = wire(Type = "WIRE", size = 1, start = value, end = value, name= name_of_variable+ "_WIRE")
+        nodeitr = nodeingraph(G, Wire)
+        if nodeitr != None:
+            return nodeitr
         G.add_edge(Wire, Input_node)
         Wire.connect_input(Input_node)
         return Wire
@@ -164,15 +170,20 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
     
     else: 
         name_of_variable = assignment.name
-        node_itr = nodeingraph(G, name_of_variable)
+        search_for_input = None
+        Type = None
+        Size = None
+        if name_of_variable in input_output_wire[0]:
+            Type = "INPUT"
+            size = input_output_wire[0][name_of_variable]
+            search_for_input = Input(Type="INPUT", size = size, start=0, end=size-1, name=name_of_variable)
+        else:
+            Type = "WIRE"
+            size = input_output_wire[2][name_of_variable]
+            search_for_input = wire(Type="WIRE", size = size, start=0, end=size-1, name=name_of_variable)
+
+        node_itr = nodeingraph(G, search_for_input)
         if node_itr == None: ## Input not in Graph
-            Type = None
-            if name_of_variable in input_output_wire[0]:
-                Type = "INPUT"
-                size = input_output_wire[0][name_of_variable]
-            else:
-                Type = "WIRE"
-                size = input_output_wire[2][name_of_variable]
 
             if Type == "INPUT":
                 input_node = Input(Type="INPUT", size = size, start=0, end=size-1, name=name_of_variable)
