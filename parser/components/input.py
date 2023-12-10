@@ -20,7 +20,7 @@ class Input(node):
 
 
     def calculate_output(self):
-        self.output = self.G[0][::-1]
+        self.output = self.G[0]
         return True
         
     

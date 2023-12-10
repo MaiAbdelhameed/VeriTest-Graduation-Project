@@ -1,5 +1,7 @@
 from components.Node import node
 from components.Gate import gate
+from components.MUX import mux
+
 class Output(node):
 
     def __init__(self,Type, size, start, end, name):
@@ -16,10 +18,16 @@ class Output(node):
     def connect_input(self, G1):
         self.G.append(G1)
 
+    def hasNone(self):
+        for bit in self.output:
+            if bit == None:
+                return False
+        return True
+
 
     def calculate_output(self):
         for Gate in self.G:
-            if isinstance(Gate, gate): # lw wasel ably gate 3la tool ha5od menha el output bta3ha kolo
+            if isinstance(Gate, gate) or isinstance(Gate, mux) : # lw wasel ably gate 3la tool ha5od menha el output bta3ha kolo
                 self.output = Gate.output
             else:
                 output = Gate.output
@@ -27,10 +35,11 @@ class Output(node):
                     return False
                 start = Gate.start
                 end = Gate.end
+                output = output[::-1]
                 self.output[start:end+1] = output
+                self.output = self.output[::-1]
                 
-        if None not in self.output and len(self.output) != 0:
-            self.output = self.output[::-1]
+        if len(self.output) != 0 and self.hasNone():
             return True
         return False
         

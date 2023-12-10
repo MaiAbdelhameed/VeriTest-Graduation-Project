@@ -23,8 +23,15 @@ class wire(node):
         if self.size == len(self.G[0].output):
             self.output = self.G[0].output
         else:
-            for i in range(self.start, self.end + 1):
-                self.output.append(self.G[0].output[i])
+        
+            start = self.start
+            end = self.end
+            if start == end:
+                self.output.append(self.G[0].output[-(start+1)])
+            else:
+                for i in range(start + 1, end + 2, 1):
+                    self.output.append(self.G[0].output[-i])
+                    self.output = self.output[::-1]
 
         
         return True
