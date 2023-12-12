@@ -106,12 +106,12 @@ def Ugatetype(right):
         return "Unot"
 
 
-def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_outputs, G):
+def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_outputs, G, is_left):
 
 
     if isGate(assignment):
-        right = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G)
-        left = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G)
+        right = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        left = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         G.add_node(left)
         G.add_node(right)
         Type = gatetype(assignment)
@@ -130,7 +130,7 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         return Gate
     
     if isinstance(assignment, Partselect):
-        INPUT_node = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G)
+        INPUT_node = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         name_of_variable = INPUT_node.name
         msb = int(assignment.msb.value)
         lsb = int(assignment.lsb.value)
@@ -140,7 +140,12 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         if nodeitr != None:
             return nodeitr
         G.add_edge(Wire, INPUT_node)
-        Wire.connect_input(INPUT_node)
+
+        if is_left:
+            INPUT_node.connect_input(Wire)
+       
+        else:
+            Wire.connect_input(INPUT_node)
         return Wire
     
     if isinstance(assignment, Concat):
@@ -148,7 +153,7 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         size = 0
         Gate = gate(Type = "concat", Type_of_gate= "concat", size=size)
         for element in assignment.list:
-            node = parse_assign_statement(element, input_output_wire, set_of_inputs, set_of_outputs, G)
+            node = parse_assign_statement(element, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
             size += node.size
             list_of_concat_element.append(node)
             Gate.connect_input(node)
@@ -159,9 +164,9 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         return Gate
     
     if isinstance(assignment, Cond):
-        input1 = parse_assign_statement(assignment.false_value, input_output_wire, set_of_inputs, set_of_outputs, G)
-        input0 = parse_assign_statement(assignment.true_value, input_output_wire, set_of_inputs, set_of_outputs, G)
-        sel = parse_assign_statement(assignment.cond, input_output_wire, set_of_inputs, set_of_outputs, G)
+        input1 = parse_assign_statement(assignment.false_value, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        input0 = parse_assign_statement(assignment.true_value, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        sel = parse_assign_statement(assignment.cond, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         mux2x1 = mux(Type = "MUX", size = input0.size, start = 0, end = input0.size-1)
         mux2x1.connect_input(input0)
         mux2x1.connect_input(input1)
@@ -176,7 +181,7 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
 
     
     if isinstance(assignment, Pointer):
-        INPUT_node = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G)
+        INPUT_node = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         name_of_variable = INPUT_node.name
         value = int(assignment.ptr.value)
         Wire = wire(Type = "WIRE", size = 1, start = value, end = value, name= name_of_variable+ "_WIRE")
@@ -193,8 +198,8 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         return fin_value[0]
     
     if isinstance(assignment, Eq):
-        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G)
-        condition_value = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G)
+        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_value = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         condition_value = condition_value[::-1]
         name_of_variable = selector_node.name
         and_gate = mGate(Type="Mand", Type_of_Mgate="Mand", size = 1)
@@ -236,7 +241,7 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
     if isUGate(assignment):
         Type = Ugatetype(assignment)
         if Type != "Unot":
-            INPUT_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G)
+            INPUT_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
             name_of_variable = INPUT_node.name
             size = 1
             Single_input_Gate = UGate(Type = Type, Type_of_Ugate = Type, size = size)
@@ -248,7 +253,7 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
             else:
                 return node_itr
         elif Type == "Unot":
-            INPUT_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G)
+            INPUT_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
             name_of_variable = INPUT_node.name
             size = INPUT_node.size
             Single_input_Gate = gate(Type = "not", Type_of_gate= "not", size = size)
@@ -271,25 +276,32 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         name_of_variable = assignment.name
         search_for_input = None
         Type = None
-        Size = None
+        size = None
         if name_of_variable in input_output_wire[0]:
             Type = "INPUT"
             size = input_output_wire[0][name_of_variable]
             search_for_input = INPUT(Type="INPUT", size = size, start=0, end=size-1, name=name_of_variable)
-        else:
+            
+        elif name_of_variable in input_output_wire[2]:
             Type = "WIRE"
             size = input_output_wire[2][name_of_variable]
             search_for_input = wire(Type="WIRE", size = size, start=0, end=size-1, name=name_of_variable)
+        
+        elif name_of_variable in input_output_wire[1]:
+            Type = "OUTPUT"
+            size = input_output_wire[1][name_of_variable]
+            search_for_input = OUTPUT(Type="OUTPUT", size = size, start=0, end=size-1, name=name_of_variable)
+            
 
         node_itr = nodeingraph(G, search_for_input)
         if node_itr == None: ## INPUT not in Graph
             if Type == "INPUT":
-                input_node = INPUT(Type="INPUT", size = size, start=0, end=size-1, name=name_of_variable)
-                set_of_inputs.add(input_node)
-                return input_node
-            else:
-                wire_node = wire(Type="WIRE", size = size, start=0, end=size-1, name=name_of_variable)
-                return wire_node
+                set_of_inputs.add(search_for_input)
+            elif Type == "OUTPUT":
+                set_of_outputs.add(search_for_input)
+                
+            return search_for_input
+                
         else:
             return node_itr
 
@@ -324,27 +336,11 @@ def parse_verilog_code():
 
     # Print the assignment statements
     for assignment in assignments:
-        final_output = parse_assign_statement(assignment.right.var, input_output_wire, set_of_inputs, set_of_outputs, G)
-        name_of_output = assignment.left.var.name
-        print(input_output_wire)
-        Type = None
-        if name_of_output in input_output_wire[1]:
-            Type = "OUTPUT"
-            size = input_output_wire[1][name_of_output]
-        else:
-            Type = "WIRE"
-            size = input_output_wire[2][name_of_output]
+        final_output = parse_assign_statement(assignment.right.var, input_output_wire, set_of_inputs, set_of_outputs, G, False)
+        output_port = parse_assign_statement(assignment.left.var, input_output_wire, set_of_inputs, set_of_outputs, G, True)
+        output_port.connect_input(final_output)
+        G.add_edge(final_output, output_port)
         
-
-        
-        if Type == "OUTPUT":
-            out = OUTPUT(Type=Type, size=size, start = 0, end = size-1, name = name_of_output)
-        else:
-            out = wire(Type=Type, size=size, start = 0, end = size-1, name = name_of_output)
-
-        out.connect_input(final_output)
-        G.add_edge(final_output, out)
-        set_of_outputs.add(out)
 
 
     return G, set_of_inputs, set_of_outputs
