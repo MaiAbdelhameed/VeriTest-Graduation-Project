@@ -2,10 +2,10 @@ from graph import parse_verilog_code
 import networkx as nx
 import matplotlib.pyplot as plt
 from components.Gate import gate
-from components.INPUT import Input
+from components.INPUT import INPUT
 
 from components.Wire import wire
-from components.OUTPUT import Output
+from components.OUTPUT import OUTPUT
 from components.MUX import mux
 
 
@@ -47,7 +47,7 @@ def DFS(node):
     if node.calculate_output() == False:
         return
     for nodeadj in list(G.neighbors(node)):
-        if isinstance(node, Output) or isInput(node, nodeadj):
+        if isinstance(node, OUTPUT) or isInput(node, nodeadj):
             continue
 
         DFS(nodeadj)
@@ -65,7 +65,7 @@ while not finished(set_of_outputs):
 
 
 for node in G:
-    if isinstance(node, Output):
+    if isinstance(node, OUTPUT):
         node.calculate_output()
         print("".join(node.output))
 

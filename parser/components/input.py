@@ -1,6 +1,6 @@
 from components.Node import node
 
-class Input(node):
+class INPUT(node):
 
     def __init__(self, Type, size, start, end, name):
         super().__init__(Type)

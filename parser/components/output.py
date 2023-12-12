@@ -2,7 +2,7 @@ from components.Node import node
 from components.Gate import gate
 from components.MUX import mux
 
-class Output(node):
+class OUTPUT(node):
 
     def __init__(self,Type, size, start, end, name):
         super().__init__(Type)

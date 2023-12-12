@@ -1,12 +1,12 @@
 
 import networkx as nx
 from components.Gate import gate
-from components.INPUT import Input
+from components.INPUT import INPUT
 from components.Ugate import UGate
 from components.MGate import mGate
 
 from components.Wire import wire
-from components.OUTPUT import Output
+from components.OUTPUT import OUTPUT
 from components.MUX import mux
 
 from preprocessing.find import *
@@ -29,20 +29,27 @@ def nodeingraph(G,a):
                 if Nodeitr.size == a.size and isinstance(Nodeitr, gate):
                     input0 = Nodeitr.G[0]
                     input1 = Nodeitr.G[1]
-                    if (a.G[0] == input0 or a.G[0] == input1) and (a.G[1] == input0 or a.G[1] == input1):
+                    if (a.G[0] == input0 or a.G[0] == input1) and (a.G[1] == input0 or a.G[1] == input1) and a.Type == Nodeitr.Type:
                         return Nodeitr
             else:
-                if Nodeitr.size == a.size and isinstance(Nodeitr, gate):
+                if Nodeitr.size == a.size and isinstance(Nodeitr, gate) and a.Type == Nodeitr.Type:
+                    input0 = Nodeitr.G[0]
+                    if a.G[0] == input0:
+                        return Nodeitr
+        elif isinstance(a, UGate):
+            if Nodeitr.size == a.size and isinstance(Nodeitr, UGate) and a.Type == Nodeitr.Type:
                     input0 = Nodeitr.G[0]
                     if a.G[0] == input0:
                         return Nodeitr
 
 
 
+
         
-        elif not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux) and not isinstance(Nodeitr, mGate) and not isinstance(Nodeitr, gate):
-            if Nodeitr.name == a.name and Nodeitr.start == a.start and Nodeitr.end == a.end:
-                return Nodeitr
+        else:
+            if not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux) and not isinstance(Nodeitr, mGate) and not isinstance(Nodeitr, gate):
+                if Nodeitr.name == a.name and Nodeitr.start == a.start and Nodeitr.end == a.end:
+                    return Nodeitr
     return None
 
 
@@ -64,7 +71,7 @@ def get_assignments(node):
 def parse_verilog(file_path):
     # Parse the Verilog code
     ast, _ = parse([file_path])
-    # ast.show()
+    ast.show()
 
     # Get all assignment statements from the AST
     assignments = get_assignments(ast)
@@ -122,8 +129,8 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         return Gate
     
     if isinstance(assignment, Partselect):
-        Input_node = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G)
-        name_of_variable = Input_node.name
+        INPUT_node = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G)
+        name_of_variable = INPUT_node.name
         msb = int(assignment.msb.value)
         lsb = int(assignment.lsb.value)
         size = abs(msb-lsb) 
@@ -131,8 +138,8 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         nodeitr = nodeingraph(G, Wire)
         if nodeitr != None:
             return nodeitr
-        G.add_edge(Wire, Input_node)
-        Wire.connect_input(Input_node)
+        G.add_edge(Wire, INPUT_node)
+        Wire.connect_input(INPUT_node)
         return Wire
     
     if isinstance(assignment, Concat):
@@ -168,15 +175,15 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
 
     
     if isinstance(assignment, Pointer):
-        Input_node = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G)
-        name_of_variable = Input_node.name
+        INPUT_node = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G)
+        name_of_variable = INPUT_node.name
         value = int(assignment.ptr.value)
         Wire = wire(Type = "WIRE", size = 1, start = value, end = value, name= name_of_variable+ "_WIRE")
         nodeitr = nodeingraph(G, Wire)
         if nodeitr != None:
             return nodeitr
-        G.add_edge(Wire, Input_node)
-        Wire.connect_input(Input_node)
+        G.add_edge(Wire, INPUT_node)
+        Wire.connect_input(INPUT_node)
         return Wire
     
     if isinstance(assignment, Eq):
@@ -223,22 +230,26 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
     if isUGate(assignment):
         Type = Ugatetype(assignment)
         if Type != "Unot":
-            Input_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G)
-            name_of_variable = Input_node.name
+            INPUT_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G)
+            name_of_variable = INPUT_node.name
             size = 1
             Single_input_Gate = UGate(Type = Type, Type_of_Ugate = Type, size = size)
-            Single_input_Gate.connect_input(Input_node)
-            G.add_edge(Single_input_Gate, Input_node)
-            return Single_input_Gate
-        elif Type == "Unot":
-            Input_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G)
-            name_of_variable = Input_node.name
-            size = Input_node.size
-            Single_input_Gate = gate(Type = "not", Type_of_gate= "not", size = size)
-            Single_input_Gate.connect_input(Input_node)
+            Single_input_Gate.connect_input(INPUT_node)
             node_itr = nodeingraph(G, Single_input_Gate)
             if node_itr == None:
-                G.add_edge(Single_input_Gate, Input_node)
+                G.add_edge(Single_input_Gate, INPUT_node)
+                return Single_input_Gate
+            else:
+                return node_itr
+        elif Type == "Unot":
+            INPUT_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G)
+            name_of_variable = INPUT_node.name
+            size = INPUT_node.size
+            Single_input_Gate = gate(Type = "not", Type_of_gate= "not", size = size)
+            Single_input_Gate.connect_input(INPUT_node)
+            node_itr = nodeingraph(G, Single_input_Gate)
+            if node_itr == None:
+                G.add_edge(Single_input_Gate, INPUT_node)
                 return Single_input_Gate
             else:
                 return node_itr
@@ -258,16 +269,16 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         if name_of_variable in input_output_wire[0]:
             Type = "INPUT"
             size = input_output_wire[0][name_of_variable]
-            search_for_input = Input(Type="INPUT", size = size, start=0, end=size-1, name=name_of_variable)
+            search_for_input = INPUT(Type="INPUT", size = size, start=0, end=size-1, name=name_of_variable)
         else:
             Type = "WIRE"
             size = input_output_wire[2][name_of_variable]
             search_for_input = wire(Type="WIRE", size = size, start=0, end=size-1, name=name_of_variable)
 
         node_itr = nodeingraph(G, search_for_input)
-        if node_itr == None: ## Input not in Graph
+        if node_itr == None: ## INPUT not in Graph
             if Type == "INPUT":
-                input_node = Input(Type="INPUT", size = size, start=0, end=size-1, name=name_of_variable)
+                input_node = INPUT(Type="INPUT", size = size, start=0, end=size-1, name=name_of_variable)
                 set_of_inputs.add(input_node)
                 return input_node
             else:
@@ -287,10 +298,19 @@ def parse_verilog_code():
     assignments = parse_verilog(verilog_file)
     G = nx.Graph()
     file = open(verilog_file)
-    input_output_wire = get_input_output(file)
-    dictionary = input_output_wire[0]
-    values = dictionary.values()
-    input_output_wire = next(iter(values))
+    input_output_wire2 = get_input_output()
+    input_output_wire = input_output_wire2.copy()
+    for key, value in input_output_wire[0].items():
+        input_output_wire[0][key] = int(value["msb"]) - int(value["lsb"]) + 1
+    
+    for key, value in input_output_wire[1].items():
+        input_output_wire[1][key] = int(value["msb"]) - int(value["lsb"]) + 1
+
+    for key, value in input_output_wire[2].items():
+        input_output_wire[2][key] = int(value["msb"]) - int(value["lsb"]) + 1
+
+    
+    
     set_of_inputs = set()
     set_of_outputs = set()
 
@@ -311,7 +331,7 @@ def parse_verilog_code():
         
 
         if Type == "OUTPUT":
-            out = Output(Type=Type, size=size, start = 0, end = size-1, name = name_of_output)
+            out = OUTPUT(Type=Type, size=size, start = 0, end = size-1, name = name_of_output)
         else:
             out = wire(Type=Type, size=size, start = 0, end = size-1, name = name_of_output)
 
