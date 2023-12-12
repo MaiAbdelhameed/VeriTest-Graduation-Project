@@ -12,10 +12,11 @@ from components.MUX import mux
 from preprocessing.find import *
 
 from pyverilog.vparser.parser import parse
-from pyverilog.vparser.ast import Assign, Concat, And, Xor, Partselect, Or, Xor, Pointer, Uand, Unor, Uxor, Uor, Cond, Eq, Unot
+from pyverilog.vparser.ast import Assign, Concat, And, Xor, Partselect, Or, Xor, Pointer, Uand, IntConst, Uxor, Uor, Cond, Eq, Unot
 
 
 import matplotlib.pyplot as plt
+import re
 
 
 
@@ -186,10 +187,15 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         Wire.connect_input(INPUT_node)
         return Wire
     
+    if isinstance(assignment, IntConst):
+        value = assignment.value
+        fin_value = re.findall("\d+'\w(\d+)", value)
+        return fin_value[0]
+    
     if isinstance(assignment, Eq):
         selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G)
-        
-        condition_value = assignment.right.value.strip("2'b").strip("3'b")[::-1]
+        condition_value = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G)
+        condition_value = condition_value[::-1]
         name_of_variable = selector_node.name
         and_gate = mGate(Type="Mand", Type_of_Mgate="Mand", size = 1)
         for i in range(0, len(condition_value), 1):
@@ -330,6 +336,7 @@ def parse_verilog_code():
             size = input_output_wire[2][name_of_output]
         
 
+        
         if Type == "OUTPUT":
             out = OUTPUT(Type=Type, size=size, start = 0, end = size-1, name = name_of_output)
         else:
