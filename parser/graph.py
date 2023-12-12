@@ -188,8 +188,13 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         nodeitr = nodeingraph(G, Wire)
         if nodeitr != None:
             return nodeitr
+        
+        if is_left:
+            INPUT_node.connect_input(Wire)
+       
+        else:
+            Wire.connect_input(INPUT_node)
         G.add_edge(Wire, INPUT_node)
-        Wire.connect_input(INPUT_node)
         return Wire
     
     if isinstance(assignment, IntConst):
@@ -299,7 +304,7 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
                 set_of_inputs.add(search_for_input)
             elif Type == "OUTPUT":
                 set_of_outputs.add(search_for_input)
-                
+
             return search_for_input
                 
         else:
