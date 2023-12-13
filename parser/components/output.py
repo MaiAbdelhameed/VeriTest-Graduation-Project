@@ -1,6 +1,7 @@
 from components.Node import node
 from components.Gate import gate
 from components.MUX import mux
+from components.Wire import wire
 
 class OUTPUT(node):
 
@@ -29,6 +30,8 @@ class OUTPUT(node):
         for Gate in self.G:
             if isinstance(Gate, gate) or isinstance(Gate, mux) : # lw wasel ably gate 3la tool ha5od menha el output bta3ha kolo
                 self.output = Gate.output
+            elif isinstance(Gate, wire) and self.size == Gate.size:
+                self.output = Gate.output
             else:
                 output = Gate.output
                 if len(output) == 0:
@@ -36,6 +39,8 @@ class OUTPUT(node):
                 start = Gate.start
                 end = Gate.end
                 output = output[::-1]
+                print(output)
+                print(self, self.start, self.end)
                 self.output[start:end+1] = output
                 self.output = self.output[::-1]
                 

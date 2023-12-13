@@ -8,6 +8,8 @@ class UGate(node):
         self.size = size
         self.Type_of_Ugate = Type_of_Ugate
         self.G = list()
+        self.start = 0
+        self.end = 0
         self.output = [None]
 
     
