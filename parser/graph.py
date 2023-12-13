@@ -8,7 +8,7 @@ from components.MGate import mGate
 from components.Wire import wire
 from components.OUTPUT import OUTPUT
 from components.MUX import mux
-
+from components.ConstValue import ConstValue
 from preprocessing.find import *
 
 from pyverilog.vparser.parser import parse
@@ -48,7 +48,7 @@ def nodeingraph(G,a):
 
         
         else:
-            if not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux) and not isinstance(Nodeitr, mGate) and not isinstance(Nodeitr, gate):
+            if not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux) and not isinstance(Nodeitr, mGate) and not isinstance(Nodeitr, gate) and not isinstance(Nodeitr, ConstValue):
                 if Nodeitr.name == a.name and Nodeitr.start == a.start and Nodeitr.end == a.end:
                     return Nodeitr
     return None
@@ -200,12 +200,14 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
     if isinstance(assignment, IntConst):
         value = assignment.value
         fin_value = re.findall("\d+'\w(\d+)", value)
-        return fin_value[0]
+        Constant_node = ConstValue(Type = "ConstValue", size = len(fin_value[0]))
+        Constant_node.connect_input(fin_value[0])
+        return Constant_node
     
     if isinstance(assignment, Eq):
         selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         condition_value = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value = condition_value[::-1]
+        condition_value = condition_value.output[::-1]
         name_of_variable = selector_node.name
         and_gate = mGate(Type="Mand", Type_of_Mgate="Mand", size = 1)
         for i in range(0, len(condition_value), 1):
