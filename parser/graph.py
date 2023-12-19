@@ -10,10 +10,9 @@ from components.OUTPUT import OUTPUT
 from components.MUX import mux
 from components.ConstValue import ConstValue
 from preprocessing.find import *
-from components.condition import conditiion
 
 from pyverilog.vparser.parser import parse
-from pyverilog.vparser.ast import Assign, Concat, And, Xor, Partselect, Or, Xor, Pointer, Uand, IntConst, Uxor, Uor, Cond, Eq, Unot, GreaterThan, GreaterEq, LessEq, LessThan
+from pyverilog.vparser.ast import Assign, Concat, And, Xor, Partselect, Or, Xor, Pointer, Uand, IntConst, Uxor, Uor, Cond, Eq, Unot
 
 
 import matplotlib.pyplot as plt
@@ -49,7 +48,7 @@ def nodeingraph(G,a):
 
         
         else:
-            if not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux) and not isinstance(Nodeitr, mGate) and not isinstance(Nodeitr, gate) and not isinstance(Nodeitr, ConstValue) and not isinstance(Nodeitr, conditiion):
+            if not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux) and not isinstance(Nodeitr, mGate) and not isinstance(Nodeitr, gate) and not isinstance(Nodeitr, ConstValue):
                 if Nodeitr.name == a.name and Nodeitr.start == a.start and Nodeitr.end == a.end:
                     return Nodeitr
     return None
@@ -206,58 +205,42 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         return Constant_node
     
     if isinstance(assignment, Eq):
-
         selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         condition_value = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        cond_node = conditiion(Type = "condition", Type_of_condition="equal")
-        cond_node.connect_input(selector_node, condition_value)
-        G.add_edge(cond_node, selector_node)
-        G.add_edge(cond_node, condition_value)
-        return cond_node
-    
+        condition_value = condition_value.output[::-1]
+        name_of_variable = selector_node.name
+        and_gate = mGate(Type="Mand", Type_of_Mgate="Mand", size = 1)
+        for i in range(0, len(condition_value), 1):
+            wire_for_cond = wire(Type = "WIRE", size = 1, start = i, end = i, name= name_of_variable+ "_WIRE")
+            node_itr = nodeingraph(G, wire_for_cond)
+            if node_itr == None:
+                wire_for_cond.connect_input(selector_node)
+                G.add_edge(wire_for_cond, selector_node)
 
-    if isinstance(assignment, GreaterThan):
+            else:
+                wire_for_cond = node_itr
 
-        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        cond_node = conditiion(Type = "condition", Type_of_condition="greaterthan")
-        cond_node.connect_input(selector_node, condition_value)
-        G.add_edge(cond_node, selector_node)
-        G.add_edge(cond_node, condition_value)
-        return cond_node
+            if condition_value[i] == "0":
+                not_gate = gate(Type = "not", Type_of_gate="not", size = 1)
+                not_gate.connect_input(wire_for_cond)
+                node_itr = nodeingraph(G, not_gate)
+                if node_itr == None:
+                    and_gate.connect_input(not_gate)
+                    G.add_edge(not_gate, and_gate)
+                    G.add_edge(not_gate, wire_for_cond)
+                else:
+                    and_gate.connect_input(node_itr)
+                    G.add_edge(node_itr, and_gate)
+                    
+
+
+            else:
+                and_gate.connect_input(wire_for_cond)
+                G.add_edge(wire_for_cond, and_gate)
+
+
+        return and_gate
         
-
-    if isinstance(assignment, LessThan):
-
-        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        cond_node = conditiion(Type = "condition", Type_of_condition="lessthan")
-        cond_node.connect_input(selector_node, condition_value)
-        G.add_edge(cond_node, selector_node)
-        G.add_edge(cond_node, condition_value)
-        return cond_node
-    
-
-    if isinstance(assignment, LessEq):
-
-        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        cond_node = conditiion(Type = "condition", Type_of_condition="LessEq")
-        cond_node.connect_input(selector_node, condition_value)
-        G.add_edge(cond_node, selector_node)
-        G.add_edge(cond_node, condition_value)
-        return cond_node
-    
-
-    if isinstance(assignment, GreaterEq):
-
-        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        cond_node = conditiion(Type = "condition", Type_of_condition="GreaterEq")
-        cond_node.connect_input(selector_node, condition_value)
-        G.add_edge(cond_node, selector_node)
-        G.add_edge(cond_node, condition_value)
-        return cond_node
            
 
 
@@ -324,8 +307,6 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
             elif Type == "OUTPUT":
                 set_of_outputs.add(search_for_input)
 
-
-            G.add_node(search_for_input)
             return search_for_input
                 
         else:

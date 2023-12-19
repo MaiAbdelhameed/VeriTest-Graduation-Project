@@ -26,9 +26,6 @@ class node:
 
             else:
                 return self.Type + " \n \n" + self.name  + "=" + str(self.size)
-            
-        elif self.Type == "condition":
-            return self.Type + " \n \n" + self.Type_of_condition
 
         else:
             return self.Type

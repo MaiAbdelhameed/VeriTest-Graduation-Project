@@ -26,7 +26,7 @@ def get_assignments(node):
 def parse_verilog(file_path):
     # Parse the Verilog code
     ast, _ = parse([file_path])
-    #ast.show()
+    ast.show()
 
     # Get all assignment statements from the AST
     assignments = get_assignments(ast)
