@@ -5,7 +5,7 @@ from components.INPUT import INPUT
 from components.Ugate import UGate
 from components.MGate import mGate
 
-from components.Wire import wire
+from components.wire import wire
 from components.output import OUTPUT
 from components.MUX import mux
 from components.ConstValue import ConstValue
@@ -219,6 +219,7 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
                 G.add_edge(wire_for_cond, selector_node)
 
             else:
+                
                 wire_for_cond = node_itr
 
             if condition_value[i] == "0":

@@ -3,7 +3,6 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from components.INPUT import INPUT
 
-from components.Wire import wire
 from components.output import OUTPUT
 from components.MUX import mux
 
