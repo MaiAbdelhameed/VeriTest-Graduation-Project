@@ -1,4 +1,5 @@
 from components.Node import node
+
 class wire(node):
 
     def __init__(self, Type, size, start, end, name):

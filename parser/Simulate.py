@@ -1,11 +1,10 @@
 from graph import parse_verilog_code
 import networkx as nx
 import matplotlib.pyplot as plt
-from components.Gate import gate
 from components.INPUT import INPUT
 
 from components.Wire import wire
-from components.OUTPUT import OUTPUT
+from components.output import OUTPUT
 from components.MUX import mux
 
 

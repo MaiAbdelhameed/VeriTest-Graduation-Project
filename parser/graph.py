@@ -6,7 +6,7 @@ from components.Ugate import UGate
 from components.MGate import mGate
 
 from components.Wire import wire
-from components.OUTPUT import OUTPUT
+from components.output import OUTPUT
 from components.MUX import mux
 from components.ConstValue import ConstValue
 from preprocessing.find import *
@@ -203,6 +203,7 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         Constant_node = ConstValue(Type = "ConstValue", size = len(fin_value[0]))
         Constant_node.connect_input(fin_value[0])
         return Constant_node
+    
     
     if isinstance(assignment, Eq):
         selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
