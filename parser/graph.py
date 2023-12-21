@@ -5,7 +5,7 @@ from components.INPUT import INPUT
 from components.Ugate import UGate
 from components.MGate import mGate
 
-from components.wire import wire
+from components.Wire import wire
 from components.output import OUTPUT
 from components.MUX import mux
 from components.ConstValue import ConstValue
@@ -142,6 +142,8 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         G.add_edge(Wire, INPUT_node)
 
         if is_left:
+            if isinstance(INPUT_node, wire):
+                INPUT_node.isleft = True
             INPUT_node.connect_input(Wire)
        
         else:
@@ -190,6 +192,8 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
             return nodeitr
         
         if is_left:
+            if isinstance(INPUT_node, wire):
+                INPUT_node.isleft = True
             INPUT_node.connect_input(Wire)
        
         else:
@@ -202,6 +206,7 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         fin_value = re.findall("\d+'\w(\d+)", value)
         Constant_node = ConstValue(Type = "ConstValue", size = len(fin_value[0]))
         Constant_node.connect_input(fin_value[0])
+        set_of_inputs.add(Constant_node)
         return Constant_node
     
     
@@ -347,6 +352,7 @@ def parse_verilog_code():
     for assignment in assignments:
         final_output = parse_assign_statement(assignment.right.var, input_output_wire, set_of_inputs, set_of_outputs, G, False)
         output_port = parse_assign_statement(assignment.left.var, input_output_wire, set_of_inputs, set_of_outputs, G, True)
+
         output_port.connect_input(final_output)
         G.add_edge(final_output, output_port)
         

@@ -3,6 +3,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from components.INPUT import INPUT
 
+from components.ConstValue import ConstValue
 from components.output import OUTPUT
 from components.MUX import mux
 
@@ -52,20 +53,24 @@ def DFS(node):
 
 
 for x in set_of_inputs:
-    INPUT = input(f"Enter {x.name} ")
-    x.connect_input(INPUT)
+    if not isinstance(x, ConstValue):
+        INPUT = input(f"Enter {x.name} ")
+        x.connect_input(INPUT)
     
 
 
-while not finished(set_of_outputs):
-    for node in set_of_inputs:
-        DFS(node)
+
+for node in set_of_inputs:
+    DFS(node)
+
+
+
 
 
 for node in G:
     if isinstance(node, OUTPUT):
         node.calculate_output()
-        print("".join(node.output))
+        print(f"{node.name}: ","".join(node.output[::-1]))
 
     
     

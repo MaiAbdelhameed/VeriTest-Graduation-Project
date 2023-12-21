@@ -2,10 +2,11 @@ from components.Node import node
 from components.Gate import gate
 from components.MUX import mux
 from components.Wire import wire
+from components.ConstValue import ConstValue
 
 class OUTPUT(node):
 
-    def __init__(self,Type, size, start, end, name):
+    def __init__(self,Type, size, start, end, name, is_wire=False):
         super().__init__(Type)
         self.start = start
         self.end = end
@@ -13,6 +14,7 @@ class OUTPUT(node):
         self.size = size
         self.output = [None] * size
         self.G = list()
+        self.is_wire = True
 
 
     
@@ -28,7 +30,7 @@ class OUTPUT(node):
 
     def calculate_output(self):
         for Gate in self.G:
-            if isinstance(Gate, gate) or isinstance(Gate, mux) : # lw wasel ably gate 3la tool ha5od menha el output bta3ha kolo
+            if isinstance(Gate, gate) or isinstance(Gate, mux) or isinstance(Gate, ConstValue) : # lw wasel ably gate 3la tool ha5od menha el output bta3ha kolo
                 self.output = Gate.output
             elif isinstance(Gate, wire) and self.size == Gate.size:
                 self.output = Gate.output
@@ -39,10 +41,11 @@ class OUTPUT(node):
                 start = Gate.start
                 end = Gate.end
                 output = output[::-1]
-                print(output)
-                print(self, self.start, self.end)
+                # print(output)
+                # print(self, self.start, self.end)
                 self.output[start:end+1] = output
-                self.output = self.output[::-1]
+                
+                
                 
         if len(self.output) != 0 and self.hasNone():
             return True

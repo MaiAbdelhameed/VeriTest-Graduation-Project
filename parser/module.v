@@ -1,15 +1,12 @@
-module Example9 (
-  input wire [2:0] A,
-  output wire [7:0] Y
+module mux_8x1 (
+  input wire [7:0] in,
+  input wire [2:0] sel,
+  output [5:0] out,
+  input [5:0] a,
+  input [5:0] b
 );
-
-  assign Y = (A == 3'b000) ? 8'b00000001 :
-            (A == 3'b001) ? 8'b00000010 :
-            (A == 3'b010) ? 8'b00000100 :
-            (A == 3'b011) ? 8'b00001000 :
-            (A == 3'b100) ? 8'b00010000 :
-            (A == 3'b101) ? 8'b00100000 :
-            (A == 3'b110) ? 8'b01000000 :
-                            8'b10000000;
+assign out[2] = a[0];
+assign out[1:0] = a[1:0] & b[3:2];
+assign out[5:3] = a[5:3];
 
 endmodule
