@@ -42,7 +42,6 @@ def isInput(node, nodeadj):
 
 stack = list()
 def DFS(node):
-    flag = False
     if node.calculate_output() == False:
         return
     for nodeadj in list(G.neighbors(node)):

@@ -26,6 +26,7 @@ class node:
 
             else:
                 return self.Type + " \n \n" + self.name  + "=" + str(self.size)
+        
 
         else:
             return self.Type

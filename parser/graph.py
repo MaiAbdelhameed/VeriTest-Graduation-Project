@@ -10,9 +10,10 @@ from components.output import OUTPUT
 from components.MUX import mux
 from components.ConstValue import ConstValue
 from preprocessing.find import *
+from components.condgate import condgate
 
 from pyverilog.vparser.parser import parse
-from pyverilog.vparser.ast import Assign, Concat, And, Xor, Partselect, Or, Xor, Pointer, Uand, IntConst, Uxor, Uor, Cond, Eq, Unot
+from pyverilog.vparser.ast import Assign, Concat, And, Xor, Partselect, Or, Xor, Pointer, Uand, IntConst, Uxor, Uor, Cond, Eq, Unot,Always, GreaterThan, LessThan, LessEq, GreaterEq
 
 
 import matplotlib.pyplot as plt
@@ -48,10 +49,24 @@ def nodeingraph(G,a):
 
         
         else:
-            if not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux) and not isinstance(Nodeitr, mGate) and not isinstance(Nodeitr, gate) and not isinstance(Nodeitr, ConstValue):
+            if not isinstance(Nodeitr, UGate) and not isinstance(Nodeitr, mux) and not isinstance(Nodeitr, mGate) and not isinstance(Nodeitr, gate) and not isinstance(Nodeitr, ConstValue) and not isinstance(Nodeitr, condgate):
                 if Nodeitr.name == a.name and Nodeitr.start == a.start and Nodeitr.end == a.end:
                     return Nodeitr
     return None
+
+
+def get_always_block(node):
+    always_blocks = []
+    if isinstance(node, Always):
+        always_blocks.append(node)
+
+    # Recursively visit child nodes
+    for child in node.children():
+        always_blocks.extend(get_always_block(child))
+
+    return always_blocks
+
+
 
 
 
@@ -76,8 +91,9 @@ def parse_verilog(file_path):
 
     # Get all assignment statements from the AST
     assignments = get_assignments(ast)
+    always_blocks = get_always_block(ast)
 
-    return assignments
+    return assignments, always_blocks
 
 
 def isGate(right):
@@ -105,6 +121,9 @@ def Ugatetype(right):
     elif isinstance(right, Unot):
         return "Unot"
 
+
+def always_block(assignment, input_output_wire, set_of_inputs, set_of_outputs, G, sensitivty_list):
+    pass
 
 def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_outputs, G, is_left):
 
@@ -209,44 +228,99 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         set_of_inputs.add(Constant_node)
         return Constant_node
     
+
+    if isinstance(assignment, LessEq):
+        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_value_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        name_of_variable = selector_node.name
+        tup = (selector_node, condition_value_node, "le","none")
+        condition_gate = condgate(tup)
+        G.add_edge(condition_gate, selector_node)
+        G.add_edge(condition_gate, condition_value_node)
+        condition_gate.connect_input(condition_value_node)
+        condition_gate.connect_input(selector_node)
+        return condition_gate
+
+    if isinstance(assignment, GreaterEq):
+        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_value_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        name_of_variable = selector_node.name
+        tup = (selector_node, condition_value_node, "ge","none")
+        condition_gate = condgate(tup)
+        G.add_edge(condition_gate, selector_node)
+        G.add_edge(condition_gate, condition_value_node)
+        condition_gate.connect_input(condition_value_node)
+        condition_gate.connect_input(selector_node)
+        return condition_gate
+    
+    if isinstance(assignment, LessThan):
+        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_value_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        name_of_variable = selector_node.name
+        tup = (selector_node, condition_value_node, "lt","none")
+        condition_gate = condgate(tup)
+        G.add_edge(condition_gate, selector_node)
+        G.add_edge(condition_gate, condition_value_node)
+        condition_gate.connect_input(condition_value_node)
+        condition_gate.connect_input(selector_node)
+        return condition_gate
+
+    if isinstance(assignment, GreaterThan):
+        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_value_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        name_of_variable = selector_node.name
+        tup = (selector_node, condition_value_node, "gt","none")
+        condition_gate = condgate(tup)
+        G.add_edge(condition_gate, selector_node)
+        G.add_edge(condition_gate, condition_value_node)
+        condition_gate.connect_input(condition_value_node)
+        condition_gate.connect_input(selector_node)
+        return condition_gate
+    
     
     if isinstance(assignment, Eq):
         selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value = condition_value.output[::-1]
+        condition_value_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         name_of_variable = selector_node.name
+        tup = (selector_node, condition_value_node, "eq","none")
+        condition_gate = condgate(tup)
+        G.add_edge(condition_gate, selector_node)
+        G.add_edge(condition_gate, condition_value_node)
+        condition_gate.connect_input(condition_value_node)
+        condition_gate.connect_input(selector_node)
+        return condition_gate
         and_gate = mGate(Type="Mand", Type_of_Mgate="Mand", size = 1)
-        for i in range(0, len(condition_value), 1):
-            wire_for_cond = wire(Type = "WIRE", size = 1, start = i, end = i, name= name_of_variable+ "_WIRE")
-            node_itr = nodeingraph(G, wire_for_cond)
-            if node_itr == None:
-                wire_for_cond.connect_input(selector_node)
-                G.add_edge(wire_for_cond, selector_node)
+        # for i in range(0, len(condition_value), 1):
+        #     wire_for_cond = wire(Type = "WIRE", size = 1, start = i, end = i, name= name_of_variable+ "_WIRE")
+        #     node_itr = nodeingraph(G, wire_for_cond)
+        #     if node_itr == None:
+        #         wire_for_cond.connect_input(selector_node)
+        #         G.add_edge(wire_for_cond, selector_node)
 
-            else:
+        #     else:
                 
-                wire_for_cond = node_itr
+        #         wire_for_cond = node_itr
 
-            if condition_value[i] == "0":
-                not_gate = gate(Type = "not", Type_of_gate="not", size = 1)
-                not_gate.connect_input(wire_for_cond)
-                node_itr = nodeingraph(G, not_gate)
-                if node_itr == None:
-                    and_gate.connect_input(not_gate)
-                    G.add_edge(not_gate, and_gate)
-                    G.add_edge(not_gate, wire_for_cond)
-                else:
-                    and_gate.connect_input(node_itr)
-                    G.add_edge(node_itr, and_gate)
+        #     if condition_value[i] == "0":
+        #         not_gate = gate(Type = "not", Type_of_gate="not", size = 1)
+        #         not_gate.connect_input(wire_for_cond)
+        #         node_itr = nodeingraph(G, not_gate)
+        #         if node_itr == None:
+        #             and_gate.connect_input(not_gate)
+        #             G.add_edge(not_gate, and_gate)
+        #             G.add_edge(not_gate, wire_for_cond)
+        #         else:
+        #             and_gate.connect_input(node_itr)
+        #             G.add_edge(node_itr, and_gate)
                     
 
 
-            else:
-                and_gate.connect_input(wire_for_cond)
-                G.add_edge(wire_for_cond, and_gate)
+        #     else:
+        #         and_gate.connect_input(wire_for_cond)
+        #         G.add_edge(wire_for_cond, and_gate)
 
 
-        return and_gate
+        # return and_gate
         
            
 
@@ -327,7 +401,7 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
 
 def parse_verilog_code():
     verilog_file = "module.v"
-    assignments = parse_verilog(verilog_file)
+    assignments, always_blocks = parse_verilog(verilog_file)
     G = nx.Graph()
     file = open(verilog_file)
     input_output_wire2 = get_input_output()
