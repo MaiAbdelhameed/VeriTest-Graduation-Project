@@ -57,6 +57,19 @@ class condgate(node):
                 else:
                     self.output = "0"
             
+            elif self.condition[2] == "ne":
+                if lhs != rhs:
+                    self.output = "1"
+                else:
+                    self.output = "0"
+            
+            return True
+        elif self.condition[0].output != None and self.condition[1].output == None:
+            value = self.binary_to_decimal(self.condition[0].output)
+            value = str(value)
+            if '0' in value:
+                self.output = "0"
+            else: self.output = "1"
             return True
         else:
             return False

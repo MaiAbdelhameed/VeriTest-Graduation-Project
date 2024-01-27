@@ -14,6 +14,7 @@ nx.draw_spring(G, with_labels = True)
 plt.show()
 
 
+
 def finished(set_of_outputs):
     for node in set_of_outputs:
         calculated = node.calculate_output()

@@ -10,6 +10,7 @@ class mux(node):
         self.start = start
         self.end = end
         self.size = size
+        self.bind = None
 
 
     def connect_input(self, G1):
