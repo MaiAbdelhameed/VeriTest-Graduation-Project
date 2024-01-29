@@ -11,12 +11,15 @@ class gate(node):
         self.output = [None] * size
         self.end = size -1 
         self.start = 0
+        self.connections = list()
 
         
 
 
 
-    
+    def add_connection(self,connection):
+        self.connections.append(connection)
+        
     def connect_input(self, G1): # not gates has only 1 input
         self.G.append(G1)
 

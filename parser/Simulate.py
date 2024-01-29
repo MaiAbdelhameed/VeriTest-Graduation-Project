@@ -10,7 +10,15 @@ from components.MUX import mux
 
 
 G, set_of_inputs, set_of_outputs = parse_verilog_code()
-nx.draw_spring(G, with_labels = True)
+pos = nx.spring_layout(G)  # Layout algorithm
+nx.draw(G, pos, with_labels=True, node_size=300, font_size=10, font_color="black", font_weight="bold")
+
+# Draw edge labels
+edge_labels = {(u, v): f"{G[u][v]['edge_attr'].__str__()}" for u, v in G.edges}
+
+
+nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
+
 plt.show()
 
 

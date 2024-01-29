@@ -8,20 +8,24 @@ class INPUT(node):
         self.end = end
         self.name = name
         self.size = size
-        self.output = list()
-        self.G = list()
+        self.connections = list()
+        self.IN_ports = list()
         
+    
+
+    def add_connection(self, connection):
+        self.connections.append(connection)
 
     
-    def connect_input(self, G1):
-        self.G.append(G1)
-        self.calculate_output()
+    
+    def process_node(self):
+        for connection in self.connections:
+            if self == connection.source: ## if you source Node
+                pass:
 
 
 
-    def calculate_output(self):
-        self.output = self.G[0]
-        return True
+ 
         
     
 

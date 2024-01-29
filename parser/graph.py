@@ -17,6 +17,7 @@ from components.dontcares import dontcares
 from pyverilog.vparser.parser import parse
 #from pyverilog.vparser.ast import Assign, Concat, And, Xor, Partselect, Or, Xor, Pointer, Uand, IntConst, Uxor, Uor, Cond, Eq, Unot,Always, GreaterThan, LessThan, LessEq, GreaterEq, NotEq, IfStatement
 from pyverilog.vparser.ast import *
+from connection import connection
 
 import matplotlib.pyplot as plt
 import re
@@ -26,31 +27,8 @@ import re
 
 
 def nodeingraph(G,a):
-    type_of_node = type(a)
-    # print(type_of_node)
     for Nodeitr in G.nodes():
-        if type_of_node != type(Nodeitr):
-            continue
-        if isinstance(Nodeitr, gate): ## check if there is a gate with same size
-            if a.Type != "not" and Nodeitr.Type != "not":
-                if Nodeitr.size == a.size:
-                    input0 = Nodeitr.G[0]
-                    input1 = Nodeitr.G[1]
-                    if (a.G[0] == input0 or a.G[0] == input1) and (a.G[1] == input0 or a.G[1] == input1) and a.Type == Nodeitr.Type:
-                        return Nodeitr
-            elif a.Type == "not" and Nodeitr.Type == "not":
-                if Nodeitr.size == a.size:
-                    input0 = Nodeitr.G[0]
-                    if a.G[0] == input0:
-                        return Nodeitr
-        elif isinstance(Nodeitr, UGate):
-            if Nodeitr.size == a.size:
-                input0 = Nodeitr.G[0]
-                if a.G[0] == input0:
-                    return Nodeitr
-
-        
-        elif isinstance(Nodeitr, INPUT) or isinstance(Nodeitr, OUTPUT):
+        if isinstance(Nodeitr, INPUT) or isinstance(Nodeitr, OUTPUT) or isinstance(Nodeitr, wire):
             if Nodeitr.name == a.name and Nodeitr.start == a.start and Nodeitr.end == a.end:
                 return Nodeitr
     return None
@@ -96,13 +74,11 @@ def parse_verilog(file_path):
 
     return assignments, always_blocks
 
-
 def isGate(right):
     return isinstance(right, And) or isinstance(right, Or) or isinstance(right, Xor)
 
 def isUGate(right):
     return isinstance(right, Uand) or isinstance(right, Uor) or isinstance(right, Uxor) or isinstance(right, Unot)
-
 
 def gatetype(right):
     if isinstance(right, And):
@@ -236,15 +212,6 @@ def parse_always_block(always, input_output_wire, set_of_inputs, set_of_outputs,
                 list_of_IF_statements.append(mux2x1)
             else:
                 pass
-
-
-
-              
-       
-
-                
-
-
                 
         
 
@@ -376,187 +343,193 @@ def parse_always_block(always, input_output_wire, set_of_inputs, set_of_outputs,
         else:
             return node_itr
 
+def create_out_connection(assignment, input_output_wire, set_of_inputs, set_of_outputs, G, is_left):
+
+    if isinstance(assignment, Partselect):
+        connecting_edge = create_out_connection(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        msb = int(assignment.msb.value)
+        lsb = int(assignment.lsb.value)
+        connecting_edge.destination_range = (lsb, msb)
+        return connecting_edge
+    elif isinstance(assignment, Pointer):
+        connecting_edge = create_out_connection(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        value = int(assignment.ptr.value)
+        connecting_edge.destination_range = (value, value)
+        return connecting_edge
+    
+    else: 
+        name_of_variable = assignment.name
+        search_for_input = None
+        size = None
+        connecting_edge = connection()
 
 
+        if name_of_variable in input_output_wire[1]:
+
+            size = input_output_wire[1][name_of_variable]
+            search_for_input = OUTPUT(Type="OUTPUT", size = size, start=0, end=size-1, name=name_of_variable)
+            
+        else:
+            size = input_output_wire[2][name_of_variable]
+            search_for_input = wire(Type="WIRE", size = size, start=0, end=size-1, name=name_of_variable)
+        
+
+        node_itr = nodeingraph(G, search_for_input)
+        if node_itr == None: 
+            connecting_edge.destination = search_for_input
+            return connecting_edge
+                
+        else:
+            
+            connecting_edge.destination = node_itr
+            return connecting_edge
     
 
 
-    
+def create_connection(gate, connection, G):
+    connection.destination = gate
+    G.add_edge(connection.source, gate, edge_attr=connection)
+
+
+
+
 
 def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_outputs, G, is_left):
 
-
     if isGate(assignment):
-        right = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        left = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        right_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        left_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         Type = gatetype(assignment)
-        Gate = gate(Type=Type, Type_of_gate = Type, size = left.size)
-        Gate.connect_input(right)
-        Gate.connect_input(left)
-        node_itr = nodeingraph(G, Gate)
-        if node_itr == None:
-            G.add_edge(Gate,right)
-            G.add_edge(Gate,left)
-
-        else:
-            return node_itr
-
-
-        return Gate
+        Gate = gate(Type=Type, Type_of_gate = Type, size = right_connection.source.size)
+        create_connection(Gate, right_connection, G)
+        create_connection(Gate, left_connection, G)
+        connecting_edge = connection()
+        connecting_edge.source = Gate
+        return connecting_edge
     
     if isinstance(assignment, Partselect):
-        INPUT_node = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        name_of_variable = INPUT_node.name
+        connecting_edge = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         msb = int(assignment.msb.value)
         lsb = int(assignment.lsb.value)
-        size = abs(msb-lsb) 
-        Wire = wire(Type = "WIRE", size = size+1, start = lsb, end = msb, name= name_of_variable+ "_WIRE")
-        nodeitr = nodeingraph(G, Wire)
-        if nodeitr != None:
-            return nodeitr
-        G.add_edge(Wire, INPUT_node)
-
-        if is_left:
-            if isinstance(INPUT_node, wire):
-                INPUT_node.isleft = True
-            INPUT_node.connect_input(Wire)
-       
-        else:
-            Wire.connect_input(INPUT_node)
-        return Wire
+        connecting_edge.source_range = (lsb, msb)
+        return connecting_edge
     
     if isinstance(assignment, Concat): ## Missing: check if concat gate exist
-        list_of_concat_element = list()
         size = 0
-        Gate = gate(Type = "concat", Type_of_gate= "concat", size=size)
+        concat_gate = gate(Type = "concat", Type_of_gate= "concat", size=size)
         for element in assignment.list:
-            node = parse_assign_statement(element, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-            size += node.size
-            list_of_concat_element.append(node)
-            Gate.connect_input(node)
-            G.add_edge(Gate, node)
+            concat_element_connection = parse_assign_statement(element, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+            size += concat_element_connection.source.size
+            create_connection(concat_gate, concat_element_connection, G)
+            
 
-        Gate.size = size
 
-        return Gate
+        concat_gate.size = size
+        concat_gate_connection = connection()
+        concat_gate_connection.source = concat_gate
+
+        return concat_gate_connection
     
     if isinstance(assignment, Cond):
-        input1 = parse_assign_statement(assignment.false_value, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        input0 = parse_assign_statement(assignment.true_value, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        sel = parse_assign_statement(assignment.cond, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        mux2x1 = mux(Type = "MUX", size = input0.size, start = 0, end = input0.size-1)
-        mux2x1.connect_input(input0)
-        mux2x1.connect_input(input1)
-        mux2x1.connect_selector(sel)
-        G.add_edge(mux2x1, input0)
-        G.add_edge(mux2x1, input1)
-        G.add_edge(mux2x1, sel)
-        return mux2x1
+        true_value_connection = parse_assign_statement(assignment.false_value, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        false_value_connection = parse_assign_statement(assignment.true_value, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        sel_connection = parse_assign_statement(assignment.cond, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        mux2x1 = mux(Type = "MUX", size = true_value_connection.source.size, start = 0, end = false_value_connection.source.size-1)
+        create_connection(mux2x1, true_value_connection, G)
+        create_connection(mux2x1, false_value_connection, G)
+        create_connection(mux2x1, sel_connection, G)
+        connecting_edge = connection()
+        connecting_edge.source = mux2x1
+        return connecting_edge
 
 
 
 
     
     if isinstance(assignment, Pointer):
-        INPUT_node = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        name_of_variable = INPUT_node.name
+        connecting_edge = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         value = int(assignment.ptr.value)
-        Wire = wire(Type = "WIRE", size = 1, start = value, end = value, name= name_of_variable+ "_WIRE")
-        nodeitr = nodeingraph(G, Wire)
-        if nodeitr != None:
-            return nodeitr
-        
-        if is_left:
-            if isinstance(INPUT_node, wire):
-                INPUT_node.isleft = True
-            INPUT_node.connect_input(Wire)
-       
-        else:
-            Wire.connect_input(INPUT_node)
-        G.add_edge(Wire, INPUT_node)
-        return Wire
+        connecting_edge.source_range = (value, value)
+        return connecting_edge
+
     
     if isinstance(assignment, IntConst): ## missing
         value = assignment.value
         fin_value = re.findall("\d+'\w(\d+)", value)
+        connecting_edge = connection()
         Constant_node = ConstValue(Type = "ConstValue", size = len(fin_value[0]))
-        Constant_node.connect_input(fin_value[0])
-        set_of_inputs.add(Constant_node)
-        return Constant_node
+        connecting_edge.source = Constant_node
+        # Constant_node.connect_input(fin_value[0])
+        #set_of_inputs.add(Constant_node)
+        return connecting_edge
     
 
     if isinstance(assignment, LessEq):
-        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        name_of_variable = selector_node.name
-        tup = (selector_node, condition_value_node, "le","none")
+        selector_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        tup = (selector_node_connection.source, condition_value_node_connection.source, "le","none")
         condition_gate = condgate(tup)
-        G.add_edge(condition_gate, selector_node)
-        G.add_edge(condition_gate, condition_value_node)
-        condition_gate.connect_input(condition_value_node)
-        condition_gate.connect_input(selector_node)
-        return condition_gate
+        create_connection(condition_gate, selector_node_connection, G)
+        create_connection(condition_gate, condition_value_node_connection, G)
+        condition_gate_connecting_edge = connection()
+        condition_gate_connecting_edge.source = condition_gate
+        return condition_gate_connecting_edge
 
     if isinstance(assignment, GreaterEq):
-        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        name_of_variable = selector_node.name
-        tup = (selector_node, condition_value_node, "ge","none")
+        selector_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        tup = (selector_node_connection.source, condition_value_node_connection.source, "ge","none")
         condition_gate = condgate(tup)
-        G.add_edge(condition_gate, selector_node)
-        G.add_edge(condition_gate, condition_value_node)
-        condition_gate.connect_input(condition_value_node)
-        condition_gate.connect_input(selector_node)
-        return condition_gate
+        create_connection(condition_gate, selector_node_connection, G)
+        create_connection(condition_gate, condition_value_node_connection, G)
+        condition_gate_connecting_edge = connection()
+        condition_gate_connecting_edge.source = condition_gate
+        return condition_gate_connecting_edge
     
     if isinstance(assignment, NotEq):
-        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        name_of_variable = selector_node.name
-        tup = (selector_node, condition_value_node, "ne","none")
+        selector_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        tup = (selector_node_connection.source, condition_value_node_connection.source, "ne","none")
         condition_gate = condgate(tup)
-        G.add_edge(condition_gate, selector_node)
-        G.add_edge(condition_gate, condition_value_node)
-        condition_gate.connect_input(condition_value_node)
-        condition_gate.connect_input(selector_node)
-        return condition_gate
+        create_connection(condition_gate, selector_node_connection, G)
+        create_connection(condition_gate, condition_value_node_connection, G)
+        condition_gate_connecting_edge = connection()
+        condition_gate_connecting_edge.source = condition_gate
+        return condition_gate_connecting_edge
     
     if isinstance(assignment, LessThan):
-        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        name_of_variable = selector_node.name
-        tup = (selector_node, condition_value_node, "lt","none")
+        selector_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        tup = (selector_node_connection.source, condition_value_node_connection.source, "lt","none")
         condition_gate = condgate(tup)
-        G.add_edge(condition_gate, selector_node)
-        G.add_edge(condition_gate, condition_value_node)
-        condition_gate.connect_input(condition_value_node)
-        condition_gate.connect_input(selector_node)
-        return condition_gate
+        create_connection(condition_gate, selector_node_connection, G)
+        create_connection(condition_gate, condition_value_node_connection, G)
+        condition_gate_connecting_edge = connection()
+        condition_gate_connecting_edge.source = condition_gate
+        return condition_gate_connecting_edge
 
     if isinstance(assignment, GreaterThan):
-        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        name_of_variable = selector_node.name
-        tup = (selector_node, condition_value_node, "gt","none")
+        selector_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        tup = (selector_node_connection.source, condition_value_node_connection.source, "gt","none")
         condition_gate = condgate(tup)
-        G.add_edge(condition_gate, selector_node)
-        G.add_edge(condition_gate, condition_value_node)
-        condition_gate.connect_input(condition_value_node)
-        condition_gate.connect_input(selector_node)
-        return condition_gate
+        create_connection(condition_gate, selector_node_connection, G)
+        create_connection(condition_gate, condition_value_node_connection, G)
+        condition_gate_connecting_edge = connection()
+        condition_gate_connecting_edge.source = condition_gate
+        return condition_gate_connecting_edge
     
     
     if isinstance(assignment, Eq):
-        selector_node = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value_node = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        name_of_variable = selector_node.name
-        tup = (selector_node, condition_value_node, "eq","none")
+        selector_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        tup = (selector_node_connection.source, condition_value_node_connection.source, "eq","none")
         condition_gate = condgate(tup)
-        G.add_edge(condition_gate, selector_node)
-        G.add_edge(condition_gate, condition_value_node)
-        condition_gate.connect_input(condition_value_node)
-        condition_gate.connect_input(selector_node)
-        return condition_gate
+        create_connection(condition_gate, selector_node_connection, G)
+        create_connection(condition_gate, condition_value_node_connection, G)
+        condition_gate_connecting_edge = connection()
+        condition_gate_connecting_edge.source = condition_gate
+        return condition_gate_connecting_edge
         
     
 
@@ -599,21 +572,25 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         search_for_input = None
         Type = None
         size = None
-        if name_of_variable in input_output_wire[0]:
+        connecting_edge = connection()
+
+        ## SEARCH FOR INPUT OR OUTPUT OR WIRE ##
+        if name_of_variable in input_output_wire[0]: 
             Type = "INPUT"
             size = input_output_wire[0][name_of_variable]
             search_for_input = INPUT(Type="INPUT", size = size, start=0, end=size-1, name=name_of_variable)
+
+        elif name_of_variable in input_output_wire[1]:
+            Type = "OUTPUT"
+            size = input_output_wire[1][name_of_variable]
+            search_for_input = OUTPUT(Type="OUTPUT", size = size, start=0, end=size-1, name=name_of_variable)
             
         elif name_of_variable in input_output_wire[2]:
             Type = "WIRE"
             size = input_output_wire[2][name_of_variable]
             search_for_input = wire(Type="WIRE", size = size, start=0, end=size-1, name=name_of_variable)
         
-        elif name_of_variable in input_output_wire[1]:
-            Type = "OUTPUT"
-            size = input_output_wire[1][name_of_variable]
-            search_for_input = OUTPUT(Type="OUTPUT", size = size, start=0, end=size-1, name=name_of_variable)
-            
+
 
         node_itr = nodeingraph(G, search_for_input)
         if node_itr == None: ## INPUT not in Graph
@@ -622,10 +599,27 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
             elif Type == "OUTPUT":
                 set_of_outputs.add(search_for_input)
 
-            return search_for_input
+            G.add_node(search_for_input)
+            
+            connecting_edge.source = search_for_input
+            return connecting_edge
                 
         else:
-            return node_itr
+            
+            connecting_edge.source = node_itr
+            return connecting_edge
+
+    
+def merge_connections(connection1, connection2):
+    if connection1.source == None:
+        connection1.source = connection2.source
+        connection1.source_range = connection2.source_range
+
+    else:
+        connection1.destination = connection2.destination
+        connection1.destination_range = connection2.destination_range
+
+    return connection1
 
     
 
@@ -640,8 +634,7 @@ def flatten_extend(matrix):
 def parse_verilog_code():
     verilog_file = "module.v"
     assignments, always_blocks = parse_verilog(verilog_file)
-    G = nx.Graph()
-    file = open(verilog_file)
+    G = nx.DiGraph()
     input_output_wire2 = get_input_output()
     input_output_wire = input_output_wire2.copy()
     for key, value in input_output_wire[0].items():
@@ -664,11 +657,13 @@ def parse_verilog_code():
 
     # Print the assignment statements
     for assignment in assignments:
-        final_output = parse_assign_statement(assignment.right.var, input_output_wire, set_of_inputs, set_of_outputs, G, False)
-        output_port = parse_assign_statement(assignment.left.var, input_output_wire, set_of_inputs, set_of_outputs, G, True)
+        final_output_connection = parse_assign_statement(assignment.right.var, input_output_wire, set_of_inputs, set_of_outputs, G, False)
+        output_port_connection = create_out_connection(assignment.left.var, input_output_wire, set_of_inputs, set_of_outputs, G, True)
+        connection = merge_connections(final_output_connection, output_port_connection)
+        G.add_edge(connection.source, connection.destination, edge_attr = connection)
 
-        output_port.connect_input(final_output)
-        G.add_edge(final_output, output_port)
+        # output_port.connect_input(final_output)
+        # G.add_edge(final_output, output_port)
         
 
 
@@ -687,7 +682,7 @@ def parse_verilog_code():
 
 
 
-   
+
 
 
 

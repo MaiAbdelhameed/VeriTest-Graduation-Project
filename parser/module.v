@@ -1,21 +1,11 @@
 module IfExample(
   input wire [3:0] data_input,
-  input clk, rst,
-  output reg result
+  input[2:0] clk, rst
+  
 );
-
-  always @(posedge clk or posedge rst) begin
-    if (rst) begin
-      // Reset condition
-      result <= 1'b0;
-    end else begin
-      // Regular condition
-      if (data_input == 4'b1010) begin
-        result <= 1'b1;
-      end else begin
-        result <= 1'b0;
-      end
-    end
-  end
+  wire [2:0] result, result2;
+  assign result[1:0] = (data_input[1] >= 1'b0) ? {clk[0], rst[1]} : data_input[2];
+  assign result[2] = data_input[2];
+ 
 
 endmodule
