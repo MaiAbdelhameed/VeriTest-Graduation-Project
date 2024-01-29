@@ -10,6 +10,11 @@ class condgate(node):
         self.Type = "CONDITION"
         self.G = list()
         self.size = 1
+        self.connections = list()
+
+
+    def add_connection(self, connection):
+        self.connections.append(connection)
        
 
     def binary_to_decimal(self, string):

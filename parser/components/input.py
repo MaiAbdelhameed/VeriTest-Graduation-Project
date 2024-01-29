@@ -9,7 +9,7 @@ class INPUT(node):
         self.name = name
         self.size = size
         self.connections = list()
-        self.IN_ports = list()
+        self.OUTPUT = [None] * size
         
     
 
@@ -18,16 +18,26 @@ class INPUT(node):
 
     
     
-    def process_node(self):
-        for connection in self.connections:
-            if self == connection.source: ## if you source Node
-                pass:
-
-
-
- 
+    def process_node(self, connection):
+        if self == connection.source:
+            if None not in self.OUTPUT:
+                if connection.source == None:
+                    connection.PORT = self.OUTPUT
+                else:
+                    output = self.OUTPUT[::-1]
+                    start = connection.source[0]
+                    end = connection.source[1]
+                    connection.PORT = output[start:end+1]
+                connection.destination.process_node(connection)
+                return True
+            else:
+                return False
+        else: ## Simply I will take what is connected on the port
+            self.OUTPUT = connection.PORT
+            
         
-    
+        
+
 
     def __str__(self):
         return super().__str__()

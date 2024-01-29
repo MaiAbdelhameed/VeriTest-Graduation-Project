@@ -20,9 +20,7 @@ class gate(node):
     def add_connection(self,connection):
         self.connections.append(connection)
         
-    def connect_input(self, G1): # not gates has only 1 input
-        self.G.append(G1)
-
+   
 
     def calculate_output(self):
         if self.Type_of_gate == "not":

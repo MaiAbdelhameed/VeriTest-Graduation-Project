@@ -1,7 +1,7 @@
 from components.Node import node
 from components.MUX import mux
 from components.ConstValue import ConstValue
-from components.Gate import gate
+from components.GATE import gate
 class wire(node):
 
     def __init__(self, Type, size, start, end, name, isleft=False):
@@ -13,11 +13,12 @@ class wire(node):
         self.output = [None] * size
         self.G = list()
         self.isleft = isleft
+        self.connections = list()
        
 
     
-    def connect_input(self, G1): ## input is a node
-        self.G.append(G1)
+    def add_connection(self, connection):
+        self.connections.append(connection)
 
     def hasNone(self):
         for bit in self.output:

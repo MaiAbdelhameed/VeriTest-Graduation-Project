@@ -1,5 +1,5 @@
 from components.Node import node
-from components.Gate import gate
+from components.GATE import gate
 from components.MUX import mux
 from components.Wire import wire
 from components.ConstValue import ConstValue
@@ -15,8 +15,12 @@ class OUTPUT(node):
         self.output = [None] * size
         self.G = list()
         self.is_wire = True
+        self.connections = list()
 
 
+
+    def add_connection(self, connection):
+        self.connections.append(connection)
     
     def connect_input(self, G1):
         self.G.append(G1)

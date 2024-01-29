@@ -6,6 +6,7 @@ from components.INPUT import INPUT
 from components.ConstValue import ConstValue
 from components.output import OUTPUT
 from components.MUX import mux
+from connection import connection
 
 
 
@@ -23,62 +24,80 @@ plt.show()
 
 
 
-def finished(set_of_outputs):
-    for node in set_of_outputs:
-        calculated = node.calculate_output()
-        if calculated == False:
-            return False
-    return True
 
 
 
-def isInput(node, nodeadj):
-    if isinstance(node, mux):
-        for gate in node.G:
-            if gate == nodeadj:
-                return True
-        if nodeadj == node.selector:
-            return True
+# def finished(set_of_outputs):
+#     for node in set_of_outputs:
+#         calculated = node.calculate_output()
+#         if calculated == False:
+#             return False
+#     return True
 
-    for gate in node.G:
-        if gate == nodeadj:
-            return True
+
+
+# def isInput(node, nodeadj):
+#     if isinstance(node, mux):
+#         for gate in node.G:
+#             if gate == nodeadj:
+#                 return True
+#         if nodeadj == node.selector:
+#             return True
+
+#     for gate in node.G:
+#         if gate == nodeadj:
+#             return True
         
-    return False
+#     return False
     
 
+def create_connection(gate, connection, G):
+    connection.destination = gate
+    G.add_edge(connection.source, gate, edge_attr=connection)
 
 
-stack = list()
+def search_for_connection(node, nodeadj):
+    for connection in node.connections:
+        if nodeadj == connection.destination:
+            return connection
+
+
 def DFS(node):
-    if node.calculate_output() == False:
-        return
     for nodeadj in list(G.neighbors(node)):
-        if isinstance(node, OUTPUT) or isInput(node, nodeadj):
-            continue
+        connection = search_for_connection(node, nodeadj)
+        if node.process_node(connection):
+            DFS(nodeadj)
+        
 
-        DFS(nodeadj)
+DFS_START = list()
+for IN in set_of_inputs:
+    user_input = input(f"Enter {IN.name} ")
+    const_node = ConstValue(user_input)
+    G.add_node(const_node)
+    connecting_edge = connection()
+    connecting_edge.source = const_node
+    connecting_edge.destination = IN
+    const_node.add_connection(connecting_edge)
+    IN.add_connection(connecting_edge)
+    DFS_START.append(const_node)
+    G.add_edge(const_node, IN, edge_attr = connecting_edge )
+    
 
-
-for x in set_of_inputs:
-    if not isinstance(x, ConstValue):
-        INPUT = input(f"Enter {x.name} ")
-        x.connect_input(INPUT)
     
 
 
 
-for node in set_of_inputs:
+for node in DFS_START:
     DFS(node)
 
 
 
 
 
-for node in G:
-    if isinstance(node, OUTPUT):
-        node.calculate_output()
-        print(f"{node.name}: ","".join(node.output[::-1]))
+# for node in G:
+#     if isinstance(node, OUTPUT):
+#         node.calculate_output()
+#         print(f"{node.name}: ","".join(node.output[::-1]))
 
     
     

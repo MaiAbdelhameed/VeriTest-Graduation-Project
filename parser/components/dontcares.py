@@ -8,6 +8,10 @@ class dontcares(node):
         self.output = list()
         self.output = ["X"] * size
         self.type = "XXX"
+        self.connections = list()
+
+    def add_connection(self, connection):
+        self.connections.append(connection)
 
 
     def __str__(self):

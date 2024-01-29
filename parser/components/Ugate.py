@@ -11,8 +11,13 @@ class UGate(node):
         self.start = 0
         self.end = 0
         self.output = [None]
+        self.connections = list()
 
     
+
+    def add_connection(self, connection):
+        self.connections.append(connection)
+
     def connect_input(self, G1):
         self.G.append(G1)
     

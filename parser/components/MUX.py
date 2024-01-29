@@ -11,14 +11,13 @@ class mux(node):
         self.end = end
         self.size = size
         self.bind = None
+        self.connections = list()
 
 
-    def connect_input(self, G1):
-        self.G.append(G1)
-
-    def connect_selector(self, S):
-        self.selector = S
-
+    def add_connection(self, connection):
+        self.connections.append(connection)
+   
+    
     def calculate_output(self):
         for gate in self.G:
             if len(gate.output) ==  0 or len(self.selector.output) == 0:

@@ -2,19 +2,20 @@ from components.Node import node
 
 class ConstValue(node):
 
-    def __init__(self, Type, size):
-        super().__init__(Type)
-        self.size = size
-        self.G = list()
-        self.output = list()
+    def __init__(self, CONST):
+        self.output = CONST
+        self.connections = list()
+        self.Type = "CONST"
 
-        
-        
 
-    def calculate_output(self):
-        pass
-    def connect_input(self, const):
-        self.output = const
+    def process_node(self, connection): ## ConstValue is always source node
+        connection.PORT = self.output
+        connection.destination.process_node(connection)
+        return True
+    
+    def add_connection(self, connection):
+        self.connections.append(connection)
+
 
 
     def __str__(self):
