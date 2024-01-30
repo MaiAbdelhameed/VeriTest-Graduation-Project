@@ -9,7 +9,7 @@ class INPUT(node):
         self.name = name
         self.size = size
         self.connections = list()
-        self.OUTPUT = [None] * size
+        self.IN_port = list()
         
     
 
@@ -17,23 +17,35 @@ class INPUT(node):
         self.connections.append(connection)
 
     
+
+    def pass_output_to_ports(self, output):
+        for connection in self.connections:
+            if self == connection.source:
+                if connection.source_range == None:
+                    connection.PORT = output
+                else:
+                    bits = output[::-1]
+                    start = connection.source_range[0]
+                    end = connection.source_range[1]
+                    connection.PORT = bits[start:end+1][::-1]
+            else:
+                pass        
+                
+
     
     def process_node(self, connection):
         if self == connection.source:
-            if None not in self.OUTPUT:
-                if connection.source == None:
-                    connection.PORT = self.OUTPUT
-                else:
-                    output = self.OUTPUT[::-1]
-                    start = connection.source[0]
-                    end = connection.source[1]
-                    connection.PORT = output[start:end+1]
-                connection.destination.process_node(connection)
-                return True
-            else:
+            if len(self.IN_port) == 0:
                 return False
-        else: ## Simply I will take what is connected on the port
-            self.OUTPUT = connection.PORT
+            IN_port = self.IN_port
+            self.pass_output_to_ports(IN_port)
+            connection.destination.process_node(connection)
+            return True
+            
+            
+            
+        else: 
+            self.IN_port = connection.PORT
             
         
         

@@ -7,11 +7,9 @@ class gate(node):
         super().__init__(Type)
         self.size = size
         self.Type_of_gate = Type_of_gate
-        self.G = list()
         self.output = [None] * size
-        self.end = size -1 
-        self.start = 0
         self.connections = list()
+        self.list_of_IN_port = list()
 
         
 
@@ -19,78 +17,59 @@ class gate(node):
 
     def add_connection(self,connection):
         self.connections.append(connection)
-        
-   
 
-    def calculate_output(self):
-        if self.Type_of_gate == "not":
-            if len(self.G[0].output) == 0:
-                return False
-            else: ## not gate
-                input = self.G[0].output
-                for i in range(self.start+1, self.end+2, 1):
-                    if input[-i] == '1': 
-                        self.output[-i] = '0'
-                    else:
-                        self.output[-i] = '1'
 
-                    
-        else:
-            for gate in self.G:
-                if len(gate.output) == 0:
-                    return False
-            else:
-                if self.Type != "concat":
-                    input1 = self.G[0].output
-                    input2 = self.G[1].output
-                    if self.Type == "and":
-                        for i in range(self.start+1, self.end+2, 1):
-                        
-                            if input1[-i] == '1' and input2[-i] == '1':
-                                self.output[-i] = '1'
-                            else:
-                                self.output[-i] = '0'
-
-                    if self.Type == "or":
-                        for i in range(self.start+1, self.end+2, 1):
-                            if input1[-i] == '1' or input2[-i] == '1':
-                                self.output[-i] = '1'
-                            else:
-                                self.output[-i] = '0'
-
-                    if self.Type == "xor":
-                        for i in range(self.start+1, self.end+2, 1):
-                            if input1[-i] == input2[-i]:
-                                self.output[-i] = '0'
-                            else:
-                                self.output[-i] = '1'
-
-                    if self.Type == "nand":
-                        for i in range(self.start+1, self.end+2, 1):
-                            if input1[-i] == '1' and input2[-i] == '1':
-                                self.output[-i] = '0'
-                            else:
-                                self.output[-i] = '1'
-                    
-                    if self.Type == "nor":
-                        for i in range(self.start+1, self.end+2, 1):
-                            if input1[-i] == '0' and input2[-i] == '0':
-                                self.output[-i] = '1'
-                            else:
-                                self.output[-i] = '0'
+    def calc_output(self):
+        in_port_1 = self.list_of_IN_port[0]
+        in_port_2 = self.list_of_IN_port[1]
+        output = list()
+        size = len(in_port_1)
+        if self.Type == "and":
+            for i in range(size):
+                if in_port_1[i] == '1' and in_port_2[i] == '1':
+                    output.append('1')
                 else:
-                    finoutput = list()
-                    for gate in self.G:
-                        finoutput.extend(gate.output)
+                    output.append('0')
+        elif self.Type == "or":
+            for i in range(size):
+                if in_port_1[i] == '1' or in_port_2[i] == '1':
+                    output.append('1')
+                else:
+                    output.append('0')
 
-                    self.output = finoutput
-
-                
-
-        return True
-        
+        elif self.Type == "xor":
+            for i in range(size):
+                if in_port_1[i] != in_port_2[i]:
+                    output.append('1')
+                else:
+                    output.append('0')
+        return output
     
 
+    def pass_output_to_ports(self, output):
+        for connection in self.connections:
+            if self == connection.source:
+                connection.PORT = output
+            else:
+                pass
+        
+
+
+
+    def process_node(self, connection):
+        if self == connection.source:
+            if len(self.list_of_IN_port) != 2:
+                return False
+            output = self.calc_output()
+            self.pass_output_to_ports(output)
+            connection.destination.process_node(connection)
+            return True
+        else:
+            self.list_of_IN_port.append(connection.PORT)
+
+
+
+    
     def __str__(self):
         return super().__str__()
 

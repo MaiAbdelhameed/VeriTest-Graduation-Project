@@ -4,6 +4,8 @@ module IfExample(
   output[2:0] fin
   
 );
-  assign fin = clk;
+
+
+assign fin[2:0] = data_input[0] ?  clk : rst;
 
 endmodule

@@ -8,11 +8,14 @@ class connection:
         self.destination_range = None
         self.PORT = []
 
-    def set_attr(self, source, destination, source_range=None, destination_range=None):
+    def set_attr(self, source, destination, source_range=None, destination_range=None, isSelector = False, isTrueValue = False, isFalseValue = False):
         self.source = source
         self.destination = destination
         self.source_range = source_range
         self.destination_range = destination_range
+        self.isSelector = isSelector
+        self.isTrueValue = isTrueValue
+        self.isFalseValue = isFalseValue
         
     def __str__(self):
         if self.source_range != None and self.destination_range != None:

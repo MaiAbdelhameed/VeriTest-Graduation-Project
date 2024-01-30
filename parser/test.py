@@ -1,37 +1,17 @@
-# import networkx as nx
-# import matplotlib.pyplot as plt
-# from test_class import test_class
+def slice_bits(input_str, start, end):
+    # Convert negative indices to positive indices
+    start_index = len(input_str) + start
+    end_index = len(input_str) + end
 
-# # Create a directed graph
-# G = nx.DiGraph()
+    # Perform string slicing
+    sliced_bits = input_str[start_index:end_index]
 
-# # Add edges with two attributes
-# G.add_edge('Node1', 'Node2', start=test_class('Node1',0,3), end=test_class('Node2',3,5))
+    return sliced_bits
 
+# Example
+input_bits = "01001"
+start_index = 0
+end_index = 2
 
-# # Draw the graph
-# pos = nx.spring_layout(G)  # Layout algorithm
-# nx.draw(G, pos, with_labels=True, node_size=700, node_color="skyblue", font_size=10, font_color="black", font_weight="bold")
-
-# # Draw edge labels
-# edge_labels = {(u, v): f"{G[u][v]['start'].__str__()}, {G[u][v]['end'].__str__()}" for u, v in G.edges}
-# nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
-
-# for node in G.nodes():
-#     for nodeadj in list(G.neighbors(node)):
-#         edge_data = G.get_edge_data(node, nodeadj)
-#         pass
-
-# # Show the plot
-# plt.show()
-
-
-X = list()
-
-Y = list()
-
-Y.append(X)
-
-X.append(0)
-
-print(Y)
+result = slice_bits(input_bits, start_index, end_index)
+print(result)

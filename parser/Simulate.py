@@ -94,10 +94,9 @@ for node in DFS_START:
 
 
 
-# for node in G:
-#     if isinstance(node, OUTPUT):
-#         node.calculate_output()
-#         print(f"{node.name}: ","".join(node.output[::-1]))
+for node in G:
+    if isinstance(node, OUTPUT):
+        print(f"{node.name}: ","".join(node.output[::-1]))
 
     
     

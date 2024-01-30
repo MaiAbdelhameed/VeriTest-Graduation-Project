@@ -13,48 +13,33 @@ class OUTPUT(node):
         self.name = name
         self.size = size
         self.output = [None] * size
-        self.G = list()
-        self.is_wire = True
         self.connections = list()
-
 
 
     def add_connection(self, connection):
         self.connections.append(connection)
-    
-    def connect_input(self, G1):
-        self.G.append(G1)
 
-    def hasNone(self):
-        for bit in self.output:
-            if bit == None:
-                return False
-        return True
+    def add_bits_to_output(self, connection):
+        if connection.destination_range == None:
+            self.output = connection.PORT
+        else:
+            start = connection.destination_range[0]
+            end = connection.destination_range[1]
+            size = abs(start-end)
+            start = (start * -1) - 1 
+            end = (start - size) - 1
+            indices = [i for i, _ in enumerate(self.output)][start:end-1:-1]
+            for index, value in zip(indices, reversed(connection.PORT)):
+                self.output[index] = value
+                pass
+ 
 
+    def process_node(self, connection):
+        if self == connection.source:
+            pass
+        else:
+            self.add_bits_to_output(connection)
 
-    def calculate_output(self):
-        for Gate in self.G:
-            if isinstance(Gate, gate) or isinstance(Gate, mux) or isinstance(Gate, ConstValue) : # lw wasel ably gate 3la tool ha5od menha el output bta3ha kolo
-                self.output = Gate.output
-            elif isinstance(Gate, wire) and self.size == Gate.size:
-                self.output = Gate.output
-            else:
-                output = Gate.output
-                if len(output) == 0:
-                    return False
-                start = Gate.start
-                end = Gate.end
-                output = output[::-1]
-                # print(output)
-                # print(self, self.start, self.end)
-                self.output[start:end+1] = output
-                
-                
-                
-        if len(self.output) != 0 and self.hasNone():
-            return True
-        return False
-        
     
 
     def __str__(self):

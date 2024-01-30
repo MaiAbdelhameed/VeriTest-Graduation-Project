@@ -167,7 +167,7 @@ def parse_always_block(always, input_output_wire, set_of_inputs, set_of_outputs,
                 bind = statement.bind
             if type(false_statement) == tuple:
                 sel = parse_always_block(always.cond, input_output_wire, set_of_inputs, set_of_outputs, G)
-                mux2x1 = mux(Type = "MUX", size = false_statement[1].size, start = 0, end = false_statement[1].size-1)
+                mux2x1 = mux(Type = "MUX")
                 mux2x1.connect_input(true_node)
                 G.add_edge(mux2x1, true_node)
                 mux2x1.connect_input(false_statement[1])
@@ -178,7 +178,7 @@ def parse_always_block(always, input_output_wire, set_of_inputs, set_of_outputs,
                 list_of_IF_statements.append(mux2x1)
             elif isinstance(false_statement,mux):
                 sel = parse_always_block(always.cond, input_output_wire, set_of_inputs, set_of_outputs, G)
-                mux2x1 = mux(Type = "MUX", size = size, start = 0, end = size-1)                
+                mux2x1 = mux(Type = "MUX")               
                 mux2x1.connect_input(true_node)
                 G.add_edge(mux2x1, true_node)
                 mux2x1.connect_input(false_statement)
@@ -189,7 +189,7 @@ def parse_always_block(always, input_output_wire, set_of_inputs, set_of_outputs,
             else: ## connect dont care
                 dontcare_node = dontcares(size=size)
                 sel = parse_always_block(always.cond, input_output_wire, set_of_inputs, set_of_outputs, G)
-                mux2x1 = mux(Type = "MUX", size = size, start = 0, end = size-1)                
+                mux2x1 = mux(Type = "MUX")               
                 mux2x1.connect_input(true_node)
                 G.add_edge(mux2x1, true_node)
                 mux2x1.connect_input(dontcare_node)
@@ -202,7 +202,7 @@ def parse_always_block(always, input_output_wire, set_of_inputs, set_of_outputs,
             dontcare_node = dontcares(size=statement[0].size)
             if type(statement) == tuple:
                 sel = parse_always_block(always.cond, input_output_wire, set_of_inputs, set_of_outputs, G)
-                mux2x1 = mux(Type = "MUX", size = size, start = 0, end = size-1)                
+                mux2x1 = mux(Type = "MUX")             
                 mux2x1.connect_input(dontcare_node)
                 G.add_edge(mux2x1, dontcare_node)
                 mux2x1.connect_input(statement[1])
@@ -375,18 +375,23 @@ def create_out_connection(assignment, input_output_wire, set_of_inputs, set_of_o
 
         node_itr = nodeingraph(G, search_for_input)
         if node_itr == None: 
+            search_for_input.add_connection(connecting_edge)
             connecting_edge.destination = search_for_input
             return connecting_edge
                 
         else:
-            
+            node_itr.add_connection(connecting_edge)
             connecting_edge.destination = node_itr
             return connecting_edge
     
 
 
-def create_connection(gate, connection, G):
+def create_connection(gate, connection, G, isTrueValue = False, isFalseValue = False, isSelector = False, ):
     connection.destination = gate
+    connection.isTrueValue = isTrueValue
+    connection.isFalseValue = isFalseValue
+    connection.isinstance = isSelector
+    gate.add_connection(connection)
     G.add_edge(connection.source, gate, edge_attr=connection)
 
 
@@ -435,12 +440,13 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         true_value_connection = parse_assign_statement(assignment.false_value, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         false_value_connection = parse_assign_statement(assignment.true_value, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         sel_connection = parse_assign_statement(assignment.cond, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        mux2x1 = mux(Type = "MUX", size = true_value_connection.source.size, start = 0, end = false_value_connection.source.size-1)
-        create_connection(mux2x1, true_value_connection, G)
-        create_connection(mux2x1, false_value_connection, G)
-        create_connection(mux2x1, sel_connection, G)
+        mux2x1 = mux(Type = "MUX")
+        create_connection(mux2x1, true_value_connection, G, isTrueValue=True)
+        create_connection(mux2x1, false_value_connection, G, isFalseValue=True)
+        create_connection(mux2x1, sel_connection, G, isSelector=True)
         connecting_edge = connection()
         connecting_edge.source = mux2x1
+        mux2x1.add_connection(connecting_edge)
         return connecting_edge
 
 
