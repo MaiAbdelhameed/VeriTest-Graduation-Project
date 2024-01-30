@@ -1,4 +1,5 @@
 from components.Node import node
+from components.output import OUTPUT
 
 class ConstValue(node):
 
@@ -10,7 +11,8 @@ class ConstValue(node):
 
     def process_node(self, connection): ## ConstValue is always source node
         connection.PORT = self.output
-        connection.destination.process_node(connection)
+        if isinstance(connection.destination, OUTPUT):
+            connection.destination.process_node(connection)
         return True
     
     def add_connection(self, connection):

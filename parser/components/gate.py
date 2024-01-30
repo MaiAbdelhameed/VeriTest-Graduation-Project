@@ -1,4 +1,5 @@
 from components.Node import node
+from components.output import OUTPUT
 
 
 class gate(node):
@@ -7,9 +8,7 @@ class gate(node):
         super().__init__(Type)
         self.size = size
         self.Type_of_gate = Type_of_gate
-        self.output = [None] * size
         self.connections = list()
-        self.list_of_IN_port = list()
 
         
 
@@ -20,10 +19,17 @@ class gate(node):
 
 
     def calc_output(self):
-        in_port_1 = self.list_of_IN_port[0]
-        in_port_2 = self.list_of_IN_port[1]
+        list_of_IN_port = list()
+        for connection in self.connections:
+            if self == connection.destination:
+                list_of_IN_port.append(connection.PORT)
+        in_port_1 = list_of_IN_port[0]
+        in_port_2 = list_of_IN_port[1]
+        if (len(in_port_1) == 0 or len(in_port_2) == 0):
+            return None
+        
         output = list()
-        size = len(in_port_1)
+        size = len(in_port_1) 
         if self.Type == "and":
             for i in range(size):
                 if in_port_1[i] == '1' and in_port_2[i] == '1':
@@ -46,26 +52,21 @@ class gate(node):
         return output
     
 
-    def pass_output_to_ports(self, output):
-        for connection in self.connections:
-            if self == connection.source:
-                connection.PORT = output
-            else:
-                pass
+    def pass_output_to_ports(self, output, connection):
+        connection.PORT = output
+        if isinstance(connection.destination, OUTPUT):
+            connection.destination.process_node(connection)
         
 
 
 
     def process_node(self, connection):
-        if self == connection.source:
-            if len(self.list_of_IN_port) != 2:
-                return False
-            output = self.calc_output()
-            self.pass_output_to_ports(output)
-            connection.destination.process_node(connection)
-            return True
-        else:
-            self.list_of_IN_port.append(connection.PORT)
+        output = self.calc_output()
+        if output == None:
+            return False
+        self.pass_output_to_ports(output, connection)
+        return True
+
 
 
 

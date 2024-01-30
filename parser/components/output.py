@@ -1,8 +1,4 @@
 from components.Node import node
-from components.GATE import gate
-from components.MUX import mux
-from components.Wire import wire
-from components.ConstValue import ConstValue
 
 class OUTPUT(node):
 

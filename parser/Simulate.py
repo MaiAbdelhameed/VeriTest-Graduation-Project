@@ -1,11 +1,8 @@
 from graph import parse_verilog_code
 import networkx as nx
 import matplotlib.pyplot as plt
-from components.INPUT import INPUT
-
 from components.ConstValue import ConstValue
 from components.output import OUTPUT
-from components.MUX import mux
 from connection import connection
 
 
@@ -96,7 +93,7 @@ for node in DFS_START:
 
 for node in G:
     if isinstance(node, OUTPUT):
-        print(f"{node.name}: ","".join(node.output[::-1]))
+        print(f"{node.name}: ","".join(node.output))
 
     
     

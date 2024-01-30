@@ -1,4 +1,5 @@
 from components.Node import node
+from components.output import OUTPUT
 
 class INPUT(node):
 
@@ -9,44 +10,45 @@ class INPUT(node):
         self.name = name
         self.size = size
         self.connections = list()
-        self.IN_port = list()
         
     
 
     def add_connection(self, connection):
         self.connections.append(connection)
 
+    def calc_output(self):
+        for connection in self.connections:
+            if self == connection.destination:
+                if len(connection.PORT) == 0:
+                    return False
+                return connection.PORT
+
+        
+
     
 
-    def pass_output_to_ports(self, output):
-        for connection in self.connections:
-            if self == connection.source:
-                if connection.source_range == None:
-                    connection.PORT = output
-                else:
-                    bits = output[::-1]
-                    start = connection.source_range[0]
-                    end = connection.source_range[1]
-                    connection.PORT = bits[start:end+1][::-1]
-            else:
-                pass        
+    def pass_output_to_ports(self, output, connection):
+        if connection.source_range == None:
+            connection.PORT = output
+        else:
+            bits = output[::-1]
+            start = connection.source_range[0]
+            end = connection.source_range[1]
+            connection.PORT = bits[start:end+1][::-1]
+            
+        if isinstance(connection.destination, OUTPUT):
+            connection.destination.process_node(connection)    
                 
 
     
     def process_node(self, connection):
-        if self == connection.source:
-            if len(self.IN_port) == 0:
-                return False
-            IN_port = self.IN_port
-            self.pass_output_to_ports(IN_port)
-            connection.destination.process_node(connection)
-            return True
+        output = self.calc_output()
+        if output == None:
+            return False
+        self.pass_output_to_ports(output, connection)
+        return True
             
-            
-            
-        else: 
-            self.IN_port = connection.PORT
-            
+ 
         
         
 

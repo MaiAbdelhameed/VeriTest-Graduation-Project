@@ -1,4 +1,6 @@
 from components.Node import node
+from components.output import OUTPUT
+
 
 class mux(node):
 
@@ -9,7 +11,7 @@ class mux(node):
 
     def add_connection(self, connection):
         self.connections.append(connection)
-        self.list_of_IN_port = list()
+        
    
     def calc_output(self):
         true_value = list()
@@ -24,29 +26,29 @@ class mux(node):
                 else:
                     selector_value = connection.PORT
 
+        
+        if len(true_value) == 0 or len(false_value) == 0 or len(selector_value) == 0:
+            return None
+
         if selector_value == "0":
             return true_value
         return false_value
         
 
-    def pass_output_to_ports(self, output):
-        for connection in self.connections:
-            if self == connection.source:
-                connection.PORT = output
-            else:
-                pass
+    def pass_output_to_ports(self, output, connection):
+        connection.PORT = output
+        if isinstance(connection.destination, OUTPUT):
+            connection.destination.process_node(connection)
         
         
     def process_node(self, connection):
-        if self == connection.source:
-            if len(self.list_of_IN_port) != 3:
-                return False
-            output = self.calc_output()
-            self.pass_output_to_ports(output)
-            connection.destination.process_node(connection)
-            return True
-        else:
-            self.list_of_IN_port.append([])
+        output = self.calc_output()
+        if output == None:
+            return False
+        self.pass_output_to_ports(output, connection)
+        connection.destination.process_node(connection)
+        return True
+        
 
 
 
