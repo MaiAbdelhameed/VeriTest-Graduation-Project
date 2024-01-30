@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from components.ConstValue import ConstValue
 from components.output import OUTPUT
 from connection import connection
+from components.INPUT import INPUT
 
 
 
@@ -67,17 +68,22 @@ def DFS(node):
         
 
 DFS_START = list()
-for IN in set_of_inputs:
-    user_input = input(f"Enter {IN.name} ")
-    const_node = ConstValue(user_input)
-    G.add_node(const_node)
-    connecting_edge = connection()
-    connecting_edge.source = const_node
-    connecting_edge.destination = IN
-    const_node.add_connection(connecting_edge)
-    IN.add_connection(connecting_edge)
-    DFS_START.append(const_node)
-    G.add_edge(const_node, IN, edge_attr = connecting_edge )
+G2 = G.copy()
+
+for node in G2.nodes():
+    if isinstance(node, INPUT):
+        user_input = input(f"Enter {node.name} ")
+        const_node = ConstValue(user_input)
+        G.add_node(const_node)
+        connecting_edge = connection()
+        connecting_edge.source = const_node
+        connecting_edge.destination = node
+        const_node.add_connection(connecting_edge)
+        node.add_connection(connecting_edge)
+        DFS_START.append(const_node)
+        G.add_edge(const_node, node, edge_attr = connecting_edge)
+    elif isinstance(node, ConstValue):
+        DFS_START.append(node)
     
 
     

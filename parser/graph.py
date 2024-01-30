@@ -396,11 +396,10 @@ def create_connection(gate, connection, G, isTrueValue = False, isFalseValue = F
 
 
 
-def create_condition(condition, selector_node_connection, condition_value_node_connection, G):
-    tup = (selector_node_connection.source, condition_value_node_connection.source, condition ,"none")
-    condition_gate = condgate(tup)
-    create_connection(condition_gate, selector_node_connection, G)
-    create_connection(condition_gate, condition_value_node_connection, G)
+def create_condition(condition, lhs_value_node_connection, rhs_value_node_connection, G):
+    condition_gate = condgate(condition)
+    create_connection(condition_gate, lhs_value_node_connection, G)
+    create_connection(condition_gate, rhs_value_node_connection, G)
     condition_gate_connecting_edge = connection()
     condition_gate_connecting_edge.source = condition_gate
     condition_gate.add_connection(condition_gate_connecting_edge)
@@ -417,8 +416,6 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         create_connection(Gate, right_connection, G)
         create_connection(Gate, left_connection, G)
         connecting_edge = connection()
-        # Gate.add_connection(right_connection)
-        # Gate.add_connection(left_connection)
         Gate.add_connection(connecting_edge)
         connecting_edge.source = Gate
         return connecting_edge
@@ -449,6 +446,16 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         true_value_connection = parse_assign_statement(assignment.false_value, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         false_value_connection = parse_assign_statement(assignment.true_value, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
         sel_connection = parse_assign_statement(assignment.cond, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        ## in case that the sel_edge source was an Input, in this case
+        ## we will first connect the input to a condition gate to compare it with 1's
+        if isinstance(sel_connection.source, INPUT): 
+            condition_gate_connection = connection()
+            condition_gate = condgate("eq")
+            create_connection(condition_gate, sel_connection, G)
+            condition_gate_connection.source = condition_gate
+            condition_gate.add_connection(condition_gate_connection)
+            sel_connection = condition_gate_connection
+        
         mux2x1 = mux(Type = "MUX")
         create_connection(mux2x1, true_value_connection, G, isTrueValue=True)
         create_connection(mux2x1, false_value_connection, G, isFalseValue=True)
@@ -457,8 +464,6 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         connecting_edge.source = mux2x1
         mux2x1.add_connection(connecting_edge)
         return connecting_edge
-
-
 
 
     
@@ -475,98 +480,47 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         connecting_edge = connection()
         Constant_node = ConstValue(CONST = fin_value[0])
         connecting_edge.source = Constant_node
+        Constant_node.add_connection(connecting_edge)
+        G.add_node(Constant_node)
         return connecting_edge
     
 
     if isinstance(assignment, LessEq):
-        selector_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_gate_connecting_edge = create_condition(condition="le", selector_node_connection=selector_node_connection, condition_value_node_connection=condition_value_node_connection, G=G)
+        lhs_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        rhs_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_gate_connecting_edge = create_condition("le", lhs_node_connection, rhs_value_node_connection, G)
         return condition_gate_connecting_edge
 
     if isinstance(assignment, GreaterEq):
-        selector_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        tup = (selector_node_connection.source, condition_value_node_connection.source, "ge","none")
-        condition_gate = condgate(tup)
-        create_connection(condition_gate, selector_node_connection, G)
-        create_connection(condition_gate, condition_value_node_connection, G)
-        condition_gate_connecting_edge = connection()
-        condition_gate_connecting_edge.source = condition_gate
-        
-        ## ADDING CONNECTIONS FOR THE CONDITION GATE ##
-        # condition_gate.add_connection(selector_node_connection)
-        # condition_gate.add_connection(condition_value_node_connection)
-        condition_gate.add_connection(condition_gate_connecting_edge)
+        lhs_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        rhs_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_gate_connecting_edge = create_condition("ge", lhs_node_connection, rhs_value_node_connection, G)
         return condition_gate_connecting_edge
     
     if isinstance(assignment, NotEq):
-        selector_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        tup = (selector_node_connection.source, condition_value_node_connection.source, "ne","none")
-        condition_gate = condgate(tup)
-        create_connection(condition_gate, selector_node_connection, G)
-        create_connection(condition_gate, condition_value_node_connection, G)
-        condition_gate_connecting_edge = connection()
-        condition_gate_connecting_edge.source = condition_gate
-        
-        ## ADDING CONNECTIONS FOR THE CONDITION GATE ##
-        # condition_gate.add_connection(selector_node_connection)
-        # condition_gate.add_connection(condition_value_node_connection)
-        condition_gate.add_connection(condition_gate_connecting_edge)
+        lhs_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        rhs_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_gate_connecting_edge = create_condition("ne", lhs_node_connection, rhs_value_node_connection, G)
         return condition_gate_connecting_edge
+        
     
     if isinstance(assignment, LessThan):
-        selector_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        tup = (selector_node_connection.source, condition_value_node_connection.source, "lt","none")
-        condition_gate = condgate(tup)
-        create_connection(condition_gate, selector_node_connection, G)
-        create_connection(condition_gate, condition_value_node_connection, G)
-        condition_gate_connecting_edge = connection()
-        condition_gate_connecting_edge.source = condition_gate
-        
-        ## ADDING CONNECTIONS FOR THE CONDITION GATE ##
-        # condition_gate.add_connection(selector_node_connection)
-        # condition_gate.add_connection(condition_value_node_connection)
-        condition_gate.add_connection(condition_gate_connecting_edge)
+        lhs_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        rhs_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_gate_connecting_edge = create_condition("lt", lhs_node_connection, rhs_value_node_connection, G)
         return condition_gate_connecting_edge
 
     if isinstance(assignment, GreaterThan):
-        selector_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        tup = (selector_node_connection.source, condition_value_node_connection.source, "gt","none")
-        condition_gate = condgate(tup)
-        create_connection(condition_gate, selector_node_connection, G)
-        create_connection(condition_gate, condition_value_node_connection, G)
-        condition_gate_connecting_edge = connection()
-        condition_gate_connecting_edge.source = condition_gate
-        
-        ## ADDING CONNECTIONS FOR THE CONDITION GATE ##
-        # condition_gate.add_connection(selector_node_connection)
-        # condition_gate.add_connection(condition_value_node_connection)
-        condition_gate.add_connection(condition_gate_connecting_edge)
+        lhs_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        rhs_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_gate_connecting_edge = create_condition("gt", lhs_node_connection, rhs_value_node_connection, G)
         return condition_gate_connecting_edge
     
     
     if isinstance(assignment, Eq):
-        selector_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        condition_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-        tup = (selector_node_connection.source, condition_value_node_connection.source, "eq","none")
-        condition_gate = condgate(tup)
-        create_connection(condition_gate, selector_node_connection, G)
-        create_connection(condition_gate, condition_value_node_connection, G)
-
-        condition_gate_connecting_edge = connection()
-        condition_gate_connecting_edge.source = condition_gate
-
-        ## ADDING CONNECTIONS FOR THE CONDITION GATE ##
-        # condition_gate.add_connection(selector_node_connection)
-        # condition_gate.add_connection(condition_value_node_connection)
-        condition_gate.add_connection(condition_gate_connecting_edge)
-
-
-        
+        lhs_node_connection = parse_assign_statement(assignment.left, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        rhs_value_node_connection = parse_assign_statement(assignment.right, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
+        condition_gate_connecting_edge = create_condition("eq", lhs_node_connection, rhs_value_node_connection, G)
         return condition_gate_connecting_edge
         
     

@@ -6,6 +6,6 @@ module IfExample(
 );
 
 
-assign fin = data_input[0] ? clk : rst;
+assign fin = data_input[1] ? clk : rst;
 
 endmodule

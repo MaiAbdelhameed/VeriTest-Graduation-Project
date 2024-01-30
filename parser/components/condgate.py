@@ -1,15 +1,13 @@
 from components.Node import node
 import math
+from components.output import OUTPUT
 
 class condgate(node):
 
-    def __init__(self, condition): ## list_of_conditions is a list of tuples where tuple[0] = LHS
-                                            ## while tuple[1] = RHS and tuple[2] = the conditions. 
+    def __init__(self, condition): 
+
         self.condition = condition
-        self.output = list()
         self.Type = "CONDITION"
-        self.G = list()
-        self.size = 1
         self.connections = list()
 
 
@@ -24,60 +22,76 @@ class condgate(node):
 
         return decimal
 
-            
-    def connect_input(self,G1):
-        self.G.append(G1)
 
 
-    def calculate_output(self):
-        if self.condition[0].output != None and self.condition[1].output != None:
-            lhs = self.binary_to_decimal(self.condition[0].output)
-            rhs = self.binary_to_decimal(self.condition[1].output)
-            if self.condition[2] == "eq":
-                if lhs == rhs:
-                    self.output = "1"
-                else:
-                    self.output = "0"
-            elif self.condition[2] == "gt":
-                if lhs > rhs:
-                    self.output = "1"
-                else:
-                    self.output = "0"
+    def pass_output_to_ports(self, output, connection):
+        connection.PORT = output
+        if isinstance(connection.destination, OUTPUT):
+            connection.destination.process_node(connection)
 
-            elif self.condition[2] == "lt":
-                if lhs < rhs:
-                    self.output = "1"
-                else:
-                    self.output = "0"
-
-            elif self.condition[2] == "ge":
-                if lhs >= rhs:
-                    self.output = "1"
-                else:
-                    self.output = "0"
-            
-            elif self.condition[2] == "le":
-                if lhs <= rhs:
-                    self.output = "1"
-                else:
-                    self.output = "0"
-            
-            elif self.condition[2] == "ne":
-                if lhs != rhs:
-                    self.output = "1"
-                else:
-                    self.output = "0"
-            
-            return True
-        elif self.condition[0].output != None and self.condition[1].output == None:
-            value = self.binary_to_decimal(self.condition[0].output)
-            value = str(value)
-            if '0' in value:
-                self.output = "0"
-            else: self.output = "1"
-            return True
-        else:
+    def process_node(self, connection):
+        output = self.calc_output()
+        if output == None:
             return False
+        self.pass_output_to_ports(output, connection)
+        return True
+        
+    def calc_output(self):
+        list_of_conditions = list()
+        output = str()
+        for connection in self.connections:
+            if self == connection.destination:
+                list_of_conditions.append(connection.PORT)
+
+        if len(list_of_conditions) < 2:
+            lhs = list_of_conditions[0]
+            rhs = ["1"] * len(lhs)
+        else:
+            lhs = list_of_conditions[0]
+            rhs = list_of_conditions[1]
+            if len(lhs) == 0 or len(rhs) == 0:
+                return None
+        lhs = self.binary_to_decimal(lhs)
+        rhs = self.binary_to_decimal(rhs)
+        if self.condition == "eq":
+            if lhs == rhs:
+                output = "1"
+            else:
+                output = "0"
+        elif self.condition == "gt":
+            if lhs > rhs:
+                output = "1"
+            else:
+                output = "0"
+
+        elif self.condition == "lt":
+            if lhs < rhs:
+                output = "1"
+            else:
+                output = "0"
+
+        elif self.condition == "ge":
+            if lhs >= rhs:
+                output = "1"
+            else:
+                output = "0"
+        
+        elif self.condition == "le":
+            if lhs <= rhs:
+                output = "1"
+            else:
+                output = "0"
+        
+        elif self.condition == "ne":
+            if lhs != rhs:
+                output = "1"
+            else:
+                output = "0"
+
+        return output
+        
+        
+    
 
  
 
