@@ -9,10 +9,13 @@ class ConstValue(node):
         self.Type = "CONST"
 
 
-    def process_node(self, connection): ## ConstValue is always source node
-        connection.PORT = self.output
-        if isinstance(connection.destination, OUTPUT):
-            connection.destination.process_node(connection)
+    def process_node(self, connections): ## ConstValue is always source node
+        for connection in connections:
+            connection.PORT = self.output
+            if isinstance(connection.destination, OUTPUT):
+                list_of_connections = list()
+                list_of_connections.append(connection)
+                connection.destination.process_node(list_of_connections)
         return True
     
     def add_connection(self, connection):

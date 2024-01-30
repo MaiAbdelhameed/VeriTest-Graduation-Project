@@ -55,9 +55,13 @@ def create_connection(gate, connection, G):
 
 
 def search_for_connection(node, nodeadj):
+    list_of_connections = list()
     for connection in node.connections:
         if nodeadj == connection.destination:
-            return connection
+            list_of_connections.append(connection)
+
+    
+    return list_of_connections
 
 
 def DFS(node):

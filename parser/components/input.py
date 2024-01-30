@@ -27,25 +27,27 @@ class INPUT(node):
 
     
 
-    def pass_output_to_ports(self, output, connection):
-        if connection.source_range == None:
-            connection.PORT = output
-        else:
-            bits = output[::-1]
-            start = connection.source_range[0]
-            end = connection.source_range[1]
-            connection.PORT = bits[start:end+1][::-1]
-            
-        if isinstance(connection.destination, OUTPUT):
-            connection.destination.process_node(connection)    
+    def pass_output_to_ports(self, output, connections):
+        for connection in connections:
+            if connection.source_range == None:
+                connection.PORT = output
+            else:
+                bits = output[::-1]
+                start = connection.source_range[0]
+                end = connection.source_range[1]
+                connection.PORT = bits[start:end+1][::-1]
+            if isinstance(connection.destination, OUTPUT):
+                list_of_connections = list()
+                list_of_connections.append(connection)
+                connection.destination.process_node(list_of_connections)
                 
 
     
-    def process_node(self, connection):
+    def process_node(self, connections):
         output = self.calc_output()
         if output == None:
             return False
-        self.pass_output_to_ports(output, connection)
+        self.pass_output_to_ports(output, connections)
         return True
             
  

@@ -35,18 +35,20 @@ class mux(node):
         return false_value
         
 
-    def pass_output_to_ports(self, output, connection):
-        connection.PORT = output
-        if isinstance(connection.destination, OUTPUT):
-            connection.destination.process_node(connection)
+    def pass_output_to_ports(self, output, connections):
+        for connection in connections:
+            connection.PORT = output
+            if isinstance(connection.destination, OUTPUT):
+                list_of_connections = list()
+                list_of_connections.append(connection)
+                connection.destination.process_node(list_of_connections)
         
         
-    def process_node(self, connection):
+    def process_node(self, connections):
         output = self.calc_output()
         if output == None:
             return False
-        self.pass_output_to_ports(output, connection)
-        connection.destination.process_node(connection)
+        self.pass_output_to_ports(output, connections)
         return True
         
 

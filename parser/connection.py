@@ -8,7 +8,7 @@ class connection:
         self.destination_range = None
         self.PORT = []
 
-    def set_attr(self, source, destination, source_range=None, destination_range=None, isSelector = False, isTrueValue = False, isFalseValue = False):
+    def set_attr(self, source, destination, port_number = None, source_range=None, destination_range=None, isSelector = False, isTrueValue = False, isFalseValue = False):
         self.source = source
         self.destination = destination
         self.source_range = source_range
@@ -16,15 +16,30 @@ class connection:
         self.isSelector = isSelector
         self.isTrueValue = isTrueValue
         self.isFalseValue = isFalseValue
+        self.port_number = port_number
         
     def __str__(self):
         if self.source_range != None and self.destination_range != None:
-            return f"{self.destination.name}[{self.destination_range[0]}:{self.destination_range[1]}] | {self.source.name}[{self.source_range[0]}:{self.source_range[1]}]" 
+            if self.destination_range[0] == self.destination_range[1] and self.source_range[0] == self.source_range[1]:
+                return f"{self.destination.name}[{self.destination_range[0]}] | {self.source.name}[{self.source_range[0]}]"
+            elif self.destination_range[0] == self.destination_range[1]:
+                return f"{self.destination.name}[{self.destination_range[0]}] | {self.source.name}[{self.source_range[0]}:{self.source_range[1]}]"
+            elif self.source_range[0] == self.source_range[1]:
+                return f"{self.destination.name}[{self.destination_range[0]}:{self.destination_range[1]}] | {self.source.name}[{self.source_range[0]}]"
+            else:    
+                return f"{self.destination.name}[{self.destination_range[0]}:{self.destination_range[1]}] | {self.source.name}[{self.source_range[0]}:{self.source_range[1]}]" 
+            
         elif self.source_range == None and self.destination_range != None:
-            return f"{self.destination.name}[{self.destination_range[0]}:{self.destination_range[1]}]" 
+            if self.destination_range[0] != self.destination_range[1]:
+                return f"{self.destination.name}[{self.destination_range[0]}:{self.destination_range[1]}]" 
+            else:
+                return f"{self.destination.name}[{self.destination_range[0]}]"
 
         elif self.source_range != None and self.destination_range == None:
-            return f"{self.source.name}[{self.source_range[0]}:{self.source_range[1]}]" 
+            if self.source_range[0] != self.source_range[1]:
+                return f"{self.source.name}[{self.source_range[0]}:{self.source_range[1]}]" 
+            else:
+                return f"{self.source.name}[{self.source_range[0]}]"
 
         else:
             return ""

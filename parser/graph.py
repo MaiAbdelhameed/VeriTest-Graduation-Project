@@ -386,6 +386,13 @@ def create_out_connection(assignment, input_output_wire, set_of_inputs, set_of_o
     
 
 
+def create_half_connection(Gate):
+    connecting_edge = connection()
+    Gate.add_connection(connecting_edge)
+    connecting_edge.source = Gate
+    return connecting_edge
+
+
 def create_connection(gate, connection, G, isTrueValue = False, isFalseValue = False, isSelector = False):
     connection.destination = gate
     connection.isTrueValue = isTrueValue
@@ -399,12 +406,8 @@ def create_connection(gate, connection, G, isTrueValue = False, isFalseValue = F
 def create_condition(condition, lhs_value_node_connection, rhs_value_node_connection, G):
     condition_gate = condgate(condition)
     create_connection(condition_gate, lhs_value_node_connection, G)
-    create_connection(condition_gate, rhs_value_node_connection, G)
-    condition_gate_connecting_edge = connection()
-    condition_gate_connecting_edge.source = condition_gate
-    condition_gate.add_connection(condition_gate_connecting_edge)
-    return condition_gate_connecting_edge
-
+    create_connection(condition_gate, rhs_value_node_connection, G)    
+    return create_half_connection(condition_gate)
 
 def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_outputs, G, is_left):
 
@@ -415,10 +418,7 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         Gate = gate(Type=Type, Type_of_gate = Type, size = right_connection.source.size)
         create_connection(Gate, right_connection, G)
         create_connection(Gate, left_connection, G)
-        connecting_edge = connection()
-        Gate.add_connection(connecting_edge)
-        connecting_edge.source = Gate
-        return connecting_edge
+        return create_half_connection(Gate)
     
     if isinstance(assignment, Partselect):
         connecting_edge = parse_assign_statement(assignment.var, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
@@ -430,17 +430,14 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
     if isinstance(assignment, Concat): ## Missing: check if concat gate exist
         size = 0
         concat_gate = gate(Type = "concat", Type_of_gate= "concat", size=size)
-        for element in assignment.list:
+        for index, element in enumerate(assignment.list):
             concat_element_connection = parse_assign_statement(element, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
-            size += concat_element_connection.source.size
+            concat_element_connection.port_number = index
             create_connection(concat_gate, concat_element_connection, G)
 
         
-        concat_gate.size = size
-        concat_gate_connection = connection()
-        concat_gate_connection.source = concat_gate
-
-        return concat_gate_connection
+        
+        return create_half_connection(concat_gate)
     
     if isinstance(assignment, Cond):
         true_value_connection = parse_assign_statement(assignment.false_value, input_output_wire, set_of_inputs, set_of_outputs, G, is_left)
@@ -449,21 +446,15 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
         ## in case that the sel_edge source was an Input, in this case
         ## we will first connect the input to a condition gate to compare it with 1's
         if isinstance(sel_connection.source, INPUT): 
-            condition_gate_connection = connection()
             condition_gate = condgate("eq")
             create_connection(condition_gate, sel_connection, G)
-            condition_gate_connection.source = condition_gate
-            condition_gate.add_connection(condition_gate_connection)
-            sel_connection = condition_gate_connection
+            sel_connection = create_half_connection(condition_gate)
         
         mux2x1 = mux(Type = "MUX")
         create_connection(mux2x1, true_value_connection, G, isTrueValue=True)
         create_connection(mux2x1, false_value_connection, G, isFalseValue=True)
         create_connection(mux2x1, sel_connection, G, isSelector=True)
-        connecting_edge = connection()
-        connecting_edge.source = mux2x1
-        mux2x1.add_connection(connecting_edge)
-        return connecting_edge
+        return create_half_connection(mux2x1)
 
 
     
@@ -477,12 +468,9 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
     if isinstance(assignment, IntConst): ## missing
         value = assignment.value
         fin_value = re.findall("\d+'\w(\d+)", value)
-        connecting_edge = connection()
         Constant_node = ConstValue(CONST = fin_value[0])
-        connecting_edge.source = Constant_node
-        Constant_node.add_connection(connecting_edge)
         G.add_node(Constant_node)
-        return connecting_edge
+        return create_half_connection(Constant_node)
     
 
     if isinstance(assignment, LessEq):
@@ -593,16 +581,12 @@ def parse_assign_statement(assignment, input_output_wire, set_of_inputs, set_of_
 
             G.add_node(search_for_input)
             
-            connecting_edge.source = search_for_input
-            search_for_input.add_connection(connecting_edge)
-            return connecting_edge
+
+            return create_half_connection(search_for_input)
                 
         else:
+            return create_half_connection(node_itr)
             
-            connecting_edge.source = node_itr
-            node_itr.add_connection(connecting_edge)
-            return connecting_edge
-
     
 def merge_connections(connection1, connection2):
     if connection1.source == None:
@@ -656,8 +640,7 @@ def parse_verilog_code():
         connection = merge_connections(final_output_connection, output_port_connection)
         G.add_edge(connection.source, connection.destination, edge_attr = connection)
 
-        # output_port.connect_input(final_output)
-        # G.add_edge(final_output, output_port)
+        
         
 
 

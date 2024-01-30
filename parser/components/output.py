@@ -30,11 +30,12 @@ class OUTPUT(node):
                 pass
  
 
-    def process_node(self, connection):
-        if self == connection.source:
-            pass
-        else:
-            self.add_bits_to_output(connection)
+    def process_node(self, connections):
+        for connection in connections:
+            if self == connection.source:
+                pass
+            else:
+                self.add_bits_to_output(connection)
 
     
 
