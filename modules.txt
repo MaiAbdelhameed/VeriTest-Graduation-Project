@@ -1,0 +1,52 @@
+Combinational
+    AND => DONE
+    OR => DONE
+    XOR => DONE
+    NOT => DONE
+    NAND => DONE
+    NOR => DONE
+    XNOR => DONE
+    half-adder => DONE
+    full-adder => DONE
+    mux => DONE
+    demux => DONE
+    encoders => DONE
+    decoders => DONE
+    comparators => DONE
+    priority encoders => DONE
+    multiplication => DONE
+    division => DONE
+    7 segments => DONE
+    BCD => DONE
+    
+    
+    n-bit full-adder
+    Arithmetic Logic Units (ALUs)
+    Control Logic Units
+    Subtractors 
+    PLD's 
+    code-converters
+
+
+
+
+Sequential
+    flip-flops => DONE
+    registers => DONE
+    left shift registers => DONE
+    right shift registers => DONE
+    
+
+    state-machines
+    FSMs
+    memory modules
+
+    counters
+    n-counters
+    Gray-code with carry-chain counter
+    johnson counter
+    ring counter
+    multi-cycle counter
+    
+    
+
