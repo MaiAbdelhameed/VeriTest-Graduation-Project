@@ -1,5 +1,5 @@
 module mult7(input [1:0] a, b,
-            output [3:0] result);
+            reg output [3:0] result);
 
     always @(*) begin
         result[0] = a[0] & b[0];
