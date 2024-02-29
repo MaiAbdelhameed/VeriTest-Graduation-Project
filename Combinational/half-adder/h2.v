@@ -1,11 +1,7 @@
-module gate_half_adder (
-  input a,
-  input b,
-  output sum,
-  output carry
-);
+module half_adder_basic_dataflow(input a, b,
+                                 output sum, carry);
 
-  xor xor_gate (sum, a, b);
-  and and_gate (carry, a, b);
+    assign sum = a ^ b;
+    assign carry = a & b;
 
 endmodule

@@ -1,20 +1,16 @@
-module table_half_adder (
-  input a,
-  input b,
-  output sum,
-  output carry
-);
+module half_adder_structural_loop(input a, b,
+                                  output sum, carry);
 
-  table
-    input a;
-    input b;
-    output sum;
-    output carry;
-  begin
-    1'b0 1'b0: sum = 1'b0; carry = 1'b0;
-    1'b0 1'b1: sum = 1'b1; carry = 1'b0;
-    1'b1 1'b0: sum = 1'b1; carry = 1'b0;
-    1'b1 1'b1: sum = 1'b0; carry = 1'b1;
-  endtable
+    wire [1:0] temp;
+
+    genvar i;
+    generate
+        for (i = 0; i < 2; i = i + 1) begin : generate_xor_and
+            xor xor_gate(temp[i], a[i], b[i]);
+        end
+    endgenerate
+
+    and and_gate(carry, a, b);
+    assign sum = temp[0];
 
 endmodule

@@ -1,11 +1,9 @@
-module dataflow_half_adder (
-  input a,
-  input b,
-  output sum,
-  output carry
-);
+module half_adder_basic_dataflow(input a, b,
+                                 reg output sum, carry);
 
-  assign sum = (a ^ b);
-  assign carry = (a & b);
+    always @(*) begin
+        sum = a ^ b;
+        carry = a & b;
+    end
 
 endmodule
