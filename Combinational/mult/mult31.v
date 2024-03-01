@@ -1,4 +1,5 @@
-module mult2(input [1:0] a, b,
+// CORRECT
+module mult31(input [1:0] a, b,
             output [3:0] result);
 
     reg [3:0] temp;
@@ -20,7 +21,7 @@ module mult2(input [1:0] a, b,
             4'b11_00: temp = 4'b0000;
             4'b11_01: temp = 4'b0011;
             4'b11_10: temp = 4'b0110;
-            4'b11_11: temp = 4'b1001;
+            default: temp = 4'b1001;
         endcase
     end
 

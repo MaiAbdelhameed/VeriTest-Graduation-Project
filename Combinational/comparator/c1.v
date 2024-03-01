@@ -14,14 +14,4 @@ module comparator1bit_basic_structural(input a, input b, output reg eq, output r
 
 endmodule
 
-// module xor_gate(output reg y, input a, input b);
-//     assign y = a ^ b;
-// endmodule
 
-// module and_gate(output reg y, input a, input b);
-//     assign y = a & b;
-// endmodule
-
-// module nor_gate(output reg y, input a, input b);
-//     assign y = ~(a | b);
-// endmodule

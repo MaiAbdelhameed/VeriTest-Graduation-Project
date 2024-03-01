@@ -1,14 +1,10 @@
-module mult8(input [1:0] a, b,
-            output [3:0] result);
+module mult8(input a1,a0,b1,b0
+            output reg [3:0] result);
 
-    reg [3:0] temp;
-    
     always @(*) begin
-        temp[0] = a[0] & b[0];
-        temp[1] = ~a[1] & a[0] & b[1] + a[0] & b[1] & ~b[0] + a[1] & ~a[0] & b[0] + a[1] & b[0] & ~b[1];
-        temp[2] = a[1] & b[1] & ~b[0] + a[1] & ~a[0] & b[1];
-        temp[3] = a[1] & b[1] & a[0] & b[0];       
+        result[0] = a0 & b0;
+        result[1] = ~a1 & a0 & b1 + a0 & b1 & ~b0 + a1 & ~a0 & b0 + a1 & b0 & ~b1;
+        result[2] = a1 & b1 & ~b0 + a1 & ~a0 & b1;
+        result[3] = a1 & b1 & a0 & b0;       
     end
-
-    assign result = temp;
 endmodule

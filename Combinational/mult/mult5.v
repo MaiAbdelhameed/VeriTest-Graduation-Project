@@ -1,12 +1,12 @@
-module mult5(input [1:0] a, b,
+module mult5(input a1,a0,b1,b0,
             output [3:0] result);
 
-    wire [1:0] a_b_0, a_b_1;
+    wire a0b0, a0b1, a1b0, a0b1;
 
-    and gate_a0(a_b_0[0], a[0], b[0]);
-    and gate_a1(a_b_1[0], a[1], b[0]);
-    and gate_a2(a_b_0[1], a[0], b[1]);
-    and gate_a3(a_b_1[1], a[1], b[1]);
+    and gate_a0(a0b0, a0, b0);
+    and gate_a1(a1b0, a1, b0);
+    and gate_a2(a0b1, a0, b1);
+    and gate_a3(a1b1, a1, b1);
 
-    assign result = {a_b_0[0], a_b_0[1]} + {a_b_1[0], a_b_1[1], 2'b0};
+    assign result = {a1b0,a0b0} + {a1b1,a0b1,1'b0};
 endmodule
