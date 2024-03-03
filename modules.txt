@@ -31,6 +31,22 @@ Combinational
 
 
 
+MALAK & MAI (Combinational)
+-----------
+7-segments          ❓
+ALUs                ✔
+Binary BCDs         ✔
+Comparator          ✔
+Decoders            ✔
+Divisor             ❓
+Encoders            ✔
+Multiplier          ✔
+MUX                 ✔
+Priority Encoders   ✔
+Subtractors         ✔
+
+
+
 Sequential
     flip-flops => DONE
     registers => DONE
@@ -48,6 +64,3 @@ Sequential
     johnson counter
     ring counter
     multi-cycle counter
-    
-    
-
