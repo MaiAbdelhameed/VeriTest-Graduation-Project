@@ -1,4 +1,4 @@
-module encoder52(input [3:0] in, output [1:0] out);
+module encoder52 (input [3:0] in, output [1:0] out);
 
     wire w1,w2;
 

@@ -1,4 +1,4 @@
-module decoder31(
+module decoder31 (
     input [4:0] select,
     output reg [31:0] output
 );

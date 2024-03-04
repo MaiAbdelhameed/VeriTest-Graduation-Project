@@ -1,4 +1,4 @@
-module divisor_behavioral_table(input [1:0] a, b,
+module d9 (input [1:0] a, b,
                                 output [1:0] quotient, remainder);
 
     reg [1:0] temp_quotient;

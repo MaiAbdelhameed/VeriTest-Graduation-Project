@@ -1,4 +1,4 @@
-module comparator25(input [1:0] a, input [1:0] b, output reg eq, output reg gt, output reg lt);
+module comparator25 (input [1:0] a, input [1:0] b, output reg eq, output reg gt, output reg lt);
 
     wire [1:0] a_xor_b, a_and_b;
     wire [1:0] a_nor_b;

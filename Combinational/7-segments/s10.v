@@ -1,4 +1,4 @@
-module seven_segment_dataflow_kmap(input [3:0] num,
+module s10 (input [3:0] num,
                                    output [6:0] segments);
 
     reg [6:0] temp_segments;

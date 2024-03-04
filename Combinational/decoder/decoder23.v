@@ -1,4 +1,4 @@
-module decoder23(in,en,out1);
+module decoder23 (in,en,out1);
 input [2:0] in;
 input en;
 output [7:0] out1;

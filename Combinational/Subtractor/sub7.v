@@ -1,4 +1,4 @@
-module sub7(A,B,Bin,D,Bout);
+module sub7 (A,B,Bin,D,Bout);
     input A,B,Bin;
     output reg D,Bout;
 

@@ -1,4 +1,4 @@
-module seven_segment_dataflow_kmap(input [3:0] num,
+module s9 (input [3:0] num,
                                    output [6:0] segments);
 
     always @(*) begin

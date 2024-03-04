@@ -1,4 +1,4 @@
-module encoder29(input [1:0] in, output out);
+module encoder29 (input [1:0] in, output out);
 
     reg temp;
     always @(*) begin

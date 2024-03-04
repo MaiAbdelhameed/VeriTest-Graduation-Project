@@ -1,4 +1,4 @@
-module mux17(input a,b,c,d,e,f,g,h,
+module mux17 (input a,b,c,d,e,f,g,h,
                             input [2:0] sel,
                             output reg out);
 

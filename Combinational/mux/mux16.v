@@ -1,4 +1,4 @@
-module mux16(input [1:0] a, sel,
+module mux16 (input [1:0] a, sel,
                     output reg y);
 
     always @(*) begin

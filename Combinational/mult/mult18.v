@@ -1,4 +1,4 @@
-module mult18(
+module mult18 (
     input [2:0] a,
     input b,
     output reg [2:0] result

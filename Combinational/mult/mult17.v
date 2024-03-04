@@ -1,4 +1,4 @@
-module mult17(
+module mult17 (
     input [1:0] a,
     input [2:0] b,
     output reg [4:0] result

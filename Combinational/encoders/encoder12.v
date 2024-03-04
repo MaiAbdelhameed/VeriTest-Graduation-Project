@@ -1,4 +1,4 @@
-module encoder12(y,a,en);
+module encoder12 (y,a,en);
     input [3:0] y;
     input en;
     output [1:0] a;

@@ -1,4 +1,4 @@
-module decoder7(ip0,ip1,ip2,op0,op1,op2,op3,op4,op5,op6,op7); // silicon vlsi 3-to-8 decoder
+module decoder8 (ip0,ip1,ip2,op0,op1,op2,op3,op4,op5,op6,op7); // silicon vlsi 3-to-8 decoder
 
 input ip0,ip1,ip2;
 output reg op0,op1,op2,op3,op4,op5,op6,op7;

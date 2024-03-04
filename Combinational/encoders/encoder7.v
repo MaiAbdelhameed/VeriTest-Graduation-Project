@@ -1,4 +1,4 @@
-module encoder7(y,a);
+module encoder7 (y,a);
     input [3:0] y;
     output [1:0] a;
 

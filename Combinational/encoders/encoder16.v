@@ -1,4 +1,4 @@
-module encoder1(D0,D1,D2,D3,D4,D5,D6,D7,
+module encoder16 (D0,D1,D2,D3,D4,D5,D6,D7,
 y0,y1,y2);
 
 input D0,D1,D2,D3,D4,D5,D6,D7;

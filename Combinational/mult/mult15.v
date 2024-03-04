@@ -1,4 +1,4 @@
-module mult15(input a1,a0,b1,b0
+module mult15 (input a1,a0,b1,b0
             output reg [3:0] result);
 
 reg temp,temp2;

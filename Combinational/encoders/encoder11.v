@@ -1,4 +1,4 @@
-module encoder11(y1,y2,y3,a0,a1,en);
+module encoder11 (y1,y2,y3,a0,a1,en);
     input y1,y2,y3,en;
     output a0,a1;
 

@@ -1,4 +1,4 @@
-module sub4(A,B,cin,sub,bo);
+module sub4 (A,B,cin,sub,bo);
 
 	input A,B,cin;
 	output reg sub,bo;

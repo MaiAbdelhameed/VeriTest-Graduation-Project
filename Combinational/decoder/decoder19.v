@@ -1,4 +1,4 @@
-module decoder19(in,out3);
+module decoder19 (in,out3);
 
     output reg [7:0] out3;
     input [2:0] in;

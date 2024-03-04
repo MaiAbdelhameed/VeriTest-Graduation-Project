@@ -1,4 +1,4 @@
-module divisor_structural_loop(input [1:0] a, b,
+module d5 (input [1:0] a, b,
                                output [1:0] quotient, remainder);
 
     wire [1:0] temp_remainder;
@@ -19,7 +19,7 @@ module divisor_structural_loop(input [1:0] a, b,
     assign remainder = temp_remainder;
 endmodule
 
-module subtractor(input [1:0] a, b,
+module d5 (input [1:0] a, b,
                   output borrow, [1:0] difference);
 
     assign {borrow, difference} = a - b;

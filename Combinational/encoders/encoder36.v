@@ -1,5 +1,5 @@
 ///4x2
-module encoder36(input [3:0] in, output reg [1:0] out);
+module encoder36 (input [3:0] in, output reg [1:0] out);
 
     always @(*) begin
         if (in[3]) begin

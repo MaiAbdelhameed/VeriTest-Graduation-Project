@@ -1,4 +1,4 @@
-module decoder32(
+module decoder32 (
     input [4:0] select, input en,
     output reg [31:0] out
 );

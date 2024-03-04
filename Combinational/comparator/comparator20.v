@@ -1,4 +1,4 @@
-module comparator20(input a, input b, output reg eq, output reg gt, output reg lt);
+module comparator20 (input a, input b, output reg eq, output reg gt, output reg lt);
 
     wire w1, w1, w3;
 

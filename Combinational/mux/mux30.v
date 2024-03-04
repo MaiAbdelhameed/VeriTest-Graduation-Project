@@ -1,4 +1,4 @@
-module mux30(input a, b, sel,
+module mux30 (input a, b, sel,
                     output y);
     
     reg temp_y;

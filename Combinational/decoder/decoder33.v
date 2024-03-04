@@ -1,5 +1,5 @@
 //2 to 4 decoder
-module decoder33(input [1:0] in, output [3:0] out);
+module decoder33 (input [1:0] in, output [3:0] out);
 
     reg [3:0] temp;
 

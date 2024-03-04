@@ -1,4 +1,4 @@
-module mult19(
+module mult19 (
     input [1:0] a,
     input b,
     output reg [1:0] result

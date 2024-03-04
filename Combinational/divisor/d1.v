@@ -1,4 +1,4 @@
-module divisor_structural(input [1:0] a, b,
+module d1 (input [1:0] a, b,
                           output [1:0] quotient, remainder);
 
     wire [1:0] temp_remainder;

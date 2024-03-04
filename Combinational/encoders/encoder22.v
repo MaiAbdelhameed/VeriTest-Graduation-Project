@@ -1,4 +1,4 @@
-module encoder20(a0,a1,a2,a3,en,y0,y1);
+module encoder22 (a0,a1,a2,a3,en,y0,y1);
     input a0,a1,a2,a3;
     input en;
     output reg y0,y1;

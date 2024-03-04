@@ -1,4 +1,4 @@
-module seven_segment_basic_behavioral(input [3:0] num,
+module s6 (input [3:0] num,
                                       reg output [6:0] segments);
 
     always @(*) begin

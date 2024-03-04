@@ -1,4 +1,4 @@
-module mult10(input a, b,
+module mult10 (input a, b,
             output [1:0] result);
 
     reg [1:0] temp;

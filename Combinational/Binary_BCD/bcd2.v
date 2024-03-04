@@ -1,4 +1,4 @@
-module bcd2(
+module bcd2 (
     bin,
     bcd
     );

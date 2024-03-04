@@ -1,4 +1,4 @@
-module decoder14(a,b,c,out);
+module decoder17 (a,b,c,out);
 input a,b,c;
 output [7:0] reg out;
 

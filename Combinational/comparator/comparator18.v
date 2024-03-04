@@ -1,4 +1,4 @@
-module comparator18(a,b,aeqb,agtb,altb);
+module comparator18 (a,b,aeqb,agtb,altb);
 input [3:0] a,b;
 output aeqb,agtb,altb;
 reg aeqb,agtb,altb;

@@ -1,4 +1,4 @@
-module multi_bit_comparator (
+module comparator8 (
     input [3:0] a,
     input [3:0] b,
     output reg eq,

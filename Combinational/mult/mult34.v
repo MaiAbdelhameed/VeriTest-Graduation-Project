@@ -1,4 +1,4 @@
-module mult34(input [1:0] a, b,
+module mult34 (input [1:0] a, b,
             output [3:0] result);
 
     wire [1:0] a_b_0, a_b_1;

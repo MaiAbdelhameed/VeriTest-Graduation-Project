@@ -1,4 +1,4 @@
-module mult35(input [1:0] a, b,
+module mult35 (input [1:0] a, b,
             reg output [3:0] result);
 
     always @(*) begin

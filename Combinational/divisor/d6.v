@@ -1,4 +1,4 @@
-module divisor_dataflow_kmap(input [1:0] a, b,
+module d6 (input [1:0] a, b,
                              output [1:0] quotient, remainder);
 
     assign quotient[0] = a[0] ^ b[0];

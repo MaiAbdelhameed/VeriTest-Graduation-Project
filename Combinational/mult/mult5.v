@@ -1,4 +1,4 @@
-module mult5(input a1,a0,b1,b0,
+module mult5 (input a1,a0,b1,b0,
             output [3:0] result);
 
     wire a0b0, a0b1, a1b0, a0b1;

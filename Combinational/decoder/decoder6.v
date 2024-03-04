@@ -1,4 +1,4 @@
-module decoder6(
+module decoder6 (
 input [2:0] D,
 output reg [7:0] y);
 

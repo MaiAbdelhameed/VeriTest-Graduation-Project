@@ -1,4 +1,4 @@
-module mux27(input a, b, sel,
+module mux27 (input a, b, sel,
                       output y);
 
     wire not_sel;

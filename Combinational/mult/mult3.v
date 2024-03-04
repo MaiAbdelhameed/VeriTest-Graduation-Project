@@ -1,4 +1,4 @@
-module mult3(input [1:0] a, b,
+module mult3 (input [1:0] a, b,
             output [3:0] reg result);
 
 

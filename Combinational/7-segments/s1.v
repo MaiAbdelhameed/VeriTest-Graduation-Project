@@ -1,4 +1,4 @@
-module seven_segment_basic_structural(input [3:0] num,
+module s1 (input [3:0] num,
                                       output [6:0] segments);
 
     wire [6:0] segment_map;

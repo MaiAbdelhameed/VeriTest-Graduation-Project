@@ -1,4 +1,4 @@
-module seven_segment_basic_structural(input [3:0] num,
+module s3 (input [3:0] num,
                                       reg output [6:0] segments);
 
     always @(*) begin

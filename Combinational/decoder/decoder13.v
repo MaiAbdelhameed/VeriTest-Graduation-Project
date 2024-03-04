@@ -1,4 +1,4 @@
-module decoder13( in,out, en);
+module decoder13 ( in,out, en);
 input [2:0] in;
 input en;
 output [7:0] reg out;

@@ -1,4 +1,4 @@
-module comparator10(input [1:0] A,B, output reg A_less_B, A_equal_B, A_greater_B);  
+module comparator10 (input [1:0] A,B, output reg A_less_B, A_equal_B, A_greater_B);  
 
 always @(*) begin
     case({A,B})

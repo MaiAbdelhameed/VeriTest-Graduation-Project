@@ -1,4 +1,4 @@
-module mux23(input [15:0] in,
+module mux23 (input [15:0] in,
                                 input [3:0] sel,
                                 output  out);
 

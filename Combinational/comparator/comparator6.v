@@ -1,4 +1,4 @@
-module comparator6(A,B,C,D,E);
+module comparator6 (A,B,C,D,E);
 
 	input [3:0]A;
 	input [3:0]B;

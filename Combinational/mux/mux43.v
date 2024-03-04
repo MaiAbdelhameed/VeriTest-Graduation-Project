@@ -1,4 +1,4 @@
-module mux43(input [3:0] in0, in1, in2, in3,
+module mux43 (input [3:0] in0, in1, in2, in3,
                      input [1:0] sel,
                      output reg out);
 

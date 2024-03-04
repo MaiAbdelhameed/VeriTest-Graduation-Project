@@ -1,4 +1,4 @@
-module encoder1(
+module encoder1 (
 input [7:0] D,
 output [2:0] y);
 

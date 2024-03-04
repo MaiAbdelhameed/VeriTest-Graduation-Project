@@ -1,6 +1,6 @@
 //3x8
 
-module decoder44(input [2:0] in, output [7:0] out);
+module decoder44 (input [2:0] in, output [7:0] out);
 
     reg [7:0] temp;
     always @* begin

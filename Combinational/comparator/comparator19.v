@@ -1,5 +1,5 @@
 //////////////CHECK///////////////////
-module comparator19(input a, input b, output reg eq, output reg gt, output reg lt);
+module comparator19 (input a, input b, output reg eq, output reg gt, output reg lt);
 
     wire a_xor_b, a_and_b;
     wire a_nor_b;

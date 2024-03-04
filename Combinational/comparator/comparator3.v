@@ -1,4 +1,4 @@
-module comparator3(A,B,C,D,E);
+module comparator3 (A,B,C,D,E);
     input A,B;
     output C,D,E;
 

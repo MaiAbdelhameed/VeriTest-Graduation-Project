@@ -1,4 +1,4 @@
-module bcd4(A,ONES,TENS,HUNDREDS);
+module bcd4 (A,ONES,TENS,HUNDREDS);
 input [7:0] A;
 output [3:0] ONES, TENS;
 output [1:0] HUNDREDS;

@@ -1,4 +1,4 @@
-module encoder8(y1,y2,y3,a0,a1);
+module encoder8 (y1,y2,y3,a0,a1);
     input y1,y2,y3;
     output a0,a1;
 

@@ -1,5 +1,5 @@
 
-module mux8(input a, b, c, d,
+module mux8 (input a, b, c, d,
                             input [1:0] sel,
                             output reg y);
 

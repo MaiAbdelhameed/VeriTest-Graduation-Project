@@ -1,4 +1,4 @@
-module decoder16(in,out1);
+module decoder16 (in,out1);
 input [2:0] in;
 output [7:0] out1;
 

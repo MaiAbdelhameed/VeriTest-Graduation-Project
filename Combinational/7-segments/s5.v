@@ -1,4 +1,4 @@
-module seven_segment_basic_behavioral(input [3:0] num,
+module s5 (input [3:0] num,
                                       output [6:0] segments);
 
     reg [6:0] segment_out;

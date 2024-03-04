@@ -1,4 +1,4 @@
-module mux32(input [1:0] a, b, sel,
+module mux32 (input [1:0] a, b, sel,
                            output y);
 
     wire [1:0] temp;
@@ -17,7 +17,7 @@ module mux32(input [1:0] a, b, sel,
     assign y = {temp[1], temp[0]};
 endmodule
 
-module and(input a, b,
+module mux32 (input a, b,
            output y);
     assign y = a & b;
 endmodule

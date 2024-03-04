@@ -1,4 +1,4 @@
-module mux33(input a, b, sel,
+module mux33 (input a, b, sel,
                    output y);
 
     // Multiplexer logic using case statement

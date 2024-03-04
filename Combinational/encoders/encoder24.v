@@ -1,4 +1,4 @@
-module encoder24(a,y); // Test
+module encoder24 (a,y); // Test
     input [15:0] a;
     output reg [3:0] y;
     always@(a)

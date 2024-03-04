@@ -1,4 +1,4 @@
-module divisor_dataflow(input [1:0] a, b,
+module d4 (input [1:0] a, b,
                         output [1:0] quotient, remainder);
 
 

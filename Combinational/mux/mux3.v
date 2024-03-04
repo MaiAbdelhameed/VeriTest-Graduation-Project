@@ -1,4 +1,4 @@
-module mux3(input a, b, sel,
+module mux3 (input a, b, sel,
                     output y);
 
     wire not_sel;

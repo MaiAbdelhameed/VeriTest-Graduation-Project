@@ -1,4 +1,4 @@
-module encoder18(en,D0,D1,D2,D3,D4,D5,D6,D7,
+module encoder18 (en,D0,D1,D2,D3,D4,D5,D6,D7,
 y0,y1,y2);
 
 input en,D0,D1,D2,D3,D4,D5,D6,D7;

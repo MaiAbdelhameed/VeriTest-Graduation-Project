@@ -1,4 +1,4 @@
-module decoder30(a,b,y);
+module decoder30 (a,b,y);
     input a,b;   
     output reg [3:0]y;
 

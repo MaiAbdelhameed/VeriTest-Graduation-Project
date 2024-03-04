@@ -1,4 +1,4 @@
-module seven_segment_basic_structural(input [3:0] num,
+module s2 (input [3:0] num,
                                       output [6:0] segments);
 
     reg [6:0] segment_map;

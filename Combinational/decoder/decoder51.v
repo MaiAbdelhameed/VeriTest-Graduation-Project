@@ -1,6 +1,6 @@
 /////check/////
 
-module decoder51(input [2:0] in, output reg [7:0] out);
+module decoder51 (input [2:0] in, output reg [7:0] out);
 
     reg [7:0] temp;
 

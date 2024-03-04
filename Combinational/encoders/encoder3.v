@@ -1,4 +1,4 @@
-module encoder3(a,en,y);
+module encoder3 (a,en,y);
 input [7:0] a;
 input en;
 output reg [2:0] y;

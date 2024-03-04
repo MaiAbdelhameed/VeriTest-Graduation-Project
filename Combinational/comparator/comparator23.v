@@ -1,4 +1,4 @@
-module comparator23(input a, input b, output eq, output gt, output lt);
+module comparator23 (input a, input b, output eq, output gt, output lt);
 
     reg temp1, temp2, temp3;
 

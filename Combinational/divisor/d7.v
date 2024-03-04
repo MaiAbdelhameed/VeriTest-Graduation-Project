@@ -1,4 +1,4 @@
-module divisor_dataflow_kmap(input [1:0] a, b,
+module d7 (input [1:0] a, b,
                             reg output [1:0] quotient, remainder);
 
     always @(*) begin

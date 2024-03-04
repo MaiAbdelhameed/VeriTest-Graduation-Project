@@ -1,4 +1,4 @@
-module encoder6(y0,y1,y2,y3,a0,a1);
+module encoder6 (y0,y1,y2,y3,a0,a1);
     input y0,y1,y2,y3;
     output a0,a1;
 

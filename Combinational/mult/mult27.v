@@ -1,4 +1,4 @@
-module mult27(
+module mult27 (
     input [2:0] a,
     input [2:0] b,
     output reg [5:0] result

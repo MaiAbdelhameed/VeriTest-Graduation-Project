@@ -1,4 +1,4 @@
-module mux56(input [7:0] in,
+module mux56 (input [7:0] in,
                               input [2:0] sel,
                               output out);
     reg temp;

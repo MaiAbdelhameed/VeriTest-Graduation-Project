@@ -1,4 +1,4 @@
-module decoder24(din, en, dout);
+module decoder24 (din, en, dout);
   input [1:0] din; //2bit input
   input en; //enable
   output reg [3:0] dout;  //4bit output

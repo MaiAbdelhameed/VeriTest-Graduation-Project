@@ -1,4 +1,4 @@
-module mult7(input [1:0] a, b,
+module mult7 (input [1:0] a, b,
             output [3:0] result);
 
     wire a0b0, a0b1, a1b0, a0b1;

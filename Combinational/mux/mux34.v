@@ -1,4 +1,4 @@
-module mux34(input a, b, sel,
+module mux34 (input a, b, sel,
                       reg output y);
 
     reg not_sel;

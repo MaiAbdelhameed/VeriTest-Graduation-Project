@@ -1,4 +1,4 @@
-module mult21( // test
+module mult21 ( // test
     input [1:0] a,
     input [1:0] b,
     output reg [3:0] result

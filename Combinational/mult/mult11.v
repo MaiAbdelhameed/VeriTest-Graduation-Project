@@ -1,4 +1,4 @@
-module mult11(input a, b,
+module mult11 (input a, b,
             output reg [1:0] result);
 
 

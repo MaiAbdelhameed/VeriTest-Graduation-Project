@@ -1,4 +1,4 @@
-module mult12(input a, b,
+module mult12 (input a, b,
             output result);
 
     reg temp;

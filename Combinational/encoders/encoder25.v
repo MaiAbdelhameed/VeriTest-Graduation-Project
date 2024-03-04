@@ -1,4 +1,4 @@
-module encoder24(a,en,y); // Test
+module encoder25 (a,en,y); // Test
     input [15:0] a;
     input en;
     output reg [3:0] y;

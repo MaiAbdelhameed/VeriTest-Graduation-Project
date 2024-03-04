@@ -1,4 +1,4 @@
-module decoder2(en,a,b,y);
+module decoder2 (en,a,b,y);
     input en,a,b;   
     output reg [3:0]y;
 

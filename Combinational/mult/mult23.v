@@ -1,4 +1,4 @@
-module mult23( //test
+module mult23 ( //test
     input [1:0] a,
     input [1:0] b,
     output reg [3:0] result

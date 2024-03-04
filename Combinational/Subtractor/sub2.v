@@ -1,4 +1,4 @@
-module sub2(a,b,c,D,cout);
+module sub2 (a,b,c,D,cout);
 input a,b ;
 input c;
 output D ;

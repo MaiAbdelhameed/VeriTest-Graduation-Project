@@ -1,4 +1,4 @@
-module decoder12(en,in,out);
+module decoder12 (en,in,out);
 	
 	input [1:0] in;
     input en;

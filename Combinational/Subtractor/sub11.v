@@ -1,4 +1,4 @@
-module halfsub2 (A,B,D,Bout);
+module sub11 (A,B,D,Bout);
 
     input A,B;
     output reg D,Bout;

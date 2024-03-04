@@ -1,4 +1,4 @@
-module seven_segment_structural_loop(input [3:0] num,
+module s7 (input [3:0] num,
                                      output [6:0] segments);
 
     wire [6:0] segment_out;

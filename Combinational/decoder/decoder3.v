@@ -1,4 +1,4 @@
-module decoder3(en,a,b,y);
+module decoder3 (en,a,b,y);
     // declare input and output ports
     input en,a,b;
     output [3:0]y;

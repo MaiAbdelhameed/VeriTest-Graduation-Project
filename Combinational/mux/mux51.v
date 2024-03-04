@@ -1,4 +1,4 @@
-module mux51(input [7:0] in,
+module mux51 (input [7:0] in,
                               input [2:0] sel,
                               output out);
 

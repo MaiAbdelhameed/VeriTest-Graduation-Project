@@ -1,4 +1,4 @@
-module encoder48(input [3:0] in, output reg [1:0] out);
+module encoder48 (input [3:0] in, output reg [1:0] out);
 
     reg [1:0] temp;
     always @* begin

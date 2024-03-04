@@ -1,4 +1,4 @@
-module encoder10(a,y);
+module encoder10 (a,y);
     input [3:0] a;
     output reg [1:0] y;
     always@(a)

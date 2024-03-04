@@ -1,4 +1,4 @@
-module comparator2(A,C,out);
+module comparator2 (A,C,out);
 
 	input [3:0]A;
 	input [3:0]C;

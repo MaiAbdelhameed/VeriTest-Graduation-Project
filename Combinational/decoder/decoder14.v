@@ -1,4 +1,4 @@
-module decoder14(
+module decoder14 (
     Data_in,
     Data_out
     );

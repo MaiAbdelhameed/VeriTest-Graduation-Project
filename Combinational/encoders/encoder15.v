@@ -1,4 +1,4 @@
-module encoder15(input en,
+module encoder15 (input en,
 input [7:0] D,
 output [2:0] y);
 

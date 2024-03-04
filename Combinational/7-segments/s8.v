@@ -1,4 +1,4 @@
-module seven_segment_dataflow_kmap(input [3:0] num,
+module s8 (input [3:0] num,
                                    output [6:0] segments);
 
     assign segments[0] = (num == 4'b0000) ? 1'b1 : 1'b0;

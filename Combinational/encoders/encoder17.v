@@ -1,4 +1,4 @@
-module encoder17(D1,D2,D3,D4,D5,D6,D7,
+module encoder17 (D1,D2,D3,D4,D5,D6,D7,
 y0,y1,y2);
 
 input D1,D2,D3,D4,D5,D6,D7;

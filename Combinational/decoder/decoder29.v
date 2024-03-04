@@ -1,4 +1,4 @@
-module decoder29(x,y,z,w,d);
+module decoder29 (x,y,z,w,d);
 input  w,x,y,z;
 output [15:0]d;
 assign d[0]=  (~x) & (~y) &(~z) & (~w)  ;

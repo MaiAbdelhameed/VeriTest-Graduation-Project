@@ -1,4 +1,4 @@
-module comparator14(
+module comparator14 (
     Data_in_A,  //input A
     Data_in_B,  //input B
     less,       //high when A is less than B

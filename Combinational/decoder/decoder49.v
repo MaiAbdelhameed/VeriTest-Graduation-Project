@@ -1,4 +1,4 @@
-module decoder49(input [2:0] in, output reg [7:0] out);
+module decoder49 (input [2:0] in, output reg [7:0] out);
 
     always @(*) begin
         

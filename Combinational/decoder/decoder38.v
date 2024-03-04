@@ -1,4 +1,4 @@
-module decoder38(input [1:0] in, output reg [3:0] out);
+module decoder38 (input [1:0] in, output reg [3:0] out);
 
     reg [3:0] temp;
     always @* begin

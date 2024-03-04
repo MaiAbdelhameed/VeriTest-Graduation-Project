@@ -1,4 +1,4 @@
-module encoder27(input [1:0] in, output reg out);
+module encoder27 (input [1:0] in, output reg out);
 
     always @(*) begin
         if (in[1]) begin

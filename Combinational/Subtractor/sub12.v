@@ -1,4 +1,4 @@
-module halfsub5 (A, B, Diff, Borrow);
+module sub12 (A, B, Diff, Borrow);
 input A, B;
 output reg Diff, Borrow;
 always @ (*)

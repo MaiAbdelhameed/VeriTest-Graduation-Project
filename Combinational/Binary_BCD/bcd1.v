@@ -1,4 +1,4 @@
-module bcd1(
+module bcd1 (
     input [13:0] bin,
     output reg [15:0] bcd
     );

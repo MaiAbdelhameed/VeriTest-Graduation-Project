@@ -1,4 +1,4 @@
-module decoder5( in,out, en);
+module decoder5 ( in,out, en);
 input [2:0]  in;
 input en;
 output [7:0] out;

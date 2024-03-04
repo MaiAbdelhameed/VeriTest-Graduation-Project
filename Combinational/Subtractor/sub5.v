@@ -1,4 +1,4 @@
-module sub5(A,B,cin,sub,bo);
+module sub5 (A,B,cin,sub,bo);
 
 	input A,B,cin;
 	output sub,bo;

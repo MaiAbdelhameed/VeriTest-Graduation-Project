@@ -1,4 +1,4 @@
-module comparator9(input [1:0] A,B, output A_less_B, A_equal_B, A_greater_B);  
+module comparator9 (input [1:0] A,B, output A_less_B, A_equal_B, A_greater_B);  
 wire tmp1,tmp2,tmp3,tmp4,tmp5, tmp6, tmp7, tmp8;  
 // A = B output   
 xnor u1(tmp1,A[1],B[1]);  

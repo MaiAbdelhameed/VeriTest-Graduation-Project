@@ -1,4 +1,4 @@
-module decoder10(ip0,ip1,op0,op1,op2,op3);
+module decoder10 (ip0,ip1,op0,op1,op2,op3);
 
 input ip0,ip1;
 output reg op0,op1,op2,op3;

@@ -1,5 +1,5 @@
 
-module mux13(input [3:0] in,
+module mux13 (input [3:0] in,
                             input [1:0] sel,
                             output reg y);
 

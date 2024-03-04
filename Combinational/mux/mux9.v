@@ -1,5 +1,5 @@
 
-module mux9(input a, b,
+module mux9 (input a, b,
             input sel,
             output reg y);
 

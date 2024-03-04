@@ -1,4 +1,4 @@
-module sub6(A,B,cin,sub,bo);
+module sub6 (A,B,cin,sub,bo);
 
 	input A,B,cin;
 	output sub,bo;

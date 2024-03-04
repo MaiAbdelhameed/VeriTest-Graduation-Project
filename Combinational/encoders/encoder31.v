@@ -1,4 +1,4 @@
-module encoder31(input [1:0] in, output reg [1:0] out);
+module encoder31 (input [1:0] in, output reg [1:0] out);
 
     always @* begin
         case(in)
