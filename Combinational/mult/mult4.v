@@ -1,7 +1,7 @@
 module mult4 (input [1:0] a, b,
             output [3:0] result);
 
-    wire a0b0, a0b1, a1b0, a0b1;
+    wire a0b0, a0b1, a1b0, a1b1;
 
     and gate_a0(a0b0, a[0], b[0]);
     and gate_a1(a1b0, a[1], b[0]);

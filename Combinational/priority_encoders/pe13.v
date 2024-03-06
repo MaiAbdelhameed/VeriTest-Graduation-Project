@@ -11,8 +11,7 @@ module pe13 (D0,D1,D2,D3,en,Y1,Y0,V);
         else if(D0 == 1) {Y1,Y0,V} = 3'b001;
         else {Y1,Y0,V} = 3'b000;
     end
-    end
     else
         {Y1,Y0,V} = 3'b000;
-
+end
 endmodule

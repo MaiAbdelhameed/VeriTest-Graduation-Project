@@ -1,6 +1,6 @@
-module ALU(input [3:0] aluin_a, aluin_b, OPCODE, input Cin, output reg [3:0] alu_out, output reg Cout, output reg OF);
-\
-always @ (*) begin
+module ALU12(input [3:0] aluin_a, aluin_b, OPCODE, input Cin, output reg [3:0] alu_out, output reg Cout, output reg OF);
+
+always@(*) begin
 case (OPCODE)
 // add
 4'b1000 : begin
@@ -36,7 +36,7 @@ Cout = 1'b0;
 end
 // logical left shift
 4'b0101 : begin
-alu_out = aluin_a << aluin_b
+alu_out = aluin_a << aluin_b;
 Cout = 1'b0;
 end
 default : begin
@@ -45,4 +45,3 @@ end
 endcase
 end
 endmodule
-/*

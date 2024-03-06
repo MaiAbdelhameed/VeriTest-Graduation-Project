@@ -4,7 +4,7 @@ module not7 (
 );
 
     reg temp;
-    always @(*) begin:
+    always @(*) begin
         temp = ~in; // Invert the input
     end
     

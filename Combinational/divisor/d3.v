@@ -1,5 +1,5 @@
-module d3 (input [1:0] a, b,
-                        reg output [1:0] quotient, remainder);
+module d3 (input [1:0] a,input [1:0] b,
+                    output reg [1:0] quotient, output reg [1:0] remainder);
 
 
     always @(*) begin

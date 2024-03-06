@@ -1,6 +1,6 @@
-module decoder30 (a,b,y);
-    input a,b;   
-    output reg [3:0]y;
+module decoder30 (a,b,en,y);
+    input a,b,en;   
+    output reg [3:0] y;
 
     always @(en,a,b)
     begin

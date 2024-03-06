@@ -4,7 +4,7 @@ module nor6 (
   output reg out
 );
 
-    always @(*) begin:
+    always @(*) begin
         out = ~(a | b); // NOR using built-in operator
     end
 

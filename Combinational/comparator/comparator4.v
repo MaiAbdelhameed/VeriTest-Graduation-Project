@@ -9,6 +9,6 @@ and g1 (C,not_A,B); // A<B
 not n2 (not_B,B);
 and g2 (E,not_B,A); // A>B
 or g3 (or_out,C,E);
-not g4 (D,or_out) // A=B
+not g4 (D,or_out); // A=B
 
 endmodule

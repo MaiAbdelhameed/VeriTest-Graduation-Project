@@ -1,10 +1,10 @@
-module s2 (input [3:0] num,
-                                      output [6:0] segments);
+module s2 (input [9:0] num,
+                                      output [9:0] segments);
 
-    reg [6:0] segment_map;
+    wire [9:0] segment_map;
 
+    // Define segment mappings for numbers 0-9
     always @(*) begin
-        // Define segment mappings for numbers 0-9
         segment_map[0] = 7'b100_0000;
         segment_map[1] = 7'b111_1001;
         segment_map[2] = 7'b010_0100;
@@ -18,5 +18,4 @@ module s2 (input [3:0] num,
     end
     
     assign segments = segment_map[num];
-
 endmodule

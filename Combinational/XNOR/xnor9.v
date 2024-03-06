@@ -5,7 +5,7 @@ module xnor9 (
 );
 
     reg temp;
-    always @(*) begin:
+    always @(*) begin
         temp = (a == b) ? 1'b1 : 1'b0; // XNOR using conditional expression (XOR and invert both)
     end
     

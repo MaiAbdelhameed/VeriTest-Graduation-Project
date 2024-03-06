@@ -4,7 +4,7 @@ module or17 (
 );
 
     reg temp;
-    always @(*) begin:
+    always @(*) begin
         temp = a | a;
     end
     

@@ -3,7 +3,7 @@ module or25 (
     output reg out
 );
 
-    always @(*) begin:
+    always @(*) begin
         out = (|a == 1'b1) ? 1'b1 : 1'b0;
     end
     

@@ -1,7 +1,7 @@
 module decoder13 ( in,out, en);
 input [2:0] in;
 input en;
-output [7:0] reg out;
+output reg [7:0] out;
 
 always @( in or en)
 	begin

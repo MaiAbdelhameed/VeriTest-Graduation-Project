@@ -5,7 +5,7 @@ module xor7 (
 );
 
     reg temp;
-    always @(*) begin:
+    always @(*) begin
         temp = a ^ b; // ^ represents the XOR operator
     end
     

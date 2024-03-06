@@ -4,7 +4,7 @@ module xnor23 (
 );
 
     reg temp;
-    always @(*) begin:
+    always @(*) begin
         temp = (a ^ a == 1'b0) ? 1'b1 : 1'b0;
     end
 

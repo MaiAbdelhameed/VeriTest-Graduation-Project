@@ -4,7 +4,7 @@ module and28(
     output reg out
 );
 
-    always @(*) begin:
+    always @(*) begin
         out = a && b;
     end
     

@@ -4,7 +4,7 @@ module xor6 (
   output reg out
 );
 
-    always @(*) begin:
+    always @(*) begin
         out = a ^ b; // ^ represents the XOR operator
     end
     

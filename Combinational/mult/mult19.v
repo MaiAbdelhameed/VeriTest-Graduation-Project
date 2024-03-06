@@ -1,6 +1,6 @@
 module mult19 (
     input [1:0] a,
-    input b,
+    input [1:0] b,
     output reg [1:0] result
 );
 

@@ -4,7 +4,7 @@ module xor22 (
 );
 
     reg temp;
-    always @(*) begin:
+    always @(*) begin
         temp = ^a;
     end
 

@@ -1,11 +1,11 @@
-module comparator20 (input a, input b, output reg eq, output reg gt, output reg lt);
+module comparator20 (input a, input b, output eq, output gt, output lt);
 
-    wire w1, w1, w3;
+    wire w1, w2, w3;
 
 
-    and u_and(w2, ~a, b); // A < B
-    and u_and(w3, a, ~b); // A > B
-    or u_or(w1, w2, w3); // A != B
+    and (w2, ~a, b); // A < B
+    and (w3, a, ~b); // A > B
+    or (w1, w2, w3); // A != B
 
     assign eq = ~w1;
     assign lt = w2;

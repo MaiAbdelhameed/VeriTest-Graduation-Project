@@ -1,7 +1,7 @@
 module decoder18 ( a,b,c,out, en);
 input a,b,c;
 input en;
-output [7:0] reg out;
+output reg [7:0] out;
 
 always @( * )
 	begin

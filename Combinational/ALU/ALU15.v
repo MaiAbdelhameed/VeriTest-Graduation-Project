@@ -1,11 +1,11 @@
 module ALU15 (
     input  [7:0] A,
     input  [7:0] B,
-    input  [3:0]      op,
+    input  [3:0] op,
     output reg [7:0] out
 );
 
-always(*) begin
+always@(*) begin
     if(op == 4'b0000)
         out = A + B;
     else if(op == 4'b0001)

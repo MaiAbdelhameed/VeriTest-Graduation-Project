@@ -1,8 +1,8 @@
 module and15 (
-    input wire a,
+    input a,
     output reg out
 );
-    always @(*) begin : and
+    always @(*) begin
         out = (a & 1'b1);
     end
 

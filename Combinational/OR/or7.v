@@ -4,7 +4,7 @@ module or7 (
   input b,
   output reg out
 );
-    always @(*) begin:
+    always @(*) begin
         out = a | b;
     end
     

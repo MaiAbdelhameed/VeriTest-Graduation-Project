@@ -5,7 +5,7 @@ module nor17 (
 );
 
     reg temp;
-    always @(*) begin:
+    always @(*) begin
         temp = ~(a || b);
     end
     

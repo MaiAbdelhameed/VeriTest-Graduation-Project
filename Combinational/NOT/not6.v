@@ -3,7 +3,7 @@ module not6 (
   output reg out
 );
 
-    always @(*) begin:
+    always @(*) begin
         out = ~in; // Invert the input
     end
     

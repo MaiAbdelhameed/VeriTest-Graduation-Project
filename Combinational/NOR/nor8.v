@@ -4,7 +4,7 @@ module nor8 (
   output reg out
 );
 
-    always @(*) begin:
+    always @(*) begin
         out = (a == 1'b1 && b == 1'b1) ? 1'b0 : 1'b1; // NOR using conditional expression
     end
 

@@ -5,7 +5,7 @@ module and29(
 );
 
     reg temp;
-    always @(*) begin:
+    always @(*) begin
         temp = a && b;
     end
     

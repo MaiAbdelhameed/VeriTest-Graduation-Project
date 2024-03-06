@@ -1,6 +1,6 @@
 module and12 (
     input wire a,
-    output wire out
+    output reg out
 );
 
     always @(*) begin

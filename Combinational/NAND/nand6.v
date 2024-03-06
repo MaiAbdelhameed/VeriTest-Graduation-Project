@@ -3,7 +3,7 @@ module nand6 (
   input b,
   output reg out
 );
-    always @(*) begin:
+    always @(*) begin
         out = ~(a & b); // NAND using built-in operator
     end
 endmodule

@@ -1,7 +1,7 @@
-module s1 (input [3:0] num,
-                                      output [6:0] segments);
+module s1 (input [9:0] num,
+                                      output [9:0] segments);
 
-    wire [6:0] segment_map;
+    wire [9:0] segment_map;
 
     // Define segment mappings for numbers 0-9
     assign segment_map[0] = 7'b100_0000;

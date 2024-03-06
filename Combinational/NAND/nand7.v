@@ -5,7 +5,7 @@ module nand7 (
 );
 
     reg temp;
-    always @(*) begin:
+    always @(*) begin
         temp = ~(a & b); // NAND using built-in operator
     end
 

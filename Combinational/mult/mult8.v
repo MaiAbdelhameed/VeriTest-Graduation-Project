@@ -1,4 +1,4 @@
-module mult8 (input a1,a0,b1,b0
+module mult8 (input a1,a0,b1,b0,
             output reg [3:0] result);
 
     always @(*) begin

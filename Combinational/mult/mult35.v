@@ -1,5 +1,5 @@
-module mult35 (input [1:0] a, b,
-            reg output [3:0] result);
+module mult35 (input [1:0] a, input [1:0] b,
+            output reg [3:0] result);
 
     always @(*) begin
         result[0] = a[0] & b[0];

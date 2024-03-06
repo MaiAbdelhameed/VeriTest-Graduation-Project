@@ -1,6 +1,6 @@
 module decoder17 (a,b,c,out);
 input a,b,c;
-output [7:0] reg out;
+output reg [7:0] out;
 
 always @(*)
 	begin

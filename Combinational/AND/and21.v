@@ -4,7 +4,7 @@ module and21 (
 );
 
     reg temp;
-    always @(*) begin:
+    always @(*) begin
         temp = &{a};
     end
 

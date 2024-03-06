@@ -4,7 +4,7 @@ module nand20 (
 );
 
     reg temp;
-    always @(*) begin:
+    always @(*) begin
         temp = (a & a) ? 1'b0 : 1'b1;
     end
     

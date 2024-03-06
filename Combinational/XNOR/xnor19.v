@@ -3,7 +3,7 @@ module xnor19 (
     output reg out
 );
 
-always @(*) begin:
+always @(*) begin
         out = ~(a ^ a);
 end
 

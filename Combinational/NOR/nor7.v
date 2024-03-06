@@ -5,7 +5,7 @@ module nor7 (
 );
 
     reg temp;
-    always @(*) begin:
+    always @(*) begin
         temp = ~(a | b); // NOR using built-in operator
     end
 

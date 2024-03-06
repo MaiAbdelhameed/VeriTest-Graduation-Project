@@ -1,6 +1,6 @@
 module mult18 (
     input [2:0] a,
-    input b,
+    input [2:0] b,
     output reg [2:0] result
 );
 

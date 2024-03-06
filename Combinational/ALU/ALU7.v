@@ -1,11 +1,11 @@
 module ALU7 (
   input  [7:0] A,
   input  [7:0] B,
-  input  [3:0]      op,
+  input  [3:0] op,
   output reg [7:0] out
 );
 
-  always(*) begin
+  always@(*) begin
     case (op)
       4'b0000: out = A + B;
       4'b0001: out = A - B;

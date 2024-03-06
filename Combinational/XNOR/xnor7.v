@@ -5,7 +5,7 @@ module xnor7 (
 );
 
     reg temp;
-    always @(*) begin:
+    always @(*) begin
         temp = a ^ ~b; // XNOR using built-in operator
     end
     

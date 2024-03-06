@@ -3,7 +3,7 @@ module sub7 (A,B,Bin,D,Bout);
     output reg D,Bout;
 
     always @(*) begin
-        case ({A,b,Bin})
+        case ({A,B,Bin})
             3'b000: begin
                 D = 1'b0;
                 Bout = 1'b0;
