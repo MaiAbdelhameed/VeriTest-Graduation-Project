@@ -1,5 +1,5 @@
 module s3 (input [3:0] num,
-                                      reg output [6:0] segments);
+                                      reg output [9:0] segments);
 
     always @(*) begin
         // Define segment mappings for numbers 0-9

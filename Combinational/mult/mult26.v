@@ -4,10 +4,12 @@ module mult26 (
     output reg [5:0] result
 );
 
+integer i;
+
 always @(*) begin
     result = 6'b0;
 
-    for (int i = 0; i < 3; i = i + 1) begin
+    for (i = 0; i < 3; i = i + 1) begin
         if (b[i] == 1'b1)
             result = result + (a << i);
     end

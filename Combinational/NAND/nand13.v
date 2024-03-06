@@ -5,9 +5,9 @@ module nand13 (
 );
 
 reg [3:0] result;
-
+integer i;
 always @(*) begin
-    for (int i = 0; i < 4; i = i + 1) begin
+    for (i = 0; i < 4; i = i + 1) begin
         result[i] = ~(a[i] & b[i]);
     end
 end

@@ -10,6 +10,7 @@ module mux57 (input [7:0] in,
                  (sel == 3'b100) ? in[4] :
                  (sel == 3'b101) ? in[5] :
                  (sel == 3'b110) ? in[6] :
-                 (sel == 3'b111) ? in[7];
+                 (sel == 3'b111) ? in[7] :
+                 out;
     end
 endmodule

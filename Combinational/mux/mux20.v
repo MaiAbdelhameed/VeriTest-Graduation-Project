@@ -9,6 +9,7 @@ module mux20 (input a,b,c,d,e,f,g,h,
                 (sel == 3'b100) ? e:
                 (sel == 3'b101) ? f:
                 (sel == 3'b110) ? g:
-                (sel == 3'b111) ? h;
+                (sel == 3'b111) ? h:
+                out;
 
 endmodule

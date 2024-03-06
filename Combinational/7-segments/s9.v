@@ -1,5 +1,5 @@
 module s9 (input [3:0] num,
-                                   output [6:0] segments);
+                                   output reg [6:0] segments);
 
     always @(*) begin
         segments[0] = (num == 4'b0000) ? 1'b1 : 1'b0;

@@ -1,7 +1,7 @@
-module s2 (input [9:0] num,
+module s2 (input [3:0] num,
                                       output [9:0] segments);
 
-    wire [9:0] segment_map;
+    reg [9:0] segment_map;
 
     // Define segment mappings for numbers 0-9
     always @(*) begin

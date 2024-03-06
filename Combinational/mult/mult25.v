@@ -6,9 +6,10 @@ module mult25 (
 
 reg [3:0] partial_products [3:0];
 reg [7:0] result_temp;
+integer i;
 
 always @(*) begin
-    for (int i = 0; i < 4; i = i + 1) begin
+    for (i = 0; i < 4; i = i + 1) begin
         partial_products[i] = a & (b[i] ? {4'b0, a} : 4'b0);
     end
     result_temp = partial_products[0] + (partial_products[1] << 1) + (partial_products[2] << 2) + (partial_products[3] << 3);

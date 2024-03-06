@@ -18,7 +18,8 @@ module mux68 (input [15:0] in,
                     (sel == 4'b1100) ? in[12] :
                     (sel == 4'b1101) ? in[13] :
                     (sel == 4'b1110) ? in[14] :
-                    (sel == 4'b1111) ? in[15];
+                    (sel == 4'b1111) ? in[15] :
+                    out;
     end
 
 endmodule

@@ -4,10 +4,11 @@ module or27 (
 );
 
 reg result;
+integer i;
 
 always @(*) begin
     result = 1'b0;
-    for (int i = 0; i < 4; i = i + 1) begin
+    for (i = 0; i < 4; i = i + 1) begin
         result = result | a[i];
     end
 end

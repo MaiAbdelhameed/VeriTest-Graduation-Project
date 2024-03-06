@@ -2,7 +2,7 @@ module mux69 (input [15:0] in,
                               input [3:0] sel,
                               output reg out);
 
-    always @(*) begin:
+    always @(*) begin
         out = (sel == 4'b0000) ? in[0] :
                     (sel == 4'b0001) ? in[1] :
                     (sel == 4'b0010) ? in[2] :

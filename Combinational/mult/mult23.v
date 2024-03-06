@@ -5,11 +5,12 @@ module mult23 ( //test
 );
 
 reg [3:0] ac;
+integer i;
 
 always @(*) begin
     ac = {a[1], a};
 
-    for (int i = 0; i < 2; i = i + 1) begin
+    for (i = 0; i < 2; i = i + 1) begin
         if (b[i] == 1'b0)
             ac = {1'b0, ac[3:1]};
         else if (b[i] == 1'b1 && ac[0] == 1'b0)

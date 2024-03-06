@@ -1,6 +1,6 @@
 module pe25 (input [3:0] in, output [1:0] out);
 
-    wire [1:0] temp;
+    reg [1:0] temp;
 
     always @* begin
         if(in[3]) begin
