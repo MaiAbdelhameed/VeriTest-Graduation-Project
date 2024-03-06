@@ -1,5 +1,5 @@
 module mux29 (input a, b, sel,
-                    reg output y);
+                    output reg y);
     
     always @(*) begin
         y = (sel & b) | (~sel & a);

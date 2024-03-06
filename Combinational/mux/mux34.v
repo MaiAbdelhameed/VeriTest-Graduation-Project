@@ -1,5 +1,5 @@
 module mux34 (input a, b, sel,
-                      reg output y);
+                    output reg y);
 
     reg not_sel;
 

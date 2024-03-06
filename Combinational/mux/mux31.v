@@ -1,5 +1,5 @@
 module mux31 (input a, b, sel,
-                       reg output y);
+                        output reg y);
 
     always @(*) begin
         if (sel)

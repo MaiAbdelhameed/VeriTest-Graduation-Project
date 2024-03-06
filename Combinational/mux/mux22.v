@@ -19,7 +19,7 @@ module mux22 (input [15:0] in,
             4'b1100: out = in[12];
             4'b1101: out = in[13];
             4'b1110: out = in[14];
-            4'b1111: out = in[15];;
+            4'b1111: out = in[15];
         endcase
     end
 

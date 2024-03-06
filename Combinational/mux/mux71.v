@@ -1,6 +1,6 @@
 module mux71 (input [15:0] in,
                               input [3:0] sel,
-                              output  out);
+                              output out);
 
     reg temp;
     always @(*) begin

@@ -3,7 +3,7 @@ module mux68 (input [15:0] in,
                               output reg out);
 
     always @(*) begin
-    out[0] = (sel == 4'b0000) ? in[0] :
+        out = (sel == 4'b0000) ? in[0] :
                     (sel == 4'b0001) ? in[1] :
                     (sel == 4'b0010) ? in[2] :
                     (sel == 4'b0011) ? in[3] :
