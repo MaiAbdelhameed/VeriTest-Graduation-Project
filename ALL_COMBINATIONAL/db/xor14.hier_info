@@ -1,8 +1,0 @@
-|xor14
-a => Equal0.IN2
-a => Equal1.IN2
-b => Equal0.IN3
-b => Equal1.IN3
-out <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
-
-

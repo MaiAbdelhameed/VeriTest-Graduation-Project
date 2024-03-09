@@ -1,6 +1,0 @@
-|mult14
-a => result.IN0
-b => result.IN1
-result <= result.DB_MAX_OUTPUT_PORT_TYPE
-
-

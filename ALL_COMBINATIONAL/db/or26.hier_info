@@ -1,5 +1,0 @@
-|or26
-a => out.DATAIN
-out <= a.DB_MAX_OUTPUT_PORT_TYPE
-
-

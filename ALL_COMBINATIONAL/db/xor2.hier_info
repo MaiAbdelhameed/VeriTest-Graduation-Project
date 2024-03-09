@@ -1,6 +1,0 @@
-|xor2
-a => comb.IN0
-b => comb.IN1
-out <= comb.DB_MAX_OUTPUT_PORT_TYPE
-
-

@@ -1,6 +1,0 @@
-|xor13
-a => Decoder0.IN0
-b => Decoder0.IN1
-out <= temp.DB_MAX_OUTPUT_PORT_TYPE
-
-

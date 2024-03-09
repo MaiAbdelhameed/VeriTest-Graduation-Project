@@ -1,7 +1,0 @@
-|sub11
-A => Decoder0.IN0
-B => Decoder0.IN1
-D <= D.DB_MAX_OUTPUT_PORT_TYPE
-Bout <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-
-

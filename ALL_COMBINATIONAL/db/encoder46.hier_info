@@ -1,9 +1,0 @@
-|encoder46
-in[0] => Decoder0.IN3
-in[1] => Decoder0.IN2
-in[2] => Decoder0.IN1
-in[3] => Decoder0.IN0
-out[0] <= temp.DB_MAX_OUTPUT_PORT_TYPE
-out[1] <= temp.DB_MAX_OUTPUT_PORT_TYPE
-
-

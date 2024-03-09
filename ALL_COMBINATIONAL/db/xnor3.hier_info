@@ -1,6 +1,0 @@
-|xnor3
-a => xor_inst.IN0
-b => xor_inst.IN1
-out <= xor_inst.DB_MAX_OUTPUT_PORT_TYPE
-
-

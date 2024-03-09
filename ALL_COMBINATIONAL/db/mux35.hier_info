@@ -1,8 +1,0 @@
-|mux35
-a => temp_y.IN0
-b => temp_y.IN0
-sel => temp_y.IN1
-sel => temp_y.IN1
-y <= temp_y.DB_MAX_OUTPUT_PORT_TYPE
-
-

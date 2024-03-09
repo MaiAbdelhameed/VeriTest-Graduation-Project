@@ -1,5 +1,0 @@
-|xnor20
-a => ~NO_FANOUT~
-out <= <VCC>
-
-

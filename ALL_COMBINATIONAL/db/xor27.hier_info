@@ -1,8 +1,0 @@
-|xor27
-a[0] => ~NO_FANOUT~
-a[1] => ~NO_FANOUT~
-a[2] => ~NO_FANOUT~
-a[3] => ~NO_FANOUT~
-out <= <GND>
-
-

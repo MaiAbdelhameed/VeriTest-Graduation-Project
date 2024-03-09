@@ -1,6 +1,0 @@
-|or11
-a => Decoder0.IN0
-b => Decoder0.IN1
-out <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-
-

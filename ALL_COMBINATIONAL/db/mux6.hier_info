@@ -1,7 +1,0 @@
-|mux6
-a => temp_y.DATAA
-b => temp_y.DATAB
-sel => temp_y.OUTPUTSELECT
-y <= temp_y.DB_MAX_OUTPUT_PORT_TYPE
-
-
