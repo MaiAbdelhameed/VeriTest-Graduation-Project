@@ -1,0 +1,9 @@
+|encoder23
+a0 => Decoder0.IN0
+a1 => Decoder0.IN1
+a2 => Decoder0.IN2
+a3 => Decoder0.IN3
+y0 <= y0.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= y1.DB_MAX_OUTPUT_PORT_TYPE
+
+

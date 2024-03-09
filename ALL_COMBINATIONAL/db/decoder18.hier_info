@@ -1,0 +1,22 @@
+|decoder18
+a => Decoder0.IN0
+b => Decoder0.IN1
+c => Decoder0.IN2
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+en => out.OUTPUTSELECT
+
+

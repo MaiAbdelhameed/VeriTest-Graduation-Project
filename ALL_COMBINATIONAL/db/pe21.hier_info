@@ -1,0 +1,15 @@
+|pe21
+i[0] => v.IN1
+i[1] => o.IN0
+i[2] => o.IN0
+i[2] => o.IN1
+i[3] => o.IN1
+i[3] => o.IN1
+en => o.IN1
+en => o.IN1
+en => v.IN1
+o[0] <= o.DB_MAX_OUTPUT_PORT_TYPE
+o[1] <= o.DB_MAX_OUTPUT_PORT_TYPE
+v <= v.DB_MAX_OUTPUT_PORT_TYPE
+
+

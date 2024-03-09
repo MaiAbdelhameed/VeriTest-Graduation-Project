@@ -1,0 +1,10 @@
+|comparator20
+a => comb.IN0
+a => comb.IN0
+b => comb.IN1
+b => comb.IN1
+eq <= w1.DB_MAX_OUTPUT_PORT_TYPE
+gt <= comb.DB_MAX_OUTPUT_PORT_TYPE
+lt <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+

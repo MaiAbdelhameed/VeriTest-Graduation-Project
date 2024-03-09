@@ -1,0 +1,6 @@
+|nor17
+a => temp.IN0
+b => temp.IN1
+out <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+

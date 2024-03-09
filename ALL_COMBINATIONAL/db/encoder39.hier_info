@@ -1,0 +1,9 @@
+|encoder39
+in[0] => ~NO_FANOUT~
+in[1] => ~NO_FANOUT~
+in[2] => ~NO_FANOUT~
+in[3] => ~NO_FANOUT~
+out[0] <= <GND>
+out[1] <= <GND>
+
+

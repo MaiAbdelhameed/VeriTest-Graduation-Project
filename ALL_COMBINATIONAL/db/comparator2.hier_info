@@ -1,0 +1,21 @@
+|comparator2
+A[0] => LessThan0.IN4
+A[0] => LessThan1.IN4
+A[1] => LessThan0.IN3
+A[1] => LessThan1.IN3
+A[2] => LessThan0.IN2
+A[2] => LessThan1.IN2
+A[3] => LessThan0.IN1
+A[3] => LessThan1.IN1
+C[0] => LessThan0.IN8
+C[0] => LessThan1.IN8
+C[1] => LessThan0.IN7
+C[1] => LessThan1.IN7
+C[2] => LessThan0.IN6
+C[2] => LessThan1.IN6
+C[3] => LessThan0.IN5
+C[3] => LessThan1.IN5
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+

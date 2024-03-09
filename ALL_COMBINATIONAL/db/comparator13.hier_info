@@ -1,0 +1,26 @@
+|comparator13
+A0 => u2.IN0
+A0 => tmp6.IN1
+A0 => tmp8.IN1
+A0 => tmp5.IN0
+A0 => tmp3.IN0
+A1 => u1.IN0
+A1 => tmp7.IN0
+A1 => tmp8.IN0
+A1 => tmp4.IN0
+A1 => tmp3.IN1
+B0 => u2.IN1
+B0 => tmp3.IN1
+B0 => tmp5.IN1
+B0 => tmp8.IN1
+B0 => tmp6.IN0
+B1 => u1.IN1
+B1 => tmp4.IN1
+B1 => tmp5.IN1
+B1 => tmp7.IN1
+B1 => tmp6.IN1
+A_less_B <= A_less_B.DB_MAX_OUTPUT_PORT_TYPE
+A_equal_B <= u3.DB_MAX_OUTPUT_PORT_TYPE
+A_greater_B <= A_greater_B.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,5 @@
+|xnor18
+a => ~NO_FANOUT~
+out <= <VCC>
+
+

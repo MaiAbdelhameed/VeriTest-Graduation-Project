@@ -1,0 +1,6 @@
+|xnor16
+a => always0.IN0
+b => always0.IN1
+out <= always0.DB_MAX_OUTPUT_PORT_TYPE
+
+

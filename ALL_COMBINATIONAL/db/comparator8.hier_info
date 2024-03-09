@@ -1,0 +1,30 @@
+|comparator8
+a[0] => LessThan0.IN4
+a[0] => Equal0.IN3
+a[0] => LessThan1.IN4
+a[1] => LessThan0.IN3
+a[1] => Equal0.IN2
+a[1] => LessThan1.IN3
+a[2] => LessThan0.IN2
+a[2] => Equal0.IN1
+a[2] => LessThan1.IN2
+a[3] => LessThan0.IN1
+a[3] => Equal0.IN0
+a[3] => LessThan1.IN1
+b[0] => LessThan0.IN8
+b[0] => Equal0.IN7
+b[0] => LessThan1.IN8
+b[1] => LessThan0.IN7
+b[1] => Equal0.IN6
+b[1] => LessThan1.IN7
+b[2] => LessThan0.IN6
+b[2] => Equal0.IN5
+b[2] => LessThan1.IN6
+b[3] => LessThan0.IN5
+b[3] => Equal0.IN4
+b[3] => LessThan1.IN5
+eq <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+greater <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+less <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+

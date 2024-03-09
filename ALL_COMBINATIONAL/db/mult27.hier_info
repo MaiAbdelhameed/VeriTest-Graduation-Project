@@ -1,0 +1,36 @@
+|mult27
+a[0] => partial_products.DATAB
+a[0] => partial_products.IN1
+a[0] => partial_products.DATAB
+a[0] => partial_products[1][0].IN1
+a[0] => partial_products.DATAB
+a[0] => partial_products[2][0].IN1
+a[1] => partial_products.DATAB
+a[1] => partial_products[0][1].IN1
+a[1] => partial_products.DATAB
+a[1] => partial_products[1][1].IN1
+a[1] => partial_products.DATAB
+a[1] => partial_products[2][1].IN1
+a[2] => partial_products.DATAB
+a[2] => partial_products[0][2].IN1
+a[2] => partial_products.DATAB
+a[2] => partial_products[1][2].IN1
+a[2] => partial_products.DATAB
+a[2] => partial_products[2][2].IN1
+b[0] => partial_products.OUTPUTSELECT
+b[0] => partial_products.OUTPUTSELECT
+b[0] => partial_products.OUTPUTSELECT
+b[1] => partial_products.OUTPUTSELECT
+b[1] => partial_products.OUTPUTSELECT
+b[1] => partial_products.OUTPUTSELECT
+b[2] => partial_products.OUTPUTSELECT
+b[2] => partial_products.OUTPUTSELECT
+b[2] => partial_products.OUTPUTSELECT
+result[0] <= partial_products.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+result[5] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+

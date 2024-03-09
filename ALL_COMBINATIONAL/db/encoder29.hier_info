@@ -1,0 +1,6 @@
+|encoder29
+in[0] => temp.DATAA
+in[1] => temp.OUTPUTSELECT
+out <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+

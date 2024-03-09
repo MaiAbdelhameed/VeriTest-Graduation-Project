@@ -1,0 +1,7 @@
+|sub12
+A => Decoder0.IN0
+B => Decoder0.IN1
+Diff <= Diff.DB_MAX_OUTPUT_PORT_TYPE
+Borrow <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+

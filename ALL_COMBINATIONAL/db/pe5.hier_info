@@ -1,0 +1,19 @@
+|pe5
+i[0] => ~NO_FANOUT~
+i[1] => y.IN0
+i[2] => y.IN0
+i[3] => y.IN1
+i[3] => y.IN1
+i[4] => y.IN0
+i[5] => y.IN1
+i[5] => y.IN1
+i[6] => y.IN1
+i[6] => y.IN1
+i[7] => y.IN1
+i[7] => y.IN1
+i[7] => y.IN1
+y[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+

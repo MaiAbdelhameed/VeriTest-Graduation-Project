@@ -1,0 +1,12 @@
+|comparator21
+a => eq.IN0
+a => LessThan0.IN1
+a => LessThan1.IN1
+b => eq.IN1
+b => LessThan0.IN2
+b => LessThan1.IN2
+eq <= eq.DB_MAX_OUTPUT_PORT_TYPE
+gt <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+lt <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+

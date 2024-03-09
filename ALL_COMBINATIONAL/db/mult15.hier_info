@@ -1,0 +1,15 @@
+|mult15
+a1 => temp.IN0
+a1 => temp2.IN0
+a0 => result.IN0
+a0 => temp.IN0
+b1 => temp.IN1
+b1 => temp2.IN1
+b0 => result.IN1
+b0 => temp.IN1
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+

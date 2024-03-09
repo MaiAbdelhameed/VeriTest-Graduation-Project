@@ -1,0 +1,26 @@
+|mux41
+a[0] => temp.DATAB
+a[1] => ~NO_FANOUT~
+a[2] => ~NO_FANOUT~
+a[3] => ~NO_FANOUT~
+b[0] => temp.DATAB
+b[1] => ~NO_FANOUT~
+b[2] => ~NO_FANOUT~
+b[3] => ~NO_FANOUT~
+c[0] => temp.DATAB
+c[1] => ~NO_FANOUT~
+c[2] => ~NO_FANOUT~
+c[3] => ~NO_FANOUT~
+d[0] => temp.DATAA
+d[1] => ~NO_FANOUT~
+d[2] => ~NO_FANOUT~
+d[3] => ~NO_FANOUT~
+sel[0] => Equal0.IN1
+sel[0] => Equal1.IN0
+sel[0] => Equal2.IN1
+sel[1] => Equal0.IN0
+sel[1] => Equal1.IN1
+sel[1] => Equal2.IN0
+y <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+

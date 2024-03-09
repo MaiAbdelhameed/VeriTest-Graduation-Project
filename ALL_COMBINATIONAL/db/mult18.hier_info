@@ -1,0 +1,14 @@
+|mult18
+a[0] => result.IN0
+a[1] => result.IN0
+a[2] => result.IN0
+b[0] => result.IN1
+b[0] => result.IN1
+b[0] => result.IN1
+b[1] => ~NO_FANOUT~
+b[2] => ~NO_FANOUT~
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+

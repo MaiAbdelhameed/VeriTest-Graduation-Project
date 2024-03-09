@@ -1,0 +1,9 @@
+|sub10
+a => D.IN0
+a => B.IN0
+b => D.IN1
+b => B.IN1
+D <= D.DB_MAX_OUTPUT_PORT_TYPE
+B <= B.DB_MAX_OUTPUT_PORT_TYPE
+
+

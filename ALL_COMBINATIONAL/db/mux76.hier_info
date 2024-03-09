@@ -1,0 +1,22 @@
+|mux76
+in0[0] => Mux0.IN0
+in0[1] => ~NO_FANOUT~
+in0[2] => ~NO_FANOUT~
+in0[3] => ~NO_FANOUT~
+in1[0] => Mux0.IN1
+in1[1] => ~NO_FANOUT~
+in1[2] => ~NO_FANOUT~
+in1[3] => ~NO_FANOUT~
+in2[0] => Mux0.IN2
+in2[1] => ~NO_FANOUT~
+in2[2] => ~NO_FANOUT~
+in2[3] => ~NO_FANOUT~
+in3[0] => Mux0.IN3
+in3[1] => ~NO_FANOUT~
+in3[2] => ~NO_FANOUT~
+in3[3] => ~NO_FANOUT~
+sel[0] => Mux0.IN5
+sel[1] => Mux0.IN4
+out <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

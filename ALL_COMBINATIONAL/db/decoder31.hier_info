@@ -1,0 +1,40 @@
+|decoder31
+select[0] => Ram0.RADDR
+select[1] => Ram0.RADDR1
+select[2] => Ram0.RADDR2
+select[3] => Ram0.RADDR3
+select[4] => Ram0.RADDR4
+out[0] <= Ram0.DATAOUT
+out[1] <= Ram0.DATAOUT1
+out[2] <= Ram0.DATAOUT2
+out[3] <= Ram0.DATAOUT3
+out[4] <= Ram0.DATAOUT4
+out[5] <= Ram0.DATAOUT5
+out[6] <= Ram0.DATAOUT6
+out[7] <= Ram0.DATAOUT7
+out[8] <= Ram0.DATAOUT8
+out[9] <= Ram0.DATAOUT9
+out[10] <= Ram0.DATAOUT10
+out[11] <= Ram0.DATAOUT11
+out[12] <= Ram0.DATAOUT12
+out[13] <= Ram0.DATAOUT13
+out[14] <= Ram0.DATAOUT14
+out[15] <= Ram0.DATAOUT15
+out[16] <= Ram0.DATAOUT16
+out[17] <= Ram0.DATAOUT17
+out[18] <= Ram0.DATAOUT18
+out[19] <= Ram0.DATAOUT19
+out[20] <= Ram0.DATAOUT20
+out[21] <= Ram0.DATAOUT21
+out[22] <= Ram0.DATAOUT22
+out[23] <= Ram0.DATAOUT23
+out[24] <= Ram0.DATAOUT24
+out[25] <= Ram0.DATAOUT25
+out[26] <= Ram0.DATAOUT26
+out[27] <= Ram0.DATAOUT27
+out[28] <= Ram0.DATAOUT28
+out[29] <= Ram0.DATAOUT29
+out[30] <= Ram0.DATAOUT30
+out[31] <= Ram0.DATAOUT31
+
+

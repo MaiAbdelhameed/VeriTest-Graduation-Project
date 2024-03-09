@@ -1,0 +1,31 @@
+|mult23
+a[0] => always0.IN0
+a[0] => ac.DATAA
+a[0] => always0.IN0
+a[1] => Add0.IN1
+a[1] => Add1.IN2
+a[1] => ac.DATAA
+a[1] => ac.DATAB
+a[1] => ac.DATAA
+a[1] => ac.DATAB
+b[0] => always0.IN1
+b[0] => Add0.IN2
+b[0] => always0.IN1
+b[0] => ac.OUTPUTSELECT
+b[0] => ac.OUTPUTSELECT
+b[0] => ac.OUTPUTSELECT
+b[0] => Add1.IN1
+b[1] => always0.IN1
+b[1] => Add2.IN4
+b[1] => always0.IN1
+b[1] => ac.OUTPUTSELECT
+b[1] => ac.OUTPUTSELECT
+b[1] => ac.OUTPUTSELECT
+b[1] => ac.OUTPUTSELECT
+b[1] => Add3.IN4
+result[0] <= ac.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= ac.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= ac.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= ac.DB_MAX_OUTPUT_PORT_TYPE
+
+

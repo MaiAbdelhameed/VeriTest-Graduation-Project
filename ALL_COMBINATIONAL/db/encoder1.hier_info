@@ -1,0 +1,19 @@
+|encoder1
+D[0] => ~NO_FANOUT~
+D[1] => y.IN0
+D[2] => y.IN0
+D[3] => y.IN1
+D[3] => y.IN1
+D[4] => y.IN0
+D[5] => y.IN1
+D[5] => y.IN1
+D[6] => y.IN1
+D[6] => y.IN1
+D[7] => y.IN1
+D[7] => y.IN1
+D[7] => y.IN1
+y[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+

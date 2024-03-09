@@ -1,0 +1,27 @@
+|mult35
+a[0] => result.IN0
+a[0] => result.IN0
+a[0] => Add0.IN1
+a[0] => result.IN1
+a[0] => result.IN1
+a[0] => result.IN1
+a[1] => Add1.IN1
+a[1] => Add2.IN2
+a[1] => result.IN0
+a[1] => result.IN1
+b[0] => result.IN1
+b[0] => Add1.IN2
+b[0] => result.IN1
+b[0] => result.IN1
+b[0] => Add2.IN1
+b[1] => Add0.IN2
+b[1] => result.IN1
+b[1] => result.IN1
+b[1] => result.IN1
+b[1] => result.IN1
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+

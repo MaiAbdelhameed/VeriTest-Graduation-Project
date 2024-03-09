@@ -1,0 +1,22 @@
+|mux42
+a[0] => Mux0.IN0
+a[1] => ~NO_FANOUT~
+a[2] => ~NO_FANOUT~
+a[3] => ~NO_FANOUT~
+b[0] => Mux0.IN1
+b[1] => ~NO_FANOUT~
+b[2] => ~NO_FANOUT~
+b[3] => ~NO_FANOUT~
+c[0] => Mux0.IN2
+c[1] => ~NO_FANOUT~
+c[2] => ~NO_FANOUT~
+c[3] => ~NO_FANOUT~
+d[0] => Mux0.IN3
+d[1] => ~NO_FANOUT~
+d[2] => ~NO_FANOUT~
+d[3] => ~NO_FANOUT~
+sel[0] => Mux0.IN5
+sel[1] => Mux0.IN4
+y <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

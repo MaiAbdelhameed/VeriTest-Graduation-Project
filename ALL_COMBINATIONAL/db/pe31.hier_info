@@ -1,0 +1,11 @@
+|pe31
+in[0] => ~NO_FANOUT~
+in[1] => temp.DATAA
+in[2] => temp.OUTPUTSELECT
+in[2] => temp[1].DATAA
+in[3] => temp[0].OUTPUTSELECT
+in[3] => temp[1].OUTPUTSELECT
+out[0] <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+
+

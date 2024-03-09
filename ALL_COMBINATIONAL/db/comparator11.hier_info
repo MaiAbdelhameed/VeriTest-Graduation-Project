@@ -1,0 +1,10 @@
+|comparator11
+A0 => Decoder0.IN0
+A1 => Decoder0.IN1
+B0 => Decoder0.IN2
+B1 => Decoder0.IN3
+A_less_B <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+A_equal_B <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+A_greater_B <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

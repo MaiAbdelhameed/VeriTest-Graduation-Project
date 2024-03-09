@@ -1,0 +1,13 @@
+|decoder20
+in[0] => ShiftLeft0.IN10
+in[1] => ShiftLeft0.IN9
+out3[0] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+out3[1] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+out3[2] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+out3[3] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+out3[4] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+out3[5] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+out3[6] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+out3[7] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,7 @@
+|mux9
+a => y.DATAA
+b => y.DATAB
+sel => Decoder0.IN0
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+

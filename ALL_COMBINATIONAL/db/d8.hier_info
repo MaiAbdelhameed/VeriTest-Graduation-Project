@@ -1,0 +1,17 @@
+|d8
+a[0] => temp_quotient.IN0
+a[0] => temp_quotient.IN0
+a[0] => Mod0.IN1
+a[1] => temp_quotient.IN0
+a[1] => Mod0.IN0
+b[0] => temp_quotient.IN1
+b[0] => temp_quotient.IN1
+b[0] => Mod0.IN3
+b[1] => Mod0.IN2
+b[1] => temp_quotient.IN1
+quotient[0] <= temp_quotient.DB_MAX_OUTPUT_PORT_TYPE
+quotient[1] <= temp_quotient.DB_MAX_OUTPUT_PORT_TYPE
+remainder[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+remainder[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+
+

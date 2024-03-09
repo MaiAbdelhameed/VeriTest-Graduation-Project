@@ -1,0 +1,8 @@
+|or27
+a[0] => result.IN0
+a[1] => result.IN1
+a[2] => result.IN1
+a[3] => result.IN1
+out <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+

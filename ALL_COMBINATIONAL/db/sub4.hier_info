@@ -1,0 +1,8 @@
+|sub4
+A => Add0.IN2
+B => Add0.IN1
+cin => Add1.IN4
+sub <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+bo <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+

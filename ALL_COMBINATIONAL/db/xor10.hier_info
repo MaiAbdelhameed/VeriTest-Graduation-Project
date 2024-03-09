@@ -1,0 +1,6 @@
+|xor10
+a => Decoder0.IN0
+b => Decoder0.IN1
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+

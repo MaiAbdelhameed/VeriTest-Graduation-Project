@@ -1,0 +1,5 @@
+|not12
+in => Decoder0.IN0
+out <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+

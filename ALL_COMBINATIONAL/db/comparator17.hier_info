@@ -1,0 +1,12 @@
+|comparator17
+a => X4.IN0
+a => X5.IN0
+a => X3.IN0
+b => X3.IN1
+b => X5.IN1
+b => X4.IN1
+L <= X3.DB_MAX_OUTPUT_PORT_TYPE
+E <= X5.DB_MAX_OUTPUT_PORT_TYPE
+G <= X4.DB_MAX_OUTPUT_PORT_TYPE
+
+

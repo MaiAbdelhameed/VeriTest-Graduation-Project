@@ -1,0 +1,89 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "decoder_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[8]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[9]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[10]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[11]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[12]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[13]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[14]",
+					"strict" : false
+				},
+				{
+					"name" : "decoder_out[15]",
+					"strict" : false
+				},
+				{
+					"name" : "binary_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "binary_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "binary_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "binary_in[3]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

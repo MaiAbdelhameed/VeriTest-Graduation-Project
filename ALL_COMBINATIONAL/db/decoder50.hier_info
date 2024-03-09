@@ -1,0 +1,27 @@
+|decoder50
+in[0] => temp.IN0
+in[0] => temp.IN0
+in[0] => temp.IN0
+in[0] => temp.IN0
+in[1] => temp.IN1
+in[1] => temp.IN1
+in[1] => temp.IN1
+in[1] => temp.IN1
+in[2] => temp.IN1
+in[2] => temp.IN1
+in[2] => temp.IN1
+in[2] => temp.IN1
+in[2] => temp.IN1
+in[2] => temp.IN1
+in[2] => temp.IN1
+in[2] => temp.IN1
+out[0] <= temp.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= temp.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= temp.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= temp.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= temp.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= temp.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= temp.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= temp.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,23 @@
+|mult17
+a[0] => Decoder0.IN1
+a[0] => Decoder1.IN1
+a[0] => Decoder2.IN1
+a[0] => Decoder3.IN0
+a[1] => Decoder0.IN0
+a[1] => Decoder1.IN0
+a[1] => Decoder2.IN0
+b[0] => Decoder1.IN4
+b[0] => Decoder2.IN3
+b[0] => Decoder3.IN1
+b[1] => Decoder0.IN3
+b[1] => Decoder1.IN3
+b[1] => Decoder2.IN2
+b[2] => Decoder0.IN2
+b[2] => Decoder1.IN2
+result[0] <= Decoder3.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,9 @@
+|mux45
+in0 => out.DATAB
+in1 => out.DATAA
+in2 => ~NO_FANOUT~
+in3 => ~NO_FANOUT~
+sel => out.OUTPUTSELECT
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+

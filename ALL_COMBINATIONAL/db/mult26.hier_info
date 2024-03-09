@@ -1,0 +1,29 @@
+|mult26
+a[0] => result.DATAB
+a[0] => Add0.IN6
+a[0] => Add1.IN6
+a[1] => result.DATAB
+a[1] => Add0.IN5
+a[1] => Add1.IN5
+a[2] => result.DATAB
+a[2] => Add0.IN4
+a[2] => Add1.IN4
+b[0] => result.OUTPUTSELECT
+b[0] => result.OUTPUTSELECT
+b[0] => result.OUTPUTSELECT
+b[1] => result.OUTPUTSELECT
+b[1] => result.OUTPUTSELECT
+b[1] => result.OUTPUTSELECT
+b[1] => result.OUTPUTSELECT
+b[2] => result.OUTPUTSELECT
+b[2] => result.OUTPUTSELECT
+b[2] => result.OUTPUTSELECT
+b[2] => result.OUTPUTSELECT
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[5] <= result.DB_MAX_OUTPUT_PORT_TYPE
+
+

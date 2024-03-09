@@ -1,0 +1,39 @@
+|decoder25
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+enable => decoder_out.OUTPUTSELECT
+binary_in[0] => Decoder0.IN3
+binary_in[1] => Decoder0.IN2
+binary_in[2] => Decoder0.IN1
+binary_in[3] => Decoder0.IN0
+decoder_out[0] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[1] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[2] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[3] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[4] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[5] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[6] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[7] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[8] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[9] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[10] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[11] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[12] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[13] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[14] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+decoder_out[15] <= decoder_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
