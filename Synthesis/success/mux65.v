@@ -2,15 +2,14 @@ module mux65 (input [15:0] in,
                                input [3:0] sel,
                                output out);
 
-    reg [15:0] temp;
+    reg temp;
 
     integer i;
     always @* begin
+        temp = 1'bx;
         for (i = 0; i < 16; i = i + 1) begin
             if (sel == i)
-                temp[i] = in[i];
-            else
-                temp[i] = 1'bx;
+                temp = in[i];
         end
     end
 
