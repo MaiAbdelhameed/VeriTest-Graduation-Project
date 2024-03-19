@@ -4,7 +4,7 @@ module adder5(A,B,Cin,Sum,Cout);
     output reg Sum,Cout;
 
     always @(*) begin
-        case({A,B,Cin}) begin
+        case({A,B,Cin})
             3'b000: begin
                 Sum = 1'b0;
                 Cout = 1'b0;
@@ -37,7 +37,6 @@ module adder5(A,B,Cin,Sum,Cout);
                 Sum = 1'b1;
                 Cout = 1'b1;
             end
-        end
         endcase
     end
 endmodule
