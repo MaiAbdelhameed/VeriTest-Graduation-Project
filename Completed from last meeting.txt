@@ -1,0 +1,12 @@
+Completed from last meeting:
+
+Calculating the output
+Output concatenation
+
+
+
+
+Backlog:
+
+Division and mod operators
+For loops 

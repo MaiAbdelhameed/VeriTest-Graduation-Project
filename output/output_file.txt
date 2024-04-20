@@ -1,0 +1,10 @@
+my_module
+#
+in(3)
+en(1)
+#
+out(8)
+#
+111
+0
+EOF

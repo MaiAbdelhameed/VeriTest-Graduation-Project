@@ -1,0 +1,8 @@
+my_module
+#
+bcd(4)
+#
+seg(7)
+#
+0010
+EOF
