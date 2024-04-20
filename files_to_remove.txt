@@ -1,2 +1,0 @@
-CHECK decoder1.v
-
