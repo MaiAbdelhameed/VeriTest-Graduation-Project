@@ -1,4 +1,4 @@
-from Coverage.coverage import COVERAGE_MAIN
+# from Coverage.coverage import COVERAGE_MAIN
 from PARSER.Simulate import PRASER_MAIN
 from PARSER.GraphAPI import GraphAPI
 from PARSER.code_to_graph import code_to_graph
@@ -11,27 +11,28 @@ import json
 import sys
 
 
-if len(sys.argv) < 2:
-    print("Usage: python main.py <argument>")
-    sys.exit(1)
+# if len(sys.argv) < 2:
+    # print("Usage: python main.py <argument>")
+    # sys.exit(1)
 
-filename = sys.argv[1]
-# filename = "my_module.v"
+# filename = sys.argv[1]
+filename = "my_module.v"
 
 G, input_output_wire = code_to_graph(filename)
+print(input_output_wire)
 
-# pos = nx.spring_layout(G)  # Layout algorithm
-# nx.draw(G, pos, with_labels=True, node_size=200,
-#         font_size=10, font_color="black")
+pos = nx.spring_layout(G)  # Layout algorithm
+nx.draw(G, pos, with_labels=True, node_size=200,
+        font_size=10, font_color="black")
 
-# # Draw edge labels
-# edge_labels = {
-#     (u, v): f"{G[u][v]['edge_attr'][0].__str__()}" for u, v in G.edges}
+# Draw edge labels
+edge_labels = {
+    (u, v): f"{G[u][v]['edge_attr'][0].__str__()}" for u, v in G.edges}
 
 
-# nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
+nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
 
-# plt.show()
+plt.show()
 
 
 nodes = G.nodes()._nodes
