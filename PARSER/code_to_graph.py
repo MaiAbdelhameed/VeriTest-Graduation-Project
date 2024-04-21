@@ -7,7 +7,7 @@ from PARSER.components.IN_OUT_WIRE.OUTPUT import OUTPUT
 from PARSER.components.IN_OUT_WIRE.INPUT import INPUT
 
 def code_to_graph(file_path):## shelt el PARSER/files/ hna
-    top_level_entity_file = "PARSER/files/"+ file_path
+    top_level_entity_file = file_path
     print(top_level_entity_file)
     G, _, input_out_wire = parse_verilog_code(top_level_entity_file, top_level = True)
 

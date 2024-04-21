@@ -1,4 +1,4 @@
-from Coverage.coverage import COVERAGE_MAIN
+# from Coverage.coverage import COVERAGE_MAIN
 from PARSER.Simulate import PRASER_MAIN
 from PARSER.GraphAPI import GraphAPI
 from PARSER.code_to_graph import code_to_graph
@@ -9,10 +9,8 @@ from PARSER.components.IN_OUT_WIRE.REG import REG
 
 
 
-
-
 G, input_output_wire = code_to_graph("my_module.v")
-
+print(input_output_wire)
 
 
 pos = nx.spring_layout(G)  # Layout algorithm
@@ -27,14 +25,14 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
 plt.show()
 
 API = GraphAPI(G)
-x = None
+# x = None
 
 
 
-x = COVERAGE_MAIN("my_module.v")
+# x = COVERAGE_MAIN("my_module.v")
 
 
-print(x)
+# print(x)
 
 
         
