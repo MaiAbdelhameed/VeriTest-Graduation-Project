@@ -16,12 +16,12 @@ class ConstValue(node):
     def process_node(self, connections): ## ConstValue is always source node
         for connection in connections:
             if connection.source_range == None:
-                connection.PORT = list(self.output)
+                connection.PORT = self.output
             else:
                 bits = self.output[::-1]
                 start = connection.source_range[0]
                 end = connection.source_range[1]
-                connection.PORT = list(bits[start:end+1][::-1])
+                connection.PORT = bits[start:end+1][::-1]
 
             if isinstance(connection.destination, OUTPUT) or isinstance(connection.destination, wire) or isinstance(connection.destination, REG):
                 connection.destination.add_bits_to_output(connection)

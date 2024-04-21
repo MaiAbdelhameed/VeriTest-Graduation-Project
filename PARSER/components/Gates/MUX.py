@@ -1,7 +1,7 @@
 from PARSER.components.Node import node
 from PARSER.components.IN_OUT_WIRE.OUTPUT import OUTPUT
 from PARSER.components.IN_OUT_WIRE.WIRE import wire
-from PARSER.components.IN_OUT_WIRE.REG import REG
+
 
 class mux(node):
 
@@ -35,7 +35,7 @@ class mux(node):
         if (len(true_value) == 0 and len(false_value) == 0)  or len(selector_value) == 0:
             return None
 
-        if selector_value[0] == "0":
+        if selector_value == "0":
             if len(false_value) > 0:
                 return false_value
             else:
@@ -54,7 +54,7 @@ class mux(node):
             start = connection.source_range[0]
             end = connection.source_range[1]
             connection.PORT = output[::-1][start:end+1][::-1]
-        if isinstance(connection.destination, OUTPUT) or isinstance(connection.destination, wire) or isinstance(connection.destination, REG):
+        if isinstance(connection.destination, OUTPUT) or isinstance(connection.destination, wire):
             connection.destination.add_bits_to_output(connection)
 
     def node_points_to_me(self, connections):

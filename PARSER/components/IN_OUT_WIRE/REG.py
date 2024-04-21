@@ -17,13 +17,9 @@ class REG(node):
     def add_bits_to_output(self, connection):
         if connection.destination_range == None:
             if self.endian == "little":
-                if len(connection.PORT) < self.size:
-                    connection.PORT = (["0"] * (self.size - len(connection.PORT))) + connection.PORT
-                self.output = connection.PORT[::-1][0:self.size][::-1]
+                self.output = list(connection.PORT)[::-1][0:self.size][::-1]
             else:
-                if len(connection.PORT) < self.size:
-                    connection.PORT = connection.PORT + ("0" * (self.size - len(connection.PORT)))
-                self.output = connection.PORT[0:self.size]
+                self.output = list(connection.PORT)[0:self.size]
             
         else:
             start = connection.destination_range[0]
@@ -81,7 +77,7 @@ class REG(node):
             self.pass_output_to_ports(output, connection)
 
 
-        if self.node_points_to_me(connections[0].destination.connections): 
+        if self.node_points_to_me(connections[0].destination.connections) and "X" not in self.output: 
             return False
         
         return True

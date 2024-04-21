@@ -4,4 +4,4 @@ module d2 (input [1:0] a, b,
     assign quotient = a / b;
     assign remainder = a % b;
 endmodule
-Error occurred: 'Mod' object has no attribute 'name'
+Error occurred: 'Divide' object has no attribute 'name'

@@ -13,27 +13,7 @@ class GraphAPI:
     
 
     def calc_output(self, dict_of_cases):
-        x = self.simulate(dict_of_cases)
-        for node in self.G.copy().nodes():
-            if isinstance(node, ConstValue):
-                if node.name != None:
-                    dest = node.connections[0].destination
-                    delete_conn = self.search_for_connection(node, dest, self.G)
-                    node.connections[0].destination.connections.remove(delete_conn[0])
-                    self.G.remove_node(node)
-        for node in self.G.nodes():
-            if isinstance(node, OUTPUT):
-                node.reset_output_port()
-        
-        for edge in self.G.edges():
-            reset_conn = self.search_for_connection(edge[0], edge[1], self.G)[0]
-            reset_conn.PORT = list()
-
-            
-
-        return x
-
-
+        return self.simulate(dict_of_cases)
 
     def search_for_connection(self, node, nodeadj, G):
         edges = G.edges[node, nodeadj]["edge_attr"]
@@ -47,16 +27,13 @@ class GraphAPI:
         return True
 
 
-    def DFS(self, node, G, set_of_nodes):
+    def DFS(self, node, G):
         for nodeadj in list(G.neighbors(node)):
             connection = self.search_for_connection(node, nodeadj, G)
             state = node.process_node(connection)
-            if state == True and not self.all_outputs_calcualted(G) and node not in set_of_nodes:
-                set_of_nodes.add(node)
-                self.DFS(nodeadj, G, set_of_nodes)
-                set_of_nodes.remove(node)
+            if state == True and not self.all_outputs_calcualted(G):
+                self.DFS(nodeadj, G)
             else:
-                
                 continue
                 
         
@@ -89,7 +66,7 @@ class GraphAPI:
         
 
         
-        
+
         for index in range(number_of_test_cases):
             for node in DFS_START:
                 if node.name != None:
@@ -97,8 +74,7 @@ class GraphAPI:
                         node.output = re.search("(?<=b)\d+", dict_of_cases[node.name][index]).group(0)
                     except:
                         node.output = ""
-                set_of_nodes = set()
-                self.DFS(node, self.G, set_of_nodes)
+                self.DFS(node, self.G)
 
 
 

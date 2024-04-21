@@ -3,7 +3,6 @@ import math
 from PARSER.components.IN_OUT_WIRE.OUTPUT import OUTPUT
 from PARSER.components.IN_OUT_WIRE.WIRE import wire
 from PARSER.components.IN_OUT_WIRE.INPUT import INPUT
-from PARSER.components.IN_OUT_WIRE.REG import REG
 
 class condgate(node):
 
@@ -29,14 +28,16 @@ class condgate(node):
 
     def pass_output_to_ports(self, output, connection):
         connection.PORT = output
-        if isinstance(connection.destination, OUTPUT) or isinstance(connection.destination, wire) or isinstance(connection.destination, REG):
-            connection.destination.add_bits_to_output(connection)
+        if isinstance(connection.destination, OUTPUT) or isinstance(connection.destination, wire):
+            list_of_connections = list()
+            list_of_connections.append(connection)
+            connection.destination.add_bits_to_output(list_of_connections)
 
     def process_node(self, connections):
         output = self.calc_output()
         if output == None: return False
         for connection in connections:
-            self.pass_output_to_ports(list(output), connection)
+            self.pass_output_to_ports(output, connection)
 
         if self.node_points_to_me(connections[0].destination.connections): 
             return False

@@ -1,7 +1,6 @@
 from PARSER.components.Node import node
 from PARSER.components.IN_OUT_WIRE.OUTPUT import OUTPUT
 from PARSER.components.IN_OUT_WIRE.WIRE import wire
-from PARSER.components.IN_OUT_WIRE.REG import REG
 from PARSER.components.IN_OUT_WIRE.INPUT import INPUT
 
 
@@ -45,7 +44,7 @@ class concatenation(node):
     
     def pass_output_to_ports(self, output, connection):
         connection.PORT = output
-        if isinstance(connection.destination, OUTPUT) or isinstance(connection.destination, wire) or isinstance(connection.destination, REG):
+        if isinstance(connection.destination, OUTPUT) or isinstance(connection.destination, wire):
             connection.destination.add_bits_to_output(connection)
         
 

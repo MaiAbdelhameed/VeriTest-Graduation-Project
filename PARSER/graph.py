@@ -14,7 +14,6 @@ from pyverilog.vparser.ast import *
 from PARSER.connection import connection
 from PARSER.components.Gates.bitwise import bitwise
 from PARSER.components.Gates.concatenation import concatenation
-from PARSER.components.Gates.Lconcatenation import Lconcatenation
 from PARSER.components.Gates.Case import Case
 from PARSER.components.Gates.adder import adder
 from PARSER.components.Gates.subtractor import subtractor
@@ -22,8 +21,6 @@ from PARSER.components.Gates.multplyer import multplyer
 from PARSER.components.Gates.shift import shift
 from PARSER.components.Gates.power import power
 from PARSER.components.Gates.Lgate import Lgate
-from PARSER.components.Gates.Division import Division
-from PARSER.components.Gates.Modulo import Modulo
 import re
 import os
 
@@ -565,7 +562,7 @@ def connect_with_another_case_statement(connections, list_of_case_gates, port_nu
             
     return list_of_new_case_gates
 
-def parse_always_block(always, input_output_wire, G, list_of_upper_statements, start = 0, end = 1):
+def parse_always_block(always, input_output_wire, G, list_of_upper_statements):
     if (always == None):
         
         return always
@@ -605,15 +602,14 @@ def parse_always_block(always, input_output_wire, G, list_of_upper_statements, s
     if isinstance(always, Block):
         list_of_statements = list() 
         list_of_subst = list()
-        for i in range(start, end,1):
-            for statement in always.statements: ## rag3 b3d el for loop
-                
-                x = parse_always_block(statement, input_output_wire, G, list_of_statements)
-                if type(x) == tuple:
-                    list_of_statements.append(x)
-                
-                else:
-                    list_of_statements.extend(x)
+        
+        for statement in always.statements: ## rag3 b3d el for loop
+            
+            x = parse_always_block(statement, input_output_wire, G, list_of_statements)
+            if type(x) == tuple:
+                list_of_statements.append(x)
+            else:
+                list_of_statements.extend(x)
         
         
         return list_of_statements
@@ -698,7 +694,7 @@ def parse_always_block(always, input_output_wire, G, list_of_upper_statements, s
 
         return connecting_edge
     
-    if isinstance(always, Concat) and not isinstance(always, LConcat): 
+    if isinstance(always, Concat): 
         concat_gate = concatenation()
         for index, element in enumerate(always.list):
             concat_element_connection = parse_always_block(element, input_output_wire, G, list_of_upper_statements)
@@ -737,31 +733,16 @@ def parse_always_block(always, input_output_wire, G, list_of_upper_statements, s
         right_connection = parse_always_block(always.right, input_output_wire, G, list_of_upper_statements)
         shift_gate = shift("shr")
         create_connection(shift_gate, right_connection, G)
-        create_connection(shift_gate, left_connection, G, isShiftVector=True)
+        create_connection(shift_gate, left_connection, G)
         return create_half_connection(shift_gate)
     
-    if isinstance(always, Divide):
-        left_connection = parse_always_block(always.left, input_output_wire, G, list_of_upper_statements)
-        right_connection = parse_always_block(always.right, input_output_wire, G, list_of_upper_statements)
-        Division_gate  = Division()
-        create_connection(Division_gate, right_connection, G)
-        create_connection(Division_gate, left_connection, G, isNumerator = True)
-        return create_half_connection(Division_gate)
-    
-    if isinstance(always, Mod):
-        left_connection = parse_always_block(always.left, input_output_wire, G, list_of_upper_statements)
-        right_connection = parse_always_block(always.right, input_output_wire, G, list_of_upper_statements)
-        Modulo_gate  = Modulo()
-        create_connection(Modulo_gate, right_connection, G)
-        create_connection(Modulo_gate, left_connection, G, isNumerator = True)
-        return create_half_connection(Modulo_gate)
 
     if isinstance(always, Sll) or isinstance(always, Sla):
         left_connection = parse_always_block(always.left, input_output_wire, G, list_of_upper_statements)
         right_connection = parse_always_block(always.right, input_output_wire, G, list_of_upper_statements)
         shift_gate = shift("shl")
         create_connection(shift_gate, right_connection, G)
-        create_connection(shift_gate, left_connection, G, isShiftVector=True)
+        create_connection(shift_gate, left_connection, G)
         return create_half_connection(shift_gate)
 
 
@@ -834,56 +815,20 @@ def parse_always_block(always, input_output_wire, G, list_of_upper_statements, s
         rhs_value_node_connection = parse_always_block(always.right, input_output_wire, G, list_of_upper_statements)
         condition_gate_connecting_edge = create_condition("eq", lhs_node_connection, rhs_value_node_connection, G)
         return condition_gate_connecting_edge
-    
-    if isinstance(always, ForStatement):
-        input_output_wire[4][always.cond.left.name] = 0
-        parse_always_block(always.statement, input_output_wire, G, list_of_upper_statements, start = 0, end= int(always.cond.right.value) )
-        pass
 
     
 
     elif isinstance(always, NonblockingSubstitution) or isinstance(always, BlockingSubstitution):
-
-        list_of_tups = list()
+        
         left = parse_always_block(always.left, input_output_wire, G, list_of_upper_statements)
         right = parse_always_block(always.right, input_output_wire, G, list_of_upper_statements)
-        if type(left) == list:
-            L_concat_gate = Lconcatenation()
-            create_connection(L_concat_gate, right, G)
-            for conn in left:
-                tup = (conn, create_half_connection(L_concat_gate, src_range=conn.source_range))
-                list_of_tups.append(tup)
-                upper_common_connections(conn, list_of_upper_statements, G)
-
-            return list_of_tups
-
-            
-        ##upper_common_connections(left, list_of_upper_statements, G)     edit lw left mwgood fel right
+        upper_common_connections(left, list_of_upper_statements, G)
         tup = (left, right)
         return tup
     
     elif isinstance(always, Lvalue) or isinstance(always, Rvalue):
         return parse_always_block(always.var, input_output_wire, G, list_of_upper_statements)
     
-    elif isinstance(always, LConcat):
-        concat_gate = Lconcatenation()
-        list_of_L_connections = list()
-        start_range = 0
-        for index, element in enumerate(always.list[::-1]):
-            concat_element_connection = parse_always_block(element, input_output_wire, G, list_of_upper_statements)
-            concat_element_connection.port_number = index
-            if concat_element_connection.destination_range == None:
-                concat_element_connection.source_range = (start_range, start_range+ concat_element_connection.destination.size - 1)
-                start_range += concat_element_connection.destination.size
-            else:
-                start,end = concat_element_connection.destination_range
-                size = abs(start-end) + 1
-                concat_element_connection.source_range = (start_range, start_range+ size - 1)
-                start_range += size
-
-            list_of_L_connections.append(concat_element_connection)
-        
-        return list_of_L_connections
 
     
 
@@ -1045,14 +990,7 @@ def create_out_connection(assignment, input_output_wire, G):
         elif name_of_variable in input_output_wire[3]:
             size = input_output_wire[3][name_of_variable]
             search_for_input = REG(Type="REG", name=name_of_variable, size = size)
-        else: ## undefined wire
-            if name_of_variable not in input_output_wire[3]:
-                size = 1
-                WIRE_NODE = wire(Type = "WIRE", name=name_of_variable, size = size, endian="little") 
-                G.add_node(WIRE_NODE)
-                input_output_wire[3][name_of_variable] = size
-
-            search_for_input = wire(Type = "WIRE", name=name_of_variable, size = size)        
+        
 
         node_itr = nodeingraph(G, search_for_input)
         if node_itr == None: 
@@ -1067,30 +1005,25 @@ def create_out_connection(assignment, input_output_wire, G):
     
 
 ## creating a connection and setting its source to be the passed Gate ##
-def create_half_connection(Gate, dst_range = None, port_number = None, src_range = None):
+def create_half_connection(Gate, dst_range = None, port_number = None):
     connecting_edge = connection()
     connecting_edge.destination_range = dst_range
     connecting_edge.port_number = port_number
-    connecting_edge.source_range = src_range
     Gate.add_connection(connecting_edge)
     connecting_edge.source = Gate
     return connecting_edge
 
 
 ## connecting the destination of the passed connection to be the gate node ##
-def create_connection(gate, connection, G, isTrueValue = False, isFalseValue = False, isSelector = False, isPowered = False, isShiftVector = False, isNumerator = False):
+def create_connection(gate, connection, G, isTrueValue = False, isFalseValue = False, isSelector = False, isPowered = False):
     if connection.source == None:
         connection.source = connection.destination
         connection.destination = None
-        connection.source_range = connection.destination_range
-        connection.destination_range = None
     connection.destination = gate
     connection.isTrueValue = isTrueValue
     connection.isFalseValue = isFalseValue
     connection.isSelector = isSelector
     connection.isPowered = isPowered
-    connection.isShiftVector = isShiftVector
-    connection.isNumerator = isNumerator
     gate.add_connection(connection)
     edge_attr = list()
     try:edge_attr = G.edges[connection.source, gate]["edge_attr"]
@@ -1177,7 +1110,7 @@ def parse_assign_statement(assignment, input_output_wire, G):
         right_connection = parse_assign_statement(assignment.right, input_output_wire, G)
         shift_gate = shift("shr")
         create_connection(shift_gate, right_connection, G)
-        create_connection(shift_gate, left_connection, G, isShiftVector=True)
+        create_connection(shift_gate, left_connection, G)
         return create_half_connection(shift_gate)
     
 
@@ -1186,7 +1119,7 @@ def parse_assign_statement(assignment, input_output_wire, G):
         right_connection = parse_assign_statement(assignment.right, input_output_wire, G)
         shift_gate = shift("shl")
         create_connection(shift_gate, right_connection, G)
-        create_connection(shift_gate, left_connection, G, isShiftVector=True)
+        create_connection(shift_gate, left_connection, G)
         return create_half_connection(shift_gate)
     
     
@@ -1229,21 +1162,6 @@ def parse_assign_statement(assignment, input_output_wire, G):
         create_connection(mux2x1, sel_connection, G, isSelector=True)
         return create_half_connection(mux2x1)
 
-    if isinstance(assignment, Divide):
-        left_connection = parse_assign_statement(assignment.left, input_output_wire, G)
-        right_connection = parse_assign_statement(assignment.right, input_output_wire, G)
-        Division_gate  = Division()
-        create_connection(Division_gate, right_connection, G)
-        create_connection(Division_gate, left_connection, G, isNumerator = True)
-        return create_half_connection(Division_gate)
-    
-    if isinstance(assignment, Mod):
-        left_connection = parse_assign_statement(assignment.left, input_output_wire, G)
-        right_connection = parse_assign_statement(assignment.right, input_output_wire, G)
-        Division_gate  = Modulo()
-        create_connection(Division_gate, right_connection, G)
-        create_connection(Division_gate, left_connection, G, isNumerator = True)
-        return create_half_connection(Division_gate)
 
     
     if isinstance(assignment, Pointer):
@@ -1517,7 +1435,7 @@ def parse_verilog_code(module_path, top_level):
 
 
 
-    input_output_wire.append(dict())
+    
     for assignment in assignments:
         final_output_connection = parse_assign_statement(assignment.right.var, input_output_wire, G)
         output_port_connection = create_out_connection(assignment.left.var, input_output_wire, G)

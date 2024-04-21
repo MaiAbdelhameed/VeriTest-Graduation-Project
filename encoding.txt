@@ -1,0 +1,47 @@
+Encoding
+--------
+nodes = [[node_features], [node_features], ....]
+
+Edges=[[sources],[destinations]]
+
+edge_attrb = [[size of connection], [size of connection],.....]
+
+
+
+node_features = [type, type_operation, num_of_connections, size]
+
+type => input 0, output 1, reg 2, operation 3, constValue 4
+
+if type != 3, type_operation = 00000
+
+type_operation => 
++ 		00001
+-		00010
+*		00011
+**		00100
+left shift	00101
+right shift	00110
+==		00111
+mux		01000
+& (and)		01001
+| (or)		01010
+~ (not)		01011
+^ (xor)		01100
+~& (nand)	01101
+~| (nor)	01110
+~^ (xnor)	01111
+case 		10000
+concatination	10001
+
+
+
+
+
+
+
+type_operation=> arthimatic , condition , logical/bitwise gate operators , case , concatination 
+
+arthimatic => + - * ** , left shift, right shift
+conditional => == != >= <= > <, mux
+logical/bitwise operators => &, |, xor, nand,...etc (any gates)
+
