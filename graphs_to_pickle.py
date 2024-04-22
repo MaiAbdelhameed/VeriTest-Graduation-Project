@@ -19,6 +19,8 @@ for file_path in files:
         G = nx.DiGraph()
         try:
             G = code_to_graph(file_path)
+            # with open("successfuly_parsed_files/"+ file_path[8:], "a") as file2:
+            #     file2.write()
         except Exception as e:
             errors_folder = os.path.join(os.getcwd(), 'errors')
             if not os.path.exists(errors_folder):
@@ -34,8 +36,8 @@ for file_path in files:
         pickle_file = "PARSED/"+file_path[8:len(file_path)-2] + ".gpickle"
 
         number_of_files += 1
-        with open(pickle_file, 'wb') as f:
-            pickle.dump(G, f, pickle.HIGHEST_PROTOCOL)
+        # with open(pickle_file, 'wb') as f:
+        #     pickle.dump(G, f, pickle.HIGHEST_PROTOCOL)
 
         
 
