@@ -1,18 +1,11 @@
-module adder4(A,B,cin,sum,cout);
+module adder14(input A0,A1,A2,A3,B0,B1,B2,B3, input Cin, output reg [3:0] Sum, output reg Cout);
 
-	input A,B,cin;
-	output sum,cout;
-
-	wire out1,out2,out3,out4,out6,out7;
-
-	and a1(out1,A,B);
-	and a2(out2,A,cin);
-	and a3(out3,B,cin);
-
-	or a4(out4,out1,out2);
-	or a5(cout,out4,out3);
-
-	xor a6(out6,A,B);
-	xor a7(sum,out6,cin);
+always @(*) begin
+    Sum[0] = A0 ^ B0 ^ Cin;
+    // Sum[1] = A1 ^ B1 ^ ((A0 & B0) | (Cin & (A0 ^ B0)));
+    // Sum[2] = A2 ^ B2 ^ ((A1 & B1) | ((A0 & B0) & (A1 ^ B1)) | (Cin & ((A0 & B0) | (A1 & B1))));
+    // Sum[3] = A3 ^ B3 ^ ((A2 & B2) | ((A1 & B1) & ((A0 & B0) | (A1 & B1))) | (Cin & ((A0 & B0) | (A1 & B1) | (A2 & B2))));
+    // Cout = ((A0 & B0) | (Cin & (A0 ^ B0))) | ((A1 & B1) | ((A0 & B0) & (A1 ^ B1))) | ((A2 & B2) | ((A1 & B1) & ((A0 & B0) | (A1 & B1)))) | ((A3 & B3) | ((A2 & B2) & ((A1 & B1) | ((A0 & B0) | (A1 & B1)))));
+end
 
 endmodule
