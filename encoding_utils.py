@@ -54,11 +54,11 @@ case
 concatenation
 """
 type_index = {
-    "input": 0,
-    "output": 1,
-    "reg": 2,
-    "wire": 3,
-    "operation": 4
+    "input": "10000",
+    "output": "01000",
+    "reg": "00100",
+    "wire": "00010",
+    "operation": "00001"
 }
 
 # operation_index = {

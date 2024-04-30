@@ -11,12 +11,12 @@ import json
 import sys
 
 
-# if len(sys.argv) < 2:
-    # print("Usage: python main.py <argument>")
-    # sys.exit(1)
+if len(sys.argv) < 2:
+    print("Usage: python main.py <argument>")
+    sys.exit(1)
 
-# filename = sys.argv[1]
-filename = "my_module.v"
+filename = sys.argv[1]
+# filename = "my_module.v"
 
 G, input_output_wire = code_to_graph(filename)
 print(input_output_wire)
@@ -55,10 +55,10 @@ for node, _ in nodes.items():
     ################################
     # number of connections
     number_of_connections = len(node.connections)
-    entry_list.append(number_of_connections)
+    # entry_list.append(number_of_connections)
     ################################
     # size of node
-    entry_list.append(nodes_sizes[node])
+    # entry_list.append(nodes_sizes[node])
     ################################
     nodes_encoded_matrix.append(entry_list)
     nodes_list.append(node)
