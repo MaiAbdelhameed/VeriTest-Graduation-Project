@@ -48,7 +48,7 @@ if __name__ == "__main__":
     
 
     nx.draw_spring(G, with_labels = True)
-    plt.show()
+    # plt.show()
 
 
    

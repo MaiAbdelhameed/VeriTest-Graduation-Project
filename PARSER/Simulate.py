@@ -25,7 +25,7 @@ def PRASER_MAIN(file_path):
 
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
 
-    plt.show()
+    # plt.show()
 
 
 

@@ -359,7 +359,7 @@ def COVERAGE_MAIN(TOP_LEVEL_ENTITY):
 
     nx.draw(G, pos, with_labels=True, node_size=5000,
             node_color='skyblue', font_size=12)
-    plt.show()
+    # plt.show()
 
     block_coverage(G, TOP_LEVEL_ENTITY)
     pass

@@ -32,7 +32,7 @@ edge_labels = {
 
 nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
 
-plt.show()
+# plt.show()
 
 
 nodes = G.nodes()._nodes
@@ -55,6 +55,8 @@ for node, _ in nodes.items():
     ################################
     # number of connections
     number_of_connections = len(node.connections)
+    if number_of_connections == 0:
+        continue
     # entry_list.append(number_of_connections)
     ################################
     # size of node
@@ -74,8 +76,8 @@ for source, destinations in edges.items():
             source_matrix.append(nodes_list.index(source))
             destination_matrix.append(
                 nodes_list.index(list(destinations.keys())[i]))
-            edge_attribute_matrix.append(
-                min(nodes_sizes[source], nodes_sizes[list(destinations.keys())[i]]))
+            # edge_attribute_matrix.append(
+                # min(nodes_sizes[source], nodes_sizes[list(destinations.keys())[i]]))
 
 
 edges_encoded_matrix.append(source_matrix)
@@ -89,7 +91,8 @@ filename = filename[:-2] + ".txt"
 file_path = os.path.join(directory, filename)
 
 
-lines = [nodes_encoded_matrix, edges_encoded_matrix, edge_attribute_matrix]
+# lines = [nodes_encoded_matrix, edges_encoded_matrix, edge_attribute_matrix]
+lines = [nodes_encoded_matrix, edges_encoded_matrix]
 
 # Create the directory if it doesn't exist
 if not os.path.exists(directory):
