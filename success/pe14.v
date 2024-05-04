@@ -1,7 +1,7 @@
-module pe14 (en,i0,i1,i2,i3,i4,i5,i6,i7,y0,y1,y2);
+module pe14 (en,i1,i2,i3,i4,i5,i6,i7,y0,y1,y2);
     // declare port list via input and output
     input en;
-    input i0,i1,i2,i3,i4,i5,i6,i7;
+    input i1,i2,i3,i4,i5,i6,i7;
     output y0,y1,y2;
 
     wire temp1,temp2,temp3; // temp is used to apply 

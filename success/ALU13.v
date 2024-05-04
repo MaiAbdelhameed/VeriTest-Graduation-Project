@@ -1,7 +1,6 @@
-module ALU13(d_out1,s,c0,A,B);      
+module ALU13(d_out1,s,A,B);      
     output [3:0] d_out1;
     input [1:0] s;
-    input c0;
     input [3:0] A;
     input [3:0] B;
     reg [3:0] d_out1;

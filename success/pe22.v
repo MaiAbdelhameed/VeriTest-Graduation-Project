@@ -1,6 +1,6 @@
-module pe22 (i3,i2,i1,i0,en,o0,o1);
+module pe22 (i3,i2,i1,en,o0,o1);
 
-    input i3,i2,i1,i0,en;
+    input i3,i2,i1,en;
     output o0,o1;
 
     assign o0 = en & ((i3) | (i1&~i2));

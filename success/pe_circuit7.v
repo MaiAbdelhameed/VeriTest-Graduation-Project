@@ -1,6 +1,6 @@
-module pe_circuit7 (A0, A1, Y0, Y1, Y2, Y3);
+module pe_circuit7 (A0, A1, Y1, Y2, Y3);
 
-input Y0, Y1, Y2, Y3;
+input Y1, Y2, Y3;
 output A0, A1;
 wire Y2bar, W1;
 

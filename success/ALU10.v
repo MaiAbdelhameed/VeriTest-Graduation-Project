@@ -1,6 +1,6 @@
-module ALU10(d_out1,s0,s1,c0,A,B);      
+module ALU10(d_out1,s0,s1,A,B);      
     output [3:0] d_out1;
-    input s0,s1,c0;
+    input s0,s1;
     input [3:0] A;
     input [3:0] B;
     reg [3:0] d_out1;
