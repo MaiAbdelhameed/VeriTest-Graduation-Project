@@ -54,11 +54,10 @@ case
 concatenation
 """
 type_index = {
-    "input": "10000",
-    "output": "01000",
-    "reg": "00100",
-    "wire": "00010",
-    "operation": "00001"
+    "input": "1000",
+    "output": "0100",
+    "reg": "0010",
+    "wire": "0001",
 }
 
 # operation_index = {
@@ -71,24 +70,23 @@ type_index = {
 # }
 
 operation_index = {
-    "no_operation": "00000000000000000",
-    "add": 			"00000000000000001",
-    "and":			"00000000000000010",
-    "or":			"00000000000000100",
-    "xor":			"00000000000001000",
-    "xnor":			"00000000000010000",
-    "nor":			"00000000000100000",
-    "nand":			"00000000001000000",
-    "not":			"00000000010000000",
-    "case":			"00000000100000000",
-    "concat":		"00000001000000000",
-    "conditional":	"00000010000000000",
-    "constVal":		"00000100000000000",
-    "mult":			"00001000000000000",
-    "mux":			"00010000000000000",
-    "power":		"00100000000000000",
-    "shift":		"01000000000000000",
-    "subtr":		"10000000000000000"
+    "nop":          "0000000000000000",
+    "subtr":		"1000000000000000",
+    "shift":		"0100000000000000",
+    "mux":			"0010000000000000",
+    "mult":			"0001000000000000",
+    "constVal":		"0000100000000000",
+    "conditional":	"0000010000000000",
+    "concat":		"0000001000000000",
+    "case":			"0000000100000000",
+    "not":			"0000000010000000",
+    "nand":			"0000000001000000",
+    "nor":			"0000000000100000",
+    "xnor":			"0000000000010000",
+    "xor":			"0000000000001000",
+    "or":			"0000000000000100",
+    "and":			"0000000000000010",
+    "add": 			"0000000000000001"
 }
 
 
@@ -98,37 +96,29 @@ def get_encoding(node):
     if (isinstance(node, INPUT)):
         temp = [int(char) for char in type_index["input"]]
         result.extend(temp)
-        temp = [int(char) for char in operation_index["no_operation"]]
+        temp = [int(char) for char in operation_index["nop"]]
         result.extend(temp)
     # output type
     elif (isinstance(node, OUTPUT)):
         temp = [int(char) for char in type_index["output"]]
         result.extend(temp)
-        temp = [int(char) for char in operation_index["no_operation"]]
+        temp = [int(char) for char in operation_index["nop"]]
         result.extend(temp)
     # reg type
     elif (isinstance(node, REG)):
         temp = [int(char) for char in type_index["reg"]]
         result.extend(temp)
-        temp = [int(char) for char in operation_index["no_operation"]]
+        temp = [int(char) for char in operation_index["nop"]]
         result.extend(temp)
     # wire type
     elif (isinstance(node, wire)):
         temp = [int(char) for char in type_index["wire"]]
         result.extend(temp)
-        temp = [int(char) for char in operation_index["no_operation"]]
-        result.extend(temp)
-    # const value type
-    elif (isinstance(node, ConstValue)):
-        temp = [int(char) for char in type_index["operation"]]
-        result.extend(temp)
-        temp = [int(char) for char in operation_index["constVal"]]
+        temp = [int(char) for char in operation_index["nop"]]
         result.extend(temp)
     # operation type
     else:
-        
-        temp = [int(char) for char in type_index["operation"]]
-        result.extend(temp)
+    
         
         if (node.Type == "Adder"):
             temp = [int(char) for char in operation_index["add"]]
