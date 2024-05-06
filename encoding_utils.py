@@ -58,6 +58,7 @@ type_index = {
     "output": "0100",
     "reg": "0010",
     "wire": "0001",
+    "operation" : "0000"
 }
 
 # operation_index = {
@@ -116,9 +117,18 @@ def get_encoding(node):
         result.extend(temp)
         temp = [int(char) for char in operation_index["nop"]]
         result.extend(temp)
+        
+    elif (isinstance(node, ConstValue)):
+        temp = [int(char) for char in type_index["operation"]]
+        result.extend(temp)
+        temp = [int(char) for char in operation_index["constVal"]]
+        result.extend(temp)
     # operation type
     else:
-    
+        
+        temp = [int(char) for char in type_index["operation"]]
+        result.extend(temp)
+        # print(node.Type)
         
         if (node.Type == "Adder"):
             temp = [int(char) for char in operation_index["add"]]
@@ -161,7 +171,7 @@ def get_encoding(node):
             result.extend(temp)
         
         elif (node.Type == "Land"):
-            temp = [int(char) for char in operation_index["add"]]
+            temp = [int(char) for char in operation_index["and"]]
             result.extend(temp)
         
         elif (node.Type == "Lor"):
@@ -174,10 +184,6 @@ def get_encoding(node):
         
         elif (node.Type == "MUX"):
             temp = [int(char) for char in operation_index["mux"]]
-            result.extend(temp)
-        
-        elif (node.Type == "power"):
-            temp = [int(char) for char in operation_index["power"]]
             result.extend(temp)
         
         elif (node.Type == "shl"):
@@ -223,7 +229,6 @@ def get_encoding(node):
         elif (node.Type == "Ulnot"):
             temp = [int(char) for char in operation_index["not"]]
             result.extend(temp)
-            
         else:
             pass
 

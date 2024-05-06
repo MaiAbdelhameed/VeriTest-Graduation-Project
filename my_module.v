@@ -1,11 +1,39 @@
-module adder14(input A0,A1,A2,A3,B0,B1,B2,B3, input Cin, output reg [3:0] Sum, output reg Cout);
+module adder11(A, B, Cin, Sum, Cout);
+    input A, B, Cin;
+    output reg Sum, Cout;
 
-always @(*) begin
-    Sum[0] = A0 ^ B0 ^ Cin;
-    // Sum[1] = A1 ^ B1 ^ ((A0 & B0) | (Cin & (A0 ^ B0)));
-    // Sum[2] = A2 ^ B2 ^ ((A1 & B1) | ((A0 & B0) & (A1 ^ B1)) | (Cin & ((A0 & B0) | (A1 & B1))));
-    // Sum[3] = A3 ^ B3 ^ ((A2 & B2) | ((A1 & B1) & ((A0 & B0) | (A1 & B1))) | (Cin & ((A0 & B0) | (A1 & B1) | (A2 & B2))));
-    // Cout = ((A0 & B0) | (Cin & (A0 ^ B0))) | ((A1 & B1) | ((A0 & B0) & (A1 ^ B1))) | ((A2 & B2) | ((A1 & B1) & ((A0 & B0) | (A1 & B1)))) | ((A3 & B3) | ((A2 & B2) & ((A1 & B1) | ((A0 & B0) | (A1 & B1)))));
-end
-
+    always @(*) begin
+        if (A == 1'b0 && B == 1'b0 && Cin == 1'b0) begin
+            Sum = 1'b0;
+            Cout = 1'b0;
+        end
+        else if (A == 1'b0 && B == 1'b0 && Cin == 1'b1) begin
+            Sum = 1'b1;
+            Cout = 1'b0;
+        end
+        else if (A == 1'b0 && B == 1'b1 && Cin == 1'b0) begin
+            Sum = 1'b1;
+            Cout = 1'b0;
+        end
+        else if (A == 1'b0 && B == 1'b1 && Cin == 1'b1) begin
+            Sum = 1'b0;
+            Cout = 1'b1;
+        end
+        else if (A == 1'b1 && B == 1'b0 && Cin == 1'b0) begin
+            Sum = 1'b1;
+            Cout = 1'b0;
+        end
+        else if (A == 1'b1 && B == 1'b0 && Cin == 1'b1) begin
+            Sum = 1'b0;
+            Cout = 1'b1;
+        end
+        else if (A == 1'b1 && B == 1'b1 && Cin == 1'b0) begin
+            Sum = 1'b0;
+            Cout = 1'b1;
+        end
+        else if (A == 1'b1 && B == 1'b1 && Cin == 1'b1) begin
+            Sum = 1'b1;
+            Cout = 1'b1;
+        end
+    end
 endmodule

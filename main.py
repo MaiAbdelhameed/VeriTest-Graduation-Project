@@ -22,15 +22,13 @@ G, input_output_wire = code_to_graph(filename)
 print(input_output_wire)
 
 pos = nx.spring_layout(G)  # Layout algorithm
-nx.draw(G, pos, with_labels=True, node_size=200,
-        font_size=10, font_color="black")
+nx.draw(G, pos, with_labels=True, node_size=200, font_size=10, font_color="black")
 
 # Draw edge labels
-edge_labels = {
-    (u, v): f"{G[u][v]['edge_attr'][0].__str__()}" for u, v in G.edges}
+# edge_labels = {(u, v): f"{G[u][v]['edge_attr'][0].__str__()}" for u, v in G.edges}
 
 
-nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
+# nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
 
 # plt.show()
 
