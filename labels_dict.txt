@@ -1,1 +1,1 @@
-{"adder": 15, "ALU": 9, "and": 25, "comparator": 28, "decoder": 26, "encoder": 23, "mult": 25, "mux": 26, "nand": 20, "nor": 16, "not": 11, "or": 24, "pe": 17, "sub": 10, "xnor": 23}
+{"adder": 15, "and": 25, "comparator": 28, "decoder": 26, "encoder": 23, "mult": 25, "mux": 26, "nand": 20, "nor": 16, "not": 11, "or": 24, "pe": 17, "sub": 10, "xnor": 23}
