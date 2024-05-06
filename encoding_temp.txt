@@ -1,0 +1,8 @@
+
+type_node_dict = {
+    0: "1000", # input
+    1: "0100", # output
+    2: "0010", # reg
+    3: "0001", # wire
+    4: "0000" # operation
+}
