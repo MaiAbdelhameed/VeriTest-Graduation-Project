@@ -8,7 +8,7 @@ $file_count = (Get-ChildItem -File).Count
 # Iterate over each file in the directory
 foreach ($file in Get-ChildItem -File) {
     # Run main.py with the file name as the command-line argument
-    python ../main.py $file.Name > $null
+    python ../final_model_utils/main.py $file.Name > $null
 
     # Check the exit status of the previous command
     if ($LASTEXITCODE -ne 0) {
