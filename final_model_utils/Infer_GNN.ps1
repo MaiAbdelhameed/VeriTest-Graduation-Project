@@ -7,8 +7,9 @@ $file_path = "test_sample.txt"  # Replace this with the path to your file
 # Call the Python script and pass the file path as an argument
 $output = & python $python_script $file_path
 
-# Save the output (prediction) to a text file
-$output | Out-File -FilePath "pred.txt"
-
-# Print a message indicating that the prediction has been saved
-Write-Output "Prediction saved to pred.txt"
+# Check the output and print "success" or "failure" accordingly
+if ($LASTEXITCODE -eq 0) {
+    Write-Output "Success : Prediction saved in 'pred.txt'"
+} else {
+    Write-Output "failure"
+}
