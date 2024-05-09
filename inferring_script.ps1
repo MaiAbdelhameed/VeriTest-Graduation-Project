@@ -27,7 +27,7 @@ Set-Location -Path "final_model_utils"
 $infer_output = .\Infer_GNN.ps1
 
 # Check for failure in Infer_GNN.ps1
-if ($infer_output -ne "Success : Prediction saved in 'pred.txt'") {
+if ($infer_output -ne "Success: Prediction saved in 'pred.txt'") {
     Write-Host "Inference failed: $infer_output"
     return "Inference failed"
 }

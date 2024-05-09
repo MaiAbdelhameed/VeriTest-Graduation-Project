@@ -1,4 +1,4 @@
-module adder(A, B, S, C);
+module mai(A, B, S, C);
 input A, B;
 output reg S, C;
 always @ (*)
