@@ -3,13 +3,13 @@
 
 # # Imports
 
-# In[3]:
+# In[1]:
 
 
 from GNN_utils import *
 
 
-# In[4]:
+# In[2]:
 
 
 def infer_GNN(test_file):
@@ -22,7 +22,7 @@ def infer_GNN(test_file):
     return label
 
 
-# In[8]:
+# In[3]:
 
 
 test_file = 'test_sample.txt'
@@ -30,7 +30,7 @@ label = infer_GNN(test_file)
 print(label)
 
 
-# In[9]:
+# In[4]:
 
 
 from nbconvert import ScriptExporter

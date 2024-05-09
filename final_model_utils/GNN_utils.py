@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
+# In[32]:
 
 
 import os
@@ -40,62 +40,7 @@ from sklearn.manifold import TSNE
 warnings.filterwarnings("ignore")
 
 
-# In[5]:
-
-
-def label_verilog_file(file_name):
-    
-    ground_truth_labels = [0,1,2,3,4,5,6,7,8,9,10,11,12,13] # no xor , no ALU
-    labels_torch = torch.tensor(ground_truth_labels)
-
-    # One-hot encode the labels
-    one_hot_labels = F.one_hot(labels_torch, num_classes=14)
-
-
-    label_mapping = {
-        'adder': 0, 'comparator': 1, 'decoder': 2,
-        'encoder': 3, 'mult': 4, 'mux': 5, 'pe': 6, 'sub': 7, 'and': 8, 'or': 9, 'not': 10, 'nand': 11, 'nor': 12, 'xnor': 13
-    }
-    
-    pattern = r"([a-zA-Z]+)(\d+)?"
-    match = re.match(pattern, file_name)
-    if match:
-        base_name = match.group(1)
-        if base_name in label_mapping:
-            return one_hot_labels[label_mapping[base_name]].tolist()
-        
-    return None
-
-
-# In[6]:
-
-
-def add_label_to_verilog_file(input_file_path, output_folder):
-    if input_file_path.endswith('.txt'):
-        with open(input_file_path, "r") as file:
-            loaded_data = json.load(file)
-            label = label_verilog_file(os.path.basename(input_file_path))
-            if label is not None and [label] not in loaded_data:  # Check if label already exists
-                loaded_data.append([label])  # Add label as the third list
-                output_file_path = os.path.join(output_folder, os.path.basename(input_file_path))
-                with open(output_file_path, "w") as output_file:
-                    json.dump(loaded_data, output_file)
-                return True
-    return False
-
-
-# In[7]:
-
-
-def preprocessing_dataset(input_folder, output_folder):
-    for file_name in os.listdir(input_folder):
-        file_path = os.path.join(input_folder, file_name)
-    if os.path.isfile(file_path):
-        if not add_label_to_verilog_file(file_path, output_folder):
-            print(f"Failed to label: {file_path}")
-
-
-# In[8]:
+# In[35]:
 
 
 def extracting_attributes(verilog_file):
@@ -124,19 +69,7 @@ def extracting_attributes(verilog_file):
         return e
 
 
-# In[9]:
-
-
-def get_files_in_folder(input_folder):
-    file_list = []
-    for file_name in os.listdir(input_folder):
-        file_path = os.path.join(input_folder, file_name)
-        if os.path.isfile(file_path):
-            file_list.append(file_path)
-    return file_list
-
-
-# In[10]:
+# In[37]:
 
 
 # from torch_geometric.nn import GCNConv
@@ -184,27 +117,24 @@ class GCN(torch.nn.Module):
 GCN()
 
 
-# In[11]:
+# In[38]:
 
 
 def preprocessing_test(test_file):
     if test_file.endswith('.txt'):
         with open(test_file, "r") as file:
             loaded_data = json.load(file)
-            label = label_verilog_file(os.path.basename(test_file))
-            if label is not None and [label] not in loaded_data:  # Check if label already exists
-                loaded_data.append([label])  # Add label as the third list
             return loaded_data
 
 
-# In[12]:
+# In[45]:
 
 
 def extracting_attributes(verilog_file):
     try:
                 nodes = verilog_file[0]
                 edges = verilog_file[1]
-                label = verilog_file[2]
+                label =  [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
                 
                 x = torch.tensor(nodes, dtype=torch.float)
                 edge_index = torch.tensor(edges, dtype=torch.long)
@@ -221,7 +151,7 @@ def extracting_attributes(verilog_file):
         return e
 
 
-# In[13]:
+# In[46]:
 
 
 def get_label_infer(pred_label):
@@ -233,7 +163,7 @@ def get_label_infer(pred_label):
     return label[0]
 
 
-# In[14]:
+# In[47]:
 
 
 def get_prediction(data):
@@ -245,7 +175,7 @@ def get_prediction(data):
     return pred_label
 
 
-# In[15]:
+# In[48]:
 
 
 from nbconvert import ScriptExporter
