@@ -1448,7 +1448,7 @@ def parse_verilog_code(module_path, top_level):
 
 
     for instance in instances:
-        if instance.module == "or" or instance.module == "and" or instance.module == "xor" or instance.module == "nand" or instance.module == "nor" or instance.module == "xnor" or instance.module == "not":
+        if instance.module.lower() == "or" or instance.module.lower() == "and" or instance.module.lower() == "xor" or instance.module.lower() == "nand" or instance.module.lower() == "nor" or instance.module.lower() == "xnor" or instance.module.lower() == "not":
             parse_gate_level(instance.portlist, G, instance.module, input_output_wire)
         else:
             file_name = get_file_name(instance.module)
