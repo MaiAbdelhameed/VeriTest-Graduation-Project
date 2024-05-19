@@ -1,0 +1,10 @@
+Module Name: mux_8x1
+INPUTS
+--------
+test2 8
+select 3
+
+
+OUTPUTS
+--------
+test 1

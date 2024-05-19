@@ -1,0 +1,111 @@
+#category
+
+=>type 1 (normal gates)
+and -> logical and bitwise✅
+or -> logical and bitwise✅
+xor -> logical and bitwise✅
+xnor -> logical and bitwise✅
+nor -> logical and bitwise✅
+nand -> logical and bitwise✅
+
+{model name}
+{type}
+{number of inputs}
+{names of outputs}
+
+{
+    model_name:'name'
+    type:'type'
+    inputs:[{name,size},{name,size}]
+    outputs: 'name'
+}
+---
+adder 
+sub
+
+=>can have different number of bits input
+=>one output
+=>carry_in and carry_out one bit
+=>output can be separate bits
+110 -111
+
+
+{model name}
+{type}
+{number of inputs}
+{input_name,input_size}
+{input_name,input_size}
+{input_name,input_size}
+{input_name,input_size}
+{output name}
+CARRY =>{Carry out name,Carry in name}(optional)
+
+
+
+{
+    model_name:'name'✅🏁
+    type:'type'✅🏁
+    mode:'signed or unsigned'✅🏁
+    inputs:[{name,size},{name,size}]✅🏁
+    outputs: {name,size}✅🏁
+    carry_in:{name,size}✅🏁
+    carry_out:{name,size}✅🏁
+    sign_flag:{name,size}✅🏁
+    overflow_flag:{name,size}✅🏁
+    zero_flag:{name,size}✅🏁
+    odd_parity_flag:{name,size,type}✅🏁
+    even_parity_flag:{name,size,type}✅🏁
+    odd_flag:{name,size}✅🏁
+    even_flag:{name,size}✅🏁
+
+}
+---
+
+adder/subtractor
+
+---
+
+not🙋🏿‍♀️✅
+
+---
+ALU
+---
+bcd (adder/subractor and binary to bcd)🙋🏿‍♀️
+(inputs can be any size and signed and unsigned outputs 3 flags concatenated or separate )comparator🙋🏿‍♀️
+comparator with multiple inputs (get biggest get smallest signed and unsigned)🤷
+
+
+---
+{
+decoder✅
+encoder✅
+}
+
+(active low and active high / input an output can be concatenated or separate / order can start for LSB or MSB )
+
+---
+mult
+
+
+---
+mux
+(always one output concatenated or separate)
+(selector bits can be concatenated or separate)
+(output bits can be concatenated or separate)
+
+
+
+
+----
+pe✅
+(input bits can be concatenated or separate / LSB or MSB)
+(output bits can be concatenated or separate/ LSB or MSB)
+
+
+---
+seg✅
+(input the number and output the display)
+(input can be from 0 to F)
+(active low or active high)
+(decimal point output)
+(inputs and outputs can be separate or concatenated)

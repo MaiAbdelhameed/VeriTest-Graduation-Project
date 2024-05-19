@@ -1,0 +1,9 @@
+{
+    "model_name":"seg",
+    "type":"seg",
+    "input_mode":"concatenated",
+    "output_mode":"concatenated",
+    "inputs":[{"name":"bcd", "size":4}],
+    "output": [{"name":"seg","size":7}]
+
+}

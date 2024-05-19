@@ -1,1 +1,1 @@
-# Verilog-Testbench-Generator-GP
+# VeriTest
