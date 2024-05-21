@@ -1,0 +1,25 @@
+[tasks]
+\d+
+
+[options]
+mode bmc
+depth 50
+expect timeout,fail
+timeout @TIMEOUT@
+aigsmt none
+
+[engines]
+abc sim3
+
+[script]
+--pycode-begin--
+output("verilog_defines -Dmutidx=%s" % task)
+--pycode-end--
+read_verilog -sv miter.sv
+read_ilang mutated.il
+prep -top miter
+fmcombine miter ref uut
+
+[files]
+../../miter.sv
+mutated.il
