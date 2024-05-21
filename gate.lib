@@ -15,7 +15,7 @@ library (gate_lib) {
         }
     }
 
-    cell (BUF) {
+    cell (WIRE) {
 
 	area: 1;
 	pin (A) {

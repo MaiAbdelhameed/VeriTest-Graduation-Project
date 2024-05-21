@@ -16,7 +16,7 @@ import sys
     # sys.exit(1)
 
 # filename = sys.argv[1]
-filename = "my_module.v"
+filename = "mux14_synth.v"
 
 G, input_output_wire = code_to_graph(filename)
 print(input_output_wire)
@@ -84,8 +84,8 @@ edges_encoded_matrix.append(destination_matrix)
 # print(edges_encoded_matrix)
 
 
-directory = "encoded_yosys_files"
-filename = "test_sample.txt"
+directory = "./"
+filename = filename[:-2] + ".txt"
 file_path = os.path.join(directory, filename)
 
 
