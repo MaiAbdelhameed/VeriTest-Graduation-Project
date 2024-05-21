@@ -1,0 +1,13 @@
+read_verilog {input_file}
+
+proc; opt; fsm; opt; memory; opt
+
+techmap; opt
+
+flatten
+
+abc -liberty {liberty_file}
+
+clean -purge
+
+write_verilog -attr2comment {output_file}

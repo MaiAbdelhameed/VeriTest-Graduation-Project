@@ -1,0 +1,14 @@
+How to calculate the outputs?
+
+Firstly you need to generate the graph for your code, using the function code_to_graph on code_to_graph.py, you have to include it using 
+"from PARSER.code_to_graph import code_to_graph"
+
+Secondly you have to create an object from GraphAPI and insert the graph that was generated in the constructor "API = GraphAPI(G)" import is using "from PARSER.GraphAPI import GraphAPI"
+
+Finaly you can generate output using the function calc_output in GraphAPI input datastructure as follows: {"key_input": ["vector", "vector2"], "key_input2": ["vector", "vector2"]}
+
+
+
+Note that: you have to send input vectors in binary form only!! and also you have to specifiy the length of each test vector independently
+
+An example for a correct input: {'in': ["3'b011", "3'b011"], 'en': ["1'b1", "1'b0"]}
