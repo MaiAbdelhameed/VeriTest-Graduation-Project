@@ -1,0 +1,7 @@
+{
+    "model_name":"model3",
+    "type":"nand",
+    "operation_type":"logical",
+    "inputs":[{"name":"in1", "size":3},{"name":"in2", "size":3},{"name":"in3", "size":3}],
+    "output": "out"
+}

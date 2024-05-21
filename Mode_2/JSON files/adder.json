@@ -1,0 +1,18 @@
+{
+    "model_name":"adder_circuit",
+    "type":"adder",
+    "mode":"unsigned",
+    "inputs":[{"name":"in1", "size":3},{"name":"in2", "size":2},{"name":"in3", "size":3}],
+    "output": {"name":"out","size":4},
+    "carry_in": {"name":"cin","size":1},
+    "carry_out": {"name":"cout","size":1},
+    "overflow_flag":{"name":"overflow_flag","size":1},
+    "sign_flag":{"name":"sf","size":1},
+    "zero_flag":{"name":"zf","size":1},
+    "odd_parity_flag":{"name":"odd_parity_flag","size":1},
+    "even_parity_flag":{"name":"even_parity_flag","size":1},
+    "odd_flag":{"name":"odd_flag","size":1},
+    "even_flag":{"name":"even_flag","size":1}
+    
+
+}
