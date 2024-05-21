@@ -14,7 +14,7 @@ print(yosys_suite_path)
 
 os.chdir(yosys_suite_path)
 
-verilog_files_dir = os.path.join(current_dir, 'temp')
+verilog_files_dir = os.path.join(current_dir, 'success_new')
 
 
 if not os.path.exists(verilog_files_dir):
