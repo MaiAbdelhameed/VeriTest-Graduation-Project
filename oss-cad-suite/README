@@ -1,0 +1,41 @@
+OSS CAD Suite
+=============
+
+Did you know that the Tabby CAD version of yosys supports industry standard SystemVerilog, VHDL and SVA? 
+Contact us at contact@yosyshq.com to arrange a free evaluation license.
+
+Installation
+------------
+
+1. Download an archive matching your OS from the releases page at https://github.com/YosysHQ/oss-cad-suite-build/releases/latest.
+2. Extract the archive to a location of your choice (for Windows it is recommended that path does not contain spaces)
+3. On macOS to allow execution of quarantined files run: ```./activate``` in extracted location once
+4. Set the environment as described below.
+
+Linux and macOS
+---------------
+export PATH="<extracted_location>/oss-cad-suite/bin:$PATH"
+
+with fish shell:
+fish_add_path "<extracted_location>/oss-cad-suite/bin"
+
+Windows
+-------
+from existing shell:
+<extracted_location>\oss-cad-suite\environment.bat
+
+to create new shell window:
+<extracted_location>\oss-cad-suite\start.bat
+
+Using the bundled Python3 (Linux and macOS only)
+------------------------------------------------
+
+If you want to use the bundled version of Python, for example with nmigen, nextpnr scripting or LiteX, then you can call it with tabbypy3.
+
+We also provide a virtual environment that you can setup like this:
+
+source <extracted_location>/oss-cad-suite/environment
+
+or with fish shell:
+
+source <extracted_location>/oss-cad-suite/environment.fish
