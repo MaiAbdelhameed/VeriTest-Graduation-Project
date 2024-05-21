@@ -84,7 +84,7 @@ edges_encoded_matrix.append(destination_matrix)
 # print(edges_encoded_matrix)
 
 
-directory = "./"
+directory = "encoded_yosys_files"
 filename = "test_sample.txt"
 file_path = os.path.join(directory, filename)
 
