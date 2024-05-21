@@ -1,5 +1,5 @@
 # Change directory to "success"
-Set-Location -Path "success"
+Set-Location -Path "success_new"
 
 $failed_count = 0
 $done_files = 0

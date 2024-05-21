@@ -5,7 +5,6 @@ import time
 import signal
 
 MAXTIMEOUT = 30
-# argv[1] is the library name
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 project_dir = os.path.abspath(os.path.join(current_dir))

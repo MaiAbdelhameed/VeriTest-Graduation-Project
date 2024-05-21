@@ -71,23 +71,11 @@ type_index = {
 # }
 
 operation_index = {
-    "nop":          "0000000000000000",
-    "subtr":		"1000000000000000",
-    "shift":		"0100000000000000",
-    "mux":			"0010000000000000",
-    "mult":			"0001000000000000",
-    "constVal":		"0000100000000000",
-    "conditional":	"0000010000000000",
-    "concat":		"0000001000000000",
-    "case":			"0000000100000000",
-    "not":			"0000000010000000",
-    "nand":			"0000000001000000",
-    "nor":			"0000000000100000",
-    "xnor":			"0000000000010000",
-    "xor":			"0000000000001000",
-    "or":			"0000000000000100",
-    "and":			"0000000000000010",
-    "add": 			"0000000000000001"
+    "nop":          "0000",
+    "not":			"1000",
+    "or":			"0100",
+    "and":			"0010",
+    "constVal":     "0001"
 }
 
 
@@ -130,44 +118,12 @@ def get_encoding(node):
         result.extend(temp)
         # print(node.Type)
         
-        if (node.Type == "Adder"):
-            temp = [int(char) for char in operation_index["add"]]
-            result.extend(temp)
-        
-        elif (node.Type == "and"):
+        if (node.Type == "and"):
             temp = [int(char) for char in operation_index["and"]]
             result.extend(temp)
         
         elif (node.Type == "or"):
             temp = [int(char) for char in operation_index["or"]]
-            result.extend(temp)
-        
-        elif (node.Type == "xor"):
-            temp = [int(char) for char in operation_index["xor"]]
-            result.extend(temp)
-        
-        elif (node.Type == "xnor"):
-            temp = [int(char) for char in operation_index["xnor"]]
-            result.extend(temp)
-        
-        elif (node.Type == "nor"):
-            temp = [int(char) for char in operation_index["nor"]]
-            result.extend(temp)
-        
-        elif (node.Type == "nand"):
-            temp = [int(char) for char in operation_index["nand"]]
-            result.extend(temp)
-        
-        elif (node.Type == "Case"):
-            temp = [int(char) for char in operation_index["case"]]
-            result.extend(temp)
-        
-        elif (node.Type == "CONCAT"):
-            temp = [int(char) for char in operation_index["concat"]]
-            result.extend(temp)
-        
-        elif (node.Type == "CONDITION"):
-            temp = [int(char) for char in operation_index["conditional"]]
             result.extend(temp)
         
         elif (node.Type == "Land"):
@@ -178,26 +134,6 @@ def get_encoding(node):
             temp = [int(char) for char in operation_index["or"]]
             result.extend(temp)
         
-        elif (node.Type == "Multplyer"):
-            temp = [int(char) for char in operation_index["mult"]]
-            result.extend(temp)
-        
-        elif (node.Type == "MUX"):
-            temp = [int(char) for char in operation_index["mux"]]
-            result.extend(temp)
-        
-        elif (node.Type == "shl"):
-            temp = [int(char) for char in operation_index["shift"]]
-            result.extend(temp)
-        
-        elif (node.Type == "shr"):
-            temp = [int(char) for char in operation_index["shift"]]
-            result.extend(temp)
-        
-        elif (node.Type == "subtractor"):
-            temp = [int(char) for char in operation_index["subtr"]]
-            result.extend(temp)
-        
         elif (node.Type == "Uor"):
             temp = [int(char) for char in operation_index["or"]]
             result.extend(temp)
@@ -206,22 +142,6 @@ def get_encoding(node):
             temp = [int(char) for char in operation_index["and"]]
             result.extend(temp)
         
-        elif (node.Type == "Unand"):
-            temp = [int(char) for char in operation_index["nand"]]
-            result.extend(temp)
-        
-        elif (node.Type == "Unor"):
-            temp = [int(char) for char in operation_index["nor"]]
-            result.extend(temp)
-        
-        elif (node.Type == "Uxor"):
-            temp = [int(char) for char in operation_index["xor"]]
-            result.extend(temp)
-    
-        elif (node.Type == "Uxnor"):
-            temp = [int(char) for char in operation_index["xnor"]]
-            result.extend(temp)
-    
         elif (node.Type == "Unot"):
             temp = [int(char) for char in operation_index["not"]]
             result.extend(temp)
