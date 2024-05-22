@@ -146,11 +146,9 @@ def get_encoding(node):
             temp = [int(char) for char in operation_index["not"]]
             result.extend(temp)
             
-        elif (node.Type == "Ulnot"):
+        else: 
             temp = [int(char) for char in operation_index["not"]]
             result.extend(temp)
-        else:
-            pass
 
     return result
 

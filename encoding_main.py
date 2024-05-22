@@ -11,18 +11,18 @@ import json
 import sys
 
 
-# if len(sys.argv) < 2:
-    # print("Usage: python main.py <argument>")
-    # sys.exit(1)
+if len(sys.argv) < 2:
+    print("Usage: python main.py <argument>")
+    sys.exit(1)
 
-# filename = sys.argv[1]
-filename = "mux14_synth.v"
+filename = sys.argv[1]
+# filename = "my_module.v"
 
 G, input_output_wire = code_to_graph(filename)
 print(input_output_wire)
 
 pos = nx.spring_layout(G)  # Layout algorithm
-nx.draw(G, pos, with_labels=True, node_size=200, font_size=10, font_color="black")
+# nx.draw(G, pos, with_labels=True, node_size=200, font_size=10, font_color="black")
 
 # Draw edge labels
 # edge_labels = {(u, v): f"{G[u][v]['edge_attr'][0].__str__()}" for u, v in G.edges}
@@ -78,13 +78,30 @@ for source, destinations in edges.items():
                 # min(nodes_sizes[source], nodes_sizes[list(destinations.keys())[i]]))
 
 
+for ind, n in enumerate(nodes_encoded_matrix):
+    if n[0] == 1:
+        for ind2, d in enumerate(destination_matrix):
+            if ind == d:
+                s = source_matrix[ind2]
+                source_matrix[ind2] = ind
+                destination_matrix[ind2] = s
+    
+    if n[1] ==1:
+        for ind2, s in enumerate(source_matrix):
+            if ind == s:
+                d = destination_matrix[ind2]
+                destination_matrix[ind2] = ind
+                source_matrix[ind2] = d
+
+
 edges_encoded_matrix.append(source_matrix)
 edges_encoded_matrix.append(destination_matrix)
 # print(nodes_encoded_matrix)
 # print(edges_encoded_matrix)
 
 
-directory = "./"
+# directory = "./"
+directory = "encoded_yosys"
 filename = filename[:-2] + ".txt"
 file_path = os.path.join(directory, filename)
 
