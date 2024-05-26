@@ -1,0 +1,116 @@
+{
+    "adder": {
+        "output": 55,
+        "input": 82,
+        "wire": 1503,
+        "not": 371,
+        "or": 637,
+        "and": 671,
+        "constVal": 4
+    },
+    "and": {
+        "output": 30,
+        "input": 97,
+        "and": 108,
+        "wire": 37
+    },
+    "comparator": {
+        "output": 64,
+        "input": 52,
+        "wire": 450,
+        "not": 139,
+        "and": 196,
+        "or": 180
+    },
+    "decoder": {
+        "output": 66,
+        "input": 72,
+        "wire": 321,
+        "not": 135,
+        "or": 49,
+        "and": 447,
+        "constVal": 9
+    },
+    "encoder": {
+        "output": 40,
+        "input": 79,
+        "wire": 522,
+        "and": 265,
+        "not": 114,
+        "or": 207
+    },
+    "mult": {
+        "output": 29,
+        "input": 68,
+        "and": 1161,
+        "wire": 2155,
+        "not": 338,
+        "or": 846
+    },
+    "mux": {
+        "output": 27,
+        "input": 177,
+        "wire": 2263,
+        "not": 84,
+        "and": 1196,
+        "or": 1075
+    },
+    "nand": {
+        "output": 31,
+        "input": 105,
+        "wire": 141,
+        "not": 98,
+        "and": 141
+    },
+    "nor": {
+        "output": 30,
+        "input": 103,
+        "wire": 144,
+        "or": 142,
+        "not": 101,
+        "and": 1
+    },
+    "not": {
+        "output": 16,
+        "input": 16,
+        "not": 16
+    },
+    "or": {
+        "output": 27,
+        "input": 66,
+        "or": 105,
+        "wire": 12
+    },
+    "pe": {
+        "output": 43,
+        "input": 65,
+        "wire": 132,
+        "not": 27,
+        "or": 115,
+        "and": 51
+    },
+    "sub": {
+        "output": 22,
+        "input": 30,
+        "wire": 97,
+        "not": 30,
+        "and": 44,
+        "or": 45
+    },
+    "xnor": {
+        "output": 30,
+        "input": 102,
+        "wire": 586,
+        "or": 316,
+        "and": 216,
+        "not": 166
+    },
+    "xor": {
+        "output": 28,
+        "input": 97,
+        "wire": 575,
+        "not": 163,
+        "or": 211,
+        "and": 311
+    }
+}

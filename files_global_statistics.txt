@@ -1,0 +1,152 @@
+{
+    "adder": {
+        "num_nodes": 3323,
+        "num_edges": 4666,
+        "average_nodes": 118.68,
+        "average_edges": 166.64,
+        "num_files": 28,
+        "percentage_nodes": 15.17,
+        "percentage_edges": 151.81,
+        "percentage_files": 7.07
+    },
+    "and": {
+        "num_nodes": 272,
+        "num_edges": 324,
+        "average_nodes": 9.07,
+        "average_edges": 10.8,
+        "num_files": 30,
+        "percentage_nodes": 1.24,
+        "percentage_edges": 10.54,
+        "percentage_files": 7.58
+    },
+    "comparator": {
+        "num_nodes": 1081,
+        "num_edges": 1406,
+        "average_nodes": 49.14,
+        "average_edges": 63.91,
+        "num_files": 22,
+        "percentage_nodes": 4.94,
+        "percentage_edges": 45.75,
+        "percentage_files": 5.56
+    },
+    "decoder": {
+        "num_nodes": 1099,
+        "num_edges": 1759,
+        "average_nodes": 34.34,
+        "average_edges": 54.97,
+        "num_files": 32,
+        "percentage_nodes": 5.02,
+        "percentage_edges": 57.23,
+        "percentage_files": 8.08
+    },
+    "encoder": {
+        "num_nodes": 1227,
+        "num_edges": 1644,
+        "average_nodes": 49.08,
+        "average_edges": 65.76,
+        "num_files": 25,
+        "percentage_nodes": 5.6,
+        "percentage_edges": 53.49,
+        "percentage_files": 6.31
+    },
+    "mult": {
+        "num_nodes": 4597,
+        "num_edges": 6697,
+        "average_nodes": 158.52,
+        "average_edges": 230.93,
+        "num_files": 29,
+        "percentage_nodes": 20.99,
+        "percentage_edges": 217.89,
+        "percentage_files": 7.32
+    },
+    "mux": {
+        "num_nodes": 4822,
+        "num_edges": 6981,
+        "average_nodes": 178.59,
+        "average_edges": 258.56,
+        "num_files": 27,
+        "percentage_nodes": 22.02,
+        "percentage_edges": 227.14,
+        "percentage_files": 6.82
+    },
+    "nand": {
+        "num_nodes": 516,
+        "num_edges": 619,
+        "average_nodes": 16.65,
+        "average_edges": 19.97,
+        "num_files": 31,
+        "percentage_nodes": 2.36,
+        "percentage_edges": 20.14,
+        "percentage_files": 7.83
+    },
+    "nor": {
+        "num_nodes": 521,
+        "num_edges": 631,
+        "average_nodes": 17.37,
+        "average_edges": 21.03,
+        "num_files": 30,
+        "percentage_nodes": 2.38,
+        "percentage_edges": 20.53,
+        "percentage_files": 7.58
+    },
+    "not": {
+        "num_nodes": 48,
+        "num_edges": 32,
+        "average_nodes": 3.0,
+        "average_edges": 2.0,
+        "num_files": 16,
+        "percentage_nodes": 0.22,
+        "percentage_edges": 1.04,
+        "percentage_files": 4.04
+    },
+    "or": {
+        "num_nodes": 210,
+        "num_edges": 315,
+        "average_nodes": 7.78,
+        "average_edges": 11.67,
+        "num_files": 27,
+        "percentage_nodes": 0.96,
+        "percentage_edges": 10.25,
+        "percentage_files": 6.82
+    },
+    "pe": {
+        "num_nodes": 433,
+        "num_edges": 552,
+        "average_nodes": 20.62,
+        "average_edges": 26.29,
+        "num_files": 21,
+        "percentage_nodes": 1.98,
+        "percentage_edges": 17.96,
+        "percentage_files": 5.3
+    },
+    "sub": {
+        "num_nodes": 268,
+        "num_edges": 327,
+        "average_nodes": 24.36,
+        "average_edges": 29.73,
+        "num_files": 11,
+        "percentage_nodes": 1.22,
+        "percentage_edges": 10.64,
+        "percentage_files": 2.78
+    },
+    "xnor": {
+        "num_nodes": 1416,
+        "num_edges": 1928,
+        "average_nodes": 47.2,
+        "average_edges": 64.27,
+        "num_files": 30,
+        "percentage_nodes": 6.47,
+        "percentage_edges": 62.73,
+        "percentage_files": 7.58
+    },
+    "xor": {
+        "num_nodes": 1385,
+        "num_edges": 1892,
+        "average_nodes": 49.46,
+        "average_edges": 67.57,
+        "num_files": 28,
+        "percentage_nodes": 6.32,
+        "percentage_edges": 61.56,
+        "percentage_files": 7.07
+    }
+}

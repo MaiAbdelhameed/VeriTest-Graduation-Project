@@ -1,0 +1,8 @@
+Input = 1211
+Output = 538
+Wire = 8938
+
+ConstVal = 13
+Not = 1782
+Or = 3928
+And = 4808
