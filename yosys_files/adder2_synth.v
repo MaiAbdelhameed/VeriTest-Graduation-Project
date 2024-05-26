@@ -38,7 +38,7 @@ module adder2(A, B, cin, sum, cout);
     .B(_03_),
     .Y(cout)
   );
-  NOT _12_ (
+  not _12_ (
     .A(cin),
     .Y(_06_)
   );
@@ -47,7 +47,7 @@ module adder2(A, B, cin, sum, cout);
     .B(B),
     .Y(_07_)
   );
-  NOT _14_ (
+  not _14_ (
     .A(_07_),
     .Y(_08_)
   );
@@ -56,7 +56,7 @@ module adder2(A, B, cin, sum, cout);
     .B(B),
     .Y(_09_)
   );
-  NOT _16_ (
+  not _16_ (
     .A(_09_),
     .Y(_00_)
   );

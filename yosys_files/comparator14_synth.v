@@ -58,35 +58,35 @@ module comparator14(Data_in_A, Data_in_B, less, equal, greater);
   /* src = "comparator14.v:13.16-13.20" */
   output less;
   wire less;
-  NOT _40_ (
+  not _40_ (
     .A(Data_in_A[0]),
     .Y(_00_)
   );
-  NOT _41_ (
+  not _41_ (
     .A(Data_in_A[1]),
     .Y(_01_)
   );
-  NOT _42_ (
+  not _42_ (
     .A(Data_in_A[2]),
     .Y(_02_)
   );
-  NOT _43_ (
+  not _43_ (
     .A(Data_in_A[3]),
     .Y(_03_)
   );
-  NOT _44_ (
+  not _44_ (
     .A(Data_in_B[0]),
     .Y(_04_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(Data_in_B[1]),
     .Y(_05_)
   );
-  NOT _46_ (
+  not _46_ (
     .A(Data_in_B[2]),
     .Y(_06_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(Data_in_B[3]),
     .Y(_07_)
   );
@@ -230,7 +230,7 @@ module comparator14(Data_in_A, Data_in_B, less, equal, greater);
     .B(_34_),
     .Y(_35_)
   );
-  NOT _76_ (
+  not _76_ (
     .A(_35_),
     .Y(equal)
   );
@@ -254,7 +254,7 @@ module comparator14(Data_in_A, Data_in_B, less, equal, greater);
     .B(_38_),
     .Y(_39_)
   );
-  NOT _81_ (
+  not _81_ (
     .A(_39_),
     .Y(greater)
   );

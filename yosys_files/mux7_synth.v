@@ -31,11 +31,11 @@ module mux7(a, b, c, d, sel, y);
   /* src = "mux7.v:4.36-4.37" */
   output y;
   wire y;
-  NOT _10_ (
+  not _10_ (
     .A(sel[1]),
     .Y(_08_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(sel[0]),
     .Y(_09_)
   );

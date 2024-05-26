@@ -50,7 +50,7 @@ module mult19(a, b, result);
     .B(_01_),
     .Y(_03_)
   );
-  NOT _22_ (
+  not _22_ (
     .A(_03_),
     .Y(_04_)
   );
@@ -64,7 +64,7 @@ module mult19(a, b, result);
     .B(a[0]),
     .Y(result[0])
   );
-  NOT _25_ (
+  not _25_ (
     .A(result[0]),
     .Y(_05_)
   );
@@ -83,7 +83,7 @@ module mult19(a, b, result);
     .B(_00_),
     .Y(_08_)
   );
-  NOT _29_ (
+  not _29_ (
     .A(_08_),
     .Y(_09_)
   );
@@ -112,7 +112,7 @@ module mult19(a, b, result);
     .B(_08_),
     .Y(result[4])
   );
-  NOT _35_ (
+  not _35_ (
     .A(result[4]),
     .Y(_14_)
   );

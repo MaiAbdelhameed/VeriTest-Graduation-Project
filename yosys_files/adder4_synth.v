@@ -55,7 +55,7 @@ module adder4(A, B, cin, sum, cout);
     .B(_06_),
     .Y(cout)
   );
-  NOT _13_ (
+  not _13_ (
     .A(cout),
     .Y(_00_)
   );

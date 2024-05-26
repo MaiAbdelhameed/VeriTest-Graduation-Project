@@ -40,19 +40,19 @@ module comparator13(A0, A1, B0, B1, A_less_B, A_equal_B, A_greater_B);
   /* src = "comparator13.v:1.37-1.39" */
   input B1;
   wire B1;
-  NOT _16_ (
+  not _16_ (
     .A(A1),
     .Y(_14_)
   );
-  NOT _17_ (
+  not _17_ (
     .A(A0),
     .Y(_15_)
   );
-  NOT _18_ (
+  not _18_ (
     .A(B1),
     .Y(_00_)
   );
-  NOT _19_ (
+  not _19_ (
     .A(B0),
     .Y(_01_)
   );

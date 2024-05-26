@@ -59,35 +59,35 @@ module comparator8(a, b, eq, greater, less);
   /* src = "comparator8.v:6.16-6.20" */
   output less;
   wire less;
-  NOT _41_ (
+  not _41_ (
     .A(a[0]),
     .Y(_00_)
   );
-  NOT _42_ (
+  not _42_ (
     .A(a[1]),
     .Y(_01_)
   );
-  NOT _43_ (
+  not _43_ (
     .A(a[2]),
     .Y(_02_)
   );
-  NOT _44_ (
+  not _44_ (
     .A(a[3]),
     .Y(_03_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(b[0]),
     .Y(_04_)
   );
-  NOT _46_ (
+  not _46_ (
     .A(b[1]),
     .Y(_05_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(b[2]),
     .Y(_06_)
   );
-  NOT _48_ (
+  not _48_ (
     .A(b[3]),
     .Y(_07_)
   );
@@ -246,7 +246,7 @@ module comparator8(a, b, eq, greater, less);
     .B(_37_),
     .Y(_38_)
   );
-  NOT _80_ (
+  not _80_ (
     .A(_38_),
     .Y(eq)
   );
@@ -260,7 +260,7 @@ module comparator8(a, b, eq, greater, less);
     .B(_39_),
     .Y(_40_)
   );
-  NOT _83_ (
+  not _83_ (
     .A(_40_),
     .Y(greater)
   );

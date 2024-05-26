@@ -36,7 +36,7 @@ module nor25(a, b, c, d, out);
     .B(_1_),
     .Y(_2_)
   );
-  NOT _6_ (
+  not _6_ (
     .A(_2_),
     .Y(out)
   );

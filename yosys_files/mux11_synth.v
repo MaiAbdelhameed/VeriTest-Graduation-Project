@@ -30,7 +30,7 @@ module mux11(a, b, sel, y);
   /* src = "mux11.v:5.30-5.31" */
   output [6:0] y;
   wire [6:0] y;
-  NOT _15_ (
+  not _15_ (
     .A(sel),
     .Y(_00_)
   );

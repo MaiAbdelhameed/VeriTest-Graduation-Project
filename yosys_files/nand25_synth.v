@@ -63,7 +63,7 @@ module nand25(a, b, c, d, e, f, g, out);
     .B(_03_),
     .Y(_04_)
   );
-  NOT _12_ (
+  not _12_ (
     .A(_04_),
     .Y(out)
   );

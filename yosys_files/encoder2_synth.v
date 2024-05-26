@@ -53,23 +53,23 @@ module encoder2(din, dout);
   /* src = "encoder2.v:3.14-3.18" */
   output [2:0] dout;
   wire [2:0] dout;
-  NOT _44_ (
+  not _44_ (
     .A(din[6]),
     .Y(_00_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(din[5]),
     .Y(_01_)
   );
-  NOT _46_ (
+  not _46_ (
     .A(din[4]),
     .Y(_02_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(din[3]),
     .Y(_03_)
   );
-  NOT _48_ (
+  not _48_ (
     .A(din[1]),
     .Y(_04_)
   );
@@ -78,7 +78,7 @@ module encoder2(din, dout);
     .B(din[0]),
     .Y(_05_)
   );
-  NOT _50_ (
+  not _50_ (
     .A(_05_),
     .Y(_06_)
   );
@@ -97,7 +97,7 @@ module encoder2(din, dout);
     .B(_08_),
     .Y(_09_)
   );
-  NOT _54_ (
+  not _54_ (
     .A(_09_),
     .Y(_10_)
   );
@@ -131,7 +131,7 @@ module encoder2(din, dout);
     .B(din[6]),
     .Y(_16_)
   );
-  NOT _61_ (
+  not _61_ (
     .A(_16_),
     .Y(_17_)
   );
@@ -175,7 +175,7 @@ module encoder2(din, dout);
     .B(_24_),
     .Y(_25_)
   );
-  NOT _70_ (
+  not _70_ (
     .A(_25_),
     .Y(_26_)
   );
@@ -209,7 +209,7 @@ module encoder2(din, dout);
     .B(_31_),
     .Y(_32_)
   );
-  NOT _77_ (
+  not _77_ (
     .A(_32_),
     .Y(_33_)
   );
@@ -223,7 +223,7 @@ module encoder2(din, dout);
     .B(din[6]),
     .Y(_34_)
   );
-  NOT _80_ (
+  not _80_ (
     .A(_34_),
     .Y(_35_)
   );

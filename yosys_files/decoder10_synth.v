@@ -24,11 +24,11 @@ module decoder10(ip0, ip1, op0, op1, op2, op3);
   /* src = "decoder10.v:4.24-4.27" */
   output op3;
   wire op3;
-  NOT _3_ (
+  not _3_ (
     .A(ip1),
     .Y(_0_)
   );
-  NOT _4_ (
+  not _4_ (
     .A(ip0),
     .Y(_1_)
   );
@@ -37,7 +37,7 @@ module decoder10(ip0, ip1, op0, op1, op2, op3);
     .B(ip0),
     .Y(_2_)
   );
-  NOT _6_ (
+  not _6_ (
     .A(_2_),
     .Y(op0)
   );

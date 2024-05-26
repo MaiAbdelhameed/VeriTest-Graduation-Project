@@ -60,7 +60,7 @@ module xor14(a, b, c, d, e, f, g, out);
   /* src = "xor14.v:9.14-9.17" */
   output out;
   wire out;
-  NOT _33_ (
+  not _33_ (
     .A(_08_),
     .Y(_09_)
   );
@@ -109,7 +109,7 @@ module xor14(a, b, c, d, e, f, g, out);
     .B(f),
     .Y(_18_)
   );
-  NOT _43_ (
+  not _43_ (
     .A(_18_),
     .Y(_19_)
   );
@@ -118,7 +118,7 @@ module xor14(a, b, c, d, e, f, g, out);
     .B(f),
     .Y(_20_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(_20_),
     .Y(_21_)
   );
@@ -177,7 +177,7 @@ module xor14(a, b, c, d, e, f, g, out);
     .B(_31_),
     .Y(out)
   );
-  NOT _57_ (
+  not _57_ (
     .A(d),
     .Y(_32_)
   );
@@ -186,7 +186,7 @@ module xor14(a, b, c, d, e, f, g, out);
     .B(a),
     .Y(_00_)
   );
-  NOT _59_ (
+  not _59_ (
     .A(_00_),
     .Y(_01_)
   );
@@ -195,7 +195,7 @@ module xor14(a, b, c, d, e, f, g, out);
     .B(a),
     .Y(_02_)
   );
-  NOT _61_ (
+  not _61_ (
     .A(_02_),
     .Y(_03_)
   );
@@ -214,7 +214,7 @@ module xor14(a, b, c, d, e, f, g, out);
     .B(c),
     .Y(_06_)
   );
-  NOT _65_ (
+  not _65_ (
     .A(_06_),
     .Y(_07_)
   );

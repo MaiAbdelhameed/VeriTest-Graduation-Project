@@ -953,23 +953,23 @@ module mux20(in0, in1, in2, in3, in4, in5, in6, in7, in8, in9, in10, in11, in12,
   /* src = "mux20.v:3.41-3.44" */
   input [4:0] sel;
   wire [4:0] sel;
-  NOT _0847_ (
+  not _0847_ (
     .A(sel[4]),
     .Y(_0123_)
   );
-  NOT _0848_ (
+  not _0848_ (
     .A(sel[1]),
     .Y(_0124_)
   );
-  NOT _0849_ (
+  not _0849_ (
     .A(sel[2]),
     .Y(_0125_)
   );
-  NOT _0850_ (
+  not _0850_ (
     .A(sel[3]),
     .Y(_0126_)
   );
-  NOT _0851_ (
+  not _0851_ (
     .A(sel[0]),
     .Y(_0127_)
   );

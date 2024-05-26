@@ -56,19 +56,19 @@ module mux22(in, sel, out);
   /* src = "mux22.v:3.45-3.48" */
   input [3:0] sel;
   wire [3:0] sel;
-  NOT _44_ (
+  not _44_ (
     .A(sel[0]),
     .Y(_00_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(sel[1]),
     .Y(_01_)
   );
-  NOT _46_ (
+  not _46_ (
     .A(sel[2]),
     .Y(_02_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(sel[3]),
     .Y(_03_)
   );

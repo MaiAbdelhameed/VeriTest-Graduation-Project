@@ -47,7 +47,7 @@ module xnor15(a, b, c, d, out);
     .B(d),
     .Y(_10_)
   );
-  NOT _17_ (
+  not _17_ (
     .A(_10_),
     .Y(_11_)
   );
@@ -56,7 +56,7 @@ module xnor15(a, b, c, d, out);
     .B(d),
     .Y(_12_)
   );
-  NOT _19_ (
+  not _19_ (
     .A(_12_),
     .Y(_13_)
   );
@@ -75,7 +75,7 @@ module xnor15(a, b, c, d, out);
     .B(b),
     .Y(_02_)
   );
-  NOT _23_ (
+  not _23_ (
     .A(_02_),
     .Y(_03_)
   );
@@ -84,7 +84,7 @@ module xnor15(a, b, c, d, out);
     .B(b),
     .Y(_04_)
   );
-  NOT _25_ (
+  not _25_ (
     .A(_04_),
     .Y(_05_)
   );

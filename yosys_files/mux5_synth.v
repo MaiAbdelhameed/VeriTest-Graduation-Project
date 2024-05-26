@@ -18,7 +18,7 @@ module mux5(in0, in1, sel, out);
   /* src = "mux5.v:2.42-2.45" */
   input sel;
   wire sel;
-  NOT _3_ (
+  not _3_ (
     .A(sel),
     .Y(_0_)
   );

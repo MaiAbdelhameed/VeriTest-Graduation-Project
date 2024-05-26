@@ -25,7 +25,7 @@ module encoder14(din, dout);
     .B(din[0]),
     .Y(_08_)
   );
-  NOT _12_ (
+  not _12_ (
     .A(_08_),
     .Y(_09_)
   );
@@ -34,7 +34,7 @@ module encoder14(din, dout);
     .B(din[1]),
     .Y(_10_)
   );
-  NOT _14_ (
+  not _14_ (
     .A(_10_),
     .Y(_00_)
   );
@@ -73,7 +73,7 @@ module encoder14(din, dout);
     .B(_05_),
     .Y(_06_)
   );
-  NOT _22_ (
+  not _22_ (
     .A(_06_),
     .Y(_07_)
   );

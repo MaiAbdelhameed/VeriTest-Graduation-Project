@@ -20,11 +20,11 @@ module decoder30(a, b, en, y);
   /* src = "decoder30.v:3.22-3.23" */
   output [3:0] y;
   reg [3:0] y;
-  NOT _04_ (
+  not _04_ (
     .A(a),
     .Y(_03_)
   );
-  NOT _05_ (
+  not _05_ (
     .A(b),
     .Y(_01_)
   );
@@ -48,7 +48,7 @@ module decoder30(a, b, en, y);
     .B(b),
     .Y(_02_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(_02_),
     .Y(_00_[3])
   );

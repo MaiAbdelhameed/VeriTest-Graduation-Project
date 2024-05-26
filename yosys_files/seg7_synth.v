@@ -68,15 +68,15 @@ module seg7(w, x, y, z, a, b, c, d, e, f, g);
   /* src = "seg7.v:8.17-8.18" */
   input z;
   wire z;
-  NOT _32_ (
+  not _32_ (
     .A(y),
     .Y(_00_)
   );
-  NOT _33_ (
+  not _33_ (
     .A(x),
     .Y(_01_)
   );
-  NOT _34_ (
+  not _34_ (
     .A(w),
     .Y(_02_)
   );
@@ -95,7 +95,7 @@ module seg7(w, x, y, z, a, b, c, d, e, f, g);
     .B(z),
     .Y(_05_)
   );
-  NOT _38_ (
+  not _38_ (
     .A(_05_),
     .Y(_06_)
   );
@@ -134,7 +134,7 @@ module seg7(w, x, y, z, a, b, c, d, e, f, g);
     .B(z),
     .Y(_12_)
   );
-  NOT _46_ (
+  not _46_ (
     .A(_12_),
     .Y(_13_)
   );
@@ -158,7 +158,7 @@ module seg7(w, x, y, z, a, b, c, d, e, f, g);
     .B(_12_),
     .Y(_16_)
   );
-  NOT _51_ (
+  not _51_ (
     .A(_16_),
     .Y(_17_)
   );
@@ -177,7 +177,7 @@ module seg7(w, x, y, z, a, b, c, d, e, f, g);
     .B(_19_),
     .Y(_20_)
   );
-  NOT _55_ (
+  not _55_ (
     .A(_20_),
     .Y(e)
   );
@@ -231,7 +231,7 @@ module seg7(w, x, y, z, a, b, c, d, e, f, g);
     .B(_22_),
     .Y(_28_)
   );
-  NOT _66_ (
+  not _66_ (
     .A(_28_),
     .Y(_29_)
   );

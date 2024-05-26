@@ -22,11 +22,11 @@ module comparator12(A, B, A_less_B, A_equal_B, A_greater_B);
   /* src = "comparator12.v:1.30-1.31" */
   input B;
   wire B;
-  NOT _04_ (
+  not _04_ (
     .A(A),
     .Y(_01_)
   );
-  NOT _05_ (
+  not _05_ (
     .A(B),
     .Y(_02_)
   );
@@ -35,7 +35,7 @@ module comparator12(A, B, A_less_B, A_equal_B, A_greater_B);
     .B(_02_),
     .Y(_03_)
   );
-  NOT _07_ (
+  not _07_ (
     .A(_03_),
     .Y(A_less_B)
   );
@@ -44,7 +44,7 @@ module comparator12(A, B, A_less_B, A_equal_B, A_greater_B);
     .B(B),
     .Y(_00_)
   );
-  NOT _09_ (
+  not _09_ (
     .A(_00_),
     .Y(A_greater_B)
   );

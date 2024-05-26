@@ -45,15 +45,15 @@ module decoder21(a, b, c, d0, d1, d2, d3, d4, d5, d6, d7);
   /* src = "decoder21.v:3.29-3.31" */
   output d7;
   wire d7;
-  NOT _09_ (
+  not _09_ (
     .A(a),
     .Y(_00_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(b),
     .Y(_01_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(c),
     .Y(_02_)
   );
@@ -62,7 +62,7 @@ module decoder21(a, b, c, d0, d1, d2, d3, d4, d5, d6, d7);
     .B(b),
     .Y(_03_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(_03_),
     .Y(_04_)
   );
@@ -71,7 +71,7 @@ module decoder21(a, b, c, d0, d1, d2, d3, d4, d5, d6, d7);
     .B(_03_),
     .Y(_05_)
   );
-  NOT _15_ (
+  not _15_ (
     .A(_05_),
     .Y(d0)
   );

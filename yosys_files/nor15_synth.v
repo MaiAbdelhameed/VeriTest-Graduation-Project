@@ -24,7 +24,7 @@ module nor15(a, b, out);
     .B(b[3]),
     .Y(_00_)
   );
-  NOT _08_ (
+  not _08_ (
     .A(_00_),
     .Y(out[3])
   );
@@ -33,7 +33,7 @@ module nor15(a, b, out);
     .B(b[2]),
     .Y(_01_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(_01_),
     .Y(out[2])
   );
@@ -42,7 +42,7 @@ module nor15(a, b, out);
     .B(b[1]),
     .Y(_02_)
   );
-  NOT _12_ (
+  not _12_ (
     .A(_02_),
     .Y(out[1])
   );
@@ -51,7 +51,7 @@ module nor15(a, b, out);
     .B(b[0]),
     .Y(_03_)
   );
-  NOT _14_ (
+  not _14_ (
     .A(_03_),
     .Y(out[0])
   );
@@ -60,7 +60,7 @@ module nor15(a, b, out);
     .B(b[6]),
     .Y(_04_)
   );
-  NOT _16_ (
+  not _16_ (
     .A(_04_),
     .Y(out[6])
   );
@@ -69,7 +69,7 @@ module nor15(a, b, out);
     .B(b[5]),
     .Y(_05_)
   );
-  NOT _18_ (
+  not _18_ (
     .A(_05_),
     .Y(out[5])
   );
@@ -78,7 +78,7 @@ module nor15(a, b, out);
     .B(b[4]),
     .Y(_06_)
   );
-  NOT _20_ (
+  not _20_ (
     .A(_06_),
     .Y(out[4])
   );

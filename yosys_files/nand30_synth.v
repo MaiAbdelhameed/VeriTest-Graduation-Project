@@ -33,7 +33,7 @@ module nand30(a, b, out);
     .B(b[0]),
     .Y(_00_)
   );
-  NOT _17_ (
+  not _17_ (
     .A(_00_),
     .Y(out[0])
   );
@@ -42,7 +42,7 @@ module nand30(a, b, out);
     .B(b[1]),
     .Y(_01_)
   );
-  NOT _19_ (
+  not _19_ (
     .A(_01_),
     .Y(out[1])
   );
@@ -51,7 +51,7 @@ module nand30(a, b, out);
     .B(b[2]),
     .Y(_02_)
   );
-  NOT _21_ (
+  not _21_ (
     .A(_02_),
     .Y(out[2])
   );
@@ -60,7 +60,7 @@ module nand30(a, b, out);
     .B(b[3]),
     .Y(_03_)
   );
-  NOT _23_ (
+  not _23_ (
     .A(_03_),
     .Y(out[3])
   );
@@ -69,7 +69,7 @@ module nand30(a, b, out);
     .B(b[4]),
     .Y(_04_)
   );
-  NOT _25_ (
+  not _25_ (
     .A(_04_),
     .Y(out[4])
   );
@@ -78,7 +78,7 @@ module nand30(a, b, out);
     .B(b[5]),
     .Y(_05_)
   );
-  NOT _27_ (
+  not _27_ (
     .A(_05_),
     .Y(out[5])
   );
@@ -87,7 +87,7 @@ module nand30(a, b, out);
     .B(b[6]),
     .Y(_06_)
   );
-  NOT _29_ (
+  not _29_ (
     .A(_06_),
     .Y(out[6])
   );
@@ -96,7 +96,7 @@ module nand30(a, b, out);
     .B(b[7]),
     .Y(_07_)
   );
-  NOT _31_ (
+  not _31_ (
     .A(_07_),
     .Y(out[7])
   );
@@ -105,7 +105,7 @@ module nand30(a, b, out);
     .B(b[8]),
     .Y(_08_)
   );
-  NOT _33_ (
+  not _33_ (
     .A(_08_),
     .Y(out[8])
   );
@@ -114,7 +114,7 @@ module nand30(a, b, out);
     .B(b[9]),
     .Y(_09_)
   );
-  NOT _35_ (
+  not _35_ (
     .A(_09_),
     .Y(out[9])
   );
@@ -123,7 +123,7 @@ module nand30(a, b, out);
     .B(b[10]),
     .Y(_10_)
   );
-  NOT _37_ (
+  not _37_ (
     .A(_10_),
     .Y(out[10])
   );
@@ -132,7 +132,7 @@ module nand30(a, b, out);
     .B(b[11]),
     .Y(_11_)
   );
-  NOT _39_ (
+  not _39_ (
     .A(_11_),
     .Y(out[11])
   );
@@ -141,7 +141,7 @@ module nand30(a, b, out);
     .B(b[12]),
     .Y(_12_)
   );
-  NOT _41_ (
+  not _41_ (
     .A(_12_),
     .Y(out[12])
   );
@@ -150,7 +150,7 @@ module nand30(a, b, out);
     .B(b[13]),
     .Y(_13_)
   );
-  NOT _43_ (
+  not _43_ (
     .A(_13_),
     .Y(out[13])
   );
@@ -159,7 +159,7 @@ module nand30(a, b, out);
     .B(b[14]),
     .Y(_14_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(_14_),
     .Y(out[14])
   );
@@ -168,7 +168,7 @@ module nand30(a, b, out);
     .B(b[15]),
     .Y(_15_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(_15_),
     .Y(out[15])
   );

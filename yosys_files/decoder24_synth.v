@@ -16,11 +16,11 @@ module decoder24(din, en, dout);
   /* src = "decoder24.v:3.9-3.11" */
   input en;
   wire en;
-  NOT _04_ (
+  not _04_ (
     .A(din[0]),
     .Y(_02_)
   );
-  NOT _05_ (
+  not _05_ (
     .A(din[1]),
     .Y(_03_)
   );

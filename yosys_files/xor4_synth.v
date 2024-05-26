@@ -25,7 +25,7 @@ module xor4(a, b, out);
     .B(b),
     .Y(_1_)
   );
-  NOT _5_ (
+  not _5_ (
     .A(_1_),
     .Y(_2_)
   );

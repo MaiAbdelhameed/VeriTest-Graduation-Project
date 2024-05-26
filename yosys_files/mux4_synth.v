@@ -18,7 +18,7 @@ module mux4(in0, in1, sel, out);
   /* src = "mux4.v:2.30-2.33" */
   input sel;
   wire sel;
-  NOT _3_ (
+  not _3_ (
     .A(sel),
     .Y(_0_)
   );

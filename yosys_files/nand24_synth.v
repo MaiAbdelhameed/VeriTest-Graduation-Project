@@ -54,7 +54,7 @@ module nand24(a, b, c, d, e, f, out);
     .B(_01_),
     .Y(_02_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(_02_),
     .Y(out)
   );

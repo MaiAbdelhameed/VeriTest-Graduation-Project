@@ -72,7 +72,7 @@ module nand27(a, b, c, d, e, f, g, h, out);
     .B(_05_),
     .Y(_06_)
   );
-  NOT _14_ (
+  not _14_ (
     .A(_06_),
     .Y(out)
   );

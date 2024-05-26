@@ -44,7 +44,7 @@ module mult6(a1, a0, b1, b0, result);
     .B(_03_),
     .Y(result[3])
   );
-  NOT _10_ (
+  not _10_ (
     .A(result[3]),
     .Y(_04_)
   );
@@ -68,7 +68,7 @@ module mult6(a1, a0, b1, b0, result);
     .B(b0),
     .Y(result[0])
   );
-  NOT _15_ (
+  not _15_ (
     .A(result[0]),
     .Y(_00_)
   );

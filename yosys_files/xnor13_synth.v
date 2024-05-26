@@ -68,7 +68,7 @@ module xnor13(a, b, c, d, e, f, g, h, out);
   /* src = "xnor13.v:10.14-10.17" */
   output out;
   wire out;
-  NOT _38_ (
+  not _38_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -77,7 +77,7 @@ module xnor13(a, b, c, d, e, f, g, h, out);
     .B(e),
     .Y(_08_)
   );
-  NOT _40_ (
+  not _40_ (
     .A(_08_),
     .Y(_09_)
   );
@@ -126,7 +126,7 @@ module xnor13(a, b, c, d, e, f, g, h, out);
     .B(g),
     .Y(_18_)
   );
-  NOT _50_ (
+  not _50_ (
     .A(_18_),
     .Y(_19_)
   );
@@ -135,7 +135,7 @@ module xnor13(a, b, c, d, e, f, g, h, out);
     .B(g),
     .Y(_20_)
   );
-  NOT _52_ (
+  not _52_ (
     .A(_20_),
     .Y(_21_)
   );
@@ -154,7 +154,7 @@ module xnor13(a, b, c, d, e, f, g, h, out);
     .B(a),
     .Y(_24_)
   );
-  NOT _56_ (
+  not _56_ (
     .A(_24_),
     .Y(_25_)
   );
@@ -163,7 +163,7 @@ module xnor13(a, b, c, d, e, f, g, h, out);
     .B(a),
     .Y(_26_)
   );
-  NOT _58_ (
+  not _58_ (
     .A(_26_),
     .Y(_27_)
   );
@@ -227,7 +227,7 @@ module xnor13(a, b, c, d, e, f, g, h, out);
     .B(c),
     .Y(_00_)
   );
-  NOT _71_ (
+  not _71_ (
     .A(_00_),
     .Y(_01_)
   );
@@ -236,7 +236,7 @@ module xnor13(a, b, c, d, e, f, g, h, out);
     .B(c),
     .Y(_02_)
   );
-  NOT _73_ (
+  not _73_ (
     .A(_02_),
     .Y(_03_)
   );

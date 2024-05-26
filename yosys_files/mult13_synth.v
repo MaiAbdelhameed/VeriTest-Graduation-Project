@@ -36,7 +36,7 @@ module mult13(a, b, result);
     .B(a[0]),
     .Y(result[0])
   );
-  NOT _20_ (
+  not _20_ (
     .A(result[0]),
     .Y(_00_)
   );
@@ -60,7 +60,7 @@ module mult13(a, b, result);
     .B(_02_),
     .Y(_04_)
   );
-  NOT _25_ (
+  not _25_ (
     .A(_04_),
     .Y(_05_)
   );
@@ -74,7 +74,7 @@ module mult13(a, b, result);
     .B(b[2]),
     .Y(_06_)
   );
-  NOT _28_ (
+  not _28_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -83,7 +83,7 @@ module mult13(a, b, result);
     .B(a[1]),
     .Y(_08_)
   );
-  NOT _30_ (
+  not _30_ (
     .A(_08_),
     .Y(_09_)
   );
@@ -127,7 +127,7 @@ module mult13(a, b, result);
     .B(_06_),
     .Y(_16_)
   );
-  NOT _39_ (
+  not _39_ (
     .A(_16_),
     .Y(_17_)
   );

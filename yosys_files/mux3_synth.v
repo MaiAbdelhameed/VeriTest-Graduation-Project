@@ -18,7 +18,7 @@ module mux3(a, b, sel, y);
   /* src = "mux3.v:3.28-3.29" */
   output y;
   wire y;
-  NOT _3_ (
+  not _3_ (
     .A(sel),
     .Y(_0_)
   );

@@ -39,7 +39,7 @@ module mult12(a1, a0, b1, b0, result);
     .B(b0),
     .Y(result[0])
   );
-  NOT _09_ (
+  not _09_ (
     .A(result[0]),
     .Y(_01_)
   );
@@ -53,7 +53,7 @@ module mult12(a1, a0, b1, b0, result);
     .B(_02_),
     .Y(result[3])
   );
-  NOT _12_ (
+  not _12_ (
     .A(result[3]),
     .Y(_03_)
   );

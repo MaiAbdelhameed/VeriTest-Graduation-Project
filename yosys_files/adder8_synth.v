@@ -26,7 +26,7 @@ module adder8(A, B, S, C);
     .B(A),
     .Y(_0_)
   );
-  NOT _5_ (
+  not _5_ (
     .A(_0_),
     .Y(_2_)
   );

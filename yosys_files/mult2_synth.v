@@ -23,7 +23,7 @@ module mult2(a, b, result);
     .B(a[0]),
     .Y(result[0])
   );
-  NOT _07_ (
+  not _07_ (
     .A(result[0]),
     .Y(_00_)
   );
@@ -52,7 +52,7 @@ module mult2(a, b, result);
     .B(_04_),
     .Y(result[3])
   );
-  NOT _13_ (
+  not _13_ (
     .A(result[3]),
     .Y(_05_)
   );

@@ -22,11 +22,11 @@ module comparator7(a, b, eq, greater, less);
   /* src = "comparator7.v:6.16-6.20" */
   output less;
   wire less;
-  NOT _04_ (
+  not _04_ (
     .A(a),
     .Y(_01_)
   );
-  NOT _05_ (
+  not _05_ (
     .A(b),
     .Y(_02_)
   );
@@ -35,7 +35,7 @@ module comparator7(a, b, eq, greater, less);
     .B(_02_),
     .Y(_03_)
   );
-  NOT _07_ (
+  not _07_ (
     .A(_03_),
     .Y(less)
   );
@@ -44,7 +44,7 @@ module comparator7(a, b, eq, greater, less);
     .B(b),
     .Y(_00_)
   );
-  NOT _09_ (
+  not _09_ (
     .A(_00_),
     .Y(greater)
   );

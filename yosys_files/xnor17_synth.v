@@ -50,7 +50,7 @@ module xnor17(a, b, c, d, e, f, out);
   /* src = "xnor17.v:8.17-8.20" */
   output out;
   wire out;
-  NOT _26_ (
+  not _26_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -99,7 +99,7 @@ module xnor17(a, b, c, d, e, f, out);
     .B(f),
     .Y(_16_)
   );
-  NOT _36_ (
+  not _36_ (
     .A(_16_),
     .Y(_17_)
   );
@@ -108,7 +108,7 @@ module xnor17(a, b, c, d, e, f, out);
     .B(f),
     .Y(_18_)
   );
-  NOT _38_ (
+  not _38_ (
     .A(_18_),
     .Y(_19_)
   );
@@ -142,7 +142,7 @@ module xnor17(a, b, c, d, e, f, out);
     .B(d),
     .Y(_24_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(_24_),
     .Y(_25_)
   );
@@ -151,7 +151,7 @@ module xnor17(a, b, c, d, e, f, out);
     .B(d),
     .Y(_00_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(_00_),
     .Y(_01_)
   );
@@ -170,7 +170,7 @@ module xnor17(a, b, c, d, e, f, out);
     .B(b),
     .Y(_04_)
   );
-  NOT _51_ (
+  not _51_ (
     .A(_04_),
     .Y(_05_)
   );

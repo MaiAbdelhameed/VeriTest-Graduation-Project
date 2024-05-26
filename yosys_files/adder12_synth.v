@@ -22,7 +22,7 @@ module adder12(A, B, S, C);
     .B(B),
     .Y(C)
   );
-  NOT _3_ (
+  not _3_ (
     .A(C),
     .Y(_0_)
   );

@@ -24,7 +24,7 @@ module mux6(a, b, sel, y);
   /* src = "mux6.v:3.34-3.35" */
   output [3:0] y;
   wire [3:0] y;
-  NOT _09_ (
+  not _09_ (
     .A(sel),
     .Y(_00_)
   );

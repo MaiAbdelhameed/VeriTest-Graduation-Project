@@ -33,7 +33,7 @@ module pe13(D0, D1, D2, D3, en, Y1, Y0, V);
   /* src = "pe13.v:3.23-3.25" */
   input en;
   wire en;
-  NOT _06_ (
+  not _06_ (
     .A(D2),
     .Y(_05_)
   );

@@ -18,11 +18,11 @@ module sub10(a, b, D, B);
   /* src = "sub10.v:2.24-2.25" */
   input b;
   wire b;
-  NOT _3_ (
+  not _3_ (
     .A(a),
     .Y(_0_)
   );
-  NOT _4_ (
+  not _4_ (
     .A(b),
     .Y(_1_)
   );

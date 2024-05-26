@@ -18,15 +18,15 @@ module decoder16(in, out1);
   /* src = "decoder16.v:3.14-3.18" */
   output [7:0] out1;
   wire [7:0] out1;
-  NOT _09_ (
+  not _09_ (
     .A(in[2]),
     .Y(_00_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(in[1]),
     .Y(_01_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(in[0]),
     .Y(_02_)
   );
@@ -35,7 +35,7 @@ module decoder16(in, out1);
     .B(in[1]),
     .Y(_03_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(_03_),
     .Y(_04_)
   );
@@ -44,7 +44,7 @@ module decoder16(in, out1);
     .B(_03_),
     .Y(_05_)
   );
-  NOT _15_ (
+  not _15_ (
     .A(_05_),
     .Y(out1[0])
   );

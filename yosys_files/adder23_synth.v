@@ -172,7 +172,7 @@ module adder23(a, b, cin, sum, cout);
     .B(cin),
     .Y(_104_)
   );
-  NOT _150_ (
+  not _150_ (
     .A(_104_),
     .Y(_105_)
   );
@@ -196,7 +196,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_106_),
     .Y(_109_)
   );
-  NOT _155_ (
+  not _155_ (
     .A(_109_),
     .Y(_110_)
   );
@@ -225,7 +225,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[1]),
     .Y(_114_)
   );
-  NOT _161_ (
+  not _161_ (
     .A(_114_),
     .Y(_115_)
   );
@@ -234,7 +234,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[1]),
     .Y(_116_)
   );
-  NOT _163_ (
+  not _163_ (
     .A(_116_),
     .Y(_117_)
   );
@@ -268,7 +268,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[2]),
     .Y(_122_)
   );
-  NOT _170_ (
+  not _170_ (
     .A(_122_),
     .Y(_123_)
   );
@@ -302,7 +302,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_127_),
     .Y(_129_)
   );
-  NOT _177_ (
+  not _177_ (
     .A(_129_),
     .Y(_130_)
   );
@@ -321,7 +321,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[3]),
     .Y(_132_)
   );
-  NOT _181_ (
+  not _181_ (
     .A(_132_),
     .Y(_133_)
   );
@@ -350,7 +350,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_136_),
     .Y(_138_)
   );
-  NOT _187_ (
+  not _187_ (
     .A(_138_),
     .Y(_139_)
   );
@@ -369,7 +369,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[4]),
     .Y(_141_)
   );
-  NOT _191_ (
+  not _191_ (
     .A(_141_),
     .Y(_142_)
   );
@@ -398,7 +398,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_145_),
     .Y(_147_)
   );
-  NOT _197_ (
+  not _197_ (
     .A(_147_),
     .Y(_148_)
   );
@@ -417,7 +417,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[5]),
     .Y(_001_)
   );
-  NOT _201_ (
+  not _201_ (
     .A(_001_),
     .Y(_002_)
   );
@@ -441,7 +441,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_005_),
     .Y(_006_)
   );
-  NOT _206_ (
+  not _206_ (
     .A(_006_),
     .Y(_007_)
   );
@@ -465,7 +465,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[6]),
     .Y(_010_)
   );
-  NOT _211_ (
+  not _211_ (
     .A(_010_),
     .Y(_011_)
   );
@@ -489,7 +489,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_014_),
     .Y(_015_)
   );
-  NOT _216_ (
+  not _216_ (
     .A(_015_),
     .Y(_016_)
   );
@@ -508,7 +508,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[7]),
     .Y(_018_)
   );
-  NOT _220_ (
+  not _220_ (
     .A(_018_),
     .Y(_019_)
   );
@@ -537,7 +537,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_023_),
     .Y(_024_)
   );
-  NOT _226_ (
+  not _226_ (
     .A(_024_),
     .Y(_025_)
   );
@@ -556,7 +556,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[8]),
     .Y(_027_)
   );
-  NOT _230_ (
+  not _230_ (
     .A(_027_),
     .Y(_028_)
   );
@@ -585,7 +585,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_032_),
     .Y(_033_)
   );
-  NOT _236_ (
+  not _236_ (
     .A(_033_),
     .Y(_034_)
   );
@@ -604,7 +604,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[9]),
     .Y(_036_)
   );
-  NOT _240_ (
+  not _240_ (
     .A(_036_),
     .Y(_037_)
   );
@@ -633,7 +633,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_041_),
     .Y(_042_)
   );
-  NOT _246_ (
+  not _246_ (
     .A(_042_),
     .Y(_043_)
   );
@@ -652,7 +652,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[10]),
     .Y(_045_)
   );
-  NOT _250_ (
+  not _250_ (
     .A(_045_),
     .Y(_046_)
   );
@@ -681,7 +681,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_050_),
     .Y(_051_)
   );
-  NOT _256_ (
+  not _256_ (
     .A(_051_),
     .Y(_052_)
   );
@@ -700,7 +700,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[11]),
     .Y(_054_)
   );
-  NOT _260_ (
+  not _260_ (
     .A(_054_),
     .Y(_055_)
   );
@@ -729,7 +729,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_059_),
     .Y(_060_)
   );
-  NOT _266_ (
+  not _266_ (
     .A(_060_),
     .Y(_061_)
   );
@@ -748,7 +748,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[12]),
     .Y(_063_)
   );
-  NOT _270_ (
+  not _270_ (
     .A(_063_),
     .Y(_064_)
   );
@@ -777,7 +777,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_068_),
     .Y(_069_)
   );
-  NOT _276_ (
+  not _276_ (
     .A(_069_),
     .Y(_070_)
   );
@@ -796,7 +796,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[13]),
     .Y(_072_)
   );
-  NOT _280_ (
+  not _280_ (
     .A(_072_),
     .Y(_073_)
   );
@@ -825,7 +825,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_077_),
     .Y(_078_)
   );
-  NOT _286_ (
+  not _286_ (
     .A(_078_),
     .Y(_079_)
   );
@@ -844,7 +844,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[14]),
     .Y(_081_)
   );
-  NOT _290_ (
+  not _290_ (
     .A(_081_),
     .Y(_082_)
   );
@@ -853,7 +853,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[14]),
     .Y(_083_)
   );
-  NOT _292_ (
+  not _292_ (
     .A(_083_),
     .Y(_084_)
   );
@@ -877,7 +877,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_087_),
     .Y(_088_)
   );
-  NOT _297_ (
+  not _297_ (
     .A(_088_),
     .Y(_089_)
   );
@@ -901,7 +901,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[15]),
     .Y(_092_)
   );
-  NOT _302_ (
+  not _302_ (
     .A(_092_),
     .Y(_093_)
   );
@@ -910,7 +910,7 @@ module adder23(a, b, cin, sum, cout);
     .B(b[15]),
     .Y(_094_)
   );
-  NOT _304_ (
+  not _304_ (
     .A(_094_),
     .Y(_095_)
   );
@@ -934,7 +934,7 @@ module adder23(a, b, cin, sum, cout);
     .B(_098_),
     .Y(_099_)
   );
-  NOT _309_ (
+  not _309_ (
     .A(_099_),
     .Y(_100_)
   );

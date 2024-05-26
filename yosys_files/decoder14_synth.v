@@ -18,15 +18,15 @@ module decoder14(Data_in, Data_out);
   /* src = "decoder14.v:9.18-9.26" */
   output [7:0] Data_out;
   wire [7:0] Data_out;
-  NOT _09_ (
+  not _09_ (
     .A(Data_in[1]),
     .Y(_00_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(Data_in[0]),
     .Y(_01_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(Data_in[2]),
     .Y(_02_)
   );
@@ -35,7 +35,7 @@ module decoder14(Data_in, Data_out);
     .B(Data_in[0]),
     .Y(_03_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(_03_),
     .Y(_04_)
   );
@@ -44,7 +44,7 @@ module decoder14(Data_in, Data_out);
     .B(_03_),
     .Y(_05_)
   );
-  NOT _15_ (
+  not _15_ (
     .A(_05_),
     .Y(Data_out[0])
   );

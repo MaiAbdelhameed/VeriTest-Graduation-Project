@@ -47,7 +47,7 @@ module nand26(a, b, c, d, e, f, g, h, out);
     .B(_05_),
     .Y(_06_)
   );
-  NOT _09_ (
+  not _09_ (
     .A(_06_),
     .Y(out)
   );

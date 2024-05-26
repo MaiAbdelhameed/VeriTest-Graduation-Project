@@ -17,7 +17,7 @@ module nor19(a, b, out);
   /* src = "nor19.v:5.23-5.26" */
   output [4:0] out;
   wire [4:0] out;
-  NOT _05_ (
+  not _05_ (
     .A(_00_),
     .Y(out[0])
   );
@@ -26,7 +26,7 @@ module nor19(a, b, out);
     .B(b[1]),
     .Y(_01_)
   );
-  NOT _07_ (
+  not _07_ (
     .A(_01_),
     .Y(out[1])
   );
@@ -35,7 +35,7 @@ module nor19(a, b, out);
     .B(b[2]),
     .Y(_02_)
   );
-  NOT _09_ (
+  not _09_ (
     .A(_02_),
     .Y(out[2])
   );
@@ -44,7 +44,7 @@ module nor19(a, b, out);
     .B(b[3]),
     .Y(_03_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(_03_),
     .Y(out[3])
   );
@@ -53,7 +53,7 @@ module nor19(a, b, out);
     .B(b[4]),
     .Y(_04_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(_04_),
     .Y(out[4])
   );

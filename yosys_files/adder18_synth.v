@@ -64,31 +64,31 @@ module adder18(a, b, cin, sum, cout);
   /* src = "adder18.v:5.14-5.17" */
   output [3:0] sum;
   wire [3:0] sum;
-  NOT _46_ (
+  not _46_ (
     .A(a[0]),
     .Y(_00_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(b[0]),
     .Y(_01_)
   );
-  NOT _48_ (
+  not _48_ (
     .A(a[1]),
     .Y(_02_)
   );
-  NOT _49_ (
+  not _49_ (
     .A(b[1]),
     .Y(_03_)
   );
-  NOT _50_ (
+  not _50_ (
     .A(a[2]),
     .Y(_04_)
   );
-  NOT _51_ (
+  not _51_ (
     .A(b[2]),
     .Y(_05_)
   );
-  NOT _52_ (
+  not _52_ (
     .A(cin),
     .Y(_06_)
   );
@@ -97,7 +97,7 @@ module adder18(a, b, cin, sum, cout);
     .B(b[3]),
     .Y(_07_)
   );
-  NOT _54_ (
+  not _54_ (
     .A(_07_),
     .Y(_08_)
   );
@@ -111,7 +111,7 @@ module adder18(a, b, cin, sum, cout);
     .B(_09_),
     .Y(_10_)
   );
-  NOT _57_ (
+  not _57_ (
     .A(_10_),
     .Y(_11_)
   );
@@ -150,7 +150,7 @@ module adder18(a, b, cin, sum, cout);
     .B(b[0]),
     .Y(_18_)
   );
-  NOT _65_ (
+  not _65_ (
     .A(_18_),
     .Y(_19_)
   );
@@ -194,7 +194,7 @@ module adder18(a, b, cin, sum, cout);
     .B(_26_),
     .Y(_27_)
   );
-  NOT _74_ (
+  not _74_ (
     .A(_27_),
     .Y(_28_)
   );
@@ -228,7 +228,7 @@ module adder18(a, b, cin, sum, cout);
     .B(_33_),
     .Y(_34_)
   );
-  NOT _81_ (
+  not _81_ (
     .A(_34_),
     .Y(_35_)
   );

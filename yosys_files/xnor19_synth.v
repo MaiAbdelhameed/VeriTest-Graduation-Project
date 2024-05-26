@@ -70,7 +70,7 @@ module xnor19(a, b, c, d, e, f, g, h, out);
   /* src = "xnor19.v:10.17-10.20" */
   output out;
   wire out;
-  NOT _40_ (
+  not _40_ (
     .A(_04_),
     .Y(_05_)
   );
@@ -119,7 +119,7 @@ module xnor19(a, b, c, d, e, f, g, h, out);
     .B(g),
     .Y(_14_)
   );
-  NOT _50_ (
+  not _50_ (
     .A(_14_),
     .Y(_15_)
   );
@@ -128,7 +128,7 @@ module xnor19(a, b, c, d, e, f, g, h, out);
     .B(g),
     .Y(_16_)
   );
-  NOT _52_ (
+  not _52_ (
     .A(_16_),
     .Y(_17_)
   );
@@ -177,7 +177,7 @@ module xnor19(a, b, c, d, e, f, g, h, out);
     .B(h),
     .Y(_26_)
   );
-  NOT _62_ (
+  not _62_ (
     .A(_26_),
     .Y(_27_)
   );
@@ -186,7 +186,7 @@ module xnor19(a, b, c, d, e, f, g, h, out);
     .B(h),
     .Y(_28_)
   );
-  NOT _64_ (
+  not _64_ (
     .A(_28_),
     .Y(_29_)
   );
@@ -245,11 +245,11 @@ module xnor19(a, b, c, d, e, f, g, h, out);
     .B(_39_),
     .Y(out)
   );
-  NOT _76_ (
+  not _76_ (
     .A(b),
     .Y(_00_)
   );
-  NOT _77_ (
+  not _77_ (
     .A(f),
     .Y(_01_)
   );
@@ -258,7 +258,7 @@ module xnor19(a, b, c, d, e, f, g, h, out);
     .B(e),
     .Y(_02_)
   );
-  NOT _79_ (
+  not _79_ (
     .A(_02_),
     .Y(_03_)
   );

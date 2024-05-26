@@ -22,7 +22,7 @@ module adder14(A, B, Sum, Cout);
     .B(B),
     .Y(Cout)
   );
-  NOT _3_ (
+  not _3_ (
     .A(Cout),
     .Y(_0_)
   );

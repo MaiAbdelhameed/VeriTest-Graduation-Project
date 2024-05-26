@@ -28,7 +28,7 @@ module adder3(A, B, cin, sum, cout);
   /* src = "adder3.v:5.9-5.12" */
   output sum;
   wire sum;
-  NOT _10_ (
+  not _10_ (
     .A(cin),
     .Y(_06_)
   );
@@ -37,7 +37,7 @@ module adder3(A, B, cin, sum, cout);
     .B(A),
     .Y(_07_)
   );
-  NOT _12_ (
+  not _12_ (
     .A(_07_),
     .Y(_08_)
   );
@@ -46,7 +46,7 @@ module adder3(A, B, cin, sum, cout);
     .B(A),
     .Y(_09_)
   );
-  NOT _14_ (
+  not _14_ (
     .A(_09_),
     .Y(_00_)
   );

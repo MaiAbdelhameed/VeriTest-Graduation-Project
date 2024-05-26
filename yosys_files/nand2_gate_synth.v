@@ -18,7 +18,7 @@ module nand2_gate(a, b, out);
     .B(b),
     .Y(_0_)
   );
-  NOT _2_ (
+  not _2_ (
     .A(_0_),
     .Y(out)
   );

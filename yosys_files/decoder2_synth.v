@@ -21,11 +21,11 @@ module decoder2(en, a, b, y);
   /* src = "decoder2.v:4.21-4.22" */
   output [3:0] y;
   reg [3:0] y;
-  NOT _05_ (
+  not _05_ (
     .A(b),
     .Y(_01_)
   );
-  NOT _06_ (
+  not _06_ (
     .A(a),
     .Y(_02_)
   );

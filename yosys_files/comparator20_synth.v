@@ -22,11 +22,11 @@ module comparator20(a, b, eq, gt, lt);
   /* src = "comparator20.v:1.69-1.71" */
   output lt;
   wire lt;
-  NOT _04_ (
+  not _04_ (
     .A(a),
     .Y(_01_)
   );
-  NOT _05_ (
+  not _05_ (
     .A(b),
     .Y(_02_)
   );
@@ -35,7 +35,7 @@ module comparator20(a, b, eq, gt, lt);
     .B(_02_),
     .Y(_03_)
   );
-  NOT _07_ (
+  not _07_ (
     .A(_03_),
     .Y(lt)
   );
@@ -44,7 +44,7 @@ module comparator20(a, b, eq, gt, lt);
     .B(b),
     .Y(_00_)
   );
-  NOT _09_ (
+  not _09_ (
     .A(_00_),
     .Y(gt)
   );

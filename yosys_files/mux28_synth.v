@@ -34,11 +34,11 @@ module mux28(out, a, b, c, d, s0, s1);
   /* src = "mux28.v:4.27-4.29" */
   input s1;
   wire s1;
-  NOT _10_ (
+  not _10_ (
     .A(s1),
     .Y(_08_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(s0),
     .Y(_09_)
   );

@@ -22,11 +22,11 @@ module comparator17(a, b, L, E, G);
   /* src = "comparator17.v:2.10-2.11" */
   input b;
   wire b;
-  NOT _04_ (
+  not _04_ (
     .A(a),
     .Y(_01_)
   );
-  NOT _05_ (
+  not _05_ (
     .A(b),
     .Y(_02_)
   );
@@ -35,7 +35,7 @@ module comparator17(a, b, L, E, G);
     .B(_02_),
     .Y(_03_)
   );
-  NOT _07_ (
+  not _07_ (
     .A(_03_),
     .Y(L)
   );
@@ -44,7 +44,7 @@ module comparator17(a, b, L, E, G);
     .B(b),
     .Y(_00_)
   );
-  NOT _09_ (
+  not _09_ (
     .A(_00_),
     .Y(G)
   );

@@ -59,19 +59,19 @@ module seg6(bcd, a, b, c, d, e, f, g);
   /* src = "seg6.v:9.28-9.29" */
   output g;
   wire g;
-  NOT _32_ (
+  not _32_ (
     .A(bcd[3]),
     .Y(_00_)
   );
-  NOT _33_ (
+  not _33_ (
     .A(bcd[2]),
     .Y(_01_)
   );
-  NOT _34_ (
+  not _34_ (
     .A(bcd[1]),
     .Y(_02_)
   );
-  NOT _35_ (
+  not _35_ (
     .A(bcd[0]),
     .Y(_03_)
   );
@@ -90,7 +90,7 @@ module seg6(bcd, a, b, c, d, e, f, g);
     .B(bcd[0]),
     .Y(_06_)
   );
-  NOT _39_ (
+  not _39_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -99,7 +99,7 @@ module seg6(bcd, a, b, c, d, e, f, g);
     .B(_06_),
     .Y(_08_)
   );
-  NOT _41_ (
+  not _41_ (
     .A(_08_),
     .Y(_09_)
   );
@@ -118,7 +118,7 @@ module seg6(bcd, a, b, c, d, e, f, g);
     .B(bcd[0]),
     .Y(_12_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(_12_),
     .Y(_13_)
   );
@@ -182,7 +182,7 @@ module seg6(bcd, a, b, c, d, e, f, g);
     .B(_08_),
     .Y(_22_)
   );
-  NOT _58_ (
+  not _58_ (
     .A(_22_),
     .Y(_23_)
   );

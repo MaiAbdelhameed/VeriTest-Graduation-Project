@@ -46,23 +46,23 @@ module decoder31(select, out);
   /* src = "decoder31.v:2.17-2.23" */
   input [4:0] select;
   wire [4:0] select;
-  NOT _037_ (
+  not _037_ (
     .A(select[3]),
     .Y(_000_)
   );
-  NOT _038_ (
+  not _038_ (
     .A(select[4]),
     .Y(_001_)
   );
-  NOT _039_ (
+  not _039_ (
     .A(select[2]),
     .Y(_002_)
   );
-  NOT _040_ (
+  not _040_ (
     .A(select[0]),
     .Y(_003_)
   );
-  NOT _041_ (
+  not _041_ (
     .A(select[1]),
     .Y(_004_)
   );
@@ -101,7 +101,7 @@ module decoder31(select, out);
     .B(_010_),
     .Y(_011_)
   );
-  NOT _049_ (
+  not _049_ (
     .A(_011_),
     .Y(out[0])
   );

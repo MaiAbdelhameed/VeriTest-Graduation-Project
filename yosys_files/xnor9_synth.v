@@ -52,7 +52,7 @@ module xnor9(a, b, c, d, out);
     .B(a),
     .Y(_10_)
   );
-  NOT _18_ (
+  not _18_ (
     .A(_10_),
     .Y(_11_)
   );
@@ -61,7 +61,7 @@ module xnor9(a, b, c, d, out);
     .B(a),
     .Y(_12_)
   );
-  NOT _20_ (
+  not _20_ (
     .A(_12_),
     .Y(_13_)
   );
@@ -80,7 +80,7 @@ module xnor9(a, b, c, d, out);
     .B(c),
     .Y(_02_)
   );
-  NOT _24_ (
+  not _24_ (
     .A(_02_),
     .Y(_03_)
   );
@@ -89,7 +89,7 @@ module xnor9(a, b, c, d, out);
     .B(c),
     .Y(_04_)
   );
-  NOT _26_ (
+  not _26_ (
     .A(_04_),
     .Y(_05_)
   );

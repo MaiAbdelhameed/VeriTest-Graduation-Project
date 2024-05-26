@@ -19,7 +19,7 @@ module nor18(a, b, out);
     .B(b[0]),
     .Y(_0_)
   );
-  NOT _3_ (
+  not _3_ (
     .A(_0_),
     .Y(out[0])
   );
@@ -28,7 +28,7 @@ module nor18(a, b, out);
     .B(b[1]),
     .Y(_1_)
   );
-  NOT _5_ (
+  not _5_ (
     .A(_1_),
     .Y(out[1])
   );

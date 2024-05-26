@@ -35,15 +35,15 @@ module mux18(in, sel, out);
   /* src = "mux18.v:3.41-3.44" */
   input [2:0] sel;
   wire [2:0] sel;
-  NOT _23_ (
+  not _23_ (
     .A(sel[1]),
     .Y(_00_)
   );
-  NOT _24_ (
+  not _24_ (
     .A(sel[2]),
     .Y(_01_)
   );
-  NOT _25_ (
+  not _25_ (
     .A(sel[0]),
     .Y(_02_)
   );

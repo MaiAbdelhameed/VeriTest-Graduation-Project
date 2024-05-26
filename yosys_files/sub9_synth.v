@@ -64,15 +64,15 @@ module sub9(a, b, Bin, D, Bout);
     .B(_05_),
     .Y(Bout)
   );
-  NOT _18_ (
+  not _18_ (
     .A(a),
     .Y(_07_)
   );
-  NOT _19_ (
+  not _19_ (
     .A(Bin),
     .Y(_08_)
   );
-  NOT _20_ (
+  not _20_ (
     .A(b),
     .Y(_09_)
   );

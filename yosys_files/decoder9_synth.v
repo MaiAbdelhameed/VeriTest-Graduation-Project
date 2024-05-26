@@ -28,11 +28,11 @@ module decoder9(ip0, ip1, en, op0, op1, op2, op3);
   /* src = "decoder9.v:4.24-4.27" */
   output op3;
   wire op3;
-  NOT _04_ (
+  not _04_ (
     .A(ip1),
     .Y(_02_)
   );
-  NOT _05_ (
+  not _05_ (
     .A(ip0),
     .Y(_03_)
   );

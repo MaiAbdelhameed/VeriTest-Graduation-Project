@@ -14,7 +14,7 @@ module pe20(i, o, v);
   /* src = "pe20.v:5.12-5.13" */
   output v;
   wire v;
-  NOT _2_ (
+  not _2_ (
     .A(i[2]),
     .Y(_0_)
   );

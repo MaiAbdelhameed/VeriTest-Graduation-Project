@@ -23,7 +23,7 @@ module pe16(i3, i2, i1, i0, o0, o1);
   /* src = "pe16.v:4.15-4.17" */
   output o1;
   wire o1;
-  NOT _2_ (
+  not _2_ (
     .A(i2),
     .Y(_0_)
   );

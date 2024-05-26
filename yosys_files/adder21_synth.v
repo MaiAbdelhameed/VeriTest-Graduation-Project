@@ -64,31 +64,31 @@ module adder21(S, Cout, a, b, Cin);
   /* src = "adder21.v:3.14-3.15" */
   input [3:0] b;
   wire [3:0] b;
-  NOT _46_ (
+  not _46_ (
     .A(a[2]),
     .Y(_00_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(b[2]),
     .Y(_01_)
   );
-  NOT _48_ (
+  not _48_ (
     .A(a[0]),
     .Y(_02_)
   );
-  NOT _49_ (
+  not _49_ (
     .A(b[0]),
     .Y(_03_)
   );
-  NOT _50_ (
+  not _50_ (
     .A(a[1]),
     .Y(_04_)
   );
-  NOT _51_ (
+  not _51_ (
     .A(b[1]),
     .Y(_05_)
   );
-  NOT _52_ (
+  not _52_ (
     .A(Cin),
     .Y(_06_)
   );
@@ -97,7 +97,7 @@ module adder21(S, Cout, a, b, Cin);
     .B(b[3]),
     .Y(_07_)
   );
-  NOT _54_ (
+  not _54_ (
     .A(_07_),
     .Y(_08_)
   );
@@ -136,7 +136,7 @@ module adder21(S, Cout, a, b, Cin);
     .B(b[0]),
     .Y(_15_)
   );
-  NOT _62_ (
+  not _62_ (
     .A(_15_),
     .Y(_16_)
   );
@@ -180,7 +180,7 @@ module adder21(S, Cout, a, b, Cin);
     .B(_23_),
     .Y(_24_)
   );
-  NOT _71_ (
+  not _71_ (
     .A(_24_),
     .Y(_25_)
   );
@@ -214,7 +214,7 @@ module adder21(S, Cout, a, b, Cin);
     .B(_30_),
     .Y(_31_)
   );
-  NOT _78_ (
+  not _78_ (
     .A(_31_),
     .Y(_32_)
   );
@@ -248,7 +248,7 @@ module adder21(S, Cout, a, b, Cin);
     .B(_37_),
     .Y(_38_)
   );
-  NOT _85_ (
+  not _85_ (
     .A(_38_),
     .Y(_39_)
   );

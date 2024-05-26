@@ -16,7 +16,7 @@ module nand10(a, b, out);
   /* src = "nand10.v:5.23-5.26" */
   output [3:0] out;
   wire [3:0] out;
-  NOT _04_ (
+  not _04_ (
     .A(_02_),
     .Y(out[2])
   );
@@ -25,7 +25,7 @@ module nand10(a, b, out);
     .B(b[3]),
     .Y(_03_)
   );
-  NOT _06_ (
+  not _06_ (
     .A(_03_),
     .Y(out[3])
   );
@@ -34,7 +34,7 @@ module nand10(a, b, out);
     .B(b[0]),
     .Y(_00_)
   );
-  NOT _08_ (
+  not _08_ (
     .A(_00_),
     .Y(out[0])
   );
@@ -43,7 +43,7 @@ module nand10(a, b, out);
     .B(b[1]),
     .Y(_01_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(_01_),
     .Y(out[1])
   );

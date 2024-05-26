@@ -84,7 +84,7 @@ module adder24(a, b, cin, sum, cout);
     .B(_04_),
     .Y(_05_)
   );
-  NOT _42_ (
+  not _42_ (
     .A(_05_),
     .Y(_06_)
   );
@@ -103,7 +103,7 @@ module adder24(a, b, cin, sum, cout);
     .B(b[1]),
     .Y(_08_)
   );
-  NOT _46_ (
+  not _46_ (
     .A(_08_),
     .Y(_09_)
   );
@@ -127,7 +127,7 @@ module adder24(a, b, cin, sum, cout);
     .B(_10_),
     .Y(_13_)
   );
-  NOT _51_ (
+  not _51_ (
     .A(_13_),
     .Y(_14_)
   );
@@ -151,7 +151,7 @@ module adder24(a, b, cin, sum, cout);
     .B(b[2]),
     .Y(_17_)
   );
-  NOT _56_ (
+  not _56_ (
     .A(_17_),
     .Y(_18_)
   );
@@ -175,7 +175,7 @@ module adder24(a, b, cin, sum, cout);
     .B(_20_),
     .Y(_22_)
   );
-  NOT _61_ (
+  not _61_ (
     .A(_22_),
     .Y(_23_)
   );
@@ -189,7 +189,7 @@ module adder24(a, b, cin, sum, cout);
     .B(b[3]),
     .Y(_24_)
   );
-  NOT _64_ (
+  not _64_ (
     .A(_24_),
     .Y(_25_)
   );
@@ -198,7 +198,7 @@ module adder24(a, b, cin, sum, cout);
     .B(b[3]),
     .Y(_26_)
   );
-  NOT _66_ (
+  not _66_ (
     .A(_26_),
     .Y(_27_)
   );
@@ -222,7 +222,7 @@ module adder24(a, b, cin, sum, cout);
     .B(_30_),
     .Y(_31_)
   );
-  NOT _71_ (
+  not _71_ (
     .A(_31_),
     .Y(_32_)
   );

@@ -80,15 +80,15 @@ module sub2(a, b, c, borrow, difference);
     .B(_07_),
     .Y(borrow)
   );
-  NOT _22_ (
+  not _22_ (
     .A(a),
     .Y(_08_)
   );
-  NOT _23_ (
+  not _23_ (
     .A(b),
     .Y(_09_)
   );
-  NOT _24_ (
+  not _24_ (
     .A(c),
     .Y(_10_)
   );

@@ -27,7 +27,7 @@ module nand21(a, b, c, out);
     .B(_0_),
     .Y(_1_)
   );
-  NOT _4_ (
+  not _4_ (
     .A(_1_),
     .Y(out)
   );

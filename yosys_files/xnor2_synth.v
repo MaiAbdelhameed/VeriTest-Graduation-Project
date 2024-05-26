@@ -20,7 +20,7 @@ module xnor2(a, b, out);
     .B(b),
     .Y(_0_)
   );
-  NOT _4_ (
+  not _4_ (
     .A(_0_),
     .Y(_1_)
   );

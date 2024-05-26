@@ -27,15 +27,15 @@ module decoder18(a, b, c, out, en);
   /* src = "decoder18.v:4.18-4.21" */
   output [7:0] out;
   wire [7:0] out;
-  NOT _09_ (
+  not _09_ (
     .A(b),
     .Y(_00_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(a),
     .Y(_01_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(c),
     .Y(_02_)
   );

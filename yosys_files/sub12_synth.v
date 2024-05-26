@@ -18,11 +18,11 @@ module sub12(A, B, Diff, Borrow);
   /* src = "sub12.v:4.12-4.16" */
   output Diff;
   wire Diff;
-  NOT _3_ (
+  not _3_ (
     .A(A),
     .Y(_0_)
   );
-  NOT _4_ (
+  not _4_ (
     .A(B),
     .Y(_1_)
   );

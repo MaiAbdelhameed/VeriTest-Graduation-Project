@@ -57,7 +57,7 @@ module xnor16(a, b, c, d, e, out);
     .B(e),
     .Y(_10_)
   );
-  NOT _24_ (
+  not _24_ (
     .A(_10_),
     .Y(_11_)
   );
@@ -66,7 +66,7 @@ module xnor16(a, b, c, d, e, out);
     .B(e),
     .Y(_12_)
   );
-  NOT _26_ (
+  not _26_ (
     .A(_12_),
     .Y(_13_)
   );
@@ -95,7 +95,7 @@ module xnor16(a, b, c, d, e, out);
     .B(_17_),
     .Y(out)
   );
-  NOT _32_ (
+  not _32_ (
     .A(c),
     .Y(_18_)
   );
@@ -104,7 +104,7 @@ module xnor16(a, b, c, d, e, out);
     .B(b),
     .Y(_19_)
   );
-  NOT _34_ (
+  not _34_ (
     .A(_19_),
     .Y(_20_)
   );
@@ -113,7 +113,7 @@ module xnor16(a, b, c, d, e, out);
     .B(b),
     .Y(_00_)
   );
-  NOT _36_ (
+  not _36_ (
     .A(_00_),
     .Y(_01_)
   );

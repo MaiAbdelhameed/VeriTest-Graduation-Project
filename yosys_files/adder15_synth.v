@@ -22,7 +22,7 @@ module adder15(A, B, sum, carry_out);
     .B(B),
     .Y(carry_out)
   );
-  NOT _3_ (
+  not _3_ (
     .A(carry_out),
     .Y(_0_)
   );

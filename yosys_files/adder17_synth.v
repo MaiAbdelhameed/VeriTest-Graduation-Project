@@ -62,7 +62,7 @@ module adder17(A, B, Cin, S, Cout);
     .B(B[3]),
     .Y(_00_)
   );
-  NOT _40_ (
+  not _40_ (
     .A(_00_),
     .Y(_01_)
   );
@@ -71,7 +71,7 @@ module adder17(A, B, Cin, S, Cout);
     .B(B[3]),
     .Y(_02_)
   );
-  NOT _42_ (
+  not _42_ (
     .A(_02_),
     .Y(_03_)
   );
@@ -80,7 +80,7 @@ module adder17(A, B, Cin, S, Cout);
     .B(B[2]),
     .Y(_04_)
   );
-  NOT _44_ (
+  not _44_ (
     .A(_04_),
     .Y(_05_)
   );
@@ -94,7 +94,7 @@ module adder17(A, B, Cin, S, Cout);
     .B(B[1]),
     .Y(_07_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(_07_),
     .Y(_08_)
   );
@@ -103,7 +103,7 @@ module adder17(A, B, Cin, S, Cout);
     .B(B[1]),
     .Y(_09_)
   );
-  NOT _49_ (
+  not _49_ (
     .A(_09_),
     .Y(_10_)
   );
@@ -112,7 +112,7 @@ module adder17(A, B, Cin, S, Cout);
     .B(B[0]),
     .Y(_11_)
   );
-  NOT _51_ (
+  not _51_ (
     .A(_11_),
     .Y(_12_)
   );
@@ -126,7 +126,7 @@ module adder17(A, B, Cin, S, Cout);
     .B(_13_),
     .Y(_14_)
   );
-  NOT _54_ (
+  not _54_ (
     .A(_14_),
     .Y(_15_)
   );
@@ -160,7 +160,7 @@ module adder17(A, B, Cin, S, Cout);
     .B(_20_),
     .Y(_21_)
   );
-  NOT _61_ (
+  not _61_ (
     .A(_21_),
     .Y(_22_)
   );
@@ -234,7 +234,7 @@ module adder17(A, B, Cin, S, Cout);
     .B(_31_),
     .Y(_33_)
   );
-  NOT _76_ (
+  not _76_ (
     .A(_33_),
     .Y(_34_)
   );

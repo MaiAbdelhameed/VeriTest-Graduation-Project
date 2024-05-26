@@ -33,7 +33,7 @@ module mult3(a, b, result);
     .B(b[0]),
     .Y(result[0])
   );
-  NOT _09_ (
+  not _09_ (
     .A(result[0]),
     .Y(_01_)
   );
@@ -47,7 +47,7 @@ module mult3(a, b, result);
     .B(_02_),
     .Y(result[3])
   );
-  NOT _12_ (
+  not _12_ (
     .A(result[3]),
     .Y(_03_)
   );

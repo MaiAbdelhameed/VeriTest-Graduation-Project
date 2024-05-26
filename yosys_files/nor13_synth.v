@@ -21,7 +21,7 @@ module nor13(a, b, out);
     .B(b[1]),
     .Y(_02_)
   );
-  NOT _05_ (
+  not _05_ (
     .A(_02_),
     .Y(out[1])
   );
@@ -30,7 +30,7 @@ module nor13(a, b, out);
     .B(b[0]),
     .Y(_03_)
   );
-  NOT _07_ (
+  not _07_ (
     .A(_03_),
     .Y(out[0])
   );
@@ -39,7 +39,7 @@ module nor13(a, b, out);
     .B(b[3]),
     .Y(_00_)
   );
-  NOT _09_ (
+  not _09_ (
     .A(_00_),
     .Y(out[3])
   );
@@ -48,7 +48,7 @@ module nor13(a, b, out);
     .B(b[2]),
     .Y(_01_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(_01_),
     .Y(out[2])
   );

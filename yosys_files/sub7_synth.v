@@ -27,7 +27,7 @@ module sub7(A, B, Bin, D, Bout);
   /* src = "sub7.v:4.16-4.17" */
   output D;
   wire D;
-  NOT _09_ (
+  not _09_ (
     .A(A),
     .Y(_05_)
   );
@@ -36,7 +36,7 @@ module sub7(A, B, Bin, D, Bout);
     .B(B),
     .Y(_06_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -50,7 +50,7 @@ module sub7(A, B, Bin, D, Bout);
     .B(B),
     .Y(_00_)
   );
-  NOT _14_ (
+  not _14_ (
     .A(_00_),
     .Y(_01_)
   );

@@ -23,7 +23,7 @@ module mult1(a, b, product);
     .B(b[0]),
     .Y(product[0])
   );
-  NOT _07_ (
+  not _07_ (
     .A(product[0]),
     .Y(_00_)
   );
@@ -52,7 +52,7 @@ module mult1(a, b, product);
     .B(_03_),
     .Y(product[3])
   );
-  NOT _13_ (
+  not _13_ (
     .A(product[3]),
     .Y(_04_)
   );

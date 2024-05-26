@@ -21,7 +21,7 @@ module mux16(a, sel, y);
     .B(sel[1]),
     .Y(_0_)
   );
-  NOT _5_ (
+  not _5_ (
     .A(_0_),
     .Y(_1_)
   );

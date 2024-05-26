@@ -80,15 +80,15 @@ module sub5(A, B, cin, sub, bo);
     .B(_07_),
     .Y(bo)
   );
-  NOT _22_ (
+  not _22_ (
     .A(A),
     .Y(_08_)
   );
-  NOT _23_ (
+  not _23_ (
     .A(B),
     .Y(_09_)
   );
-  NOT _24_ (
+  not _24_ (
     .A(cin),
     .Y(_10_)
   );

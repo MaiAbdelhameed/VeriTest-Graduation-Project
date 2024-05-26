@@ -52,7 +52,7 @@ module xor12(a, b, c, d, e, out);
     .B(a),
     .Y(_10_)
   );
-  NOT _23_ (
+  not _23_ (
     .A(_10_),
     .Y(_11_)
   );
@@ -61,7 +61,7 @@ module xor12(a, b, c, d, e, out);
     .B(a),
     .Y(_12_)
   );
-  NOT _25_ (
+  not _25_ (
     .A(_12_),
     .Y(_13_)
   );
@@ -90,7 +90,7 @@ module xor12(a, b, c, d, e, out);
     .B(_17_),
     .Y(out)
   );
-  NOT _31_ (
+  not _31_ (
     .A(c),
     .Y(_18_)
   );
@@ -99,7 +99,7 @@ module xor12(a, b, c, d, e, out);
     .B(d),
     .Y(_19_)
   );
-  NOT _33_ (
+  not _33_ (
     .A(_19_),
     .Y(_20_)
   );
@@ -108,7 +108,7 @@ module xor12(a, b, c, d, e, out);
     .B(d),
     .Y(_00_)
   );
-  NOT _35_ (
+  not _35_ (
     .A(_00_),
     .Y(_01_)
   );

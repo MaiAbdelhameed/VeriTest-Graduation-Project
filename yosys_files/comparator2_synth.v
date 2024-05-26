@@ -48,35 +48,35 @@ module comparator2(A, C, out);
   /* src = "comparator2.v:5.17-5.20" */
   output [1:0] out;
   wire [1:0] out;
-  NOT _36_ (
+  not _36_ (
     .A(A[1]),
     .Y(_00_)
   );
-  NOT _37_ (
+  not _37_ (
     .A(A[2]),
     .Y(_01_)
   );
-  NOT _38_ (
+  not _38_ (
     .A(A[0]),
     .Y(_02_)
   );
-  NOT _39_ (
+  not _39_ (
     .A(A[3]),
     .Y(_03_)
   );
-  NOT _40_ (
+  not _40_ (
     .A(C[1]),
     .Y(_04_)
   );
-  NOT _41_ (
+  not _41_ (
     .A(C[2]),
     .Y(_05_)
   );
-  NOT _42_ (
+  not _42_ (
     .A(C[0]),
     .Y(_06_)
   );
-  NOT _43_ (
+  not _43_ (
     .A(C[3]),
     .Y(_07_)
   );
@@ -190,7 +190,7 @@ module comparator2(A, C, out);
     .B(_28_),
     .Y(_29_)
   );
-  NOT _66_ (
+  not _66_ (
     .A(_29_),
     .Y(_30_)
   );
@@ -199,7 +199,7 @@ module comparator2(A, C, out);
     .B(_30_),
     .Y(_31_)
   );
-  NOT _68_ (
+  not _68_ (
     .A(_31_),
     .Y(out[1])
   );

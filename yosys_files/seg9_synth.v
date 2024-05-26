@@ -78,19 +78,19 @@ module seg9(w, x, y, z, a, b, c, d, e, f, g);
   /* src = "seg9.v:8.17-8.18" */
   input z;
   wire z;
-  NOT _42_ (
+  not _42_ (
     .A(y),
     .Y(_00_)
   );
-  NOT _43_ (
+  not _43_ (
     .A(z),
     .Y(_01_)
   );
-  NOT _44_ (
+  not _44_ (
     .A(x),
     .Y(_02_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(w),
     .Y(_03_)
   );
@@ -99,7 +99,7 @@ module seg9(w, x, y, z, a, b, c, d, e, f, g);
     .B(x),
     .Y(_04_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(_04_),
     .Y(_05_)
   );
@@ -108,7 +108,7 @@ module seg9(w, x, y, z, a, b, c, d, e, f, g);
     .B(x),
     .Y(_06_)
   );
-  NOT _49_ (
+  not _49_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -117,7 +117,7 @@ module seg9(w, x, y, z, a, b, c, d, e, f, g);
     .B(w),
     .Y(_08_)
   );
-  NOT _51_ (
+  not _51_ (
     .A(_08_),
     .Y(_09_)
   );
@@ -126,7 +126,7 @@ module seg9(w, x, y, z, a, b, c, d, e, f, g);
     .B(w),
     .Y(_10_)
   );
-  NOT _53_ (
+  not _53_ (
     .A(_10_),
     .Y(_11_)
   );
@@ -175,7 +175,7 @@ module seg9(w, x, y, z, a, b, c, d, e, f, g);
     .B(_02_),
     .Y(_18_)
   );
-  NOT _63_ (
+  not _63_ (
     .A(_18_),
     .Y(_19_)
   );
@@ -294,7 +294,7 @@ module seg9(w, x, y, z, a, b, c, d, e, f, g);
     .B(_38_),
     .Y(_39_)
   );
-  NOT _87_ (
+  not _87_ (
     .A(_39_),
     .Y(e)
   );

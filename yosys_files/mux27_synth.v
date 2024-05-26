@@ -215,11 +215,11 @@ module mux27(a, b, c, d, sel, out);
     .B(_33_),
     .Y(out[3])
   );
-  NOT _66_ (
+  not _66_ (
     .A(sel[0]),
     .Y(_00_)
   );
-  NOT _67_ (
+  not _67_ (
     .A(sel[1]),
     .Y(_01_)
   );

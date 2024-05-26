@@ -28,19 +28,19 @@ module decoder26(binary_in, decoder_out);
   /* src = "decoder26.v:3.20-3.31" */
   output [15:0] decoder_out;
   wire [15:0] decoder_out;
-  NOT _19_ (
+  not _19_ (
     .A(binary_in[2]),
     .Y(_00_)
   );
-  NOT _20_ (
+  not _20_ (
     .A(binary_in[3]),
     .Y(_01_)
   );
-  NOT _21_ (
+  not _21_ (
     .A(binary_in[1]),
     .Y(_02_)
   );
-  NOT _22_ (
+  not _22_ (
     .A(binary_in[0]),
     .Y(_03_)
   );
@@ -49,7 +49,7 @@ module decoder26(binary_in, decoder_out);
     .B(binary_in[0]),
     .Y(_04_)
   );
-  NOT _24_ (
+  not _24_ (
     .A(_04_),
     .Y(_05_)
   );
@@ -58,7 +58,7 @@ module decoder26(binary_in, decoder_out);
     .B(_04_),
     .Y(_06_)
   );
-  NOT _26_ (
+  not _26_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -67,7 +67,7 @@ module decoder26(binary_in, decoder_out);
     .B(_06_),
     .Y(_08_)
   );
-  NOT _28_ (
+  not _28_ (
     .A(_08_),
     .Y(decoder_out[0])
   );

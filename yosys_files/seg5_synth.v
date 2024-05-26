@@ -41,19 +41,19 @@ module seg5(bcd, seg);
   /* src = "seg5.v:9.18-9.21" */
   output [6:0] seg;
   wire [6:0] seg;
-  NOT _32_ (
+  not _32_ (
     .A(bcd[0]),
     .Y(_00_)
   );
-  NOT _33_ (
+  not _33_ (
     .A(bcd[3]),
     .Y(_01_)
   );
-  NOT _34_ (
+  not _34_ (
     .A(bcd[1]),
     .Y(_02_)
   );
-  NOT _35_ (
+  not _35_ (
     .A(bcd[2]),
     .Y(_03_)
   );
@@ -82,7 +82,7 @@ module seg5(bcd, seg);
     .B(bcd[1]),
     .Y(_08_)
   );
-  NOT _41_ (
+  not _41_ (
     .A(_08_),
     .Y(_09_)
   );
@@ -111,7 +111,7 @@ module seg5(bcd, seg);
     .B(bcd[2]),
     .Y(_14_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(_14_),
     .Y(_15_)
   );
@@ -160,7 +160,7 @@ module seg5(bcd, seg);
     .B(_21_),
     .Y(_22_)
   );
-  NOT _57_ (
+  not _57_ (
     .A(_22_),
     .Y(seg[2])
   );
@@ -219,7 +219,7 @@ module seg5(bcd, seg);
     .B(_29_),
     .Y(_30_)
   );
-  NOT _69_ (
+  not _69_ (
     .A(_30_),
     .Y(_31_)
   );

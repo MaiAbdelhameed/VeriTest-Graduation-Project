@@ -54,35 +54,35 @@ module encoder4(din, en, dout);
   /* src = "encoder4.v:3.7-3.9" */
   input en;
   wire en;
-  NOT _42_ (
+  not _42_ (
     .A(din[7]),
     .Y(_00_)
   );
-  NOT _43_ (
+  not _43_ (
     .A(din[6]),
     .Y(_01_)
   );
-  NOT _44_ (
+  not _44_ (
     .A(din[5]),
     .Y(_02_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(din[4]),
     .Y(_03_)
   );
-  NOT _46_ (
+  not _46_ (
     .A(din[3]),
     .Y(_04_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(din[2]),
     .Y(_05_)
   );
-  NOT _48_ (
+  not _48_ (
     .A(din[1]),
     .Y(_06_)
   );
-  NOT _49_ (
+  not _49_ (
     .A(din[0]),
     .Y(_07_)
   );
@@ -201,7 +201,7 @@ module encoder4(din, en, dout);
     .B(din[6]),
     .Y(_29_)
   );
-  NOT _73_ (
+  not _73_ (
     .A(_29_),
     .Y(_30_)
   );

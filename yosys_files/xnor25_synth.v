@@ -21,7 +21,7 @@ module xnor25(a, b, out);
   /* src = "xnor25.v:5.23-5.26" */
   output [2:0] out;
   wire [2:0] out;
-  NOT _09_ (
+  not _09_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -40,7 +40,7 @@ module xnor25(a, b, out);
     .B(b[0]),
     .Y(_00_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(_00_),
     .Y(_01_)
   );
@@ -59,7 +59,7 @@ module xnor25(a, b, out);
     .B(b[1]),
     .Y(_03_)
   );
-  NOT _17_ (
+  not _17_ (
     .A(_03_),
     .Y(_04_)
   );

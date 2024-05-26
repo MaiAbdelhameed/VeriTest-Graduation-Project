@@ -32,19 +32,19 @@ module seg3(bcd, seg);
   /* src = "seg3.v:7.17-7.20" */
   output [6:0] seg;
   wire [6:0] seg;
-  NOT _23_ (
+  not _23_ (
     .A(bcd[0]),
     .Y(_00_)
   );
-  NOT _24_ (
+  not _24_ (
     .A(bcd[2]),
     .Y(_01_)
   );
-  NOT _25_ (
+  not _25_ (
     .A(bcd[1]),
     .Y(_02_)
   );
-  NOT _26_ (
+  not _26_ (
     .A(bcd[3]),
     .Y(_03_)
   );
@@ -73,7 +73,7 @@ module seg3(bcd, seg);
     .B(_07_),
     .Y(_08_)
   );
-  NOT _32_ (
+  not _32_ (
     .A(_08_),
     .Y(_09_)
   );
@@ -147,7 +147,7 @@ module seg3(bcd, seg);
     .B(_05_),
     .Y(_19_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(_19_),
     .Y(_20_)
   );

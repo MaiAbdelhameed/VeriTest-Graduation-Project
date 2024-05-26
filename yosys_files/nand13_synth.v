@@ -25,7 +25,7 @@ module nand13(a, b, out);
     .B(b[5]),
     .Y(_00_)
   );
-  NOT _09_ (
+  not _09_ (
     .A(_00_),
     .Y(out[5])
   );
@@ -34,7 +34,7 @@ module nand13(a, b, out);
     .B(b[4]),
     .Y(_01_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(_01_),
     .Y(out[4])
   );
@@ -43,7 +43,7 @@ module nand13(a, b, out);
     .B(b[3]),
     .Y(_02_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(_02_),
     .Y(out[3])
   );
@@ -52,7 +52,7 @@ module nand13(a, b, out);
     .B(b[2]),
     .Y(_03_)
   );
-  NOT _15_ (
+  not _15_ (
     .A(_03_),
     .Y(out[2])
   );
@@ -61,7 +61,7 @@ module nand13(a, b, out);
     .B(b[1]),
     .Y(_04_)
   );
-  NOT _17_ (
+  not _17_ (
     .A(_04_),
     .Y(out[1])
   );
@@ -70,7 +70,7 @@ module nand13(a, b, out);
     .B(b[0]),
     .Y(_05_)
   );
-  NOT _19_ (
+  not _19_ (
     .A(_05_),
     .Y(out[0])
   );
@@ -79,7 +79,7 @@ module nand13(a, b, out);
     .B(b[7]),
     .Y(_06_)
   );
-  NOT _21_ (
+  not _21_ (
     .A(_06_),
     .Y(out[7])
   );
@@ -88,7 +88,7 @@ module nand13(a, b, out);
     .B(b[6]),
     .Y(_07_)
   );
-  NOT _23_ (
+  not _23_ (
     .A(_07_),
     .Y(out[6])
   );

@@ -49,7 +49,7 @@ module adder11(A, B, Cin, Sum, Cout);
     .B(_02_),
     .Y(_00_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(_00_),
     .Y(_03_)
   );

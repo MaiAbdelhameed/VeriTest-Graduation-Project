@@ -106,19 +106,19 @@ module mux24(in, sel, out);
   /* src = "mux24.v:3.41-3.44" */
   input [3:0] sel;
   wire [3:0] sel;
-  NOT _094_ (
+  not _094_ (
     .A(sel[3]),
     .Y(_016_)
   );
-  NOT _095_ (
+  not _095_ (
     .A(sel[2]),
     .Y(_017_)
   );
-  NOT _096_ (
+  not _096_ (
     .A(sel[1]),
     .Y(_018_)
   );
-  NOT _097_ (
+  not _097_ (
     .A(sel[0]),
     .Y(_019_)
   );

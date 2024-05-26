@@ -100,7 +100,7 @@ module xor29(a, b, c, d, e, f, g, h, out);
     .B(f),
     .Y(_14_)
   );
-  NOT _42_ (
+  not _42_ (
     .A(_14_),
     .Y(_15_)
   );
@@ -109,7 +109,7 @@ module xor29(a, b, c, d, e, f, g, h, out);
     .B(f),
     .Y(_16_)
   );
-  NOT _44_ (
+  not _44_ (
     .A(_16_),
     .Y(_17_)
   );
@@ -198,15 +198,15 @@ module xor29(a, b, c, d, e, f, g, h, out);
     .B(_33_),
     .Y(out)
   );
-  NOT _62_ (
+  not _62_ (
     .A(c),
     .Y(_34_)
   );
-  NOT _63_ (
+  not _63_ (
     .A(d),
     .Y(_00_)
   );
-  NOT _64_ (
+  not _64_ (
     .A(h),
     .Y(_01_)
   );
@@ -215,7 +215,7 @@ module xor29(a, b, c, d, e, f, g, h, out);
     .B(b),
     .Y(_02_)
   );
-  NOT _66_ (
+  not _66_ (
     .A(_02_),
     .Y(_03_)
   );
@@ -224,7 +224,7 @@ module xor29(a, b, c, d, e, f, g, h, out);
     .B(b),
     .Y(_04_)
   );
-  NOT _68_ (
+  not _68_ (
     .A(_04_),
     .Y(_05_)
   );

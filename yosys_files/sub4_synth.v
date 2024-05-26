@@ -29,15 +29,15 @@ module sub4(A, B, cin, sub, bo);
   /* src = "sub4.v:5.13-5.16" */
   output sub;
   wire sub;
-  NOT _11_ (
+  not _11_ (
     .A(B),
     .Y(_07_)
   );
-  NOT _12_ (
+  not _12_ (
     .A(cin),
     .Y(_08_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(A),
     .Y(_09_)
   );

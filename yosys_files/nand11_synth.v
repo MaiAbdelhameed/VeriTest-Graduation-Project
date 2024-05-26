@@ -16,7 +16,7 @@ module nand11(a, b, out);
   /* src = "nand11.v:4.22-4.25" */
   output [3:0] out;
   wire [3:0] out;
-  NOT _04_ (
+  not _04_ (
     .A(_01_),
     .Y(out[1])
   );
@@ -25,7 +25,7 @@ module nand11(a, b, out);
     .B(b[2]),
     .Y(_02_)
   );
-  NOT _06_ (
+  not _06_ (
     .A(_02_),
     .Y(out[2])
   );
@@ -34,7 +34,7 @@ module nand11(a, b, out);
     .B(b[3]),
     .Y(_03_)
   );
-  NOT _08_ (
+  not _08_ (
     .A(_03_),
     .Y(out[3])
   );
@@ -43,7 +43,7 @@ module nand11(a, b, out);
     .B(b[0]),
     .Y(_00_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(_00_),
     .Y(out[0])
   );

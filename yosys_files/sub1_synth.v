@@ -70,15 +70,15 @@ module sub1(a, b, c, sum, cout);
     .B(_07_),
     .Y(cout)
   );
-  NOT _20_ (
+  not _20_ (
     .A(a),
     .Y(_08_)
   );
-  NOT _21_ (
+  not _21_ (
     .A(b),
     .Y(_09_)
   );
-  NOT _22_ (
+  not _22_ (
     .A(c),
     .Y(_10_)
   );

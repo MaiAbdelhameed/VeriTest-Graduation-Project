@@ -47,7 +47,7 @@ module xor26(a, b, c, d, e, out);
     .B(e),
     .Y(_10_)
   );
-  NOT _22_ (
+  not _22_ (
     .A(_10_),
     .Y(_11_)
   );
@@ -56,7 +56,7 @@ module xor26(a, b, c, d, e, out);
     .B(e),
     .Y(_12_)
   );
-  NOT _24_ (
+  not _24_ (
     .A(_12_),
     .Y(_13_)
   );
@@ -85,7 +85,7 @@ module xor26(a, b, c, d, e, out);
     .B(_17_),
     .Y(out)
   );
-  NOT _30_ (
+  not _30_ (
     .A(c),
     .Y(_18_)
   );
@@ -94,7 +94,7 @@ module xor26(a, b, c, d, e, out);
     .B(b),
     .Y(_19_)
   );
-  NOT _32_ (
+  not _32_ (
     .A(_19_),
     .Y(_20_)
   );
@@ -103,7 +103,7 @@ module xor26(a, b, c, d, e, out);
     .B(b),
     .Y(_00_)
   );
-  NOT _34_ (
+  not _34_ (
     .A(_00_),
     .Y(_01_)
   );

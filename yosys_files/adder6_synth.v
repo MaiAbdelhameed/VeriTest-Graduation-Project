@@ -33,7 +33,7 @@ module adder6(A, B, Cin, Sum, Cout);
     .B(_03_),
     .Y(Cout)
   );
-  NOT _11_ (
+  not _11_ (
     .A(Cin),
     .Y(_06_)
   );
@@ -42,7 +42,7 @@ module adder6(A, B, Cin, Sum, Cout);
     .B(B),
     .Y(_07_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(_07_),
     .Y(_08_)
   );
@@ -51,7 +51,7 @@ module adder6(A, B, Cin, Sum, Cout);
     .B(B),
     .Y(_09_)
   );
-  NOT _15_ (
+  not _15_ (
     .A(_09_),
     .Y(_00_)
   );

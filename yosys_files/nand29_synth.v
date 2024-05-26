@@ -144,7 +144,7 @@ module nand29(a, b, c, d, e, f, g, h, a1, b1, c1, d1, e1, f1, g1, h1, out);
     .B(_13_),
     .Y(_14_)
   );
-  NOT _30_ (
+  not _30_ (
     .A(_14_),
     .Y(out)
   );

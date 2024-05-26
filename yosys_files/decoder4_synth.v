@@ -19,11 +19,11 @@ module decoder4(en, a, b, y);
   /* src = "decoder4.v:4.17-4.18" */
   output [3:0] y;
   wire [3:0] y;
-  NOT _04_ (
+  not _04_ (
     .A(a),
     .Y(_02_)
   );
-  NOT _05_ (
+  not _05_ (
     .A(b),
     .Y(_03_)
   );

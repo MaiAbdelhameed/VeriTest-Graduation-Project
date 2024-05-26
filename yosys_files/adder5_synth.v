@@ -28,7 +28,7 @@ module adder5(A, B, Cin, Sum, Cout);
   /* src = "adder5.v:5.16-5.19" */
   output Sum;
   wire Sum;
-  NOT _10_ (
+  not _10_ (
     .A(B),
     .Y(_06_)
   );
@@ -37,7 +37,7 @@ module adder5(A, B, Cin, Sum, Cout);
     .B(A),
     .Y(_07_)
   );
-  NOT _12_ (
+  not _12_ (
     .A(_07_),
     .Y(_08_)
   );
@@ -46,7 +46,7 @@ module adder5(A, B, Cin, Sum, Cout);
     .B(A),
     .Y(_09_)
   );
-  NOT _14_ (
+  not _14_ (
     .A(_09_),
     .Y(_00_)
   );

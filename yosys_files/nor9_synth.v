@@ -18,7 +18,7 @@ module nor9(a, b, result);
     .B(b),
     .Y(_0_)
   );
-  NOT _2_ (
+  not _2_ (
     .A(_0_),
     .Y(result)
   );

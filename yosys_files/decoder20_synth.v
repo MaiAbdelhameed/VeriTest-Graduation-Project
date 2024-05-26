@@ -12,11 +12,11 @@ module decoder20(in, out3);
   /* src = "decoder20.v:3.22-3.26" */
   output [7:0] out3;
   wire [7:0] out3;
-  NOT _3_ (
+  not _3_ (
     .A(in[1]),
     .Y(_0_)
   );
-  NOT _4_ (
+  not _4_ (
     .A(in[0]),
     .Y(_1_)
   );
@@ -25,7 +25,7 @@ module decoder20(in, out3);
     .B(in[0]),
     .Y(_2_)
   );
-  NOT _6_ (
+  not _6_ (
     .A(_2_),
     .Y(out3[0])
   );

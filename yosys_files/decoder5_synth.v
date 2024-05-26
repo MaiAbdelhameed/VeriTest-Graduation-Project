@@ -21,15 +21,15 @@ module decoder5(in, out, en);
   /* src = "decoder5.v:4.14-4.17" */
   output [7:0] out;
   wire [7:0] out;
-  NOT _09_ (
+  not _09_ (
     .A(in[1]),
     .Y(_00_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(in[2]),
     .Y(_01_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(in[0]),
     .Y(_02_)
   );

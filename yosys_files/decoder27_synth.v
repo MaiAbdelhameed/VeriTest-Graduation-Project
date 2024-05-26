@@ -21,19 +21,19 @@ module decoder27(d_out, d_in);
   /* src = "decoder27.v:3.19-3.24" */
   output [15:0] d_out;
   wire [15:0] d_out;
-  NOT _12_ (
+  not _12_ (
     .A(d_in[0]),
     .Y(_00_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(d_in[1]),
     .Y(_01_)
   );
-  NOT _14_ (
+  not _14_ (
     .A(d_in[2]),
     .Y(_02_)
   );
-  NOT _15_ (
+  not _15_ (
     .A(d_in[3]),
     .Y(_03_)
   );

@@ -60,23 +60,23 @@ module adder26(a, b, s, cin, cout);
   /* src = "adder26.v:5.13-5.14" */
   output [3:0] s;
   wire [3:0] s;
-  NOT _42_ (
+  not _42_ (
     .A(a[1]),
     .Y(_00_)
   );
-  NOT _43_ (
+  not _43_ (
     .A(b[1]),
     .Y(_01_)
   );
-  NOT _44_ (
+  not _44_ (
     .A(a[2]),
     .Y(_02_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(b[2]),
     .Y(_03_)
   );
-  NOT _46_ (
+  not _46_ (
     .A(cin),
     .Y(_04_)
   );
@@ -85,7 +85,7 @@ module adder26(a, b, s, cin, cout);
     .B(b[3]),
     .Y(_05_)
   );
-  NOT _48_ (
+  not _48_ (
     .A(_05_),
     .Y(_06_)
   );
@@ -114,7 +114,7 @@ module adder26(a, b, s, cin, cout);
     .B(b[0]),
     .Y(_11_)
   );
-  NOT _54_ (
+  not _54_ (
     .A(_11_),
     .Y(_12_)
   );
@@ -123,7 +123,7 @@ module adder26(a, b, s, cin, cout);
     .B(b[1]),
     .Y(_13_)
   );
-  NOT _56_ (
+  not _56_ (
     .A(_13_),
     .Y(_14_)
   );
@@ -167,7 +167,7 @@ module adder26(a, b, s, cin, cout);
     .B(_21_),
     .Y(_22_)
   );
-  NOT _65_ (
+  not _65_ (
     .A(_22_),
     .Y(_23_)
   );
@@ -201,7 +201,7 @@ module adder26(a, b, s, cin, cout);
     .B(_28_),
     .Y(_29_)
   );
-  NOT _72_ (
+  not _72_ (
     .A(_29_),
     .Y(_30_)
   );
@@ -225,7 +225,7 @@ module adder26(a, b, s, cin, cout);
     .B(b[0]),
     .Y(_33_)
   );
-  NOT _77_ (
+  not _77_ (
     .A(_33_),
     .Y(_34_)
   );

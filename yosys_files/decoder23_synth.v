@@ -21,15 +21,15 @@ module decoder23(in, en, out1);
   /* src = "decoder23.v:4.14-4.18" */
   output [7:0] out1;
   wire [7:0] out1;
-  NOT _09_ (
+  not _09_ (
     .A(in[2]),
     .Y(_00_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(in[1]),
     .Y(_01_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(in[0]),
     .Y(_02_)
   );

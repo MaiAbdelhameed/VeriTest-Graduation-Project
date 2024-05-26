@@ -12,11 +12,11 @@ module decoder11(in, out);
   /* src = "decoder11.v:4.19-4.22" */
   output [3:0] out;
   wire [3:0] out;
-  NOT _3_ (
+  not _3_ (
     .A(in[1]),
     .Y(_0_)
   );
-  NOT _4_ (
+  not _4_ (
     .A(in[0]),
     .Y(_1_)
   );
@@ -25,7 +25,7 @@ module decoder11(in, out);
     .B(in[0]),
     .Y(_2_)
   );
-  NOT _6_ (
+  not _6_ (
     .A(_2_),
     .Y(out[0])
   );

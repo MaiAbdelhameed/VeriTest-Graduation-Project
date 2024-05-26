@@ -24,7 +24,7 @@ module xnor24(a, b, out);
   /* src = "xnor24.v:5.23-5.26" */
   output [3:0] out;
   wire [3:0] out;
-  NOT _12_ (
+  not _12_ (
     .A(_03_),
     .Y(_04_)
   );
@@ -43,7 +43,7 @@ module xnor24(a, b, out);
     .B(b[2]),
     .Y(_06_)
   );
-  NOT _16_ (
+  not _16_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -62,7 +62,7 @@ module xnor24(a, b, out);
     .B(b[3]),
     .Y(_09_)
   );
-  NOT _20_ (
+  not _20_ (
     .A(_09_),
     .Y(_10_)
   );
@@ -81,7 +81,7 @@ module xnor24(a, b, out);
     .B(b[0]),
     .Y(_00_)
   );
-  NOT _24_ (
+  not _24_ (
     .A(_00_),
     .Y(_01_)
   );

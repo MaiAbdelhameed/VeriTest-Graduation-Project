@@ -45,7 +45,7 @@ module nand23(a, b, c, d, e, out);
     .B(_3_),
     .Y(_0_)
   );
-  NOT _8_ (
+  not _8_ (
     .A(_0_),
     .Y(out)
   );

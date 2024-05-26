@@ -26,7 +26,7 @@ module pe19(i3, i2, i1, i0, o0, o1, v);
   /* src = "pe19.v:4.18-4.19" */
   output v;
   wire v;
-  NOT _2_ (
+  not _2_ (
     .A(i2),
     .Y(_0_)
   );

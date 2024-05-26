@@ -54,11 +54,13 @@ case
 concatenation
 """
 type_index = {
-    "input": "1000",
-    "output": "0100",
-    "reg": "0010",
-    "wire": "0001",
-    "operation" : "0000"
+    "input":    "1000000",
+    "output":   "0100000",
+    "wire":     "0010000",
+    "not" :     "0001000",
+    "or" :      "0000100",
+    "and":      "0000010",
+    "constVal": "0000001"
 }
 
 # operation_index = {
@@ -70,13 +72,6 @@ type_index = {
 #     "concatenation": 5
 # }
 
-operation_index = {
-    "nop":          "0000",
-    "not":			"1000",
-    "or":			"0100",
-    "and":			"0010",
-    "constVal":     "0001"
-}
 
 
 def get_encoding(node):
@@ -85,70 +80,62 @@ def get_encoding(node):
     if (isinstance(node, INPUT)):
         temp = [int(char) for char in type_index["input"]]
         result.extend(temp)
-        temp = [int(char) for char in operation_index["nop"]]
-        result.extend(temp)
+        
     # output type
     elif (isinstance(node, OUTPUT)):
         temp = [int(char) for char in type_index["output"]]
         result.extend(temp)
-        temp = [int(char) for char in operation_index["nop"]]
-        result.extend(temp)
+        
     # reg type
     elif (isinstance(node, REG)):
         temp = [int(char) for char in type_index["reg"]]
         result.extend(temp)
-        temp = [int(char) for char in operation_index["nop"]]
-        result.extend(temp)
+        
     # wire type
     elif (isinstance(node, wire)):
         temp = [int(char) for char in type_index["wire"]]
         result.extend(temp)
-        temp = [int(char) for char in operation_index["nop"]]
-        result.extend(temp)
+        
         
     elif (isinstance(node, ConstValue)):
-        temp = [int(char) for char in type_index["operation"]]
+        temp = [int(char) for char in type_index["constVal"]]
         result.extend(temp)
-        temp = [int(char) for char in operation_index["constVal"]]
-        result.extend(temp)
+        
     # operation type
-    else:
-        
-        temp = [int(char) for char in type_index["operation"]]
+    elif (node.Type == "AND"):
+        # print("and")
+        temp = [int(char) for char in type_index["and"]]
         result.extend(temp)
-        # print(node.Type)
         
-        if (node.Type == "and"):
-            temp = [int(char) for char in operation_index["and"]]
-            result.extend(temp)
-        
-        elif (node.Type == "or"):
-            temp = [int(char) for char in operation_index["or"]]
-            result.extend(temp)
-        
-        elif (node.Type == "Land"):
-            temp = [int(char) for char in operation_index["and"]]
-            result.extend(temp)
-        
-        elif (node.Type == "Lor"):
-            temp = [int(char) for char in operation_index["or"]]
-            result.extend(temp)
-        
-        elif (node.Type == "Uor"):
-            temp = [int(char) for char in operation_index["or"]]
-            result.extend(temp)
-        
-        elif (node.Type == "Uand"):
-            temp = [int(char) for char in operation_index["and"]]
-            result.extend(temp)
-        
-        elif (node.Type == "Unot"):
-            temp = [int(char) for char in operation_index["not"]]
-            result.extend(temp)
-            
-        else: 
-            temp = [int(char) for char in operation_index["not"]]
-            result.extend(temp)
+    elif (node.Type == "OR"):
+        # print("or")
+        temp = [int(char) for char in type_index["or"]]
+        result.extend(temp)
+    
+    elif (node.Type == "Land"):
+        # print("land")
+        temp = [int(char) for char in type_index["and"]]
+        result.extend(temp)
+    
+    elif (node.Type == "Lor"):
+        # print("lor")
+        temp = [int(char) for char in type_index["or"]]
+        result.extend(temp)
+    
+    elif (node.Type == "Uor"):
+        # print("uor")
+        temp = [int(char) for char in type_index["or"]]
+        result.extend(temp)
+    
+    elif (node.Type == "Uand"):
+        # print("uand")
+        temp = [int(char) for char in type_index["and"]]
+        result.extend(temp)
+    
+    else: 
+        # print("not")
+        temp = [int(char) for char in type_index["not"]]
+        result.extend(temp)
 
     return result
 

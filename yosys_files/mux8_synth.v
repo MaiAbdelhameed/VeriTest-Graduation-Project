@@ -75,11 +75,11 @@ module mux8(a, b, c, d, sel, y);
   /* src = "mux8.v:5.46-5.47" */
   output [7:0] y;
   wire [7:0] y;
-  NOT _054_ (
+  not _054_ (
     .A(sel[1]),
     .Y(_004_)
   );
-  NOT _055_ (
+  not _055_ (
     .A(sel[0]),
     .Y(_005_)
   );

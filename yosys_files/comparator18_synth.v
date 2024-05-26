@@ -58,35 +58,35 @@ module comparator18(a, b, aeqb, agtb, altb);
   /* src = "comparator18.v:2.15-2.16" */
   input [3:0] b;
   wire [3:0] b;
-  NOT _40_ (
+  not _40_ (
     .A(a[0]),
     .Y(_00_)
   );
-  NOT _41_ (
+  not _41_ (
     .A(a[1]),
     .Y(_01_)
   );
-  NOT _42_ (
+  not _42_ (
     .A(a[2]),
     .Y(_02_)
   );
-  NOT _43_ (
+  not _43_ (
     .A(a[3]),
     .Y(_03_)
   );
-  NOT _44_ (
+  not _44_ (
     .A(b[0]),
     .Y(_04_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(b[1]),
     .Y(_05_)
   );
-  NOT _46_ (
+  not _46_ (
     .A(b[2]),
     .Y(_06_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(b[3]),
     .Y(_07_)
   );
@@ -230,7 +230,7 @@ module comparator18(a, b, aeqb, agtb, altb);
     .B(_34_),
     .Y(_35_)
   );
-  NOT _76_ (
+  not _76_ (
     .A(_35_),
     .Y(aeqb)
   );
@@ -254,7 +254,7 @@ module comparator18(a, b, aeqb, agtb, altb);
     .B(_38_),
     .Y(_39_)
   );
-  NOT _81_ (
+  not _81_ (
     .A(_39_),
     .Y(agtb)
   );

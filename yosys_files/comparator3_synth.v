@@ -22,11 +22,11 @@ module comparator3(A, B, C, D, E);
   /* src = "comparator3.v:3.16-3.17" */
   output E;
   wire E;
-  NOT _04_ (
+  not _04_ (
     .A(A),
     .Y(_01_)
   );
-  NOT _05_ (
+  not _05_ (
     .A(B),
     .Y(_02_)
   );
@@ -35,7 +35,7 @@ module comparator3(A, B, C, D, E);
     .B(_02_),
     .Y(_03_)
   );
-  NOT _07_ (
+  not _07_ (
     .A(_03_),
     .Y(C)
   );
@@ -44,7 +44,7 @@ module comparator3(A, B, C, D, E);
     .B(B),
     .Y(_00_)
   );
-  NOT _09_ (
+  not _09_ (
     .A(_00_),
     .Y(E)
   );

@@ -22,7 +22,7 @@ module nand19(a, b, out);
     .B(b[4]),
     .Y(_00_)
   );
-  NOT _06_ (
+  not _06_ (
     .A(_00_),
     .Y(out[4])
   );
@@ -31,7 +31,7 @@ module nand19(a, b, out);
     .B(b[3]),
     .Y(_01_)
   );
-  NOT _08_ (
+  not _08_ (
     .A(_01_),
     .Y(out[3])
   );
@@ -40,7 +40,7 @@ module nand19(a, b, out);
     .B(b[2]),
     .Y(_02_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(_02_),
     .Y(out[2])
   );
@@ -49,7 +49,7 @@ module nand19(a, b, out);
     .B(b[1]),
     .Y(_03_)
   );
-  NOT _12_ (
+  not _12_ (
     .A(_03_),
     .Y(out[1])
   );
@@ -58,7 +58,7 @@ module nand19(a, b, out);
     .B(b[0]),
     .Y(_04_)
   );
-  NOT _14_ (
+  not _14_ (
     .A(_04_),
     .Y(out[0])
   );

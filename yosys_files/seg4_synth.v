@@ -59,15 +59,15 @@ module seg4(bcd, a, b, c, d, e, f, g);
   /* src = "seg4.v:9.28-9.29" */
   output g;
   wire g;
-  NOT _32_ (
+  not _32_ (
     .A(bcd[1]),
     .Y(_00_)
   );
-  NOT _33_ (
+  not _33_ (
     .A(bcd[2]),
     .Y(_01_)
   );
-  NOT _34_ (
+  not _34_ (
     .A(bcd[3]),
     .Y(_02_)
   );
@@ -86,7 +86,7 @@ module seg4(bcd, a, b, c, d, e, f, g);
     .B(bcd[0]),
     .Y(_05_)
   );
-  NOT _38_ (
+  not _38_ (
     .A(_05_),
     .Y(_06_)
   );
@@ -125,7 +125,7 @@ module seg4(bcd, a, b, c, d, e, f, g);
     .B(bcd[0]),
     .Y(_12_)
   );
-  NOT _46_ (
+  not _46_ (
     .A(_12_),
     .Y(_13_)
   );
@@ -149,7 +149,7 @@ module seg4(bcd, a, b, c, d, e, f, g);
     .B(_12_),
     .Y(_16_)
   );
-  NOT _51_ (
+  not _51_ (
     .A(_16_),
     .Y(_17_)
   );
@@ -168,7 +168,7 @@ module seg4(bcd, a, b, c, d, e, f, g);
     .B(_19_),
     .Y(_20_)
   );
-  NOT _55_ (
+  not _55_ (
     .A(_20_),
     .Y(e)
   );
@@ -222,7 +222,7 @@ module seg4(bcd, a, b, c, d, e, f, g);
     .B(_22_),
     .Y(_28_)
   );
-  NOT _66_ (
+  not _66_ (
     .A(_28_),
     .Y(_29_)
   );

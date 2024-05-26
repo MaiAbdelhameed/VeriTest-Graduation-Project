@@ -39,19 +39,19 @@ module decoder28(x, y, z, w, e, d);
   /* src = "decoder28.v:2.14-2.15" */
   input z;
   wire z;
-  NOT _18_ (
+  not _18_ (
     .A(x),
     .Y(_00_)
   );
-  NOT _19_ (
+  not _19_ (
     .A(y),
     .Y(_01_)
   );
-  NOT _20_ (
+  not _20_ (
     .A(z),
     .Y(_02_)
   );
-  NOT _21_ (
+  not _21_ (
     .A(w),
     .Y(_03_)
   );

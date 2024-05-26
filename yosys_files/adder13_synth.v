@@ -40,15 +40,15 @@ module adder13(A, B, Cin, Sum, Cout);
   /* src = "adder13.v:2.62-2.65" */
   output [1:0] Sum;
   wire [1:0] Sum;
-  NOT _22_ (
+  not _22_ (
     .A(Cin),
     .Y(_21_)
   );
-  NOT _23_ (
+  not _23_ (
     .A(A[0]),
     .Y(_00_)
   );
-  NOT _24_ (
+  not _24_ (
     .A(B[0]),
     .Y(_01_)
   );
@@ -67,7 +67,7 @@ module adder13(A, B, Cin, Sum, Cout);
     .B(B[0]),
     .Y(_04_)
   );
-  NOT _28_ (
+  not _28_ (
     .A(_04_),
     .Y(_05_)
   );
@@ -106,7 +106,7 @@ module adder13(A, B, Cin, Sum, Cout);
     .B(B[1]),
     .Y(_12_)
   );
-  NOT _36_ (
+  not _36_ (
     .A(_12_),
     .Y(_13_)
   );
@@ -130,7 +130,7 @@ module adder13(A, B, Cin, Sum, Cout);
     .B(B[1]),
     .Y(_15_)
   );
-  NOT _41_ (
+  not _41_ (
     .A(_15_),
     .Y(_16_)
   );

@@ -27,7 +27,7 @@ module pe9(D0, D1, D2, D3, Y1, Y0, V);
   /* src = "pe9.v:4.16-4.18" */
   output Y1;
   wire Y1;
-  NOT _3_ (
+  not _3_ (
     .A(D2),
     .Y(_2_)
   );

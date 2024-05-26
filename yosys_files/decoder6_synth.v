@@ -18,15 +18,15 @@ module decoder6(D, y);
   /* src = "decoder6.v:3.18-3.19" */
   output [7:0] y;
   wire [7:0] y;
-  NOT _09_ (
+  not _09_ (
     .A(D[0]),
     .Y(_00_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(D[1]),
     .Y(_01_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(D[2]),
     .Y(_02_)
   );
@@ -65,7 +65,7 @@ module decoder6(D, y);
     .B(D[1]),
     .Y(_06_)
   );
-  NOT _19_ (
+  not _19_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -94,7 +94,7 @@ module decoder6(D, y);
     .B(_06_),
     .Y(_08_)
   );
-  NOT _25_ (
+  not _25_ (
     .A(_08_),
     .Y(y[0])
   );

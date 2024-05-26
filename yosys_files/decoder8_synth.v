@@ -45,15 +45,15 @@ module decoder8(ip0, ip1, ip2, op0, op1, op2, op3, op4, op5, op6, op7);
   /* src = "decoder8.v:4.40-4.43" */
   output op7;
   wire op7;
-  NOT _09_ (
+  not _09_ (
     .A(ip0),
     .Y(_00_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(ip1),
     .Y(_01_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(ip2),
     .Y(_02_)
   );
@@ -62,7 +62,7 @@ module decoder8(ip0, ip1, ip2, op0, op1, op2, op3, op4, op5, op6, op7);
     .B(ip1),
     .Y(_03_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(_03_),
     .Y(_04_)
   );
@@ -71,7 +71,7 @@ module decoder8(ip0, ip1, ip2, op0, op1, op2, op3, op4, op5, op6, op7);
     .B(_03_),
     .Y(_05_)
   );
-  NOT _15_ (
+  not _15_ (
     .A(_05_),
     .Y(op0)
   );

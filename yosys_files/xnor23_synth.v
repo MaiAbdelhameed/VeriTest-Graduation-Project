@@ -27,7 +27,7 @@ module xnor23(a, b, out);
   /* src = "xnor23.v:5.23-5.26" */
   output [4:0] out;
   wire [4:0] out;
-  NOT _15_ (
+  not _15_ (
     .A(_00_),
     .Y(_01_)
   );
@@ -46,7 +46,7 @@ module xnor23(a, b, out);
     .B(b[1]),
     .Y(_03_)
   );
-  NOT _19_ (
+  not _19_ (
     .A(_03_),
     .Y(_04_)
   );
@@ -65,7 +65,7 @@ module xnor23(a, b, out);
     .B(b[2]),
     .Y(_06_)
   );
-  NOT _23_ (
+  not _23_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -84,7 +84,7 @@ module xnor23(a, b, out);
     .B(b[3]),
     .Y(_09_)
   );
-  NOT _27_ (
+  not _27_ (
     .A(_09_),
     .Y(_10_)
   );
@@ -103,7 +103,7 @@ module xnor23(a, b, out);
     .B(b[4]),
     .Y(_12_)
   );
-  NOT _31_ (
+  not _31_ (
     .A(_12_),
     .Y(_13_)
   );

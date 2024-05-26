@@ -25,11 +25,11 @@ module encoder9(a, en, y);
   /* src = "encoder9.v:4.22-4.23" */
   output [1:0] y;
   wire [1:0] y;
-  NOT _13_ (
+  not _13_ (
     .A(a[2]),
     .Y(_11_)
   );
-  NOT _14_ (
+  not _14_ (
     .A(a[0]),
     .Y(_12_)
   );
@@ -53,7 +53,7 @@ module encoder9(a, en, y);
     .B(a[3]),
     .Y(_03_)
   );
-  NOT _19_ (
+  not _19_ (
     .A(_03_),
     .Y(_04_)
   );
@@ -82,7 +82,7 @@ module encoder9(a, en, y);
     .B(_06_),
     .Y(_08_)
   );
-  NOT _25_ (
+  not _25_ (
     .A(_08_),
     .Y(_09_)
   );

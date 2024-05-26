@@ -55,7 +55,7 @@ module adder20(Y, carryout, A, B, carryin);
   /* src = "adder20.v:4.10-4.18" */
   output carryout;
   wire carryout;
-  NOT _37_ (
+  not _37_ (
     .A(A[3]),
     .Y(_00_)
   );
@@ -64,7 +64,7 @@ module adder20(Y, carryout, A, B, carryin);
     .B(B[0]),
     .Y(_01_)
   );
-  NOT _39_ (
+  not _39_ (
     .A(_01_),
     .Y(_02_)
   );
@@ -78,7 +78,7 @@ module adder20(Y, carryout, A, B, carryin);
     .B(_03_),
     .Y(_04_)
   );
-  NOT _42_ (
+  not _42_ (
     .A(_04_),
     .Y(_05_)
   );
@@ -97,7 +97,7 @@ module adder20(Y, carryout, A, B, carryin);
     .B(_06_),
     .Y(_08_)
   );
-  NOT _46_ (
+  not _46_ (
     .A(_08_),
     .Y(_09_)
   );
@@ -116,7 +116,7 @@ module adder20(Y, carryout, A, B, carryin);
     .B(_11_),
     .Y(_12_)
   );
-  NOT _50_ (
+  not _50_ (
     .A(_12_),
     .Y(_13_)
   );
@@ -140,7 +140,7 @@ module adder20(Y, carryout, A, B, carryin);
     .B(_16_),
     .Y(_17_)
   );
-  NOT _55_ (
+  not _55_ (
     .A(_17_),
     .Y(_18_)
   );
@@ -149,7 +149,7 @@ module adder20(Y, carryout, A, B, carryin);
     .B(_16_),
     .Y(_19_)
   );
-  NOT _57_ (
+  not _57_ (
     .A(_19_),
     .Y(_20_)
   );
@@ -198,7 +198,7 @@ module adder20(Y, carryout, A, B, carryin);
     .B(_25_),
     .Y(_27_)
   );
-  NOT _67_ (
+  not _67_ (
     .A(_27_),
     .Y(_28_)
   );
@@ -222,7 +222,7 @@ module adder20(Y, carryout, A, B, carryin);
     .B(_15_),
     .Y(_31_)
   );
-  NOT _72_ (
+  not _72_ (
     .A(_31_),
     .Y(_32_)
   );

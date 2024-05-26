@@ -37,19 +37,19 @@ module decoder29(x, y, z, w, d);
   /* src = "decoder29.v:2.14-2.15" */
   input z;
   wire z;
-  NOT _19_ (
+  not _19_ (
     .A(x),
     .Y(_00_)
   );
-  NOT _20_ (
+  not _20_ (
     .A(y),
     .Y(_01_)
   );
-  NOT _21_ (
+  not _21_ (
     .A(z),
     .Y(_02_)
   );
-  NOT _22_ (
+  not _22_ (
     .A(w),
     .Y(_03_)
   );
@@ -58,7 +58,7 @@ module decoder29(x, y, z, w, d);
     .B(y),
     .Y(_04_)
   );
-  NOT _24_ (
+  not _24_ (
     .A(_04_),
     .Y(_05_)
   );
@@ -67,7 +67,7 @@ module decoder29(x, y, z, w, d);
     .B(_04_),
     .Y(_06_)
   );
-  NOT _26_ (
+  not _26_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -76,7 +76,7 @@ module decoder29(x, y, z, w, d);
     .B(_06_),
     .Y(_08_)
   );
-  NOT _28_ (
+  not _28_ (
     .A(_08_),
     .Y(d[0])
   );

@@ -28,7 +28,7 @@ module pe22(i3, i2, i1, i0, en, o0, o1);
   /* src = "pe22.v:4.15-4.17" */
   output o1;
   wire o1;
-  NOT _4_ (
+  not _4_ (
     .A(i2),
     .Y(_1_)
   );

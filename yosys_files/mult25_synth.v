@@ -23,7 +23,7 @@ module mult25(x, y, out);
     .B(y[0]),
     .Y(out[0])
   );
-  NOT _07_ (
+  not _07_ (
     .A(out[0]),
     .Y(_00_)
   );
@@ -52,7 +52,7 @@ module mult25(x, y, out);
     .B(_03_),
     .Y(out[3])
   );
-  NOT _13_ (
+  not _13_ (
     .A(out[3]),
     .Y(_04_)
   );

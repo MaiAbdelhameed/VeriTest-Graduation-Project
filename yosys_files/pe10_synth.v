@@ -23,7 +23,7 @@ module pe10(D0, D1, D2, D3, Y1, Y0);
   /* src = "pe10.v:4.16-4.18" */
   output Y1;
   wire Y1;
-  NOT _2_ (
+  not _2_ (
     .A(D2),
     .Y(_0_)
   );

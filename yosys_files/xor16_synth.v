@@ -24,7 +24,7 @@ module xor16(a, b, c, out);
   /* src = "xor16.v:5.17-5.20" */
   output out;
   wire out;
-  NOT _09_ (
+  not _09_ (
     .A(a),
     .Y(_04_)
   );
@@ -33,7 +33,7 @@ module xor16(a, b, c, out);
     .B(c),
     .Y(_05_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(_05_),
     .Y(_06_)
   );
@@ -42,7 +42,7 @@ module xor16(a, b, c, out);
     .B(c),
     .Y(_07_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(_07_),
     .Y(_08_)
   );

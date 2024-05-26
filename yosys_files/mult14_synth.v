@@ -38,7 +38,7 @@ module mult14(a, b, result);
     .B(b[0]),
     .Y(result[0])
   );
-  NOT _10_ (
+  not _10_ (
     .A(result[0]),
     .Y(_02_)
   );
@@ -52,7 +52,7 @@ module mult14(a, b, result);
     .B(_03_),
     .Y(result[3])
   );
-  NOT _13_ (
+  not _13_ (
     .A(result[3]),
     .Y(_04_)
   );

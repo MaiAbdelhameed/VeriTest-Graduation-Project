@@ -62,7 +62,7 @@ module adder19(A, B, cin, S, cout);
     .B(A[3]),
     .Y(_00_)
   );
-  NOT _40_ (
+  not _40_ (
     .A(_00_),
     .Y(_01_)
   );
@@ -71,7 +71,7 @@ module adder19(A, B, cin, S, cout);
     .B(A[3]),
     .Y(_02_)
   );
-  NOT _42_ (
+  not _42_ (
     .A(_02_),
     .Y(_03_)
   );
@@ -90,7 +90,7 @@ module adder19(A, B, cin, S, cout);
     .B(A[2]),
     .Y(_06_)
   );
-  NOT _46_ (
+  not _46_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -104,7 +104,7 @@ module adder19(A, B, cin, S, cout);
     .B(A[1]),
     .Y(_09_)
   );
-  NOT _49_ (
+  not _49_ (
     .A(_09_),
     .Y(_10_)
   );
@@ -113,7 +113,7 @@ module adder19(A, B, cin, S, cout);
     .B(A[1]),
     .Y(_11_)
   );
-  NOT _51_ (
+  not _51_ (
     .A(_11_),
     .Y(_12_)
   );
@@ -127,7 +127,7 @@ module adder19(A, B, cin, S, cout);
     .B(_13_),
     .Y(_14_)
   );
-  NOT _54_ (
+  not _54_ (
     .A(_14_),
     .Y(_15_)
   );
@@ -136,7 +136,7 @@ module adder19(A, B, cin, S, cout);
     .B(B[0]),
     .Y(_16_)
   );
-  NOT _56_ (
+  not _56_ (
     .A(_16_),
     .Y(_17_)
   );
@@ -170,7 +170,7 @@ module adder19(A, B, cin, S, cout);
     .B(_22_),
     .Y(_23_)
   );
-  NOT _63_ (
+  not _63_ (
     .A(_23_),
     .Y(_24_)
   );
@@ -204,7 +204,7 @@ module adder19(A, B, cin, S, cout);
     .B(_27_),
     .Y(_29_)
   );
-  NOT _70_ (
+  not _70_ (
     .A(_29_),
     .Y(_30_)
   );

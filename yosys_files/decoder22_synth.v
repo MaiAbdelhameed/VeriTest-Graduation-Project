@@ -48,15 +48,15 @@ module decoder22(a, b, c, en, d0, d1, d2, d3, d4, d5, d6, d7);
   /* src = "decoder22.v:2.13-2.15" */
   input en;
   wire en;
-  NOT _09_ (
+  not _09_ (
     .A(a),
     .Y(_00_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(b),
     .Y(_01_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(c),
     .Y(_02_)
   );

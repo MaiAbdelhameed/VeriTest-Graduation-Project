@@ -48,15 +48,15 @@ module decoder7(ip0, ip1, ip2, en, op0, op1, op2, op3, op4, op5, op6, op7);
   /* src = "decoder7.v:4.40-4.43" */
   output op7;
   wire op7;
-  NOT _09_ (
+  not _09_ (
     .A(ip2),
     .Y(_00_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(ip0),
     .Y(_01_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(ip1),
     .Y(_02_)
   );

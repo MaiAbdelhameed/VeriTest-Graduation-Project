@@ -24,15 +24,15 @@ module decoder17(a, b, c, out);
   /* src = "decoder17.v:3.18-3.21" */
   output [7:0] out;
   wire [7:0] out;
-  NOT _09_ (
+  not _09_ (
     .A(b),
     .Y(_00_)
   );
-  NOT _10_ (
+  not _10_ (
     .A(c),
     .Y(_01_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(a),
     .Y(_02_)
   );
@@ -41,7 +41,7 @@ module decoder17(a, b, c, out);
     .B(c),
     .Y(_03_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(_03_),
     .Y(_04_)
   );
@@ -50,7 +50,7 @@ module decoder17(a, b, c, out);
     .B(_03_),
     .Y(_05_)
   );
-  NOT _15_ (
+  not _15_ (
     .A(_05_),
     .Y(out[0])
   );

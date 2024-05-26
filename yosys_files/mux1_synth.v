@@ -75,11 +75,11 @@ module mux1(A, B, C, D, Select, Y);
   /* src = "mux1.v:8.20-8.21" */
   output [7:0] Y;
   wire [7:0] Y;
-  NOT _054_ (
+  not _054_ (
     .A(Select[1]),
     .Y(_004_)
   );
-  NOT _055_ (
+  not _055_ (
     .A(Select[0]),
     .Y(_005_)
   );

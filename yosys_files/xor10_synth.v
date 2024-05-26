@@ -24,7 +24,7 @@ module xor10(a, b, c, out);
   /* src = "xor10.v:5.14-5.17" */
   output out;
   wire out;
-  NOT _09_ (
+  not _09_ (
     .A(c),
     .Y(_04_)
   );
@@ -33,7 +33,7 @@ module xor10(a, b, c, out);
     .B(a),
     .Y(_05_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(_05_),
     .Y(_06_)
   );
@@ -42,7 +42,7 @@ module xor10(a, b, c, out);
     .B(a),
     .Y(_07_)
   );
-  NOT _13_ (
+  not _13_ (
     .A(_07_),
     .Y(_08_)
   );

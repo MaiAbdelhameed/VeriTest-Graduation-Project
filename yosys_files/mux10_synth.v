@@ -18,7 +18,7 @@ module mux10(in0, in1, sel, out);
   /* src = "mux10.v:2.31-2.34" */
   input sel;
   wire sel;
-  NOT _3_ (
+  not _3_ (
     .A(sel),
     .Y(_0_)
   );

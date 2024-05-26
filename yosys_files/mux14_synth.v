@@ -21,11 +21,11 @@ module mux14(in, sel, y);
   /* src = "mux14.v:4.40-4.41" */
   output y;
   reg y;
-  NOT _08_ (
+  not _08_ (
     .A(sel[0]),
     .Y(_05_)
   );
-  NOT _09_ (
+  not _09_ (
     .A(sel[1]),
     .Y(_06_)
   );

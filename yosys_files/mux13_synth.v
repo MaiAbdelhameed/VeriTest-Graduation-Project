@@ -22,11 +22,11 @@ module mux13(in, sel, y);
   /* src = "mux13.v:5.40-5.41" */
   output y;
   wire y;
-  NOT _10_ (
+  not _10_ (
     .A(sel[1]),
     .Y(_08_)
   );
-  NOT _11_ (
+  not _11_ (
     .A(sel[0]),
     .Y(_09_)
   );

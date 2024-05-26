@@ -20,7 +20,7 @@ module mux9(a, b, sel, y);
   /* src = "mux9.v:5.30-5.31" */
   output [1:0] y;
   wire [1:0] y;
-  NOT _05_ (
+  not _05_ (
     .A(sel),
     .Y(_03_)
   );

@@ -26,15 +26,15 @@ module encoder13(din, en, dout);
   /* src = "encoder13.v:3.7-3.9" */
   input en;
   wire en;
-  NOT _14_ (
+  not _14_ (
     .A(din[2]),
     .Y(_12_)
   );
-  NOT _15_ (
+  not _15_ (
     .A(din[1]),
     .Y(_13_)
   );
-  NOT _16_ (
+  not _16_ (
     .A(din[0]),
     .Y(_00_)
   );
@@ -58,7 +58,7 @@ module encoder13(din, en, dout);
     .B(din[1]),
     .Y(_04_)
   );
-  NOT _21_ (
+  not _21_ (
     .A(_04_),
     .Y(_05_)
   );
@@ -87,7 +87,7 @@ module encoder13(din, en, dout);
     .B(din[2]),
     .Y(_09_)
   );
-  NOT _27_ (
+  not _27_ (
     .A(_09_),
     .Y(_10_)
   );

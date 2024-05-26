@@ -68,19 +68,19 @@ module seg8(w, x, y, z, a, b, c, d, e, f, g);
   /* src = "seg8.v:8.17-8.18" */
   input z;
   wire z;
-  NOT _32_ (
+  not _32_ (
     .A(w),
     .Y(_00_)
   );
-  NOT _33_ (
+  not _33_ (
     .A(x),
     .Y(_01_)
   );
-  NOT _34_ (
+  not _34_ (
     .A(y),
     .Y(_02_)
   );
-  NOT _35_ (
+  not _35_ (
     .A(z),
     .Y(_03_)
   );
@@ -99,7 +99,7 @@ module seg8(w, x, y, z, a, b, c, d, e, f, g);
     .B(z),
     .Y(_06_)
   );
-  NOT _39_ (
+  not _39_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -108,7 +108,7 @@ module seg8(w, x, y, z, a, b, c, d, e, f, g);
     .B(_06_),
     .Y(_08_)
   );
-  NOT _41_ (
+  not _41_ (
     .A(_08_),
     .Y(_09_)
   );
@@ -127,7 +127,7 @@ module seg8(w, x, y, z, a, b, c, d, e, f, g);
     .B(z),
     .Y(_12_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(_12_),
     .Y(_13_)
   );
@@ -191,7 +191,7 @@ module seg8(w, x, y, z, a, b, c, d, e, f, g);
     .B(_08_),
     .Y(_22_)
   );
-  NOT _58_ (
+  not _58_ (
     .A(_22_),
     .Y(_23_)
   );

@@ -9,7 +9,7 @@ module not13(a, out);
   /* src = "not13.v:3.16-3.19" */
   output out;
   wire out;
-  NOT _0_ (
+  not _0_ (
     .A(a),
     .Y(out)
   );

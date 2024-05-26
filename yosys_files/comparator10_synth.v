@@ -34,19 +34,19 @@ module comparator10(A, B, A_less_B, A_equal_B, A_greater_B);
   /* src = "comparator10.v:1.36-1.37" */
   input [1:0] B;
   wire [1:0] B;
-  NOT _16_ (
+  not _16_ (
     .A(A[0]),
     .Y(_14_)
   );
-  NOT _17_ (
+  not _17_ (
     .A(B[1]),
     .Y(_15_)
   );
-  NOT _18_ (
+  not _18_ (
     .A(A[1]),
     .Y(_00_)
   );
-  NOT _19_ (
+  not _19_ (
     .A(B[0]),
     .Y(_01_)
   );

@@ -20,7 +20,7 @@ module nor14(a, b, out);
     .B(b[2]),
     .Y(_0_)
   );
-  NOT _4_ (
+  not _4_ (
     .A(_0_),
     .Y(out[2])
   );
@@ -29,7 +29,7 @@ module nor14(a, b, out);
     .B(b[1]),
     .Y(_1_)
   );
-  NOT _6_ (
+  not _6_ (
     .A(_1_),
     .Y(out[1])
   );
@@ -38,7 +38,7 @@ module nor14(a, b, out);
     .B(b[0]),
     .Y(_2_)
   );
-  NOT _8_ (
+  not _8_ (
     .A(_2_),
     .Y(out[0])
   );

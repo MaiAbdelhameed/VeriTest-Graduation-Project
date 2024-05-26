@@ -18,7 +18,7 @@ module mux15(a, b, sel, y);
   /* src = "mux15.v:3.32-3.33" */
   output y;
   wire y;
-  NOT _3_ (
+  not _3_ (
     .A(sel),
     .Y(_0_)
   );

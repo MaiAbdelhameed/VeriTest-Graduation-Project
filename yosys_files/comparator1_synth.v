@@ -60,35 +60,35 @@ module comparator1(a, b, z, n, v);
   /* src = "comparator1.v:3.8-3.9" */
   output z;
   wire z;
-  NOT _42_ (
+  not _42_ (
     .A(b[0]),
     .Y(_00_)
   );
-  NOT _43_ (
+  not _43_ (
     .A(b[1]),
     .Y(_01_)
   );
-  NOT _44_ (
+  not _44_ (
     .A(b[2]),
     .Y(_02_)
   );
-  NOT _45_ (
+  not _45_ (
     .A(b[3]),
     .Y(_03_)
   );
-  NOT _46_ (
+  not _46_ (
     .A(a[0]),
     .Y(_04_)
   );
-  NOT _47_ (
+  not _47_ (
     .A(a[1]),
     .Y(_05_)
   );
-  NOT _48_ (
+  not _48_ (
     .A(a[2]),
     .Y(_06_)
   );
-  NOT _49_ (
+  not _49_ (
     .A(a[3]),
     .Y(_07_)
   );
@@ -97,7 +97,7 @@ module comparator1(a, b, z, n, v);
     .B(a[3]),
     .Y(_08_)
   );
-  NOT _51_ (
+  not _51_ (
     .A(_08_),
     .Y(_09_)
   );
@@ -106,7 +106,7 @@ module comparator1(a, b, z, n, v);
     .B(a[3]),
     .Y(_10_)
   );
-  NOT _53_ (
+  not _53_ (
     .A(_10_),
     .Y(_11_)
   );
@@ -225,7 +225,7 @@ module comparator1(a, b, z, n, v);
     .B(_33_),
     .Y(_34_)
   );
-  NOT _77_ (
+  not _77_ (
     .A(_34_),
     .Y(n)
   );

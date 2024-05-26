@@ -47,23 +47,23 @@ module decoder32(select, en, out);
   /* src = "decoder32.v:2.17-2.23" */
   input [4:0] select;
   wire [4:0] select;
-  NOT _035_ (
+  not _035_ (
     .A(select[0]),
     .Y(_000_)
   );
-  NOT _036_ (
+  not _036_ (
     .A(select[3]),
     .Y(_001_)
   );
-  NOT _037_ (
+  not _037_ (
     .A(select[4]),
     .Y(_002_)
   );
-  NOT _038_ (
+  not _038_ (
     .A(select[2]),
     .Y(_003_)
   );
-  NOT _039_ (
+  not _039_ (
     .A(select[1]),
     .Y(_004_)
   );

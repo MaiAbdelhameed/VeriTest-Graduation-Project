@@ -28,7 +28,7 @@ module pe12(D0, D1, D2, D3, en, Y1, Y0);
   /* src = "pe12.v:3.23-3.25" */
   input en;
   wire en;
-  NOT _4_ (
+  not _4_ (
     .A(D2),
     .Y(_2_)
   );

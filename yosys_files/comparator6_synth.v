@@ -55,35 +55,35 @@ module comparator6(A, B, C, D, E);
   /* src = "comparator6.v:5.17-5.18" */
   output E;
   wire E;
-  NOT _37_ (
+  not _37_ (
     .A(A[1]),
     .Y(_00_)
   );
-  NOT _38_ (
+  not _38_ (
     .A(A[2]),
     .Y(_01_)
   );
-  NOT _39_ (
+  not _39_ (
     .A(A[0]),
     .Y(_02_)
   );
-  NOT _40_ (
+  not _40_ (
     .A(A[3]),
     .Y(_03_)
   );
-  NOT _41_ (
+  not _41_ (
     .A(B[1]),
     .Y(_04_)
   );
-  NOT _42_ (
+  not _42_ (
     .A(B[2]),
     .Y(_05_)
   );
-  NOT _43_ (
+  not _43_ (
     .A(B[0]),
     .Y(_06_)
   );
-  NOT _44_ (
+  not _44_ (
     .A(B[3]),
     .Y(_07_)
   );
@@ -212,7 +212,7 @@ module comparator6(A, B, C, D, E);
     .B(_31_),
     .Y(_32_)
   );
-  NOT _70_ (
+  not _70_ (
     .A(_32_),
     .Y(D)
   );
@@ -236,7 +236,7 @@ module comparator6(A, B, C, D, E);
     .B(_35_),
     .Y(_36_)
   );
-  NOT _75_ (
+  not _75_ (
     .A(_36_),
     .Y(E)
   );

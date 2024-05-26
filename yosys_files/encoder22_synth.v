@@ -38,15 +38,15 @@ module encoder22(a0, a1, a2, a3, en, y0, y1);
   /* src = "encoder22.v:4.19-4.21" */
   output y1;
   wire y1;
-  NOT _14_ (
+  not _14_ (
     .A(a2),
     .Y(_12_)
   );
-  NOT _15_ (
+  not _15_ (
     .A(a1),
     .Y(_13_)
   );
-  NOT _16_ (
+  not _16_ (
     .A(a0),
     .Y(_00_)
   );
@@ -70,7 +70,7 @@ module encoder22(a0, a1, a2, a3, en, y0, y1);
     .B(a3),
     .Y(_04_)
   );
-  NOT _21_ (
+  not _21_ (
     .A(_04_),
     .Y(_05_)
   );
@@ -99,7 +99,7 @@ module encoder22(a0, a1, a2, a3, en, y0, y1);
     .B(a1),
     .Y(_09_)
   );
-  NOT _27_ (
+  not _27_ (
     .A(_09_),
     .Y(_10_)
   );

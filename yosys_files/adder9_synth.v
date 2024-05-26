@@ -47,15 +47,15 @@ module adder9(A0, A1, B0, B1, Sum, Cin, Cout);
   /* src = "adder9.v:5.18-5.21" */
   output [1:0] Sum;
   wire [1:0] Sum;
-  NOT _23_ (
+  not _23_ (
     .A(B0),
     .Y(_22_)
   );
-  NOT _24_ (
+  not _24_ (
     .A(A0),
     .Y(_00_)
   );
-  NOT _25_ (
+  not _25_ (
     .A(Cin),
     .Y(_01_)
   );
@@ -64,7 +64,7 @@ module adder9(A0, A1, B0, B1, Sum, Cin, Cout);
     .B(A1),
     .Y(_02_)
   );
-  NOT _27_ (
+  not _27_ (
     .A(_02_),
     .Y(_03_)
   );
@@ -83,7 +83,7 @@ module adder9(A0, A1, B0, B1, Sum, Cin, Cout);
     .B(A0),
     .Y(_06_)
   );
-  NOT _31_ (
+  not _31_ (
     .A(_06_),
     .Y(_07_)
   );
@@ -122,7 +122,7 @@ module adder9(A0, A1, B0, B1, Sum, Cin, Cout);
     .B(A1),
     .Y(_14_)
   );
-  NOT _39_ (
+  not _39_ (
     .A(_14_),
     .Y(_15_)
   );

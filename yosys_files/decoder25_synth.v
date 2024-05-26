@@ -30,19 +30,19 @@ module decoder25(enable, binary_in, decoder_out);
   /* src = "decoder25.v:2.9-2.15" */
   input enable;
   wire enable;
-  NOT _18_ (
+  not _18_ (
     .A(binary_in[2]),
     .Y(_00_)
   );
-  NOT _19_ (
+  not _19_ (
     .A(binary_in[3]),
     .Y(_01_)
   );
-  NOT _20_ (
+  not _20_ (
     .A(binary_in[0]),
     .Y(_02_)
   );
-  NOT _21_ (
+  not _21_ (
     .A(binary_in[1]),
     .Y(_03_)
   );
