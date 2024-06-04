@@ -1,0 +1,5942 @@
+{
+    "adder10_synth": {
+        "statistics": {
+            "num_nodes": 54,
+            "num_edges": 72
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 23,
+            "not_count": 6,
+            "or_count": 10,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "adder11_synth": {
+        "statistics": {
+            "num_nodes": 29,
+            "num_edges": 34
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 9,
+            "not_count": 5,
+            "or_count": 4,
+            "and_count": 4,
+            "constVal_count": 2
+        }
+    },
+    "adder12_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 2,
+            "wire_count": 2,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "adder13_synth": {
+        "statistics": {
+            "num_nodes": 52,
+            "num_edges": 69
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 22,
+            "not_count": 6,
+            "or_count": 11,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    },
+    "adder14_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 2,
+            "wire_count": 2,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "adder15_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 2,
+            "wire_count": 2,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "adder16_synth": {
+        "statistics": {
+            "num_nodes": 102,
+            "num_edges": 141
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 46,
+            "not_count": 12,
+            "or_count": 20,
+            "and_count": 19,
+            "constVal_count": 0
+        }
+    },
+    "adder17_synth": {
+        "statistics": {
+            "num_nodes": 88,
+            "num_edges": 123
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 39,
+            "not_count": 9,
+            "or_count": 18,
+            "and_count": 17,
+            "constVal_count": 0
+        }
+    },
+    "adder18_synth": {
+        "statistics": {
+            "num_nodes": 102,
+            "num_edges": 141
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 46,
+            "not_count": 12,
+            "or_count": 20,
+            "and_count": 19,
+            "constVal_count": 0
+        }
+    },
+    "adder19_synth": {
+        "statistics": {
+            "num_nodes": 88,
+            "num_edges": 123
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 39,
+            "not_count": 9,
+            "or_count": 17,
+            "and_count": 18,
+            "constVal_count": 0
+        }
+    },
+    "adder1_synth": {
+        "statistics": {
+            "num_nodes": 27,
+            "num_edges": 33
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 10,
+            "not_count": 3,
+            "or_count": 4,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "adder20_synth": {
+        "statistics": {
+            "num_nodes": 84,
+            "num_edges": 117
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 37,
+            "not_count": 9,
+            "or_count": 17,
+            "and_count": 16,
+            "constVal_count": 0
+        }
+    },
+    "adder21_synth": {
+        "statistics": {
+            "num_nodes": 102,
+            "num_edges": 141
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 46,
+            "not_count": 12,
+            "or_count": 20,
+            "and_count": 19,
+            "constVal_count": 0
+        }
+    },
+    "adder22_synth": {
+        "statistics": {
+            "num_nodes": 158,
+            "num_edges": 227
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 72,
+            "not_count": 16,
+            "or_count": 30,
+            "and_count": 35,
+            "constVal_count": 0
+        }
+    },
+    "adder23_synth": {
+        "statistics": {
+            "num_nodes": 320,
+            "num_edges": 464
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 149,
+            "not_count": 34,
+            "or_count": 57,
+            "and_count": 75,
+            "constVal_count": 0
+        }
+    },
+    "adder24_synth": {
+        "statistics": {
+            "num_nodes": 82,
+            "num_edges": 115
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 36,
+            "not_count": 8,
+            "or_count": 15,
+            "and_count": 18,
+            "constVal_count": 0
+        }
+    },
+    "adder25_synth": {
+        "statistics": {
+            "num_nodes": 94,
+            "num_edges": 130
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 42,
+            "not_count": 11,
+            "or_count": 18,
+            "and_count": 18,
+            "constVal_count": 0
+        }
+    },
+    "adder26_synth": {
+        "statistics": {
+            "num_nodes": 94,
+            "num_edges": 130
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 42,
+            "not_count": 11,
+            "or_count": 18,
+            "and_count": 18,
+            "constVal_count": 0
+        }
+    },
+    "adder27_synth": {
+        "statistics": {
+            "num_nodes": 850,
+            "num_edges": 1218
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 406,
+            "not_count": 99,
+            "or_count": 165,
+            "and_count": 175,
+            "constVal_count": 0
+        }
+    },
+    "adder28_synth": {
+        "statistics": {
+            "num_nodes": 662,
+            "num_edges": 964
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 313,
+            "not_count": 71,
+            "or_count": 138,
+            "and_count": 136,
+            "constVal_count": 0
+        }
+    },
+    "adder2_synth": {
+        "statistics": {
+            "num_nodes": 27,
+            "num_edges": 33
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 10,
+            "not_count": 3,
+            "or_count": 5,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "adder3_synth": {
+        "statistics": {
+            "num_nodes": 27,
+            "num_edges": 33
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 10,
+            "not_count": 3,
+            "or_count": 5,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "adder4_synth": {
+        "statistics": {
+            "num_nodes": 21,
+            "num_edges": 26
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 7,
+            "not_count": 1,
+            "or_count": 4,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "adder5_synth": {
+        "statistics": {
+            "num_nodes": 27,
+            "num_edges": 33
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 10,
+            "not_count": 3,
+            "or_count": 4,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "adder6_synth": {
+        "statistics": {
+            "num_nodes": 27,
+            "num_edges": 33
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 10,
+            "not_count": 3,
+            "or_count": 5,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "adder7_synth": {
+        "statistics": {
+            "num_nodes": 102,
+            "num_edges": 142
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 46,
+            "not_count": 11,
+            "or_count": 18,
+            "and_count": 22,
+            "constVal_count": 0
+        }
+    },
+    "adder8_synth": {
+        "statistics": {
+            "num_nodes": 18,
+            "num_edges": 19
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 2,
+            "wire_count": 4,
+            "not_count": 5,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 2
+        }
+    },
+    "adder9_synth": {
+        "statistics": {
+            "num_nodes": 56,
+            "num_edges": 72
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 2,
+            "wire_count": 23,
+            "not_count": 6,
+            "or_count": 10,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "and10_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "and11_gate_synth": {
+        "statistics": {
+            "num_nodes": 7,
+            "num_edges": 12
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "and12_gate_synth": {
+        "statistics": {
+            "num_nodes": 7,
+            "num_edges": 12
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "and13_synth": {
+        "statistics": {
+            "num_nodes": 7,
+            "num_edges": 12
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "and14_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 9
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "and15_synth": {
+        "statistics": {
+            "num_nodes": 11,
+            "num_edges": 24
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    },
+    "and16_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "and17_synth": {
+        "statistics": {
+            "num_nodes": 11,
+            "num_edges": 24
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    },
+    "and18_gate_synth": {
+        "statistics": {
+            "num_nodes": 19,
+            "num_edges": 48
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 16,
+            "constVal_count": 0
+        }
+    },
+    "and19_synth": {
+        "statistics": {
+            "num_nodes": 5,
+            "num_edges": 6
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "and1_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "and20_synth": {
+        "statistics": {
+            "num_nodes": 7,
+            "num_edges": 6
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "and21_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 9
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 2,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "and22_synth": {
+        "statistics": {
+            "num_nodes": 13,
+            "num_edges": 12
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "and23_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 15
+        },
+        "counts": {
+            "input_count": 6,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "and24_synth": {
+        "statistics": {
+            "num_nodes": 19,
+            "num_edges": 18
+        },
+        "counts": {
+            "input_count": 7,
+            "output_count": 1,
+            "wire_count": 5,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 6,
+            "constVal_count": 0
+        }
+    },
+    "and25_synth": {
+        "statistics": {
+            "num_nodes": 22,
+            "num_edges": 21
+        },
+        "counts": {
+            "input_count": 8,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "and26_synth": {
+        "statistics": {
+            "num_nodes": 7,
+            "num_edges": 6
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "and27_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 9
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 2,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "and28_synth": {
+        "statistics": {
+            "num_nodes": 13,
+            "num_edges": 12
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "and29_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 15
+        },
+        "counts": {
+            "input_count": 6,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "and2_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "and30_synth": {
+        "statistics": {
+            "num_nodes": 22,
+            "num_edges": 21
+        },
+        "counts": {
+            "input_count": 8,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "and3_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "and4_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "and5_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "and6_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "and7_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "and8_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "and9_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "comparator10_synth": {
+        "statistics": {
+            "num_nodes": 40,
+            "num_edges": 53
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 16,
+            "not_count": 4,
+            "or_count": 6,
+            "and_count": 9,
+            "constVal_count": 0
+        }
+    },
+    "comparator11_synth": {
+        "statistics": {
+            "num_nodes": 42,
+            "num_edges": 53
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 3,
+            "wire_count": 16,
+            "not_count": 4,
+            "or_count": 6,
+            "and_count": 9,
+            "constVal_count": 0
+        }
+    },
+    "comparator12_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "comparator13_synth": {
+        "statistics": {
+            "num_nodes": 42,
+            "num_edges": 53
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 3,
+            "wire_count": 16,
+            "not_count": 4,
+            "or_count": 6,
+            "and_count": 9,
+            "constVal_count": 0
+        }
+    },
+    "comparator14_synth": {
+        "statistics": {
+            "num_nodes": 88,
+            "num_edges": 119
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 40,
+            "not_count": 10,
+            "or_count": 16,
+            "and_count": 17,
+            "constVal_count": 0
+        }
+    },
+    "comparator15_synth": {
+        "statistics": {
+            "num_nodes": 42,
+            "num_edges": 53
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 3,
+            "wire_count": 16,
+            "not_count": 4,
+            "or_count": 6,
+            "and_count": 9,
+            "constVal_count": 0
+        }
+    },
+    "comparator16_synth": {
+        "statistics": {
+            "num_nodes": 172,
+            "num_edges": 237
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 82,
+            "not_count": 18,
+            "or_count": 34,
+            "and_count": 33,
+            "constVal_count": 0
+        }
+    },
+    "comparator17_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "comparator18_synth": {
+        "statistics": {
+            "num_nodes": 88,
+            "num_edges": 119
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 40,
+            "not_count": 10,
+            "or_count": 16,
+            "and_count": 17,
+            "constVal_count": 0
+        }
+    },
+    "comparator19_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "comparator1_synth": {
+        "statistics": {
+            "num_nodes": 92,
+            "num_edges": 124
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 42,
+            "not_count": 11,
+            "or_count": 14,
+            "and_count": 20,
+            "constVal_count": 0
+        }
+    },
+    "comparator20_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "comparator21_synth": {
+        "statistics": {
+            "num_nodes": 42,
+            "num_edges": 53
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 3,
+            "wire_count": 16,
+            "not_count": 4,
+            "or_count": 6,
+            "and_count": 9,
+            "constVal_count": 0
+        }
+    },
+    "comparator22_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "comparator2_synth": {
+        "statistics": {
+            "num_nodes": 77,
+            "num_edges": 104
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 36,
+            "not_count": 10,
+            "or_count": 14,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "comparator3_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "comparator4_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "comparator5_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "comparator6_synth": {
+        "statistics": {
+            "num_nodes": 82,
+            "num_edges": 110
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 37,
+            "not_count": 10,
+            "or_count": 15,
+            "and_count": 15,
+            "constVal_count": 0
+        }
+    },
+    "comparator7_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "comparator8_synth": {
+        "statistics": {
+            "num_nodes": 90,
+            "num_edges": 122
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 41,
+            "not_count": 10,
+            "or_count": 17,
+            "and_count": 17,
+            "constVal_count": 0
+        }
+    },
+    "comparator9_synth": {
+        "statistics": {
+            "num_nodes": 40,
+            "num_edges": 53
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 3,
+            "wire_count": 16,
+            "not_count": 4,
+            "or_count": 6,
+            "and_count": 9,
+            "constVal_count": 0
+        }
+    },
+    "decoder10_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 18
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 4,
+            "wire_count": 3,
+            "not_count": 3,
+            "or_count": 1,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "decoder11_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 18
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 3,
+            "or_count": 1,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "decoder12_synth": {
+        "statistics": {
+            "num_nodes": 15,
+            "num_edges": 22
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 2,
+            "or_count": 0,
+            "and_count": 6,
+            "constVal_count": 0
+        }
+    },
+    "decoder13_synth": {
+        "statistics": {
+            "num_nodes": 29,
+            "num_edges": 48
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 0,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "decoder14_synth": {
+        "statistics": {
+            "num_nodes": 28,
+            "num_edges": 46
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 5,
+            "or_count": 2,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "decoder15_synth": {
+        "statistics": {
+            "num_nodes": 17,
+            "num_edges": 25
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 5,
+            "not_count": 2,
+            "or_count": 0,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "decoder16_synth": {
+        "statistics": {
+            "num_nodes": 28,
+            "num_edges": 46
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 5,
+            "or_count": 2,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "decoder17_synth": {
+        "statistics": {
+            "num_nodes": 30,
+            "num_edges": 46
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 5,
+            "or_count": 2,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "decoder18_synth": {
+        "statistics": {
+            "num_nodes": 31,
+            "num_edges": 48
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 0,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "decoder19_synth": {
+        "statistics": {
+            "num_nodes": 28,
+            "num_edges": 46
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 5,
+            "or_count": 2,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "decoder1_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 18
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 3,
+            "or_count": 1,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "decoder20_synth": {
+        "statistics": {
+            "num_nodes": 13,
+            "num_edges": 19
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 3,
+            "or_count": 1,
+            "and_count": 3,
+            "constVal_count": 1
+        }
+    },
+    "decoder21_synth": {
+        "statistics": {
+            "num_nodes": 37,
+            "num_edges": 46
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 8,
+            "wire_count": 9,
+            "not_count": 5,
+            "or_count": 2,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "decoder22_synth": {
+        "statistics": {
+            "num_nodes": 38,
+            "num_edges": 48
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 8,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 0,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "decoder23_synth": {
+        "statistics": {
+            "num_nodes": 29,
+            "num_edges": 48
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 0,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "decoder24_synth": {
+        "statistics": {
+            "num_nodes": 15,
+            "num_edges": 22
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 2,
+            "or_count": 0,
+            "and_count": 6,
+            "constVal_count": 0
+        }
+    },
+    "decoder25_synth": {
+        "statistics": {
+            "num_nodes": 55,
+            "num_edges": 98
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 18,
+            "not_count": 4,
+            "or_count": 0,
+            "and_count": 30,
+            "constVal_count": 0
+        }
+    },
+    "decoder26_synth": {
+        "statistics": {
+            "num_nodes": 56,
+            "num_edges": 98
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 19,
+            "not_count": 7,
+            "or_count": 3,
+            "and_count": 25,
+            "constVal_count": 0
+        }
+    },
+    "decoder27_synth": {
+        "statistics": {
+            "num_nodes": 42,
+            "num_edges": 80
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 12,
+            "not_count": 4,
+            "or_count": 0,
+            "and_count": 24,
+            "constVal_count": 0
+        }
+    },
+    "decoder28_synth": {
+        "statistics": {
+            "num_nodes": 58,
+            "num_edges": 98
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 18,
+            "not_count": 4,
+            "or_count": 0,
+            "and_count": 30,
+            "constVal_count": 0
+        }
+    },
+    "decoder29_synth": {
+        "statistics": {
+            "num_nodes": 59,
+            "num_edges": 98
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 19,
+            "not_count": 7,
+            "or_count": 3,
+            "and_count": 25,
+            "constVal_count": 0
+        }
+    },
+    "decoder2_synth": {
+        "statistics": {
+            "num_nodes": 29,
+            "num_edges": 38
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 5,
+            "not_count": 10,
+            "or_count": 6,
+            "and_count": 0,
+            "constVal_count": 4
+        }
+    },
+    "decoder30_synth": {
+        "statistics": {
+            "num_nodes": 26,
+            "num_edges": 34
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 11,
+            "or_count": 3,
+            "and_count": 1,
+            "constVal_count": 4
+        }
+    },
+    "decoder31_synth": {
+        "statistics": {
+            "num_nodes": 108,
+            "num_edges": 201
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 37,
+            "not_count": 6,
+            "or_count": 4,
+            "and_count": 59,
+            "constVal_count": 0
+        }
+    },
+    "decoder32_synth": {
+        "statistics": {
+            "num_nodes": 105,
+            "num_edges": 196
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 35,
+            "not_count": 5,
+            "or_count": 0,
+            "and_count": 62,
+            "constVal_count": 0
+        }
+    },
+    "decoder3_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 22
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 2,
+            "or_count": 6,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "decoder4_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 22
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 2,
+            "or_count": 6,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "decoder5_synth": {
+        "statistics": {
+            "num_nodes": 29,
+            "num_edges": 48
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 0,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "decoder6_synth": {
+        "statistics": {
+            "num_nodes": 28,
+            "num_edges": 46
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 5,
+            "or_count": 2,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "decoder7_synth": {
+        "statistics": {
+            "num_nodes": 38,
+            "num_edges": 48
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 8,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 0,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "decoder8_synth": {
+        "statistics": {
+            "num_nodes": 37,
+            "num_edges": 46
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 8,
+            "wire_count": 9,
+            "not_count": 5,
+            "or_count": 2,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "decoder9_synth": {
+        "statistics": {
+            "num_nodes": 19,
+            "num_edges": 22
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 4,
+            "wire_count": 4,
+            "not_count": 2,
+            "or_count": 0,
+            "and_count": 6,
+            "constVal_count": 0
+        }
+    },
+    "encoder10_synth": {
+        "statistics": {
+            "num_nodes": 26,
+            "num_edges": 36
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 11,
+            "not_count": 3,
+            "or_count": 5,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "encoder11_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 12
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 2,
+            "wire_count": 2,
+            "not_count": 0,
+            "or_count": 2,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "encoder12_synth": {
+        "statistics": {
+            "num_nodes": 9,
+            "num_edges": 12
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 2,
+            "not_count": 0,
+            "or_count": 2,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "encoder13_synth": {
+        "statistics": {
+            "num_nodes": 33,
+            "num_edges": 43
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 14,
+            "not_count": 5,
+            "or_count": 2,
+            "and_count": 9,
+            "constVal_count": 0
+        }
+    },
+    "encoder14_synth": {
+        "statistics": {
+            "num_nodes": 26,
+            "num_edges": 36
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 11,
+            "not_count": 3,
+            "or_count": 5,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "encoder15_synth": {
+        "statistics": {
+            "num_nodes": 22,
+            "num_edges": 33
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 8,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "encoder16_synth": {
+        "statistics": {
+            "num_nodes": 23,
+            "num_edges": 24
+        },
+        "counts": {
+            "input_count": 7,
+            "output_count": 3,
+            "wire_count": 5,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "encoder17_synth": {
+        "statistics": {
+            "num_nodes": 23,
+            "num_edges": 24
+        },
+        "counts": {
+            "input_count": 7,
+            "output_count": 3,
+            "wire_count": 5,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "encoder18_synth": {
+        "statistics": {
+            "num_nodes": 30,
+            "num_edges": 33
+        },
+        "counts": {
+            "input_count": 8,
+            "output_count": 3,
+            "wire_count": 8,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "encoder19_synth": {
+        "statistics": {
+            "num_nodes": 30,
+            "num_edges": 33
+        },
+        "counts": {
+            "input_count": 8,
+            "output_count": 3,
+            "wire_count": 8,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "encoder1_synth": {
+        "statistics": {
+            "num_nodes": 15,
+            "num_edges": 24
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 5,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "encoder20_synth": {
+        "statistics": {
+            "num_nodes": 37,
+            "num_edges": 43
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 2,
+            "wire_count": 14,
+            "not_count": 5,
+            "or_count": 2,
+            "and_count": 9,
+            "constVal_count": 0
+        }
+    },
+    "encoder21_synth": {
+        "statistics": {
+            "num_nodes": 28,
+            "num_edges": 34
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 2,
+            "wire_count": 10,
+            "not_count": 2,
+            "or_count": 6,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "encoder22_synth": {
+        "statistics": {
+            "num_nodes": 37,
+            "num_edges": 43
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 2,
+            "wire_count": 14,
+            "not_count": 5,
+            "or_count": 2,
+            "and_count": 9,
+            "constVal_count": 0
+        }
+    },
+    "encoder23_synth": {
+        "statistics": {
+            "num_nodes": 30,
+            "num_edges": 36
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 2,
+            "wire_count": 11,
+            "not_count": 3,
+            "or_count": 5,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "encoder24_synth": {
+        "statistics": {
+            "num_nodes": 206,
+            "num_edges": 293
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 100,
+            "not_count": 19,
+            "or_count": 27,
+            "and_count": 58,
+            "constVal_count": 0
+        }
+    },
+    "encoder25_synth": {
+        "statistics": {
+            "num_nodes": 219,
+            "num_edges": 308
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 106,
+            "not_count": 22,
+            "or_count": 33,
+            "and_count": 55,
+            "constVal_count": 0
+        }
+    },
+    "encoder2_synth": {
+        "statistics": {
+            "num_nodes": 93,
+            "num_edges": 130
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 44,
+            "not_count": 11,
+            "or_count": 20,
+            "and_count": 16,
+            "constVal_count": 0
+        }
+    },
+    "encoder3_synth": {
+        "statistics": {
+            "num_nodes": 94,
+            "num_edges": 130
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 44,
+            "not_count": 11,
+            "or_count": 13,
+            "and_count": 23,
+            "constVal_count": 0
+        }
+    },
+    "encoder4_synth": {
+        "statistics": {
+            "num_nodes": 90,
+            "num_edges": 126
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 42,
+            "not_count": 9,
+            "or_count": 8,
+            "and_count": 28,
+            "constVal_count": 0
+        }
+    },
+    "encoder5_synth": {
+        "statistics": {
+            "num_nodes": 95,
+            "num_edges": 132
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 45,
+            "not_count": 12,
+            "or_count": 18,
+            "and_count": 18,
+            "constVal_count": 0
+        }
+    },
+    "encoder6_synth": {
+        "statistics": {
+            "num_nodes": 7,
+            "num_edges": 6
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 2,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "encoder7_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 6
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 2,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "encoder8_synth": {
+        "statistics": {
+            "num_nodes": 7,
+            "num_edges": 6
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 2,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "encoder9_synth": {
+        "statistics": {
+            "num_nodes": 31,
+            "num_edges": 41
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 13,
+            "not_count": 4,
+            "or_count": 3,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    },
+    "mult10_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "mult11_synth": {
+        "statistics": {
+            "num_nodes": 21,
+            "num_edges": 28
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "mult12_synth": {
+        "statistics": {
+            "num_nodes": 21,
+            "num_edges": 28
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "mult13_synth": {
+        "statistics": {
+            "num_nodes": 46,
+            "num_edges": 67
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 19,
+            "not_count": 5,
+            "or_count": 5,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "mult14_synth": {
+        "statistics": {
+            "num_nodes": 19,
+            "num_edges": 28
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "mult15_synth": {
+        "statistics": {
+            "num_nodes": 313,
+            "num_edges": 453
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 151,
+            "not_count": 24,
+            "or_count": 58,
+            "and_count": 77,
+            "constVal_count": 0
+        }
+    },
+    "mult16_synth": {
+        "statistics": {
+            "num_nodes": 287,
+            "num_edges": 420
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 138,
+            "not_count": 18,
+            "or_count": 57,
+            "and_count": 71,
+            "constVal_count": 0
+        }
+    },
+    "mult17_synth": {
+        "statistics": {
+            "num_nodes": 135,
+            "num_edges": 194
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 63,
+            "not_count": 13,
+            "or_count": 24,
+            "and_count": 32,
+            "constVal_count": 0
+        }
+    },
+    "mult18_synth": {
+        "statistics": {
+            "num_nodes": 117,
+            "num_edges": 169
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 54,
+            "not_count": 11,
+            "or_count": 20,
+            "and_count": 29,
+            "constVal_count": 0
+        }
+    },
+    "mult19_synth": {
+        "statistics": {
+            "num_nodes": 44,
+            "num_edges": 65
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 18,
+            "not_count": 4,
+            "or_count": 5,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "mult1_synth": {
+        "statistics": {
+            "num_nodes": 19,
+            "num_edges": 28
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "mult20_synth": {
+        "statistics": {
+            "num_nodes": 267,
+            "num_edges": 387
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 128,
+            "not_count": 21,
+            "or_count": 50,
+            "and_count": 65,
+            "constVal_count": 0
+        }
+    },
+    "mult21_synth": {
+        "statistics": {
+            "num_nodes": 19,
+            "num_edges": 28
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "mult22_synth": {
+        "statistics": {
+            "num_nodes": 273,
+            "num_edges": 391
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 131,
+            "not_count": 26,
+            "or_count": 52,
+            "and_count": 61,
+            "constVal_count": 0
+        }
+    },
+    "mult23_synth": {
+        "statistics": {
+            "num_nodes": 1493,
+            "num_edges": 2176
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 737,
+            "not_count": 83,
+            "or_count": 312,
+            "and_count": 358,
+            "constVal_count": 0
+        }
+    },
+    "mult25_synth": {
+        "statistics": {
+            "num_nodes": 19,
+            "num_edges": 28
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "mult26_synth": {
+        "statistics": {
+            "num_nodes": 285,
+            "num_edges": 415
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 137,
+            "not_count": 20,
+            "or_count": 56,
+            "and_count": 69,
+            "constVal_count": 0
+        }
+    },
+    "mult27_synth": {
+        "statistics": {
+            "num_nodes": 253,
+            "num_edges": 362
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 121,
+            "not_count": 25,
+            "or_count": 40,
+            "and_count": 64,
+            "constVal_count": 0
+        }
+    },
+    "mult28_synth": {
+        "statistics": {
+            "num_nodes": 503,
+            "num_edges": 725
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 245,
+            "not_count": 40,
+            "or_count": 99,
+            "and_count": 116,
+            "constVal_count": 0
+        }
+    },
+    "mult29_synth": {
+        "statistics": {
+            "num_nodes": 281,
+            "num_edges": 407
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 135,
+            "not_count": 22,
+            "or_count": 55,
+            "and_count": 66,
+            "constVal_count": 0
+        }
+    },
+    "mult2_synth": {
+        "statistics": {
+            "num_nodes": 19,
+            "num_edges": 28
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "mult30_synth": {
+        "statistics": {
+            "num_nodes": 35,
+            "num_edges": 96
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 32,
+            "constVal_count": 0
+        }
+    },
+    "mult3_synth": {
+        "statistics": {
+            "num_nodes": 19,
+            "num_edges": 28
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "mult4_synth": {
+        "statistics": {
+            "num_nodes": 21,
+            "num_edges": 28
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "mult5_synth": {
+        "statistics": {
+            "num_nodes": 19,
+            "num_edges": 28
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "mult6_synth": {
+        "statistics": {
+            "num_nodes": 21,
+            "num_edges": 28
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "mult7_synth": {
+        "statistics": {
+            "num_nodes": 19,
+            "num_edges": 28
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "mult8_synth": {
+        "statistics": {
+            "num_nodes": 21,
+            "num_edges": 28
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "mult9_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "mux10_synth": {
+        "statistics": {
+            "num_nodes": 11,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "mux11_synth": {
+        "statistics": {
+            "num_nodes": 41,
+            "num_edges": 65
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 15,
+            "not_count": 1,
+            "or_count": 7,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "mux12_synth": {
+        "statistics": {
+            "num_nodes": 50,
+            "num_edges": 69
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 23,
+            "not_count": 3,
+            "or_count": 11,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "mux13_synth": {
+        "statistics": {
+            "num_nodes": 24,
+            "num_edges": 31
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 10,
+            "not_count": 2,
+            "or_count": 3,
+            "and_count": 6,
+            "constVal_count": 0
+        }
+    },
+    "mux15_synth": {
+        "statistics": {
+            "num_nodes": 11,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "mux16_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 14
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "mux17_synth": {
+        "statistics": {
+            "num_nodes": 57,
+            "num_edges": 69
+        },
+        "counts": {
+            "input_count": 9,
+            "output_count": 1,
+            "wire_count": 23,
+            "not_count": 3,
+            "or_count": 11,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "mux18_synth": {
+        "statistics": {
+            "num_nodes": 50,
+            "num_edges": 69
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 23,
+            "not_count": 3,
+            "or_count": 10,
+            "and_count": 11,
+            "constVal_count": 0
+        }
+    },
+    "mux19_synth": {
+        "statistics": {
+            "num_nodes": 968,
+            "num_edges": 1482
+        },
+        "counts": {
+            "input_count": 9,
+            "output_count": 1,
+            "wire_count": 463,
+            "not_count": 3,
+            "or_count": 224,
+            "and_count": 268,
+            "constVal_count": 0
+        }
+    },
+    "mux1_synth": {
+        "statistics": {
+            "num_nodes": 122,
+            "num_edges": 184
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 54,
+            "not_count": 2,
+            "or_count": 24,
+            "and_count": 36,
+            "constVal_count": 0
+        }
+    },
+    "mux20_synth": {
+        "statistics": {
+            "num_nodes": 1736,
+            "num_edges": 2560
+        },
+        "counts": {
+            "input_count": 33,
+            "output_count": 1,
+            "wire_count": 847,
+            "not_count": 5,
+            "or_count": 416,
+            "and_count": 434,
+            "constVal_count": 0
+        }
+    },
+    "mux21_synth": {
+        "statistics": {
+            "num_nodes": 57,
+            "num_edges": 69
+        },
+        "counts": {
+            "input_count": 9,
+            "output_count": 1,
+            "wire_count": 23,
+            "not_count": 3,
+            "or_count": 10,
+            "and_count": 11,
+            "constVal_count": 0
+        }
+    },
+    "mux22_synth": {
+        "statistics": {
+            "num_nodes": 92,
+            "num_edges": 131
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 44,
+            "not_count": 4,
+            "or_count": 18,
+            "and_count": 23,
+            "constVal_count": 0
+        }
+    },
+    "mux23_synth": {
+        "statistics": {
+            "num_nodes": 410,
+            "num_edges": 597
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 203,
+            "not_count": 15,
+            "or_count": 97,
+            "and_count": 92,
+            "constVal_count": 0
+        }
+    },
+    "mux24_synth": {
+        "statistics": {
+            "num_nodes": 192,
+            "num_edges": 281
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 94,
+            "not_count": 4,
+            "or_count": 44,
+            "and_count": 47,
+            "constVal_count": 0
+        }
+    },
+    "mux25_synth": {
+        "statistics": {
+            "num_nodes": 441,
+            "num_edges": 597
+        },
+        "counts": {
+            "input_count": 33,
+            "output_count": 1,
+            "wire_count": 203,
+            "not_count": 15,
+            "or_count": 97,
+            "and_count": 92,
+            "constVal_count": 0
+        }
+    },
+    "mux26_synth": {
+        "statistics": {
+            "num_nodes": 207,
+            "num_edges": 281
+        },
+        "counts": {
+            "input_count": 17,
+            "output_count": 1,
+            "wire_count": 94,
+            "not_count": 4,
+            "or_count": 44,
+            "and_count": 47,
+            "constVal_count": 0
+        }
+    },
+    "mux27_synth": {
+        "statistics": {
+            "num_nodes": 78,
+            "num_edges": 112
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 34,
+            "not_count": 2,
+            "or_count": 12,
+            "and_count": 24,
+            "constVal_count": 0
+        }
+    },
+    "mux28_synth": {
+        "statistics": {
+            "num_nodes": 28,
+            "num_edges": 31
+        },
+        "counts": {
+            "input_count": 6,
+            "output_count": 1,
+            "wire_count": 10,
+            "not_count": 2,
+            "or_count": 3,
+            "and_count": 6,
+            "constVal_count": 0
+        }
+    },
+    "mux2_synth": {
+        "statistics": {
+            "num_nodes": 11,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "mux3_synth": {
+        "statistics": {
+            "num_nodes": 11,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "mux4_synth": {
+        "statistics": {
+            "num_nodes": 11,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "mux5_synth": {
+        "statistics": {
+            "num_nodes": 11,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "mux6_synth": {
+        "statistics": {
+            "num_nodes": 26,
+            "num_edges": 38
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 1,
+            "or_count": 4,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    },
+    "mux7_synth": {
+        "statistics": {
+            "num_nodes": 27,
+            "num_edges": 31
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 10,
+            "not_count": 2,
+            "or_count": 6,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "mux8_synth": {
+        "statistics": {
+            "num_nodes": 122,
+            "num_edges": 184
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 54,
+            "not_count": 2,
+            "or_count": 24,
+            "and_count": 36,
+            "constVal_count": 0
+        }
+    },
+    "mux9_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 20
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 5,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "nand10_synth": {
+        "statistics": {
+            "num_nodes": 15,
+            "num_edges": 20
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 0,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "nand11_synth": {
+        "statistics": {
+            "num_nodes": 15,
+            "num_edges": 20
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 0,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "nand12_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "nand13_synth": {
+        "statistics": {
+            "num_nodes": 27,
+            "num_edges": 40
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 8,
+            "not_count": 8,
+            "or_count": 0,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    },
+    "nand14_synth": {
+        "statistics": {
+            "num_nodes": 51,
+            "num_edges": 80
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 16,
+            "not_count": 16,
+            "or_count": 0,
+            "and_count": 16,
+            "constVal_count": 0
+        }
+    },
+    "nand15_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 15
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 3,
+            "or_count": 0,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "nand16_synth": {
+        "statistics": {
+            "num_nodes": 9,
+            "num_edges": 10
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 2,
+            "not_count": 2,
+            "or_count": 0,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "nand17_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 15
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 3,
+            "or_count": 0,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "nand18_synth": {
+        "statistics": {
+            "num_nodes": 21,
+            "num_edges": 30
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 6,
+            "or_count": 0,
+            "and_count": 6,
+            "constVal_count": 0
+        }
+    },
+    "nand19_synth": {
+        "statistics": {
+            "num_nodes": 18,
+            "num_edges": 25
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 5,
+            "not_count": 5,
+            "or_count": 0,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "nand1_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "nand20_gate_synth": {
+        "statistics": {
+            "num_nodes": 15,
+            "num_edges": 20
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 0,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "nand21_synth": {
+        "statistics": {
+            "num_nodes": 9,
+            "num_edges": 8
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 2,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "nand22_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "nand23_synth": {
+        "statistics": {
+            "num_nodes": 15,
+            "num_edges": 14
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "nand24_synth": {
+        "statistics": {
+            "num_nodes": 18,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 6,
+            "output_count": 1,
+            "wire_count": 5,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "nand25_synth": {
+        "statistics": {
+            "num_nodes": 21,
+            "num_edges": 20
+        },
+        "counts": {
+            "input_count": 7,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 6,
+            "constVal_count": 0
+        }
+    },
+    "nand26_synth": {
+        "statistics": {
+            "num_nodes": 24,
+            "num_edges": 23
+        },
+        "counts": {
+            "input_count": 8,
+            "output_count": 1,
+            "wire_count": 7,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "nand27_synth": {
+        "statistics": {
+            "num_nodes": 24,
+            "num_edges": 23
+        },
+        "counts": {
+            "input_count": 8,
+            "output_count": 1,
+            "wire_count": 7,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "nand28_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "nand29_synth": {
+        "statistics": {
+            "num_nodes": 48,
+            "num_edges": 47
+        },
+        "counts": {
+            "input_count": 16,
+            "output_count": 1,
+            "wire_count": 15,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 15,
+            "constVal_count": 0
+        }
+    },
+    "nand2_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "nand30_synth": {
+        "statistics": {
+            "num_nodes": 51,
+            "num_edges": 80
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 16,
+            "not_count": 16,
+            "or_count": 0,
+            "and_count": 16,
+            "constVal_count": 0
+        }
+    },
+    "nand31_synth": {
+        "statistics": {
+            "num_nodes": 27,
+            "num_edges": 40
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 8,
+            "not_count": 8,
+            "or_count": 0,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    },
+    "nand3_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "nand4_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "nand5_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "nand6_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "nand7_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "nand8_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "nand9_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "nor10_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor11_synth": {
+        "statistics": {
+            "num_nodes": 51,
+            "num_edges": 80
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 16,
+            "not_count": 16,
+            "or_count": 16,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor12_gate_synth": {
+        "statistics": {
+            "num_nodes": 27,
+            "num_edges": 40
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 8,
+            "not_count": 8,
+            "or_count": 8,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor13_synth": {
+        "statistics": {
+            "num_nodes": 15,
+            "num_edges": 20
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 4,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor14_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 15
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 3,
+            "or_count": 3,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor15_synth": {
+        "statistics": {
+            "num_nodes": 24,
+            "num_edges": 35
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 7,
+            "not_count": 7,
+            "or_count": 7,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor16_synth": {
+        "statistics": {
+            "num_nodes": 15,
+            "num_edges": 20
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 4,
+            "or_count": 4,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor17_synth": {
+        "statistics": {
+            "num_nodes": 27,
+            "num_edges": 40
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 8,
+            "not_count": 8,
+            "or_count": 8,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor18_synth": {
+        "statistics": {
+            "num_nodes": 9,
+            "num_edges": 10
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 2,
+            "not_count": 2,
+            "or_count": 2,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor19_synth": {
+        "statistics": {
+            "num_nodes": 18,
+            "num_edges": 25
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 5,
+            "not_count": 5,
+            "or_count": 5,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor1_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor20_synth": {
+        "statistics": {
+            "num_nodes": 24,
+            "num_edges": 23
+        },
+        "counts": {
+            "input_count": 8,
+            "output_count": 1,
+            "wire_count": 7,
+            "not_count": 1,
+            "or_count": 7,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor21_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 3,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor22_synth": {
+        "statistics": {
+            "num_nodes": 9,
+            "num_edges": 8
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 2,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor23_synth": {
+        "statistics": {
+            "num_nodes": 15,
+            "num_edges": 14
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 4,
+            "not_count": 1,
+            "or_count": 4,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor24_synth": {
+        "statistics": {
+            "num_nodes": 24,
+            "num_edges": 23
+        },
+        "counts": {
+            "input_count": 8,
+            "output_count": 1,
+            "wire_count": 7,
+            "not_count": 1,
+            "or_count": 7,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor25_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 3,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor26_synth": {
+        "statistics": {
+            "num_nodes": 21,
+            "num_edges": 20
+        },
+        "counts": {
+            "input_count": 7,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 1,
+            "or_count": 6,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor27_gate_synth": {
+        "statistics": {
+            "num_nodes": 18,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 6,
+            "output_count": 1,
+            "wire_count": 5,
+            "not_count": 1,
+            "or_count": 5,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor28_synth": {
+        "statistics": {
+            "num_nodes": 50,
+            "num_edges": 49
+        },
+        "counts": {
+            "input_count": 16,
+            "output_count": 1,
+            "wire_count": 16,
+            "not_count": 2,
+            "or_count": 14,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "nor29_synth": {
+        "statistics": {
+            "num_nodes": 51,
+            "num_edges": 80
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 16,
+            "not_count": 16,
+            "or_count": 16,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor2_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor30_synth": {
+        "statistics": {
+            "num_nodes": 27,
+            "num_edges": 40
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 8,
+            "not_count": 8,
+            "or_count": 8,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor3_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor4_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor5_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor6_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor7_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor8_gate_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "nor9_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 5
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not10_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not11_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not12_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not13_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not14_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not15_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not16_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not1_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not2_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not3_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not4_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not5_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not6_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not7_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not8_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "not9_synth": {
+        "statistics": {
+            "num_nodes": 3,
+            "num_edges": 2
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 1,
+            "or_count": 0,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or11_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or13_synth": {
+        "statistics": {
+            "num_nodes": 7,
+            "num_edges": 12
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 4,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or14_synth": {
+        "statistics": {
+            "num_nodes": 11,
+            "num_edges": 24
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or15_synth": {
+        "statistics": {
+            "num_nodes": 19,
+            "num_edges": 48
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 16,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or16_synth": {
+        "statistics": {
+            "num_nodes": 5,
+            "num_edges": 6
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 2,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or17_gate_synth": {
+        "statistics": {
+            "num_nodes": 5,
+            "num_edges": 6
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 2,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or18_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or19_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or1_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 9
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 3,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or20_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or21_synth": {
+        "statistics": {
+            "num_nodes": 6,
+            "num_edges": 9
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 3,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or22_synth": {
+        "statistics": {
+            "num_nodes": 7,
+            "num_edges": 12
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 4,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or23_synth": {
+        "statistics": {
+            "num_nodes": 19,
+            "num_edges": 48
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 16,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or24_synth": {
+        "statistics": {
+            "num_nodes": 11,
+            "num_edges": 24
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or25_synth": {
+        "statistics": {
+            "num_nodes": 22,
+            "num_edges": 21
+        },
+        "counts": {
+            "input_count": 8,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 0,
+            "or_count": 7,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or26_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 9
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 2,
+            "not_count": 0,
+            "or_count": 3,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or27_synth": {
+        "statistics": {
+            "num_nodes": 7,
+            "num_edges": 6
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 1,
+            "not_count": 0,
+            "or_count": 2,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or28_synth": {
+        "statistics": {
+            "num_nodes": 13,
+            "num_edges": 12
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 0,
+            "or_count": 4,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or29_synth": {
+        "statistics": {
+            "num_nodes": 11,
+            "num_edges": 24
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or2_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or3_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or4_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or5_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or6_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or7_synth": {
+        "statistics": {
+            "num_nodes": 7,
+            "num_edges": 12
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 4,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or8_gate_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "or9_synth": {
+        "statistics": {
+            "num_nodes": 4,
+            "num_edges": 3
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 0,
+            "not_count": 0,
+            "or_count": 1,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "pe10_synth": {
+        "statistics": {
+            "num_nodes": 11,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 2,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "pe11_synth": {
+        "statistics": {
+            "num_nodes": 44,
+            "num_edges": 62
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 2,
+            "wire_count": 18,
+            "not_count": 4,
+            "or_count": 10,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    },
+    "pe12_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 2,
+            "wire_count": 4,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "pe13_synth": {
+        "statistics": {
+            "num_nodes": 23,
+            "num_edges": 26
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 3,
+            "wire_count": 6,
+            "not_count": 1,
+            "or_count": 4,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "pe14_synth": {
+        "statistics": {
+            "num_nodes": 30,
+            "num_edges": 33
+        },
+        "counts": {
+            "input_count": 8,
+            "output_count": 3,
+            "wire_count": 8,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "pe15_synth": {
+        "statistics": {
+            "num_nodes": 23,
+            "num_edges": 24
+        },
+        "counts": {
+            "input_count": 7,
+            "output_count": 3,
+            "wire_count": 5,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "pe16_synth": {
+        "statistics": {
+            "num_nodes": 11,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 2,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "pe17_synth": {
+        "statistics": {
+            "num_nodes": 14,
+            "num_edges": 14
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 3,
+            "wire_count": 2,
+            "not_count": 1,
+            "or_count": 3,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "pe18_synth": {
+        "statistics": {
+            "num_nodes": 14,
+            "num_edges": 14
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 3,
+            "wire_count": 2,
+            "not_count": 1,
+            "or_count": 3,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "pe19_synth": {
+        "statistics": {
+            "num_nodes": 14,
+            "num_edges": 14
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 3,
+            "wire_count": 2,
+            "not_count": 1,
+            "or_count": 3,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "pe1_synth": {
+        "statistics": {
+            "num_nodes": 38,
+            "num_edges": 53
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 16,
+            "not_count": 4,
+            "or_count": 8,
+            "and_count": 7,
+            "constVal_count": 0
+        }
+    },
+    "pe20_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 14
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 2,
+            "wire_count": 2,
+            "not_count": 1,
+            "or_count": 3,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "pe21_synth": {
+        "statistics": {
+            "num_nodes": 17,
+            "num_edges": 23
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 2,
+            "wire_count": 5,
+            "not_count": 1,
+            "or_count": 3,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "pe22_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 2,
+            "wire_count": 4,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "pe2_synth": {
+        "statistics": {
+            "num_nodes": 18,
+            "num_edges": 27
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "pe3_synth": {
+        "statistics": {
+            "num_nodes": 22,
+            "num_edges": 33
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 8,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "pe4_synth": {
+        "statistics": {
+            "num_nodes": 31,
+            "num_edges": 44
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 13,
+            "not_count": 4,
+            "or_count": 8,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "pe5_synth": {
+        "statistics": {
+            "num_nodes": 15,
+            "num_edges": 24
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 5,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "pe6_synth": {
+        "statistics": {
+            "num_nodes": 15,
+            "num_edges": 24
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 5,
+            "not_count": 0,
+            "or_count": 8,
+            "and_count": 0,
+            "constVal_count": 0
+        }
+    },
+    "pe8_synth": {
+        "statistics": {
+            "num_nodes": 35,
+            "num_edges": 50
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 2,
+            "wire_count": 14,
+            "not_count": 4,
+            "or_count": 10,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "pe9_synth": {
+        "statistics": {
+            "num_nodes": 16,
+            "num_edges": 17
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 3,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 4,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "seg1_synth": {
+        "statistics": {
+            "num_nodes": 75,
+            "num_edges": 111
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 33,
+            "not_count": 9,
+            "or_count": 17,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "seg2_synth": {
+        "statistics": {
+            "num_nodes": 56,
+            "num_edges": 85
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 23,
+            "not_count": 6,
+            "or_count": 8,
+            "and_count": 16,
+            "constVal_count": 1
+        }
+    },
+    "seg3_synth": {
+        "statistics": {
+            "num_nodes": 55,
+            "num_edges": 84
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 23,
+            "not_count": 6,
+            "or_count": 8,
+            "and_count": 16,
+            "constVal_count": 0
+        }
+    },
+    "seg4_synth": {
+        "statistics": {
+            "num_nodes": 79,
+            "num_edges": 109
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 7,
+            "wire_count": 32,
+            "not_count": 8,
+            "or_count": 18,
+            "and_count": 13,
+            "constVal_count": 0
+        }
+    },
+    "seg5_synth": {
+        "statistics": {
+            "num_nodes": 73,
+            "num_edges": 109
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 1,
+            "wire_count": 32,
+            "not_count": 8,
+            "or_count": 17,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "seg6_synth": {
+        "statistics": {
+            "num_nodes": 79,
+            "num_edges": 109
+        },
+        "counts": {
+            "input_count": 1,
+            "output_count": 7,
+            "wire_count": 32,
+            "not_count": 8,
+            "or_count": 17,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "seg7_synth": {
+        "statistics": {
+            "num_nodes": 82,
+            "num_edges": 109
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 7,
+            "wire_count": 32,
+            "not_count": 8,
+            "or_count": 18,
+            "and_count": 13,
+            "constVal_count": 0
+        }
+    },
+    "seg8_synth": {
+        "statistics": {
+            "num_nodes": 82,
+            "num_edges": 109
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 7,
+            "wire_count": 32,
+            "not_count": 8,
+            "or_count": 17,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "seg9_synth": {
+        "statistics": {
+            "num_nodes": 102,
+            "num_edges": 137
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 7,
+            "wire_count": 42,
+            "not_count": 10,
+            "or_count": 20,
+            "and_count": 19,
+            "constVal_count": 0
+        }
+    },
+    "sub10_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 13
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 2,
+            "wire_count": 3,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "sub11_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 13
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 2,
+            "wire_count": 3,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "sub12_synth": {
+        "statistics": {
+            "num_nodes": 12,
+            "num_edges": 13
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 2,
+            "wire_count": 3,
+            "not_count": 2,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "sub1_synth": {
+        "statistics": {
+            "num_nodes": 31,
+            "num_edges": 39
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 12,
+            "not_count": 3,
+            "or_count": 6,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "sub2_synth": {
+        "statistics": {
+            "num_nodes": 31,
+            "num_edges": 39
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 12,
+            "not_count": 3,
+            "or_count": 6,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "sub4_synth": {
+        "statistics": {
+            "num_nodes": 29,
+            "num_edges": 36
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 11,
+            "not_count": 3,
+            "or_count": 5,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "sub5_synth": {
+        "statistics": {
+            "num_nodes": 31,
+            "num_edges": 39
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 12,
+            "not_count": 3,
+            "or_count": 6,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "sub6_synth": {
+        "statistics": {
+            "num_nodes": 31,
+            "num_edges": 39
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 12,
+            "not_count": 3,
+            "or_count": 6,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "sub7_synth": {
+        "statistics": {
+            "num_nodes": 25,
+            "num_edges": 30
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 4,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "sub8_synth": {
+        "statistics": {
+            "num_nodes": 25,
+            "num_edges": 30
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 4,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "sub9_synth": {
+        "statistics": {
+            "num_nodes": 29,
+            "num_edges": 36
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 2,
+            "wire_count": 11,
+            "not_count": 3,
+            "or_count": 5,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "xnor10_synth": {
+        "statistics": {
+            "num_nodes": 49,
+            "num_edges": 61
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 21,
+            "not_count": 5,
+            "or_count": 8,
+            "and_count": 9,
+            "constVal_count": 0
+        }
+    },
+    "xnor11_synth": {
+        "statistics": {
+            "num_nodes": 60,
+            "num_edges": 75
+        },
+        "counts": {
+            "input_count": 6,
+            "output_count": 1,
+            "wire_count": 26,
+            "not_count": 6,
+            "or_count": 11,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "xnor12_synth": {
+        "statistics": {
+            "num_nodes": 75,
+            "num_edges": 95
+        },
+        "counts": {
+            "input_count": 7,
+            "output_count": 1,
+            "wire_count": 33,
+            "not_count": 7,
+            "or_count": 14,
+            "and_count": 13,
+            "constVal_count": 0
+        }
+    },
+    "xnor13_synth": {
+        "statistics": {
+            "num_nodes": 86,
+            "num_edges": 109
+        },
+        "counts": {
+            "input_count": 8,
+            "output_count": 1,
+            "wire_count": 38,
+            "not_count": 8,
+            "or_count": 16,
+            "and_count": 15,
+            "constVal_count": 0
+        }
+    },
+    "xnor14_synth": {
+        "statistics": {
+            "num_nodes": 23,
+            "num_edges": 27
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 3,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "xnor15_synth": {
+        "statistics": {
+            "num_nodes": 34,
+            "num_edges": 41
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 14,
+            "not_count": 4,
+            "or_count": 6,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "xnor16_synth": {
+        "statistics": {
+            "num_nodes": 49,
+            "num_edges": 61
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 21,
+            "not_count": 5,
+            "or_count": 8,
+            "and_count": 9,
+            "constVal_count": 0
+        }
+    },
+    "xnor17_synth": {
+        "statistics": {
+            "num_nodes": 60,
+            "num_edges": 75
+        },
+        "counts": {
+            "input_count": 6,
+            "output_count": 1,
+            "wire_count": 26,
+            "not_count": 6,
+            "or_count": 10,
+            "and_count": 11,
+            "constVal_count": 0
+        }
+    },
+    "xnor18_synth": {
+        "statistics": {
+            "num_nodes": 79,
+            "num_edges": 101
+        },
+        "counts": {
+            "input_count": 7,
+            "output_count": 1,
+            "wire_count": 35,
+            "not_count": 7,
+            "or_count": 15,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "xnor19_synth": {
+        "statistics": {
+            "num_nodes": 90,
+            "num_edges": 115
+        },
+        "counts": {
+            "input_count": 8,
+            "output_count": 1,
+            "wire_count": 40,
+            "not_count": 8,
+            "or_count": 16,
+            "and_count": 17,
+            "constVal_count": 0
+        }
+    },
+    "xnor1_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "xnor20_synth": {
+        "statistics": {
+            "num_nodes": 115,
+            "num_edges": 176
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 48,
+            "not_count": 16,
+            "or_count": 32,
+            "and_count": 16,
+            "constVal_count": 0
+        }
+    },
+    "xnor21_synth": {
+        "statistics": {
+            "num_nodes": 59,
+            "num_edges": 88
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 24,
+            "not_count": 8,
+            "or_count": 16,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    },
+    "xnor22_synth": {
+        "statistics": {
+            "num_nodes": 31,
+            "num_edges": 44
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 12,
+            "not_count": 4,
+            "or_count": 8,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "xnor23_synth": {
+        "statistics": {
+            "num_nodes": 38,
+            "num_edges": 55
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 15,
+            "not_count": 5,
+            "or_count": 10,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "xnor24_synth": {
+        "statistics": {
+            "num_nodes": 31,
+            "num_edges": 44
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 12,
+            "not_count": 4,
+            "or_count": 8,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "xnor25_synth": {
+        "statistics": {
+            "num_nodes": 24,
+            "num_edges": 33
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 6,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "xnor26_synth": {
+        "statistics": {
+            "num_nodes": 17,
+            "num_edges": 22
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 4,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "xnor27_synth": {
+        "statistics": {
+            "num_nodes": 59,
+            "num_edges": 88
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 24,
+            "not_count": 8,
+            "or_count": 16,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    },
+    "xnor28_synth": {
+        "statistics": {
+            "num_nodes": 38,
+            "num_edges": 55
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 15,
+            "not_count": 5,
+            "or_count": 10,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "xnor29_synth": {
+        "statistics": {
+            "num_nodes": 45,
+            "num_edges": 66
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 18,
+            "not_count": 6,
+            "or_count": 12,
+            "and_count": 6,
+            "constVal_count": 0
+        }
+    },
+    "xnor2_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "xnor30_synth": {
+        "statistics": {
+            "num_nodes": 227,
+            "num_edges": 352
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 96,
+            "not_count": 32,
+            "or_count": 64,
+            "and_count": 32,
+            "constVal_count": 0
+        }
+    },
+    "xnor3_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "xnor4_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "xnor5_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "xnor6_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "xnor7_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 2,
+            "and_count": 1,
+            "constVal_count": 0
+        }
+    },
+    "xnor8_synth": {
+        "statistics": {
+            "num_nodes": 23,
+            "num_edges": 27
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 3,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "xnor9_synth": {
+        "statistics": {
+            "num_nodes": 34,
+            "num_edges": 41
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 14,
+            "not_count": 4,
+            "or_count": 6,
+            "and_count": 5,
+            "constVal_count": 0
+        }
+    },
+    "xor10_synth": {
+        "statistics": {
+            "num_nodes": 23,
+            "num_edges": 27
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 4,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "xor11_synth": {
+        "statistics": {
+            "num_nodes": 34,
+            "num_edges": 41
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 14,
+            "not_count": 4,
+            "or_count": 5,
+            "and_count": 6,
+            "constVal_count": 0
+        }
+    },
+    "xor12_synth": {
+        "statistics": {
+            "num_nodes": 49,
+            "num_edges": 61
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 21,
+            "not_count": 5,
+            "or_count": 9,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    },
+    "xor13_synth": {
+        "statistics": {
+            "num_nodes": 60,
+            "num_edges": 75
+        },
+        "counts": {
+            "input_count": 6,
+            "output_count": 1,
+            "wire_count": 26,
+            "not_count": 6,
+            "or_count": 10,
+            "and_count": 11,
+            "constVal_count": 0
+        }
+    },
+    "xor14_synth": {
+        "statistics": {
+            "num_nodes": 75,
+            "num_edges": 95
+        },
+        "counts": {
+            "input_count": 7,
+            "output_count": 1,
+            "wire_count": 33,
+            "not_count": 7,
+            "or_count": 13,
+            "and_count": 14,
+            "constVal_count": 0
+        }
+    },
+    "xor15_synth": {
+        "statistics": {
+            "num_nodes": 86,
+            "num_edges": 109
+        },
+        "counts": {
+            "input_count": 8,
+            "output_count": 1,
+            "wire_count": 38,
+            "not_count": 8,
+            "or_count": 15,
+            "and_count": 16,
+            "constVal_count": 0
+        }
+    },
+    "xor16_synth": {
+        "statistics": {
+            "num_nodes": 23,
+            "num_edges": 27
+        },
+        "counts": {
+            "input_count": 3,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 4,
+            "and_count": 3,
+            "constVal_count": 0
+        }
+    },
+    "xor17_synth": {
+        "statistics": {
+            "num_nodes": 227,
+            "num_edges": 352
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 96,
+            "not_count": 32,
+            "or_count": 32,
+            "and_count": 64,
+            "constVal_count": 0
+        }
+    },
+    "xor18_synth": {
+        "statistics": {
+            "num_nodes": 45,
+            "num_edges": 66
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 18,
+            "not_count": 6,
+            "or_count": 6,
+            "and_count": 12,
+            "constVal_count": 0
+        }
+    },
+    "xor19_synth": {
+        "statistics": {
+            "num_nodes": 38,
+            "num_edges": 55
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 15,
+            "not_count": 5,
+            "or_count": 5,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "xor1_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "xor20_synth": {
+        "statistics": {
+            "num_nodes": 59,
+            "num_edges": 88
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 24,
+            "not_count": 8,
+            "or_count": 8,
+            "and_count": 16,
+            "constVal_count": 0
+        }
+    },
+    "xor21_synth": {
+        "statistics": {
+            "num_nodes": 17,
+            "num_edges": 22
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 6,
+            "not_count": 2,
+            "or_count": 2,
+            "and_count": 4,
+            "constVal_count": 0
+        }
+    },
+    "xor22_synth": {
+        "statistics": {
+            "num_nodes": 24,
+            "num_edges": 33
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 9,
+            "not_count": 3,
+            "or_count": 3,
+            "and_count": 6,
+            "constVal_count": 0
+        }
+    },
+    "xor23_synth": {
+        "statistics": {
+            "num_nodes": 31,
+            "num_edges": 44
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 12,
+            "not_count": 4,
+            "or_count": 4,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    },
+    "xor24_synth": {
+        "statistics": {
+            "num_nodes": 38,
+            "num_edges": 55
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 15,
+            "not_count": 5,
+            "or_count": 5,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "xor25_synth": {
+        "statistics": {
+            "num_nodes": 34,
+            "num_edges": 41
+        },
+        "counts": {
+            "input_count": 4,
+            "output_count": 1,
+            "wire_count": 14,
+            "not_count": 4,
+            "or_count": 5,
+            "and_count": 6,
+            "constVal_count": 0
+        }
+    },
+    "xor26_synth": {
+        "statistics": {
+            "num_nodes": 49,
+            "num_edges": 61
+        },
+        "counts": {
+            "input_count": 5,
+            "output_count": 1,
+            "wire_count": 21,
+            "not_count": 5,
+            "or_count": 9,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    },
+    "xor27_synth": {
+        "statistics": {
+            "num_nodes": 60,
+            "num_edges": 75
+        },
+        "counts": {
+            "input_count": 6,
+            "output_count": 1,
+            "wire_count": 26,
+            "not_count": 6,
+            "or_count": 11,
+            "and_count": 10,
+            "constVal_count": 0
+        }
+    },
+    "xor28_synth": {
+        "statistics": {
+            "num_nodes": 79,
+            "num_edges": 101
+        },
+        "counts": {
+            "input_count": 7,
+            "output_count": 1,
+            "wire_count": 35,
+            "not_count": 7,
+            "or_count": 14,
+            "and_count": 15,
+            "constVal_count": 0
+        }
+    },
+    "xor29_synth": {
+        "statistics": {
+            "num_nodes": 79,
+            "num_edges": 101
+        },
+        "counts": {
+            "input_count": 7,
+            "output_count": 1,
+            "wire_count": 35,
+            "not_count": 7,
+            "or_count": 14,
+            "and_count": 15,
+            "constVal_count": 0
+        }
+    },
+    "xor2_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "xor3_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "xor4_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "xor5_synth": {
+        "statistics": {
+            "num_nodes": 10,
+            "num_edges": 11
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 3,
+            "not_count": 1,
+            "or_count": 1,
+            "and_count": 2,
+            "constVal_count": 0
+        }
+    },
+    "xor6_synth": {
+        "statistics": {
+            "num_nodes": 115,
+            "num_edges": 176
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 48,
+            "not_count": 16,
+            "or_count": 16,
+            "and_count": 32,
+            "constVal_count": 0
+        }
+    },
+    "xor7_synth": {
+        "statistics": {
+            "num_nodes": 59,
+            "num_edges": 88
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 24,
+            "not_count": 8,
+            "or_count": 8,
+            "and_count": 16,
+            "constVal_count": 0
+        }
+    },
+    "xor8_synth": {
+        "statistics": {
+            "num_nodes": 31,
+            "num_edges": 44
+        },
+        "counts": {
+            "input_count": 2,
+            "output_count": 1,
+            "wire_count": 12,
+            "not_count": 4,
+            "or_count": 4,
+            "and_count": 8,
+            "constVal_count": 0
+        }
+    }
+}
