@@ -22,7 +22,7 @@ def infer_GNN(test_file):
     return label
 
 
-# In[3]:
+# In[4]:
 
 
 test_file = 'test_sample.txt'
@@ -30,7 +30,7 @@ label = infer_GNN(test_file)
 print(label)
 
 
-# In[4]:
+# In[5]:
 
 
 from nbconvert import ScriptExporter

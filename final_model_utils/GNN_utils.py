@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[32]:
+# In[1]:
 
 
 import os
@@ -12,20 +12,15 @@ import torch
 import torch.nn.functional as F
 import torch_geometric
 from torch_geometric.data import Data
-import os
 import pickle
-import json
 import random
 import numpy as np
-import torch
 import torch.nn as nn
-import torch.nn.functional as F
 import networkx as nx
 import matplotlib.pyplot as plt
 import warnings
 from torch.utils.data import DataLoader, Dataset
-from torch_geometric.data import Data
-from torch_geometric.nn import GCNConv
+from torch_geometric.nn import SAGEConv
 from torch.utils.data.dataloader import default_collate
 from torch.utils.data import random_split
 import math
@@ -34,13 +29,10 @@ from torch_geometric.nn import global_mean_pool
 import time
 from sklearn.model_selection import train_test_split
 
-# from tensorboardX import SummaryWriter
-from sklearn.manifold import TSNE
-
 warnings.filterwarnings("ignore")
 
 
-# In[35]:
+# In[2]:
 
 
 def extracting_attributes(verilog_file):
@@ -69,55 +61,26 @@ def extracting_attributes(verilog_file):
         return e
 
 
-# In[37]:
+# In[3]:
 
 
-# from torch_geometric.nn import GCNConv
-class GCN(torch.nn.Module):
-    def __init__(self):
-        super(GCN, self).__init__()
+from torch_geometric.nn import global_mean_pool
+class GraphSAGE(torch.nn.Module):
+    def __init__(self, in_channels, hidden_channels, out_channels):
+        super(GraphSAGE, self).__init__()
+        self.conv1 = SAGEConv(in_channels, hidden_channels)
+        self.conv2 = SAGEConv(hidden_channels, out_channels)
         
-        num_node_features = 20
-        num_output_classes = 14
-        
-        # num_channels = 32
-        
-        self.gcn1 = GCNConv(num_node_features, 64)
-        self.r1 = nn.ReLU()
-        self.gcn2 = GCNConv(64, 64)
-        self.r2 = nn.ReLU()
-        self.gcn3 = GCNConv(64, 128)
-        # self.r3 = nn.ReLU()
-        # self.gcn4 = GCNConv(128, 128)
-        self.linear = nn.Linear(in_features=128, out_features=num_output_classes)
 
-    def forward(self, x, edge_index, batch):
-    
-        x = self.gcn1(x, edge_index)
-        x = self.r1(x)
-        x = self.gcn2(x, edge_index)
-        x = self.r2(x)
-        x = self.gcn3(x, edge_index)
-        # x = self.r3(x)
-        # x = self.gcn4(x, edge_index)
-        x = global_mean_pool(x, batch)
-        
-        x = F.dropout(x, p = 0.4, training=self.training)
-        x = self.linear(x)
-        
-        probs = F.log_softmax(x, dim=-1)
-        
-        return probs
-        
-        
-        
-        # KNN
-        # embeddings
-        # PCA
-GCN()
+    def forward(self, x, edge_index):
+        x = self.conv1(x, edge_index)
+        x = F.relu(x)
+        emb = self.conv2(x, edge_index)
+        x = global_mean_pool(emb, batch=None)
+        return x, emb
 
 
-# In[38]:
+# In[4]:
 
 
 def preprocessing_test(test_file):
@@ -127,7 +90,7 @@ def preprocessing_test(test_file):
             return loaded_data
 
 
-# In[45]:
+# In[5]:
 
 
 def extracting_attributes(verilog_file):
@@ -151,7 +114,7 @@ def extracting_attributes(verilog_file):
         return e
 
 
-# In[46]:
+# In[6]:
 
 
 def get_label_infer(pred_label):
@@ -163,19 +126,22 @@ def get_label_infer(pred_label):
     return label[0]
 
 
-# In[47]:
+# In[9]:
 
 
 def get_prediction(data):
-    gcn = GCN()
-    gcn.load_state_dict(torch.load('gcn_model89-72-0001-200.pth'))
-    out = gcn(data.x, data.edge_index, data.batch) 
+    in_channels = 7
+    hidden_channels = 16
+    out_channels = 15
+    graph_sage = GraphSAGE(in_channels, hidden_channels, out_channels)
+    graph_sage.load_state_dict(torch.load('grahpSAGE94_92_200_graph_embeddings.pth'))
+    out,_ = graph_sage(data.x, data.edge_index) 
     pred = out.argmax(dim=1)  # Use the class with highest probability.
     pred_label = (pred.tolist())[0]
     return pred_label
 
 
-# In[48]:
+# In[10]:
 
 
 from nbconvert import ScriptExporter

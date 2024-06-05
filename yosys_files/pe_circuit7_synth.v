@@ -26,7 +26,7 @@ module pe_circuit7(A0, A1, Y0, Y1, Y2, Y3);
     .B(Y3),
     .Y(A1)
   );
-  BUF _1_ (
+  WIRE _1_ (
     .A(Y1),
     .Z(A0)
   );
