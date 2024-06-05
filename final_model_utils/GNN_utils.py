@@ -119,14 +119,14 @@ def extracting_attributes(verilog_file):
 
 def get_label_infer(pred_label):
     label_mapping = {
-        'adder': 0, 'comparator': 1, 'decoder': 2,
-        'encoder': 3, 'mult': 4, 'mux': 5, 'pe': 6, 'sub': 7, 'and': 8, 'or': 9, 'not': 10, 'nand': 11, 'nor': 12, 'xnor': 13
-    }
+        'Adder': 0, 'Comparator': 1, 'Decoder': 2,
+        'Encoder': 3, 'Multiplier': 4, 'Multiplexer': 5, 'Priority Encoder': 6, 'Subtractor': 7, 
+        'AND Gate': 8, 'OR Gate': 9, 'NOT Gate': 10, 'NAND Gate': 11, 'NOR Gate': 12, 'XNOR Gate': 13,'XOR Gate':14}
     label = [k for k, v in label_mapping.items() if v == pred_label]
     return label[0]
 
 
-# In[9]:
+# In[7]:
 
 
 def get_prediction(data):
@@ -141,7 +141,7 @@ def get_prediction(data):
     return pred_label
 
 
-# In[10]:
+# In[8]:
 
 
 from nbconvert import ScriptExporter

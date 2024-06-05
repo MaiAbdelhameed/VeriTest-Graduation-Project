@@ -2,7 +2,7 @@
 $python_script = "Testing_GNN.py"
 
 # Define the file path to be passed to the Python script
-$file_path = "test_sample.txt"  # Replace this with the path to your file
+$file_path = "test_sample_synth.txt"  # Replace this with the path to your file
 
 # Call the Python script and pass the file path as an argument, redirecting output to pred.txt
 & python $python_script $file_path > pred.txt

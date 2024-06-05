@@ -1,7 +1,4 @@
-param (
-    [string]$verilog_file  # Define the Verilog file name as a command-line argument
-)
-
+$verilog_file = "test_sample.v"
 # Call synthesizer.ps1 with the Verilog file
 $synthesizer_output = .\synthesizer.ps1 $verilog_file
 
@@ -10,6 +7,20 @@ if ($synthesizer_output -eq "compilation failed" -or $synthesizer_output -eq "sy
     Write-Host "Synthesizer failed: $synthesizer_output"
     return $synthesizer_output
 }
+
+
+# Call run_yosys_test.ps1 with the Verilog file as an argument
+.\run_yosys_test.ps1
+
+# Check for failure in run_yosys_test.ps1
+# Check the exit code of the Python script
+if ($LASTEXITCODE -eq 1) {
+    Write-Host "Yosys synthesis failed."
+    return "failure"
+}
+
+
+$verilog_file = "test_sample_synth.v"
 
 # Call encode_test_sample.ps1 with the Verilog file as an argument
 $encode_output = .\encode_test_sample.ps1 -verilog_file $verilog_file

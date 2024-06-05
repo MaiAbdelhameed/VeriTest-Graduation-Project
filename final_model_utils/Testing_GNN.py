@@ -22,15 +22,15 @@ def infer_GNN(test_file):
     return label
 
 
-# In[4]:
+# In[3]:
 
 
-test_file = 'test_sample.txt'
+test_file = 'test_sample_synth.txt'
 label = infer_GNN(test_file)
 print(label)
 
 
-# In[5]:
+# In[4]:
 
 
 from nbconvert import ScriptExporter
@@ -42,6 +42,12 @@ def convert_notebook_to_script(notebook_filename, script_filename):
         f.write(output)
 
 convert_notebook_to_script('Testing_GNN.ipynb', 'Testing_GNN.py')
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:

@@ -101,7 +101,7 @@ edges_encoded_matrix.append(destination_matrix)
 
 
 # directory = "./"
-directory = "encoded_yosys"
+directory = "./final_model_utils"
 filename = filename[:-2] + ".txt"
 file_path = os.path.join(directory, filename)
 

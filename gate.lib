@@ -1,0 +1,59 @@
+library (gate_lib) {
+    /* AND Gate */
+    
+    cell (AND) {
+        area: 1;
+        pin (A) {
+            direction: input;
+        }
+        pin (B) {
+            direction: input;
+        }
+        pin (Y) {
+            direction: output;
+            function: "A & B";
+        }
+    }
+    /* WIRE Gate */
+    cell (WIRE) {
+
+	area: 1;
+	pin (A) {
+
+		direction		: input;
+	}
+
+	pin (Z) {
+
+		direction		: output;
+		function		: "A";
+	}
+
+  }
+
+    /* OR Gate */
+    cell (OR) {
+        area: 1;
+        pin (A) {
+            direction: input;
+        }
+        pin (B) {
+            direction: input;
+        }
+        pin (Y) {
+            direction: output;
+            function: "A | B";
+        }
+    }
+    /* NOT Gate */
+    cell (NOT) {
+        area: 1;
+        pin (A) {
+            direction: input;
+        }
+        pin (Y) {
+            direction: output;
+            function: "!A";
+        }
+    }
+}
