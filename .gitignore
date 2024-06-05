@@ -1,0 +1,8 @@
+oss-cad-suite/
+yosys_script.tcl
+yosys_script.template
+test_sample.v
+test_sample_synth.v
+run_yosys_test.ps1
+run_yosys_test.py
+run_yosys.py
