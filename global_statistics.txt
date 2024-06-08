@@ -1,0 +1,7 @@
+Average number of nodes: 55.30555555555556
+Max number of nodes: 1736
+Min number of nodes: 3
+Average number of edges: 77.61363636363636
+Max number of edges: 2560
+Min number of edges: 2
+Sum number of nodes: 21901
