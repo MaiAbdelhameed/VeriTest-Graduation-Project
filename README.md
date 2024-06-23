@@ -14,11 +14,11 @@ Diagram:
  <!-- Update with correct path to the image -->
 
 ### Mode 2: Specifications
-Input: A Verilog file and a JSON file containing specifications about the circuit.
-Process:
+  Input: A Verilog file and a JSON file containing specifications about the circuit.
+  Process:
 Analyzes the JSON file to construct a Python file containing a golden model of the circuit.
 Executes Mode 1 using the generated Python code as the golden model and the provided Verilog file.
-Diagram:
+  Diagram:
  <!-- Update with correct path to the image -->
 
 ### Mode 3: Predict Functionality
