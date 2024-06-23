@@ -1,4 +1,4 @@
-# Verilog-Testbench-Generator-GP
+![WhatsApp Image 2024-06-24 at 02 37 29_9ca44fe4](https://github.com/MaiAbdelhameed/Verilog-Testbench-Generator-GP/assets/82734074/8f114967-7f39-444a-8453-dd61026d600e)# Verilog-Testbench-Generator-GP
 
 ## Overview
 This repository contains a tool for generating testbenches for Verilog files. The tool operates in three distinct modes based on user input, providing flexibility for different stages of the verification process. The core idea is to automate the generation of test cases and expected outputs, easing the verification process of digital circuits described in Verilog.
@@ -6,7 +6,8 @@ This repository contains a tool for generating testbenches for Verilog files. Th
 ## Modes of Operation
 ### Mode 1: Golden Model
 Diagram:<br>
- ![mode 1](/mode1.jpg)
+ ![Mode 1](https://github.com/MaiAbdelhameed/Verilog-Testbench-Generator-GP/assets/82734074/e8db7c95-050f-44bd-b7b0-80249eddda06)
+
 &nbsp;Input: <br>
 &nbsp;&nbsp;A Verilog file and a Python file containing a golden model.<br>
 &nbsp;Process:<br>
@@ -16,15 +17,20 @@ Diagram:<br>
 
 
 ### Mode 2: Specifications<br>
+Diagram:<br>
+ ![Mode 2](https://github.com/MaiAbdelhameed/Verilog-Testbench-Generator-GP/assets/82734074/82b867b9-1b1e-4540-a4f3-8678ffb0089f)
+
 &nbsp;Input:<br> 
 &nbsp;&nbsp;A Verilog file and a JSON file containing specifications about the circuit.<br>
 &nbsp;Process:
 &nbsp;&nbsp;*Analyzes the JSON file to construct a Python file containing a golden model of the circuit.
 &nbsp;&nbsp;*Executes Mode 1 using the generated Python code as the golden model and the provided Verilog file.
-  Diagram:
- <!-- Update with correct path to the image -->
+
 
 ### Mode 3: Predict Functionality
+Diagram: <br>
+![Mode 3](https://github.com/MaiAbdelhameed/Verilog-Testbench-Generator-GP/assets/82734074/d795f4ce-08d6-4888-b43e-a8a2de91134a)
+
 Input: A Verilog file.
 Process:
 Generates a prediction using the GNN model embeddings trained on an SVM model.
