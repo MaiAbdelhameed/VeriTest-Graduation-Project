@@ -5,19 +5,22 @@ This repository contains a tool for generating testbenches for Verilog files. Th
 
 ## Modes of Operation
 ### Mode 1: Golden Model
-Input: A Verilog file and a Python file containing a golden model.
-Process:
-  Generates test cases.
-  Computes expected outputs using the golden model.
-  Generates a Verilog testbench that tests the given Verilog file using the generated test cases and expected results.
-Diagram:
- <!-- Update with correct path to the image -->
+Diagram:<br>
+ ![mode 1](./modejpg)
+&nbsp;Input: <br>
+&nbsp;&nbsp;A Verilog file and a Python file containing a golden model.<br>
+&nbsp;Process:<br>
+&nbsp;&nbsp;* Generates test cases.<br>
+&nbsp;&nbsp;* Computes expected outputs using the golden model.<br>
+&nbsp;&nbsp;* Generates a Verilog testbench that tests the given Verilog file using the generated test cases and expected results.<br>
 
-### Mode 2: Specifications
-  Input: A Verilog file and a JSON file containing specifications about the circuit.
-  Process:
-Analyzes the JSON file to construct a Python file containing a golden model of the circuit.
-Executes Mode 1 using the generated Python code as the golden model and the provided Verilog file.
+
+### Mode 2: Specifications<br>
+&nbsp;Input:<br> 
+&nbsp;&nbsp;A Verilog file and a JSON file containing specifications about the circuit.<br>
+&nbsp;Process:
+&nbsp;&nbsp;*Analyzes the JSON file to construct a Python file containing a golden model of the circuit.
+&nbsp;&nbsp;*Executes Mode 1 using the generated Python code as the golden model and the provided Verilog file.
   Diagram:
  <!-- Update with correct path to the image -->
 
