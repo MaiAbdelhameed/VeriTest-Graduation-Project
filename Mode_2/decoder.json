@@ -1,0 +1,9 @@
+{
+    "model_name":"decoder_circuit",
+    "type":"decoder",
+    "input_mode":"concatenated",
+    "output_mode":"concatenated",
+    "inputs":[{"name":"in", "size":2}],
+    "output": [{"name":"out","size":4}]
+
+}

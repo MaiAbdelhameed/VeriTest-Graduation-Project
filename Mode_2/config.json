@@ -1,0 +1,15 @@
+{
+    "and":"gate_category_generator.py",
+    "nand":"gate_category_generator.py",
+    "or":"gate_category_generator.py",
+    "nor":"gate_category_generator.py",
+    "xor":"gate_category_generator.py",
+    "xnor":"gate_category_generator.py",
+    "adder":"adder_category_generator.py",
+    "decoder":"decoder_category_generator.py",
+    "encoder":"encoder_category_generator.py",
+    "not":"not_category_generator.py",
+    "seg":"seven_segment_category_generator.py",
+    "mux":"mux_category_generator.py"
+
+}

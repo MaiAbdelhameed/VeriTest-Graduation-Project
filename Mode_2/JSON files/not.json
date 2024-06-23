@@ -1,0 +1,7 @@
+{
+    "model_name":"not_circuit",
+    "type":"not",
+    "inputs_outputs":[{"input_name":"in1","output_name":"out1", "size":3},{"input_name":"in2","output_name":"out2", "size":2},{"input_name":"in3","output_name":"out3", "size":3}]
+    
+
+}

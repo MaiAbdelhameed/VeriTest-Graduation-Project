@@ -1,0 +1,9 @@
+{
+    "model_name":"seven_segment_circuit",
+    "type":"seg",
+    "input_mode":"separate",
+    "output_mode":"separate",
+    "inputs":[{"name":"in0", "size":1},{"name":"in1", "size":1},{"name":"in2", "size":1},{"name":"in3", "size":1}],
+    "output": [{"name":"out0","size":1},{"name":"out1","size":1},{"name":"out2","size":1},{"name":"out3","size":1},{"name":"out4","size":1},{"name":"out5","size":1},{"name":"out6","size":1}]
+
+}

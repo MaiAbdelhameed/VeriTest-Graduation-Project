@@ -1,0 +1,10 @@
+{
+    "model_name":"mux_circuit",
+    "type":"mux",
+    "input_mode":"concatenated",
+    "selector_mode":"concatenated",
+    "selectors": [{"name":"s", "size":2}],
+    "inputs":[{"name":"in", "size":4}],
+    "output": {"name":"out","size":1}
+
+}
