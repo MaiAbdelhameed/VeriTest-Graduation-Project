@@ -6,7 +6,7 @@ This repository contains a tool for generating testbenches for Verilog files. Th
 ## Modes of Operation
 ### Mode 1: Golden Model
 Diagram:<br>
- ![mode 1](./modejpg)
+ ![mode 1](/mode1.jpg)
 &nbsp;Input: <br>
 &nbsp;&nbsp;A Verilog file and a Python file containing a golden model.<br>
 &nbsp;Process:<br>
