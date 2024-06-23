@@ -5,56 +5,61 @@ This repository contains a tool for generating testbenches for Verilog files. Th
 
 ## Modes of Operation
 ### Mode 1: Golden Model
-Diagram:<br>
+* Diagram <br>
  ![Mode 1](https://github.com/MaiAbdelhameed/Verilog-Testbench-Generator-GP/assets/82734074/e8db7c95-050f-44bd-b7b0-80249eddda06)
 
-&nbsp;Input: <br>
-&nbsp;&nbsp;A Verilog file and a Python file containing a golden model.<br>
-&nbsp;Process:<br>
-&nbsp;&nbsp;* Generates test cases.<br>
-&nbsp;&nbsp;* Computes expected outputs using the golden model.<br>
-&nbsp;&nbsp;* Generates a Verilog testbench that tests the given Verilog file using the generated test cases and expected results.<br>
+* Input <br>
+A Verilog file and a Python file containing a golden model.<br>
+
+* Process <br>
+  * Generates test cases.<br>
+  * Computes expected outputs using the golden model.<br>
+  * Generates a Verilog testbench that tests the given Verilog file using the generated test cases and expected results.<br>
 
 
 ### Mode 2: Specifications<br>
-Diagram:<br>
+* Diagram<br>
  ![Mode 2](https://github.com/MaiAbdelhameed/Verilog-Testbench-Generator-GP/assets/82734074/82b867b9-1b1e-4540-a4f3-8678ffb0089f)
 
-&nbsp;Input:<br> 
-&nbsp;&nbsp;A Verilog file and a JSON file containing specifications about the circuit.<br>
-&nbsp;Process:
-&nbsp;&nbsp;*Analyzes the JSON file to construct a Python file containing a golden model of the circuit.
-&nbsp;&nbsp;*Executes Mode 1 using the generated Python code as the golden model and the provided Verilog file.
+* Input <br> 
+A Verilog file and a JSON file containing specifications about the circuit.<br>
+* Process:
+  * Analyzes the JSON file to construct a Python file containing a golden model of the circuit.
+  *  Executes Mode 1 using the generated Python code as the golden model and the provided Verilog file.
 
 
 ### Mode 3: Predict Functionality
-Diagram: <br>
+* Diagram <br>
 ![Mode 3](https://github.com/MaiAbdelhameed/Verilog-Testbench-Generator-GP/assets/82734074/d795f4ce-08d6-4888-b43e-a8a2de91134a)
 
-Input: A Verilog file.
-Process:
-Generates a prediction using the GNN model embeddings trained on an SVM model.
-Creates a specs JSON in the same format as Mode 2.
-The user confirms the details in the JSON.
-Executes the cycle as in Mode 2.
+* Input <br>
+A Verilog file. <br>
+
+* Process<br>
+  * Generates a prediction using the GNN model embeddings trained on an SVM model. <br>
+  * Creates a specs JSON in the same format as Mode 2. <br>
+  * The user confirms the details in the JSON. <br> 
+  * Executes the cycle as in Mode 2. <br> 
 
 ### Experiments:
 Includes experiments with pure classical methods, pure GNN methods, and classical methods trained on GNN embeddings.
-Diagram:
- <!-- Update with correct path to the image -->
-
 
 ### Installation
 To set up the project, follow these steps:
 
 1. Clone the repository:
-<insert code snippet>
+```
+git clone [https://github.com/your-repo-name.git](https://github.com/MaiAbdelhameed/Verilog-Testbench-Generator-GP.git)
+cd Verilog-Testbench-Generator-GP
+```
+
 2. Install dependencies:
-<insert code snippet>
+```
+pip install -r requirements.txt
+```
 
 ### Usage
-
-### Project Structure
+(website tutorial)
 
 ### Future Work
 #### Coverage Enhancement
@@ -69,13 +74,13 @@ To set up the project, follow these steps:
 
 #### Additional Features
 1. Support for Sequential Circuits
-2. Deployment of a Web Interface
+2. Sponsorship Opportunities
 3. VS Code Extension
 4. Publication of Manually Created Dataset
-5. Research Paper on Predicting Verilog Codes using GNNs
+5. Publication of Research Paper on Predicting Verilog Codes using GNNs
 
-### Contributors
-Mai Abdelhameed
-Malak Mokhtar
-Mohammed Mohsen
-Mark Milad
+### Contributors 
+[Mai Abdelhameed](https://github.com/MaiAbdelhameed) <br>
+[Malak Mokhtar](https://github.com/Malak-Mokhtar) <br>
+[Mohammed Mohsen](https://github.com/Makoish) <br>
+[Mark Milad](https://github.com/helloworld877) <br>
