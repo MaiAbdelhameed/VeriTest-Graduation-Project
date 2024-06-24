@@ -49,8 +49,8 @@ To set up the project, follow these steps:
 
 1. Clone the repository:
 ```
-git clone [https://github.com/your-repo-name.git](https://github.com/MaiAbdelhameed/Verilog-Testbench-Generator-GP.git)
-cd Verilog-Testbench-Generator-GP
+git clone [https://github.com/your-repo-name.git](https://github.com/MaiAbdelhameed/VeriTest-Graduation-Project.git)
+cd VeriTest-Graduation-Project
 ```
 
 2. Install dependencies:
