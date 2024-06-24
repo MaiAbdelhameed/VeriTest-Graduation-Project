@@ -79,8 +79,8 @@ pip install -r requirements.txt
 4. Publication of Manually Created Dataset
 5. Publication of Research Paper on Predicting Verilog Codes using GNNs
 
-### Contributors 
-[Mai Abdelhameed](https://github.com/MaiAbdelhameed) <br>
-[Malak Mokhtar](https://github.com/Malak-Mokhtar) <br>
-[Mohammed Mohsen](https://github.com/Makoish) <br>
-[Mark Milad](https://github.com/helloworld877) <br>
+### Contributors & their parts
+[Mai Abdelhameed](https://github.com/MaiAbdelhameed) : AI tools, research and experiments <br>
+[Malak Mokhtar](https://github.com/Malak-Mokhtar) : Coverage Parser & Test Set Optimization<br>
+[Mohammed Mohsen](https://github.com/Makoish) : Verilog Parser and Toggle Coverage <br>
+[Mark Milad](https://github.com/helloworld877) : Golden Model and Output Generation, and Website Integration <br>
