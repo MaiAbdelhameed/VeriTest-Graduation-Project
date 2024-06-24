@@ -41,10 +41,10 @@ A Verilog file. <br>
   * The user confirms the details in the JSON. <br> 
   * Executes the cycle as in Mode 2. <br> 
 
-### Experiments:
+## Experiments:
 Includes experiments with pure classical methods, pure GNN methods, and classical methods trained on GNN embeddings.
 
-### Installation
+## Installation
 To set up the project, follow these steps:
 
 1. Clone the repository:
@@ -58,28 +58,28 @@ cd VeriTest-Graduation-Project
 pip install -r requirements.txt
 ```
 
-### Usage
+## Usage
 (website tutorial)
 
-### Future Work
-#### Coverage Enhancement
+## Future Work
+### Coverage Enhancement
 1. Expanded Coverage Metrics
 2. Support for Larger and More Complex Designs
 
-#### Test Set Optimization
+### Test Set Optimization
 1. Enhanced SMT Solver Integration
 2. Adaptive Random Stimuli Generation
 3. Hybrid Approach for Test Case Generation
 4. Incremental Coverage Feedback
 
-#### Additional Features
+### Additional Features
 1. Support for Sequential Circuits
 2. Sponsorship Opportunities
 3. VS Code Extension
 4. Publication of Manually Created Dataset
 5. Publication of Research Paper on Predicting Verilog Codes using GNNs
 
-### Contributors & their parts
+## Contributors & their parts
 [Mai Abdelhameed](https://github.com/MaiAbdelhameed) : AI tools, research and experiments <br>
 [Malak Mokhtar](https://github.com/Malak-Mokhtar) : Coverage Parser & Test Set Optimization<br>
 [Mohammed Mohsen](https://github.com/Makoish) : Verilog Parser and Toggle Coverage <br>
