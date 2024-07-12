@@ -84,3 +84,7 @@ pip install -r requirements.txt
 [Malak Mokhtar](https://github.com/Malak-Mokhtar) : Coverage Parser & Test Set Optimization<br>
 [Mohammed Mohsen](https://github.com/Makoish) : Verilog Parser and Toggle Coverage <br>
 [Mark Milad](https://github.com/helloworld877) : Golden Model and Output Generation, and Website Integration <br>
+
+
+
+For more info about our project, you can check our presentation slides here: https://docs.google.com/presentation/d/1y-4pfcGbEakUpIj5VloSzB5nLqj5NzFL1iZe69CHcl4/edit#slide=id.p
